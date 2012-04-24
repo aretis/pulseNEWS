@@ -1,0 +1,193 @@
+﻿/* Salman ALAMDAR 
+	CSS de la page d'inscription
+	Début : 10/04/12 */
+	
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{ margin:0; padding:0;}
+table{ border-collapse:collapse; border-spacing:0;}
+fieldset,img{ border:0;}
+address,caption,cite,code,dfn,th,var{ font-style:normal; font-weight:normal;}
+ol,ul{ list-style:none;}
+caption,th{ text-align:left;}
+h1,h2,h3,h4,h5,h6{ font-size:100%; font-weight:normal;}
+q:before,q:after{ content:'';}
+abbr,acronym{ border:0;}
+
+html {
+	overflow:-moz-scrollbars-vertical;
+}
+body{
+	color:white;
+	font-size:12px;
+	line-height:16px;
+	background-color:rgb(240,255,240);
+}
+
+form{
+	background:#85c630; /* Firefox */
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-box-shadow:0 0 15px black;
+	-webkit-box-shadow:0 0 15px black;
+	font-family: 'coolvetica_rg';
+	margin : auto;
+	padding:15px;
+	margin-top:15px;
+	width: 40%;
+}
+.erreur
+{
+	background:#85c630; /* Firefox */
+	font-family: 'coolvetica_rg';
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-box-shadow:0 0 15px black;
+	-webkit-box-shadow:0 0 15px black;
+	width: 18%;
+	color:#FFFD55;
+	top:409px;
+	right: 109px;
+	padding:1%;
+	position:absolute;
+	font-size:20px;
+}
+#block{
+	float: right;
+	background:#85c630; /* Firefox */
+	font-family: 'coolvetica_rg';
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-box-shadow:0 0 15px black;
+	-webkit-box-shadow:0 0 15px black;
+	margin-top: 20px;
+	margin-left: 10px;
+	padding:15px;
+	width: 40%;
+}
+#title
+{
+	margin-top: 50px;
+	font-size: 70px;
+	font-family: 'coolvetica_rg';
+}
+#texte
+{
+	line-height: 25px;
+	font-size: 42px;
+	font-family: 'coolvetica_rg';
+	
+}
+h1{
+	border-bottom:1px solid #ccc;
+	font-size:11px;
+	font-weight:bold;
+	letter-spacing:2px;
+	margin-bottom:46px;
+	text-transform:uppercase;
+}
+
+form p:last-child{ /* Sélecteur avancé pour sélectionner le dernier paragraphe du formulaire */
+	margin-bottom:0;
+}
+label{
+	cursor:pointer;
+	display:block;
+	float:left;
+	font-size:26px;
+	font-weight:bold;
+	line-height: 32px;
+	margin-bottom:0px;
+	width:268px;
+	font-family: 'coolvetica_rg';
+}
+form label:hover{
+	color:#fffd55;
+}
+form label:hover:after{
+	content:" »";
+}
+input[type=text],
+input[type=password]{
+	background:#a5d85f; /* Firefox */
+	border:0px;
+	font-size: 22px;
+	font-family:'coolvetica_rg';
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+input[type=text]:focus,
+input[type=password]:focus{
+	border-color:#093c75;
+	-moz-box-shadow:0 0 3px #85c630;
+	-webkit-box-shadow:0 0 3px #85c630;
+	outline:none; /* Pour enlever le contour jaune lorsque l'on sélectionne un input dans Chrome */
+}
+select{
+	cursor:pointer;
+	padding:3px;
+	-moz-box-shadow:0 0 3px #aaa;
+	-webkit-box-shadow:0 0 3px #aaa;
+}
+select:active,
+select:focus{
+	border:1px solid #093c75;
+	-moz-box-shadow:0 0 3px #0459b7;
+	-webkit-box-shadow:0 0 3px #0459b7;
+	outline:none;
+}
+input[type=submit],
+a.submit{
+	background-color:#50b326;
+	border:0px;
+	-moz-border-radius:25px;
+	-webkit-border-radius:25px;
+	color:#fff;
+	cursor:pointer;
+	font-family: 'coolvetica_rg';
+	font-size:48px;
+	margin-left: 60%;
+	padding: 2px 0px;
+	text-decoration:none;
+}
+input[type=submit]:hover,
+a.submit:hover{
+	text-decoration:none;
+	color:#fffd55;
+}
+input[type=submit]:active,
+input[type=submit]:focus,
+a.submit:active,
+a.submit:focus{
+	background:green;
+	border-color:#093c75;
+	outline:none;
+}
+#options{
+	margin-bottom:20px;
+}
+#options p{
+	display:none;
+}
+#options .show{
+	display:block;
+}
+#options:target .show{
+	display:none;
+}
+#options {
+	display:none;
+}
+#options:target{
+	display:block;
+}
+#options:target p{
+	display:block;
+}
+
+#finish:target{
+	display:block;
+}
+#credits{
+	font-size:11px;
+	margin-top:20px;
+	text-align:center;
+}

@@ -1,0 +1,162 @@
+/*
+	Salman ALAMDAR
+	17/04/12
+	Page de validation
+*/
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{ margin:0; padding:0;}
+table{ border-collapse:collapse; border-spacing:0;}
+fieldset,img{ border:0;}
+address,caption,cite,code,dfn,th,var{ font-style:normal; font-weight:normal;}
+ol,ul{ list-style:none;}
+caption,th{ text-align:left;}
+h1,h2,h3,h4,h5,h6{ font-size:100%; font-weight:normal;}
+q:before,q:after{ content:'';}
+abbr,acronym{ border:0;}
+
+@font-face 
+{
+	font-family: 'coolvetica_rg';
+	src: url('fonts/coolvetica_rg.ttf') format('truetype');
+}
+html {
+	overflow:-moz-scrollbars-vertical;
+}
+body{
+	background-color:rgb(240,255,240);
+	font-family: 'coolvetica_rg';
+	line-height:16px;
+	text-shadow:0 1px 0 #fff;
+	color:white;
+}
+a{
+	color:#333;
+	text-decoration:underline;
+}
+form{
+	background:#85c630;
+	margin:40px auto 0;
+	padding:73px;
+	width:653px;
+}
+h1{
+	border-bottom:1px solid #ccc;
+	font-size:11px;
+	font-weight:bold;
+	letter-spacing:2px;
+	margin-bottom:46px;
+	text-transform:uppercase;
+}
+form p{
+	margin-bottom:63px;
+	text-align:center;
+}
+form p:last-child{ /* Sélecteur avancé pour sélectionner le dernier paragraphe du formulaire */
+	margin-bottom:0;
+}
+.name{
+	cursor:pointer;
+	display:block;
+	float:left;
+	font-size:36px;
+	font-weight:bold;
+	line-height:42px;
+	margin-bottom:48px;
+	width:668px;
+	color:white;
+}
+
+input[type=text],
+input[type=password]{
+	background: rgba(255, 255, 255, 0.9);
+	background:-moz-linear-gradient(90deg, #fff, #eee); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff), color-stop(0.2, #fff)); /* Webkit */
+	border:1px solid #aaa;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-box-shadow:0 0 3px #aaa;
+	-webkit-box-shadow:0 0 3px #aaa;
+	padding:5px;
+}
+input[type=text]:focus,
+input[type=password]:focus{
+	border-color:#093c75;
+	-moz-box-shadow:0 0 3px #0459b7;
+	-webkit-box-shadow:0 0 3px #0459b7;
+	outline:none; /* Pour enlever le contour jaune lorsque l'on sélectionne un input dans Chrome */
+}
+select{
+	cursor:pointer;
+	padding:3px;
+	-moz-box-shadow:0 0 3px #aaa;
+	-webkit-box-shadow:0 0 3px #aaa;
+}
+select:active,
+select:focus{
+	border:1px solid #093c75;
+	-moz-box-shadow:0 0 3px #0459b7;
+	-webkit-box-shadow:0 0 3px #0459b7;
+	outline:none;
+}
+input[type=submit],
+a.submit{
+	background-color:#50b326;
+	color:#fff;
+	cursor:pointer;
+	font-family:Arial,sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	padding:7px 10px;
+	text-decoration:none;
+	text-shadow:0 1px 1px #333;
+	text-transform:uppercase;
+}
+input[type=submit]:hover,
+a.submit:hover{
+	text-decoration:none;
+	color:#fffd55;
+}
+input[type=submit]:active,
+input[type=submit]:focus,
+a.submit:active,
+a.submit:focus{
+	background:#ccc;
+	background:-moz-linear-gradient(90deg, #0bcdff, #067cd3);
+	background:-webkit-gradient(linear, left top, left bottom, from(#067cd3), to(#0bcdff));
+	border-color:#093c75;
+	outline:none;
+}
+#options{
+	margin-bottom:20px;
+}
+#options p{
+	display:none;
+}
+#options .show{
+	display:block;
+}
+#options:target .show{
+	display:none;
+}
+#options {
+	display:none;
+}
+#options:target{
+	display:block;
+}
+#options:target p{
+	display:block;
+}
+#finish{
+	background:rgba(65, 166, 42, 0.2);
+	border:2px solid #41a62a;
+	-moz-border-radius:43px;
+	-webkit-border-radius:43px;
+	display:block;
+	padding:5px 10px;
+}
+#credits{
+	font-size:11px;
+	margin-top:20px;
+	text-align:center;
+}
