@@ -54,6 +54,7 @@
 <tr style='background-color: #85c630;'>
 	<td>
 		<div class='article_content'>
+		<br><img src='design/img/exemple_article.jpg'/><br>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
 		</div>
 	</td>
