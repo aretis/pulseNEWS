@@ -46,7 +46,7 @@ $result = call_db($query);
 <label for='name'>adresse e-mail</label>
 <input id='name' type='text' name='mail' onblur='verifMail(this)'size='30' VALUE ='<?php if(isset($_POST['mail'])) echo $_POST['mail']; ?>'/>
 <br>
-<input type="submit" value="s'inscrire"/>
+<input type="submit" value=" s'inscrire ! "/>
 
 </form>
 

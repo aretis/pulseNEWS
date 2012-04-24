@@ -1,6 +1,4 @@
-﻿<div class='deco'>&nbsp;&nbsp;</div>
-<br>
-<div class='profile_ban'>
+﻿<div class='profile_ban'>
 	<img src='design/img/ban_exemple.png'/>
 </div>
 <table style='margin: auto; text-align: center;' cellpadding='0' cellspacing='0'>
