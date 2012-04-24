@@ -83,6 +83,7 @@ a
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 22px;
+	box-shadow: 5px 5px 15px #333333; 
 }
 .description
 {
@@ -99,6 +100,7 @@ a
 	color: white;
 	font-size: 10px;
 	height: 100%; 
+	box-shadow: 5px 5px 15px #333333; 
 }
 .rss_block
 {
@@ -114,8 +116,7 @@ a
 	font-family: 'coolvetica_rg';
 	font-size: 24px;
 	width: 120px;
-	-moz-box-shadow:0 0 15px black;
-	-webkit-box-shadow:0 0 15px black; 
+	box-shadow: 5px 5px 15px #333333; 
 }
 .block_content
 {
@@ -213,16 +214,23 @@ a
 	border-color:#85c630;
 	border-width: 12px;
 	border-style:solid;
-	width: 920px;
+	height: 200px;
+	width: 900px;
+	box-shadow: 10px 10px 15px #333333; 
+}
+.profile_ban img
+{
+	height: 200px;
+	width: 900px;
 }
 .profile_button_left
 {
 	background-color: #85c630;
-	
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 24px;
 	margin-top: -14px;
+	box-shadow: 5px 5px 15px #333333; 
 }
 .profile_button_right
 {
@@ -231,6 +239,7 @@ a
 	font-family: 'coolvetica_rg';
 	font-size: 24px;
 	margin-top: -14px;
+	box-shadow: 5px 5px 15px #333333; 
 }
 .profile_name
 {
@@ -240,6 +249,7 @@ a
 	font-family: 'coolvetica_rg';
 	font-size: 28px;
 	margin-top: -10px;
+	box-shadow: 5px 5px 15px #333333; 
 }
 	
 
@@ -284,4 +294,5 @@ a
 	background-color: white;
 	font-size: 16px;
 	height: 400px;
+	box-shadow: 5px 5px 15px #333333; 
 }
