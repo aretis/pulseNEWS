@@ -1,5 +1,5 @@
 ﻿<?php
-
+ 
 session_start();
  
 if($_GET['page'] == 'disconnect')
