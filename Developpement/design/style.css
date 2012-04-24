@@ -83,6 +83,7 @@ a
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 22px;
+	box-shadow: 5px 5px 15px #333333; 
 }
 .description
 {
@@ -99,6 +100,7 @@ a
 	color: white;
 	font-size: 10px;
 	height: 100%; 
+	box-shadow: 5px 5px 15px #333333; 
 }
 .rss_block
 {
@@ -214,6 +216,7 @@ a
 	border-style:solid;
 	height: 200px;
 	width: 900px;
+	box-shadow: 10px 10px 15px #333333; 
 }
 .profile_ban img
 {
