@@ -30,7 +30,8 @@ function verif_formulaire()
 	}
 }
 </script>
-
+<br>
+<br>
 <form id='start' name='formulaire' action='index.php?page=connect' method='post' onSubmit='verif_formulaire()'>
 <br>
 <span id='title'>connexion</span></br>
@@ -44,7 +45,7 @@ function verif_formulaire()
 <label for='password'>mot de passe</label>
 <input id='password' type='password' name='password'/>
 
-<input type="submit" value="Connexion"/>
+<input type="submit" value=" se connecter ! "/>
 
 </form>
 

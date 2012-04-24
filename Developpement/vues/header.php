@@ -11,7 +11,7 @@
 <div class='header'>
 	<table cellspacing="0">
 		<td>
-				<img style='width: 451px;' src='design/img/logo_header.png'/>
+				<img style='height: 75px;' src='design/img/logo_header.png'/>
 				
 		</td>
 		<td style='width: 100%;'>
@@ -24,20 +24,20 @@
 					<?php
 						if( isset($_SESSION['pseudo'] ))
 						{
-							echo "Bonjour, ".$_SESSION['pseudo']." !<br><br>";
+							echo "Bonjour, ".$_SESSION['pseudo']." !  ";
 							echo "<a href='index.php?page=disconnect' style='color: white;'>(se déconnecter)</a>";
 						}
 						else
 						{													
-							echo "<a href='index.php?page=register' style='color: white;'>s'inscrire !</a><br><br>";
+							echo "<a href='index.php?page=register' style='color: white;'>s'inscrire !</a><br>";
 						}
 					?>
 					<div class='header_menu'>
-						<a href='index.php?page=news' style='color: white;'>fil d'actualités</a>&nbsp;&nbsp;
-						<a href='' style='color: white;'>débat du jour</a>&nbsp;&nbsp;
+						<a href='index.php?page=news'>fil d'actualités</a>&nbsp;&nbsp;
+						<a href=''>débat du jour</a>&nbsp;&nbsp;
 						<?php if( isset($_SESSION['pseudo'] ))
 							{
-								echo"<a href='index.php?page=profile' style='color: white;'>".$_SESSION['pseudo']."</a>&nbsp;&nbsp;";
+								echo"<a href='index.php?page=profile'>".$_SESSION['pseudo']."</a>&nbsp;&nbsp;";
 							}
 							else
 							{
@@ -49,3 +49,4 @@
 		</td>
 	</table>
 </div>
+<br><br><br><br>
