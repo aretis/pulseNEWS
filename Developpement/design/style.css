@@ -293,6 +293,13 @@ a
 	border-style:solid;
 	background-color: white;
 	font-size: 16px;
-	height: 400px;
-	box-shadow: 5px 5px 15px #333333; 
+	box-shadow: 5px 5px 15px #333333;
+	vertical-align: top;
+}
+.article_content img
+{
+	display: block;
+	margin: auto;
+	height: 200px;
+	
 }
