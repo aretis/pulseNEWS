@@ -24,7 +24,7 @@
 
 			<tr>
 				<td>
-					<div class='block_title_about'>&nbsp;a propos de moi</div>
+					<div class='block_title_about'>&nbsp;à propos de moi</div>
 				</td>
 			</tr>
 			<tr>
