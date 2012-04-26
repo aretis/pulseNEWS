@@ -1,4 +1,22 @@
-﻿<div class='profile_ban'>
+﻿<?php
+//include(dirname(__FILE__).'/../vues/header.php');
+//include(dirname(__FILE__).'/../vues/profile.php');
+include ('/../modeles/profile_print.php');
+	$connect = mysql_connect("localhost","root","")
+		or die("Connexion impossible : ".mysql_error());
+		mysql_select_db("pulsenews");
+		$pseudo = $_SESSION['pseudo'];
+		$req = mysql_query("SELECT * FROM users WHERE pseudo='$pseudo'");
+		$req2 = mysql_fetch_row($req);
+		$pseudo = $req2[1];
+		$key = $req2[0];
+		$surname = $req2[3];
+		$mail = $req2[5];
+		$area_name = $req2[7];
+		$firstname = $req2[4];
+		$about = $req2[6];
+?>
+<div class='profile_ban'>
 	<img src='design/img/ban_exemple.png'/>
 </div>
 <table style='margin: auto; text-align: center;' cellpadding='0' cellspacing='0'>
@@ -9,9 +27,7 @@
 <td>&nbsp;&nbsp;
 </td>
 <td>
-<div class='profile_name'>&nbsp;Mich'Mich'&nbsp;</div>
-</td>
-<td>&nbsp;&nbsp;
+<div class='profile_name'>&nbsp;<?php echo $pseudo;?>&nbsp;
 </td>
 <td>
 <div class='profile_button_left'>&nbsp;modifier mon profil&nbsp;</div>
@@ -84,12 +100,15 @@
 			</tr>
 			<tr>
 				<td style='background-color: #85c630;'>
-					<div class='block_content'>
-					<strong>Pseudo: </strong>Mich'Mich'<br>
-					<strong>Nom: </strong>Gille<br>
-					<strong>Prénom: </strong>Michel<br>	
-					<strong>Mail: </strong>gille@intechinfo.fr<br>
-					<strong>Région: </strong>Ile-de-France<br>
+				<div class='block_content'>
+					<?php
+						
+						print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about)?>
+					<strong>Pseudo: </strong><?php echo $pseudo;?><br>
+					<strong>Nom: </strong><?php echo $surname;?><br>
+					<strong>Prénom: </strong><?php echo $firstname; ?><br>	
+					<strong>Mail: </strong><?php echo $mail; ?><br>
+					<strong>Région: </strong><?php echo $area_name; ?><br>
 					</div>
 				</td>
 			</tr>
