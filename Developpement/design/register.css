@@ -32,7 +32,7 @@ form{
 	margin : auto;
 	padding:15px;
 	margin-top:15px;
-	width: 40%;
+	width: 500px;
 }
 .erreur
 {
@@ -58,15 +58,11 @@ form{
 	-webkit-border-radius:10px;
 	-moz-box-shadow:0 0 15px black;
 	-webkit-box-shadow:0 0 15px black;
-	margin-top: 20px;
-	margin-left: 10px;
-	padding:15px;
-	width: 40%;
 }
 #title
 {
 	margin-top: 50px;
-	font-size: 70px;
+	font-size: 38px;
 	font-family: 'coolvetica_rg';
 }
 #texte
@@ -92,7 +88,7 @@ label{
 	cursor:pointer;
 	display:block;
 	float:left;
-	font-size:26px;
+	font-size:22px;
 	font-weight:bold;
 	line-height: 32px;
 	margin-bottom:0px;
@@ -112,7 +108,8 @@ input[type=password]{
 	font-size: 22px;
 	font-family:'coolvetica_rg';
 	margin-bottom: 10px;
-	margin-top: 10px;
+	margin-top: 0px;
+	width: 200px;
 }
 input[type=text]:focus,
 input[type=password]:focus{
@@ -122,6 +119,10 @@ input[type=password]:focus{
 	outline:none; /* Pour enlever le contour jaune lorsque l'on sélectionne un input dans Chrome */
 }
 select{
+	border: 0px;
+	font-size: 22px;
+	font-family: 'coolvetica_rg';
+	background-color: #a5d85f;
 	cursor:pointer;
 	padding:3px;
 	-moz-box-shadow:0 0 3px #aaa;
@@ -129,21 +130,19 @@ select{
 }
 select:active,
 select:focus{
-	border:1px solid #093c75;
-	-moz-box-shadow:0 0 3px #0459b7;
-	-webkit-box-shadow:0 0 3px #0459b7;
+	border: 2px solid black;
 	outline:none;
 }
 input[type=submit],
 a.submit{
 	background-color:#50b326;
 	border:0px;
-	-moz-border-radius:25px;
-	-webkit-border-radius:25px;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
 	color:#fff;
 	cursor:pointer;
 	font-family: 'coolvetica_rg';
-	font-size:48px;
+	font-size: 32px;
 	margin-left: 60%;
 	padding: 2px 0px;
 	text-decoration:none;

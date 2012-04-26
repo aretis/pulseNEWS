@@ -1,6 +1,4 @@
-﻿<div class='deco'>&nbsp;&nbsp;</div>
-<br>
-<div class='profile_ban'>
+﻿<div class='profile_ban'>
 	<img src='design/img/ban_exemple.png'/>
 </div>
 <table style='margin: auto; text-align: center;' cellpadding='0' cellspacing='0'>
@@ -26,7 +24,7 @@
 
 			<tr>
 				<td>
-					<div class='block_title_about'>&nbsp;a propos de moi</div>
+					<div class='block_title_about'>&nbsp;à propos de moi</div>
 				</td>
 			</tr>
 			<tr>
@@ -56,6 +54,7 @@
 <tr style='background-color: #85c630;'>
 	<td>
 		<div class='article_content'>
+		<br><img src='design/img/exemple_article.jpg'/><br>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
 		</div>
 	</td>
