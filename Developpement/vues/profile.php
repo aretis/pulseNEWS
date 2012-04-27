@@ -21,6 +21,12 @@
 <table>
 <td>
 <table cellpadding='0' cellspacing='0' class='about_block'>
+			
+			<tr>
+				<td>
+					<img src='design/img/exemple_profile.jpg'/>
+				</td>
+			</tr>
 
 			<tr>
 				<td>
