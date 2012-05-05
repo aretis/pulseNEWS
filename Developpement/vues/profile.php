@@ -1,6 +1,5 @@
 ﻿<?php
-//include(dirname(__FILE__).'/../vues/header.php');
-//include(dirname(__FILE__).'/../vues/profile.php');
+
 include ('/../modeles/profile_print.php');
 	$connect = mysql_connect("localhost","root","")
 		or die("Connexion impossible : ".mysql_error());
@@ -15,6 +14,8 @@ include ('/../modeles/profile_print.php');
 		$area_name = $req2[7];
 		$firstname = $req2[4];
 		$about = $req2[6];
+		
+		print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about);
 ?>
 <div class='profile_ban'>
 	<img src='design/img/ban_exemple.png'/>
@@ -52,7 +53,7 @@ include ('/../modeles/profile_print.php');
 			<tr>
 				<td style='background-color: #85c630;'>
 					<div class='block_content'>
-					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut arcu leo, scelerisque eu iaculis id, aliquam quis sem. 				
+					<?php echo $about; ?> 				
 					</div>
 				</td>
 			</tr>
@@ -109,7 +110,7 @@ include ('/../modeles/profile_print.php');
 				<div class='block_content'>
 					<?php
 						
-						print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about)?>
+						?>
 					<strong>Pseudo: </strong><?php echo $pseudo;?><br>
 					<strong>Nom: </strong><?php echo $surname;?><br>
 					<strong>Prénom: </strong><?php echo $firstname; ?><br>	
