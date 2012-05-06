@@ -23,7 +23,7 @@ include ('/../modeles/profile_print.php');
 <table style='margin: auto; text-align: center;' cellpadding='0' cellspacing='0'>
 <td>
 <td>
-<div class='profile_button_right'>&nbsp;rédiger un article&nbsp;</div>
+<a href='index.php?page=create_article'><div class='profile_button_right'>&nbsp;rédiger un article&nbsp;</div></a>
 </td>
 <td>&nbsp;&nbsp;
 </td>

@@ -20,6 +20,8 @@ if( isset($_POST['area']) || isset($_POST['cat']) )
 		$article['cat'] = $_POST['cat'];
 		
 		create_article($article);
+		
+		header('Location:index.php?page=profile');
 	}
 	else
 	{
