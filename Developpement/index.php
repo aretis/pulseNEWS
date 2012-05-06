@@ -1,22 +1,31 @@
 ﻿<?php
- 
-session_start();
 
-if( isset($_GET['page']) && $_GET['page'] == 'disconnect')
-{
-	unset($_SESSION['pseudo']);
-}
+session_start();
  
- 
-if (!empty($_GET['page']) && is_file('controleurs/'.$_GET['page'].'.php'))
+if (!isset($_GET['page']))
 {
-	
-	include 'controleurs/'.$_GET['page'].'.php';
+	include('controleurs/home.php');
 }
 else
 {
-	include 'controleurs/news.php';
+	if (!empty($_GET['page']) && is_file('controleurs/'.$_GET['page'].'.php'))
+	{
+		
+		include 'controleurs/'.$_GET['page'].'.php';
+	}
+	else
+	{
+			include 'controleurs/news.php';
+	}
+	if($_GET['page'] == 'disconnect')
+	{
+		unset($_SESSION['pseudo']);
+	}
 }
+
+
  
+ 
+
 
 ?>
