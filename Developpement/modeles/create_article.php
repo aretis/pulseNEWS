@@ -1,26 +1,40 @@
-
+ï»¿
 
 <?php
 
-/*Fonction créée par Michel GILLE le 02/05/12*/
+/*Fonction crÃ©Ã©e par Michel GILLE le 02/05/12*/
 
 function create_article($article)
 {
+	
+		
+	$req = call_db('SELECT id_user FROM users WHERE pseudo = "'.$_SESSION['pseudo'].'"');
+	
+	while($data = mysql_fetch_assoc($req)) 
+    { 
+		$id_user = $data['id_user'];
+    } 
+	
+	$req = call_db('SELECT id_cat FROM NEWS_CAT WHERE cat_name = "'.$article['cat'].'";');
+	
+	while($data = mysql_fetch_assoc($req)) 
+    { 
+		$id_cat = $data['id_cat'];
+    } 
+	
+	$req = call_db('SELECT id_area FROM AREAS WHERE area_name = "'.$article['area'].'";');
+	
+	while($data = mysql_fetch_assoc($req)) 
+    { 
+		$id_area = $data['id_area'];
+    } 
+
 	include_once('modeles/db_connect.php');
-		
-		
-		
-	$id_user = call_db('SELECT id_user FROM USERS WHERE pseudo = "'.$_SESSION['pseudo'].'";');
-	echo "id_user = ".$id_user;
 	
-	$id_cat = call_db('SELECT id_cat FROM NEWS_CAT WHERE cat_name = "'.$article['cat'].'";');
-	$id_area = call_db('SELECT id_area FROM AREAS WHERE area_name = "'.$article['area'].'";');
+	$query = 'INSERT INTO posts VALUES("", "'.$id_user.'", "'.$article['title'].'", "'.$article['description'].'", "'.$article['content'].'", "'.$id_cat.'", "0", NOW(), "'.$id_area.'")';
 	
-	$query = 'INSERT INTO POSTS VALUES (NULL, 1, "'.$article['title'].'", "'.$article['description'].'", "'.$article['content'].'", "1", "0", TIMESTAMP(), "1");';
+	$test = mysql_query($query);
 	
-	mysql_query($query);
-	
-	echo var_dump($query);
 	
 	mysql_close();
 	

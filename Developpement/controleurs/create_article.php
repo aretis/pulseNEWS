@@ -3,24 +3,36 @@
 include_once('modeles/call_db.php');
 include_once('modeles/create_article.php');
 
+$field_errors = 0;
 
-if( !empty($_POST['title']) )
+if( isset($_POST['area']) || isset($_POST['cat']) )
 {
-	$article = array();
 
-	$article['title'] = $_POST['title'];
-	$article['description'] = $_POST['description'];
-	$article['content'] = $_POST['content'];
-	$article['area'] = $_POST['area'];
-	$article['cat'] = $_POST['cat'];
 	
-	create_article($article);
+	if( !empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['content']) && !empty($_POST['area']) && !empty($_POST['cat']))
+	{
+		$article = array();
+
+		$article['title'] = $_POST['title'];
+		$article['description'] = $_POST['description'];
+		$article['content'] = $_POST['content'];
+		$article['area'] = $_POST['area'];
+		$article['cat'] = $_POST['cat'];
+		
+		create_article($article);
+	}
+	else
+	{
+		$field_errors = 1;
+	}
+	
+	
 }
 
 
 
-include(dirname(__FILE__).'/../vues/header.php');
+include('vues/header.php');
  
 
-include(dirname(__FILE__).'/../vues/create_article.php');
+include('vues/create_article.php');
 ?>

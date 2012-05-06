@@ -399,3 +399,16 @@ a.submit:focus{
 	border-color:#093c75;
 	outline:none;
 }
+
+.create_article_errors
+{
+	font-family: "coolvetica_rg";
+	font-size: 22px;
+	position: fixed;
+	color:#fffd55;
+	right: 0px;
+	bottom: 75px;
+	width: 300px;
+	background-color: #50b326;
+	box-shadow: 5px 5px 3px #417324;
+}
