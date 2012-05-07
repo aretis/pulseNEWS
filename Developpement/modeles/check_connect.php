@@ -48,3 +48,4 @@ function check_connect($pseudo, $password)
 		header('Location:index.php?page=profile');
 	}
 }
+?>

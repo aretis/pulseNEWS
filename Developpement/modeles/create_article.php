@@ -33,7 +33,7 @@ function create_article($article)
 	
 	$query = 'INSERT INTO posts VALUES("", "'.$id_user.'", "'.$article['title'].'", "'.$article['description'].'", "'.$article['content'].'", "'.$id_cat.'", "0", NOW(), "'.$id_area.'")';
 	
-	$test = mysql_query($query);
+	mysql_query($query);
 	
 	
 	mysql_close();

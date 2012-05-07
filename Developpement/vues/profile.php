@@ -4,6 +4,7 @@ include ('/../modeles/profile_print.php');
 	$connect = mysql_connect("localhost","root","")
 		or die("Connexion impossible : ".mysql_error());
 		mysql_select_db("pulsenews");
+		mysql_query("SET NAMES 'utf8'");
 		$pseudo = $_SESSION['pseudo'];
 		$req = mysql_query("SELECT * FROM users WHERE pseudo='$pseudo'");
 		$req2 = mysql_fetch_row($req);
@@ -15,7 +16,7 @@ include ('/../modeles/profile_print.php');
 		$firstname = $req2[4];
 		$about = $req2[6];
 		
-		print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about);
+		/*print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about);*/
 ?>
 <div class='profile_ban'>
 	<img src='design/img/ban_exemple.png'/>
