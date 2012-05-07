@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 
 /*  Salman ALAMDAR
 	Function Call DB
@@ -19,10 +19,10 @@ function call_db($query)
 		or die("Connexion impossible : ".mysql_error());
 		
 	mysql_select_db("pulsenews")
-		or die("Base de données inaccessible.".mysql_error());
+		or die("Base de donnÃ©es inaccessible.".mysql_error());
 	
 	$result = mysql_query($query)
-		or die('Echec de la requête'.mysql_error());
+		or die('Echec de la requÃªte'.mysql_error());
 
 	return $result;
 	}?>

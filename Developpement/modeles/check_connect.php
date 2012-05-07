@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 //--------------------
 //check_connect.php
 //Christie Bunlon
