@@ -1,17 +1,35 @@
-﻿<div class='profile_ban'>
+﻿<?php
+
+include ('/../modeles/profile_print.php');
+	$connect = mysql_connect("localhost","root","")
+		or die("Connexion impossible : ".mysql_error());
+		mysql_select_db("pulsenews");
+		mysql_query("SET NAMES 'utf8'");
+		$pseudo = $_SESSION['pseudo'];
+		$req = mysql_query("SELECT * FROM users WHERE pseudo='$pseudo'");
+		$req2 = mysql_fetch_row($req);
+		$pseudo = $req2[1];
+		$key = $req2[0];
+		$surname = $req2[3];
+		$mail = $req2[5];
+		$area_name = $req2[7];
+		$firstname = $req2[4];
+		$about = $req2[6];
+		
+		/*print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about);*/
+?>
+<div class='profile_ban'>
 	<img src='design/img/ban_exemple.png'/>
 </div>
 <table style='margin: auto; text-align: center;' cellpadding='0' cellspacing='0'>
 <td>
 <td>
-<div class='profile_button_right'>&nbsp;rédiger un article&nbsp;</div>
+<a href='index.php?page=create_article'><div class='profile_button_right'>&nbsp;rédiger un article&nbsp;</div></a>
 </td>
 <td>&nbsp;&nbsp;
 </td>
 <td>
-<div class='profile_name'>&nbsp;Mich'Mich'&nbsp;</div>
-</td>
-<td>&nbsp;&nbsp;
+<div class='profile_name'>&nbsp;<?php echo $pseudo;?>&nbsp;
 </td>
 <td>
 <div class='profile_button_left'>&nbsp;modifier mon profil&nbsp;</div>
@@ -21,6 +39,12 @@
 <table>
 <td>
 <table cellpadding='0' cellspacing='0' class='about_block'>
+			
+			<tr>
+				<td>
+					<img src='design/img/exemple_profile.jpg'/>
+				</td>
+			</tr>
 
 			<tr>
 				<td>
@@ -30,7 +54,7 @@
 			<tr>
 				<td style='background-color: #85c630;'>
 					<div class='block_content'>
-					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut arcu leo, scelerisque eu iaculis id, aliquam quis sem. 				
+					<?php echo $about; ?> 				
 					</div>
 				</td>
 			</tr>
@@ -84,12 +108,15 @@
 			</tr>
 			<tr>
 				<td style='background-color: #85c630;'>
-					<div class='block_content'>
-					<strong>Pseudo: </strong>Mich'Mich'<br>
-					<strong>Nom: </strong>Gille<br>
-					<strong>Prénom: </strong>Michel<br>	
-					<strong>Mail: </strong>gille@intechinfo.fr<br>
-					<strong>Région: </strong>Ile-de-France<br>
+				<div class='block_content'>
+					<?php
+						
+						?>
+					<strong>Pseudo: </strong><?php echo $pseudo;?><br>
+					<strong>Nom: </strong><?php echo $surname;?><br>
+					<strong>Prénom: </strong><?php echo $firstname; ?><br>	
+					<strong>Mail: </strong><?php echo $mail; ?><br>
+					<strong>Région: </strong><?php echo $area_name; ?><br>
 					</div>
 				</td>
 			</tr>

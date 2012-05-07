@@ -1,0 +1,49 @@
+#word1 {
+    left: -7%;
+    position: relative;
+    top: 4%;
+}
+#word2 {
+    display: none;
+    left: -10%;
+    position: relative;
+    top: 17%;
+}
+#word3 {
+    display: none;
+    left: 0;
+    position: relative;
+    top: 21%;
+}
+#word4 {
+    display: none;
+    left: 15%;
+    position: relative;
+    top: 33%;
+}
+#word5 {
+    display: none;
+    left: -55%;
+    position: relative;
+    top: 44%;
+}
+#word6 {
+    display: none;
+    left: -24%;
+    position: relative;
+    top: 53%;
+}
+#word7 {
+    display: none;
+    left: -23%;
+    position: relative;
+    top: 55%;
+}
+#lol {
+    display: none;
+    font-size: 42px;
+    left: 10%;
+    padding: 7px;
+    position: relative;
+    top: 50%;
+}

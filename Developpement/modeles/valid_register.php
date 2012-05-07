@@ -1,4 +1,4 @@
-//Function which puts informations about users in the DB
+﻿//Function which puts informations about users in the DB
 //Brice HOFFMANN,edit Salman ALAMDAR
 
 <?php
@@ -9,7 +9,7 @@ function valid_register($pseudo,$password,$surname,$firstname,$mail,$areaname)
 		or die("Connexion impossible : ".mysql_error());
 		
 	mysql_select_db("pulsenews")
-		or die("Base de donn�es inaccessible.".mysql_error());
+		or die("Base de données inaccessible.".mysql_error());
 	
 	mysql_query('INSERT INTO users VALUES("","'.$pseudo.'","'.$password.'","'.$surname.'","'.$firstname.'","'.$mail.'","","'.$areaname.'")');
 	

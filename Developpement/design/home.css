@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "coolvetica_rg";
+    src: url("fonts/coolvetica_rg.ttf") format("truetype");
+}
+body {
+    background-color: white;
+    font-family: 'coolvetica_rg';
+}
+a {
+    text-decoration: none;
+}
+.header {
+    background-color: #85C630;
+    margin: auto;
+    width: 990px;
+    z-index: 8;
+}
+.header_info {
+    color: white;
+    font-size: 12px;
+    height: 35px;
+    text-align: right;
+    width: 349px;
+}
+.header_menu {
+    font-family: 'coolvetica_rg';
+    font-size: 23px;
+    height: 34px;
+}
+#main {
+    margin: 0 auto;
+    width: 1008px;
+}
+#content {
+    background-color: #F0F8FF;
+    height: 78%;
+    margin-top: 107px;
+    overflow: hidden;
+    position: absolute;
+    width: 990px;
+}
+input[type="submit"], a.submit {
+    background-color: #50B326;
+    border: 0 none;
+    border-radius: 25px 25px 25px 25px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: 'coolvetica_rg';
+    font-size: 28px;
+    margin-left: 369px;
+    margin-top: -17;
+    text-decoration: none;
+}
+input[type="submit"]:hover, a.submit:hover {
+    color: #FFFD55;
+    text-decoration: none;
+}
+input[type="submit"]:active, input[type="submit"]:focus, a.submit:active, a.submit:focus {
+    background: none repeat scroll 0 0 green;
+    border-color: #093C75;
+    outline: medium none;
+}
+.erreur {
+    color: red;
+    font-family: 'coolvetica_rg';
+    font-size: 21px;
+    height: 0;
+    left: 543px;
+    padding: 2px;
+    position: relative;
+    top: -39px;
+    width: 43%;
+    z-index: 4;
+}
