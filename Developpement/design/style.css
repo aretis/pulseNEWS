@@ -6,7 +6,7 @@
 }
 body
 {
-	background-color: white;
+	background-color: #d0e2ff;
 	font-family: 'Calibri';
 }
 a
@@ -79,7 +79,6 @@ a
 .rate
 {
 	background-color: #85c630;
-	width: 60px;
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 22px;
@@ -310,6 +309,16 @@ a
 	display: block;
 	margin: auto;
 	height: 200px;
+	border-color:#85c630;
+	border-width: 8px;
+	border-style:solid;
+	box-shadow: 3px 3px 2px #417324; 
+	
+}
+.article_content iframe
+{
+	display: block;
+	margin: auto;
 	border-color:#85c630;
 	border-width: 8px;
 	border-style:solid;
