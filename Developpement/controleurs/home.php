@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 	include("vues/home_header.php");
 	include("modeles/connect.php");	

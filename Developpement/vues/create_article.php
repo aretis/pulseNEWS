@@ -45,3 +45,9 @@ $result = call_db($query);
 </form>
 
 </table>
+<?php
+	if( $field_errors == 1)
+	{
+		echo"<div class='create_article_errors'> Un ou plusieurs champs sont manquants! </div>";
+	}
+?>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 //--------------------
 //check_connect.php
 //Christie Bunlon
@@ -48,3 +48,4 @@ function check_connect($pseudo, $password)
 		header('Location:index.php?page=profile');
 	}
 }
+?>

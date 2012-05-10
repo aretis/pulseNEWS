@@ -3,7 +3,7 @@
 
 <html>
 <link rel="stylesheet" href="design/style.css" />
-<link rel="icon" type="image/gif" href="favicon.gif" />
+<link rel="icon" type="image/gif" href="design/img/favicon.gif" />
 <head>
 	<title>pulseNEWS, sponsored by your mind!</title>
 </head>
