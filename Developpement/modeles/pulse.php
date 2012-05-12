@@ -36,7 +36,7 @@
 			}
 			
 			// Récupération de l'enregistrement du résultat
-			$row = mysql_fetch_assoc($result);
+			$row = mysql_result($result, 0);
 			
 			if($row === false)
 			{
