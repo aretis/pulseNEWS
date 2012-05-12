@@ -1,4 +1,29 @@
-﻿<div class='news_sort'>
+﻿<?php if(isset($_POST['pulse']))
+{
+
+	echo $_POST['title'];
+	
+	$link= mysql_connect('localhost', 'root', '')
+				or die ('Connexion impossible :'.mysql_error());
+
+	mysql_select_db('pulsenews')
+		or die ('Bdd innaccessible'.mysql_error());
+	
+	$id_user = 1;
+	
+	mysql_query("SET NAMES 'utf8'");
+	
+	$query='INSERT INTO news VALUES ("", "'.$_POST['title'].'", "'.$_POST['link'].'", "'.$id_user.'", "'.$_POST['cat'].'")';
+	
+	if(!mysql_query($query) )
+	{
+		echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
+		return;
+	}
+}?>
+
+
+<div class='news_sort'>
 TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;économie&nbsp;&nbsp;sport&nbsp;&nbsp;culture&nbsp;&nbsp;faits divers
 </div>
 <br>
@@ -17,8 +42,9 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 					<div class='block_content'>
 					<?php
 					$url= 'news.xml';
-
-					echo RSS_display($url, 3);		
+					$cat = 'politique';
+					
+					echo RSS_display($cat, $url, 3);		
 					?>
 					</div>
 				</td>
@@ -35,8 +61,9 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 					<div class='block_content'>
 					<?php
 					$url= 'news.xml';
-
-					echo RSS_display($url, 3);		
+					$cat = 'économie';
+					
+					echo RSS_display($cat, $url, 3);		
 					?>
 					
 					</div>
@@ -223,8 +250,9 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 					<div class='block_content_right'>
 					<?php
 					$url= 'news.xml';
-
-					echo RSS_display($url, 3);		
+					$cat = 'sport';
+					
+					echo RSS_display($cat, $url, 3);		
 					?>				
 					</div>
 				</td>
@@ -246,8 +274,9 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 					
 					<?php
 					$url= 'news.xml';
-
-					echo RSS_display($url, 3);		
+					$cat = 'écologie';
+					
+					echo RSS_display($cat, $url, 3);		
 					?>					
 					</div>
 				</td>

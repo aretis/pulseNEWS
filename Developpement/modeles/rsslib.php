@@ -18,23 +18,6 @@
 	
 */
 
-if(isset($_POST['title']) && isset($_POST['link']))
-{
-	$link= mysql_connect('localhost', 'root', '')
-				or die ('Connexion impossible :'.mysql_error());
-		
-	mysql_select_db('pulsenews')
-		or die ('Bdd innaccessible'.mysql_error());
-		
-	$query='INSERT INTO news VALUES ( ,"'.$title.'", "'.$link.'", '.$id_user.', "'.$cat.'")';
-	
-	if(!mysql_query($query) )
-	{
-		echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
-		return;
-	}
-}
-
 $RSS_Content = array();
 
 function RSS_Tags($item, $type)
@@ -188,10 +171,10 @@ function RSS_Display($cat, $url, $size = 15, $site = 0)
 		$link = $article["link"];
 		$description = $article["description"];
 		$page .= "<strong><a style='color: black' href=\"$link\">$title</a></strong><form action='index.php?page=news' method='post'>
-		<input type'hidden' name='title' value='$title'/>
-		<input type'hidden' name='title' value='$link'/>
-		<input type'hidden' name='title' value='$cat'/>
-		<input class='pulse_button' type='submit' value='pulse!' name=pulse'/>
+		<input type='hidden' name='title' value='$title'/>
+		<input type='hidden' name='link' value='$link'/>
+		<input type='hidden' name='cat' value='$cat'/>
+		<input class='pulse_button' type='submit' value='p!' name='pulse'/>
 		<br><br><form>";
 
 //	if($description != false)
