@@ -4,18 +4,16 @@
 	07/05/2012
 	Salman ALAMDAR */
 
-	include('Funct_pro_de_pulse.php');
+	include('pulse.php');
 	
-	$id_post = 1;
-	$id_user = 22;
-	
-	if(isset($_GET['PROpulse']))
+
+	if(isset($_POST['PROpulse']))
 	{
-		$post_rating = pulse($id_post, $id_user, $_GET['PROpulse']);
+		$post_rating = pulse($_POST['id_post'], $_SESSION['$id_user'], $_GET['PROpulse']);
 	}
-	else if(isset($_GET['DEpulse']))
+	else if(isset($_POST['DEpulse']))
 	{
-		$post_rating = pulse($id_post, $id_user, $_GET['DEpulse']);
+		$post_rating = pulse($_POST['id_post'], $_SESSION['$id_user'], $_GET['DEpulse']);
 	}
 	
 	

@@ -1,5 +1,15 @@
 ﻿<?php
 
+	include('modeles/pulse.php');
+	
+	if(isset($_POST['PROpulse']))
+	{
+		pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['PROpulse'], $_POST['type']);
+	}
+	else if(isset($_POST['DEpulse']))
+	{
+		pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['DEpulse'], $_POST['type']);
+	}
 
 	$connect = mysql_connect("localhost","root","")
 		or die("Connexion impossible : ".mysql_error());
@@ -116,7 +126,7 @@
 
 <?php
 
-	$query = 'SELECT news_layout, link, cat FROM news WHERE id_user ='.$_SESSION['id_user'];
+	$query = 'SELECT * FROM news WHERE id_user ='.$_SESSION['id_user'];
 	$result = call_db($query);
 	
 	while($data = mysql_fetch_array($result))
@@ -126,7 +136,7 @@
 		echo"<tr style='height: 10px;'>";
 		echo"	<td rowspan='1'>";
 		echo"	<div class='title_post'>";
-		echo"Nouvelle Short news en ".$data['cat']." !";
+		echo"Short news : ".$data['cat']." !";
 		echo"	</div>";
 		echo"	</td>";
 		echo"";
@@ -152,9 +162,9 @@
 		echo"<td>";
 		echo"	<a href=''><div class='comment_button'>débattre</div></a>";
 		echo"	<div style='float: right; width: 5%px;'>&nbsp;</div>";
-		echo"	<a href=''><div class='rate_button'>DEpulse!</div></a>";
+		echo"	<a href=''><div class='rate_button'><form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='news' /><input type='hidden' name='id_news' value='".$data['id_news']."' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
 		echo"	<div style='float: right; width: 5%px;'>&nbsp;</div>";
-		echo"	<a href=''><div class='rate_button'>PROpulse!</div></a>";
+		echo"	<a href=''><div class='rate_button'><form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='news' /><input type='hidden' name='id_news' value='".$data['id_news']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
 		echo"</td>";
 		echo"</tr>";
 		echo"<tr style='height: 30px;'>";
