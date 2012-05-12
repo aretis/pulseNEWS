@@ -6,15 +6,16 @@
 
 	include('Funct_pro_de_pulse.php');
 	
-	$id_post == 12;
+	$id_post = 1;
+	$id_user = 22;
 	
 	if(isset($_GET['PROpulse']))
 	{
-		$post_rating = pulse($id_post, $_GET['PROpulse']);
+		$post_rating = pulse($id_post, $id_user, $_GET['PROpulse']);
 	}
 	else if(isset($_GET['DEpulse']))
 	{
-		$post_rating = pulse($id_post, $_GET['DEpulse']);
+		$post_rating = pulse($id_post, $id_user, $_GET['DEpulse']);
 	}
 	
 	

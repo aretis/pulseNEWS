@@ -1,19 +1,15 @@
 ﻿<?php if(isset($_POST['pulse']))
 {
 
-	echo $_POST['title'];
-	
 	$link= mysql_connect('localhost', 'root', '')
 				or die ('Connexion impossible :'.mysql_error());
 
 	mysql_select_db('pulsenews')
 		or die ('Bdd innaccessible'.mysql_error());
 	
-	$id_user = 1;
-	
 	mysql_query("SET NAMES 'utf8'");
 	
-	$query='INSERT INTO news VALUES ("", "'.$_POST['title'].'", "'.$_POST['link'].'", "'.$id_user.'", "'.$_POST['cat'].'")';
+	$query='INSERT INTO news VALUES ("", "'.$_POST['title'].'", "'.$_POST['link'].'", "'.$_SESSION['id_user'].'", "'.$_POST['cat'].'")';
 	
 	if(!mysql_query($query) )
 	{

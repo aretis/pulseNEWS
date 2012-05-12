@@ -113,6 +113,57 @@
 		echo"</table>";
 	}
 ?>
+
+<?php
+
+	$query = 'SELECT news_layout, link, cat FROM news WHERE id_user ='.$_SESSION['id_user'];
+	$result = call_db($query);
+	
+	while($data = mysql_fetch_array($result))
+	{
+
+		echo"<table cellpadding='0' cellspacing='0' class='article'>";
+		echo"<tr style='height: 10px;'>";
+		echo"	<td rowspan='1'>";
+		echo"	<div class='title_post'>";
+		echo"Nouvelle Short news en ".$data['cat']." !";
+		echo"	</div>";
+		echo"	</td>";
+		echo"";
+		echo"	<td>";
+		echo"		<div class='rate'>";
+		echo $data['rate'];
+		echo "</div>";
+		echo"	</td>";
+		echo"</tr>";
+		echo"<tr style='background-color: #85c630;'>";
+		echo"	<td>";
+		echo"		<div class='article_content'>";
+		echo"<p>";
+		echo $data['news_layout'];
+		echo"</p>";
+		echo"<p>";
+		echo"Lien : ".$data['link'];
+		echo"</p>";
+		echo"		</div>";
+		echo"	</td>";
+		echo"</tr>";
+		echo"<tr>";
+		echo"<td>";
+		echo"	<a href=''><div class='comment_button'>débattre</div></a>";
+		echo"	<div style='float: right; width: 5%px;'>&nbsp;</div>";
+		echo"	<a href=''><div class='rate_button'>DEpulse!</div></a>";
+		echo"	<div style='float: right; width: 5%px;'>&nbsp;</div>";
+		echo"	<a href=''><div class='rate_button'>PROpulse!</div></a>";
+		echo"</td>";
+		echo"</tr>";
+		echo"<tr style='height: 30px;'>";
+		echo"</tr>";
+		echo"</table>";
+
+		
+	}
+?>
 </td>
 
 <td style='vertical-align: top; '>
