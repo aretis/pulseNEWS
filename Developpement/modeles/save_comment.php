@@ -1,6 +1,6 @@
 <?php
 
-	/* Function whish save comment in the database
+	/* Function which save comment in the database
 		Salman ALAMDAR
 		13/05/2012
 	*/
