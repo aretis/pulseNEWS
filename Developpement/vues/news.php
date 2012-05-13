@@ -1,20 +1,34 @@
 ﻿<?php if(isset($_POST['pulse']))
 {
-
-	$link= mysql_connect('localhost', 'root', '')
-				or die ('Connexion impossible :'.mysql_error());
-
-	mysql_select_db('pulsenews')
-		or die ('Bdd innaccessible'.mysql_error());
+	include('modeles/call_db.php');
+	
+	// Checking if entry is not a duplicate
 	
 	mysql_query("SET NAMES 'utf8'");
 	
-	$query='INSERT INTO news VALUES ("", "'.$_POST['title'].'", "'.$_POST['link'].'", "'.$_SESSION['id_user'].'", "'.$_POST['cat'].'")';
+	$query = 'SELECT news_layout FROM news WHERE id_user='.$_SESSION['id_user'];
+	$result = call_db($query);
+		
+	$news_exists = 0;
 	
-	if(!mysql_query($query) )
+	while($data = mysql_fetch_array($result))
 	{
-		echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
-		return;
+		if	(($data['news_layout']) == ($_POST['title']))
+		{	
+			$news_exists = 1;	
+		}
+
+	}
+	
+	if($news_exists == 0)
+	{
+		$query='INSERT INTO news VALUES ("", "'.$_POST['title'].'", "'.$_POST['link'].'", "'.$_SESSION['id_user'].'", "'.$_POST['cat'].'", 0)';
+		
+		if(!mysql_query($query) )
+		{
+			echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
+			return;
+		}
 	}
 }?>
 
@@ -28,6 +42,15 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 <td>
 <table cellpadding='0' cellspacing='0' class='rss_block'>
 
+<?php 
+if(isset($_POST['pulse']))
+{
+	if($news_exists == 1){
+		echo "<span style='color : red'> Vous avez déja pulsé cette news !</span>";}
+		
+	else if($news_exists == 0){
+		echo"<span style='color : red'>Votre news à bien été pulsé !</span>";}
+}?>
 			<tr>
 				<td>
 					<div class='block_title'>&nbsp;politique</div>
