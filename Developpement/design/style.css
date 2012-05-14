@@ -94,6 +94,17 @@ a
 	font-size: 14px;
 	box-shadow: 5px 5px 3px #417324; 
 }
+.description_news
+{
+	border-color:#85c630;
+	border-width:6;
+	border-style:solid;
+	background-color: #50b326;
+	font-size: 20px;
+	color: white;
+	box-shadow: 5px 5px 3px #417324; 
+	font-family: 'coolvetica_rg';
+}
 .date_news
 {
 	background-color: #85c630;
@@ -386,4 +397,56 @@ select:focus{
 	width: 300px;
 	background-color: #50b326;
 	box-shadow: 5px 5px 3px #417324;
+}
+.news_link
+{
+	color: white;
+	font-weight: bold;
+	font-size: 28px;
+	font-family: 'coolvetica_rg';
+	background-color: #50b326;
+}
+.depulse input[type=submit],
+a.submit, .propulse input[type=submit],
+a.submit, .debate input[type=submit],
+a.submit{
+	background-color:#50b326;
+	border:0px;
+	color:#fff;
+	cursor:pointer;
+	font-family: 'coolvetica_rg';
+	font-size: 19px;
+	padding: 2px 0px;
+	text-decoration:none;
+	margin-left: 60%;
+	box-shadow: 3px 3px 2px #417324;
+}
+.depulse  input[type=submit]:hover,
+a.submit:hover, .propulse  input[type=submit]:hover,
+a.submit:hover, .debate input[type=submit]:hover,
+a.submit:hover{
+	text-decoration:none;
+	color:#fffd55;
+}
+.depulse input[type=submit]:active, .propulse input[type=submit]:active, .debate input[type=submit]:active,
+.depulse input[type=submit]:focus, .propulse input[type=submit]:focus, .debate input[type=submit]:focus,
+a.submit:active,
+a.submit:focus{
+	background:green;
+	border-color:#093c75;
+	outline:none;
+}
+.depulse 
+{
+	float: right;
+	margin-top: -20px;
+}
+.propulse {
+	float: right;
+	margin-top: -20px;
+	margin-right: 20px;
+}
+.debate 
+{
+	float : right; 
 }
