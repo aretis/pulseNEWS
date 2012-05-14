@@ -166,8 +166,9 @@ a
 	float: right;
 	color: white;
 	font-family: 'coolvetica_rg';
+	background-color: #85c630;
 	text-align: center;
-	width: 403px;
+	width: 100px;
 	margin-top: -5px;
 	font-size: 18px;
 }
@@ -356,56 +357,7 @@ a
 	-webkit-box-shadow:0 0 3px #85c630;
 	outline:none; /* Pour enlever le contour jaune lorsque l'on sélectionne un input dans Chrome */
 }
-select{
-	border: 0px;
-	font-size: 22px;
-	font-family: 'coolvetica_rg';
-	background-color: #a5d85f;
-	cursor:pointer;
-	padding:3px;
-	-moz-box-shadow:0 0 3px #aaa;
-	-webkit-box-shadow:0 0 3px #aaa;
-}
-select:active,
-select:focus{
-	border: 5px solid #85c630;
-	outline:none;
-}
 
-input[type=file]
-{
-	font-family: 'coolvetica_rg';
-	font-size: 18px;
-	width: 500px;
-}
-
-input[type=submit],
-a.submit{
-	background-color:#50b326;
-	border:0px;
-	-moz-border-radius:15px;
-	-webkit-border-radius:15px;
-	color:#fff;
-	cursor:pointer;
-	font-family: 'coolvetica_rg';
-	font-size: 42px;
-	padding: 2px 0px;
-	text-decoration:none;
-	margin-left: 60%;
-}
-input[type=submit]:hover,
-a.submit:hover{
-	text-decoration:none;
-	color:#fffd55;
-}
-input[type=submit]:active,
-input[type=submit]:focus,
-a.submit:active,
-a.submit:focus{
-	background:green;
-	border-color:#093c75;
-	outline:none;
-}
 
 .create_article_errors
 {
