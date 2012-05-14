@@ -92,46 +92,109 @@ if(isset($_POST['pulse']))
 
 </td>
 <td>
-<table cellpadding='0' cellspacing='0' class='post_news' >
-<tr style='height: 32px;'>
-	<td rowspan='1'>
-	<div class='title_post'>
-		&nbsp;Nom du journal: Titre de l'article
-	</div>
-	</td>
+<?php
 
-	<td>
-		<div class='rate'>+128</div>
-	</td>
-</tr>
-<tr style='background-color: #85c630;'>
-	<td>
-		<div class='description'>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
-		</div>
-	</td>
+	include('modeles/view_all_articles.php');
+	
+	$req = view_all_article();
 
+	while($data = mysql_fetch_array($req))
+	{
+		if( $data['type'] == 1)
+		{
+	
+			echo"		<table cellpadding='0' cellspacing='0' class='post_news' >";
+			echo"		<tr style='height: 32px;'>";
+			echo"		<td rowspan='1'>";
+			echo"		<div class='title_post'>";
+			echo"			&nbsp;".$data['title'];
+			echo"		</div>";
+			echo"		</td>";
 
+			echo"		<td>";
+			echo"			<div class='rate'>";
+			if($data['rate'] > 0) echo" + ";
+			echo $data['rate'];
+			echo "</div>";
+			echo"		</td>";
+			echo"	</tr>";
+			echo"	<tr style='background-color: #85c630;'>";
+			echo"		<td>";
+			echo"		<div class='description_news'>";
+			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;&nbsp;lire l'article&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;";
+			echo "pulsé le : ".$data['post_date']." par 'SOLID !'</div>";
+			echo"<form action='index.php?page=profile' method='post'/>";
+			echo"<br>";
+			echo'</form>';
+		echo"	</td>";
+			echo"	<td style='background-color: white;'>";
+			echo"		<div class='date_news'>";
+				echo"	</div>";
+					
+				echo"</td>";
 
-	<td style='background-color: white;'>
-		<div class='date_news'>
-		Aujourd'hui à 9h15
-		</div>
+			echo"</tr>";
+			echo"<tr>";
+			
+			echo"	<td>";
+			echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
+			echo"	<div class='depulse'>&nbsp;";
+			echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+			echo"	<div class='propulse'>&nbsp;";
+			echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+			echo"</td>";
+			echo"</tr>";
+			
+			echo"</table>";
+		}		
 		
-	</td>
+		else
+		{
+			echo"<table cellpadding='0' cellspacing='0' class='post_news' >";
+			echo"<tr style='height: 32px;'>";
+				echo"<td rowspan='1'>";
+				echo"<div class='title_post'>";
+			echo"		&nbsp;".$data['title'];
+			echo"	</div>";
+			echo"	</td>";
 
-</tr>
-<tr>
-<td>
-	<a href=''><div class='comment_button'>débattre</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>DEpulse!</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>PROpulse!</div></a>
-</td>
-</tr>
-</table>
-<br>
+			echo"	<td>";
+			echo"		<div class='rate'>";
+			if($data['rate'] > 0) echo" + ";
+			echo $data['rate']."</div>";
+			echo"	</td>";
+			echo"</tr>";
+			echo"<tr style='background-color: #85c630;'>";
+			echo"	<td>";
+			echo"		<div class='description'>";
+			echo $data['description']; 
+			echo"		</div>";
+			echo"	</td>";
+
+
+
+			echo"	<td style='background-color: white;'>";
+			echo"		<div class='date_news'>";
+			echo $data['post_date'];
+			echo"		</div>";
+					
+			echo"	</td>";
+
+			echo"</tr>";
+			echo"<tr>";
+			echo"<td>";
+						echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
+						echo"	<div class='depulse'>&nbsp;";
+						echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+						echo"	<div class='propulse'>&nbsp;";
+						echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+			echo"</td>";
+			echo"</tr>";
+			echo"</table>";
+			echo"<br>";
+		}
+	}
+?>
 <table cellpadding='0' cellspacing='0' class='post_news' >
 <tr style='height: 32px;'>
 	<td rowspan='1'>

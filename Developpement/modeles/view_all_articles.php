@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	/* Function whish show all the posts in the DB
 		Salman ALAMDAR
 		14/05/12 */

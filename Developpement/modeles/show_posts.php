@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 
 	while($data = mysql_fetch_array($req))
 	{
@@ -26,7 +26,7 @@
 		echo"		<td>";
 			echo"		<div class='description_news'>";
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;&nbsp;lire l'article&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;";
-			echo "pulsé le : ".$data['post_date']." par 'SOLID !'</div>";
+			echo "pulsÃ© le : ".$data['post_date']." par 'SOLID !'</div>";
 			echo"<form action='index.php?page=profile' method='post'/>";
 			echo"<br>";
 			echo"&nbsp;&nbsp;<input type='text' name='comment' placeholder='Commenter...' size='77%'>";
@@ -49,7 +49,7 @@
 				
 				echo"<span style='font-size:10px; color:white;'>";
 				echo"<br>&nbsp;&nbsp;Ecrit le ";
-				echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+				echo date("d/m/Y Ã  H\hi", strtotime($data['post_date']));
 				echo"<br><HR></span>";
 
 			}
@@ -67,7 +67,7 @@
 			echo"<tr>";
 			
 			echo"	<td>";
-			echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
+			echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='dÃ©battre' /></form></div>";
 			echo"	<div class='depulse'>&nbsp;";
 			echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
 			echo"	<div class='propulse'>&nbsp;";
@@ -147,7 +147,7 @@
 				
 				echo"<span style='font-size:10px; color:white;'>";
 				echo"<br>&nbsp;&nbsp;Ecrit le ";
-				echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+				echo date("d/m/Y Ã  H\hi", strtotime($data['post_date']));
 				echo"<br><HR></span>";
 
 			}
@@ -155,7 +155,7 @@
 			echo"</tr>";
 			echo"<tr>";
 			echo"<td>";
-			echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
+			echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='dÃ©battre' /></form></div>";
 			echo"	<div class='depulse'>&nbsp;";
 			echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
 			echo"	<div class='propulse'>&nbsp;";
