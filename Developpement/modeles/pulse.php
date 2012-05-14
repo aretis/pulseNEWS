@@ -6,6 +6,8 @@
 
 	function pulse($id_post, $id_user, $pulse, $type)
 	{
+	
+		$pulse1 = $pulse;
 		$link = mysql_connect("localhost","root","")
 			or die("Connexion impossible : ".mysql_error());
 		
@@ -24,6 +26,8 @@
 		$row = mysql_fetch_assoc($result);
 		if($row === false)
 		{
+			
+			
 			// Construction de la requête
 			$query='SELECT rate FROM '.$type.' WHERE id_post = '.(int)$id_post;
 			
@@ -45,13 +49,17 @@
 			}
 			
 			
-			if($pulse == 'PROpulse'){
-			$row++;}
-			else if($pulse == 'DEpulse'){
-			$row--;}
+			if($pulse1 == 'PROpulse')
+			{
+				$row['rate'] ++;
+			}
+			else if($pulse1 == 'DEpulse')
+			{
+				$row['rate'] --;
+			}
 
 			
-			$query='UPDATE '.$type.' SET rate='.(int)$row.' WHERE id_post ='.(int)$id_post;
+			$query='UPDATE '.$type.' SET rate='.(int)$row['rate'].' WHERE id_post ='.(int)$id_post;
 			
 			if(!mysql_query($query) )
 			{

@@ -3,12 +3,15 @@
 
 <?php	include('modeles/pulse.php');
 	
+	
 	if(isset($_POST['PROpulse']))
 	{
+	
 		pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['PROpulse'], $_POST['type']);
 	}
 	else if(isset($_POST['DEpulse']))
 	{
+	
 		pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['DEpulse'], $_POST['type']);
 	}
 
@@ -85,6 +88,7 @@
 	{
 	
 		$content = $data['content'];
+		$id_post = $data['id_post'];
 	
 		echo"<table cellpadding='0' cellspacing='0' class='article'>";
 		echo"<tr style='height: 10px;'>";
@@ -97,7 +101,6 @@
 		echo"	<td>";
 		echo"		<div class='rate'>";
 		if($data['rate'] > 0) echo" + "; 
-		if($data['rate'] < 0) echo" - "; 
 		echo $data['rate']."</div>";
 		echo"	</td>";
 		echo"</tr>";
@@ -109,7 +112,7 @@
 		echo"</p>";
 		
 		$id = $data['id_post'];
-
+		
 	
 		$request = "SELECT picture_id, picture_type, picture_blob FROM pictures WHERE post_id = $id";
 
@@ -138,9 +141,9 @@
 		echo"<td>";
 		echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
 		echo"	<div class='depulse'>&nbsp;";
-		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
 		echo"	<div class='propulse'>&nbsp;";
-		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$id."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
 		echo"</td>";
 		echo"</tr>";
 		echo"<tr style='height: 30px;'>";
