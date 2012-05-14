@@ -45,7 +45,7 @@ function check_connect($pseudo, $password)
 	if($field_empty == 0 && $login_ok == 1)	
 	{
 		$_SESSION['pseudo'] = $pseudo;
-		$query = 'SELECT id_user FROM users';
+		$query = 'SELECT id_user FROM users WHERE pseudo="'.$pseudo.'"';
 		$result = call_db($query);
 		
 		$donnees = mysql_fetch_array($result);

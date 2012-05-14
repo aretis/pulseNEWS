@@ -236,3 +236,8 @@ a.submit:focus{
 {
 	float : right; 
 }
+.comments
+{
+	font-size: 14px;
+	border-color:#85c630;
+}

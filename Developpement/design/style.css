@@ -450,3 +450,11 @@ a.submit:focus{
 {
 	float : right; 
 }
+.comments
+{
+	background-color: #85C630;
+    font-size: 25px;
+    height: 100%;
+    position: relative;
+    width: 64%;
+}
