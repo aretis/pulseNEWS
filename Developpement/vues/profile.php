@@ -137,9 +137,9 @@
 		echo"<td>";
 		echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='debattre' /></form></div>";
 		echo"	<div class='depulse'>&nbsp;";
-		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_posts']."' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
 		echo"	<div class='propulse'>&nbsp;";
-		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_posts']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
 		echo"</td>";
 		echo"</tr>";
 		echo"<tr style='height: 30px;'>";
