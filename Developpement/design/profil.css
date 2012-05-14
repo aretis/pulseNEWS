@@ -1,3 +1,200 @@
+/* Par Michel GILLE le 11/04/12 */
+@font-face 
+{
+	font-family: 'coolvetica_rg';
+	src: url('fonts/coolvetica_rg.ttf') format('truetype');
+}
+body
+{
+	background-color: #d0e2ff;
+	font-family: 'Calibri';
+}
+a
+{
+	text-decoration: none;
+	color: none;
+}
+.header
+{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: #85c630;
+	width: 100%;
+	box-shadow: 10px 10px 8px #417324; 
+}
+.header_info
+{
+	font-size: 12px;
+	color: white;
+	height: 75px;
+	width: 600px;
+	text-align: right;
+}
+.header_menu
+{
+	font-size: 26px;
+	font-family: 'coolvetica_rg';
+}
+.header_menu a
+{
+	color: white;
+	-webkit-transition: all 0.1s ease-in;
+	-moz-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+}
+.header_menu a:hover
+{
+	text-shadow: 1px 0px 10px black;
+}
+
+.news_sort
+{
+	position: fixed;
+	top: 75px;
+	right: 0px;
+	background-color: #85c630;
+	color: white;
+	font-size: 18px;
+	font-family: 'coolvetica_rg';
+	text-align: center;
+	width: 600px;
+	height: 30px;
+	box-shadow: 10px 10px 8px #417324; 
+}
+.post_news
+{
+	height: 50%;
+	width: 85%;
+	margin: auto;
+}
+.title_post
+{
+	background-color: #85c630;
+	width: 100%;
+	color: white;
+	font-family: 'coolvetica_rg';
+	font-size: 22px;
+}
+.rate
+{
+	background-color: #85c630;
+	color: white;
+	font-family: 'coolvetica_rg';
+	font-size: 22px;
+	box-shadow: 5px 5px 3px #417324; 
+}
+.description
+{
+	border-color:#85c630;
+	border-width:6;
+	border-style:solid;
+	background-color: white;
+	font-size: 14px;
+	box-shadow: 5px 5px 3px #417324; 
+}
+.date_news
+{
+	background-color: #85c630;
+	color: white;
+	font-size: 10px;
+	height: 100%; 
+	box-shadow: 5px 5px 3px #417324; 
+}
+.rss_block
+{
+	width: 100%;
+	height: 100%;
+	vertical-align: top; 
+
+}
+.block_title
+{
+	background-color: #85c630;
+	color: white;
+	font-family: 'coolvetica_rg';
+	font-size: 24px;
+	width: 120px;
+	box-shadow: 5px 5px 3px #417324; 
+}
+.block_content
+{
+	font-size: 14px;
+	border-color:#85c630;
+	border-width:6;
+	border-style:solid;
+	background-color: white;
+	box-shadow: 5px 5px 3px #417324; 
+}
+.pulse_button
+{
+	float: right;
+	color: white;
+	background-color: #85c630;
+	font-family: 'coolvetica_rg';
+	width: 35px;
+	font-size: 14px; 
+}
+.block_title_right
+{
+	background-color: #85c630;
+	color: white;
+	font-family: 'coolvetica_rg';
+	font-size: 24px;
+	text-align: right;
+}
+.block_content_right
+{
+	font-size: 14px;
+	border-color:#85c630;
+	border-width:6px;
+	border-style:solid;
+	background-color: white;
+	box-shadow: 5px 5px 3px #417324; 
+}
+.pulse_button_right
+{
+	float: right;
+	color: white;
+	background-color: #85c630;
+	font-family: 'coolvetica_rg';
+	width: 35px;
+	font-size: 14px;
+}
+.rate_button
+{
+	float: right;
+	color: white;
+	font-family: 'coolvetica_rg';
+	text-align: center;
+	width: 403px;
+	margin-top: -5px;
+	font-size: 18px;
+}
+.rate_button:hover
+{
+	color:#fffd55;
+	margin-top: -6px;
+}
+.comment_button
+{
+	float: right;
+	color: white;
+	font-family: 'coolvetica_rg';
+	background-color: #85c630;
+	text-align: center;
+	width: 100px;
+	margin-top: -5px;
+	font-size: 16px;
+	box-shadow: 5px 5px 3px #417324; 
+}
+.comment_button:hover
+{
+	color:#fffd55;
+	margin-top: -6px;
+}
+
+
 /* Par Michel GILLE le 12/04/12 */
 
 .deco
@@ -14,16 +211,23 @@
 	border-color:#85c630;
 	border-width: 12px;
 	border-style:solid;
-	width: 920px;
+	height: 200px;
+	width: 900px;
+	box-shadow: 5px 5px 3px #417324; 
+}
+.profile_ban img
+{
+	height: 200px;
+	width: 900px;
 }
 .profile_button_left
 {
 	background-color: #85c630;
-	
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 24px;
 	margin-top: -14px;
+	box-shadow: 5px 5px 3px #417324; 
 }
 .profile_button_right
 {
@@ -32,6 +236,7 @@
 	font-family: 'coolvetica_rg';
 	font-size: 24px;
 	margin-top: -14px;
+	box-shadow: 5px 5px 3px #417324; 
 }
 .profile_name
 {
@@ -41,17 +246,10 @@
 	font-family: 'coolvetica_rg';
 	font-size: 28px;
 	margin-top: -10px;
+	box-shadow: 5px 5px 3px #417324; 
 }
 	
-.title_about
-{
-	background-color: #85c630;
-	border-radius: 5px 5px 0px 0px;
-	color: white;
-	font-family:'coolvetica_rg';
-	font-size:24px;
-	width: 200px;
-}
+
 .block_title_about
 {
 	background-color: #85c630;
@@ -59,18 +257,30 @@
 	font-family: 'coolvetica_rg';
 	font-size: 24px;
 	width: 200px;
+	box-shadow: 5px 5px 3px #417324; 
 }
 .about_block
 {
 	float: left;
 	width: 200px;
 	height: 400px;
+	vertical-align: top; 
 }
+.about_block img
+{
+	border-color:#85c630;
+	border-width: 8px;
+	border-style:solid;
+	height: 100px;
+	box-shadow: 5px 5px 3px #417324; 
+}
+
 .profile_block
 {
 	float: right;
 	width: 200px;
 	height: 400px;
+	vertical-align: top; 
 }
 
 
@@ -89,5 +299,138 @@
 	border-style:solid;
 	background-color: white;
 	font-size: 16px;
-	height: 400px;
+	box-shadow: 5px 5px 3px #417324;
+	vertical-align: top;
+}
+.article_content img
+{
+	display: block;
+	margin: auto;
+	height: 200px;
+	border-color:#85c630;
+	border-width: 8px;
+	border-style:solid;
+	box-shadow: 3px 3px 2px #417324; 
+	
+}
+.article_content iframe
+{
+	display: block;
+	margin: auto;
+	border-color:#85c630;
+	border-width: 8px;
+	border-style:solid;
+	box-shadow: 3px 3px 2px #417324; 
+	
+}
+
+.create_article
+{
+	width: 50%;
+	margin: auto;
+	background-color: #85c630;
+	box-shadow: 5px 5px 3px #417324;
+}
+
+.title_create_article
+{
+	color: white;
+	font-family: 'coolvetica_rg';
+	font-size: 26px;
+	vertical-align: top; 
+}
+
+.title_create_article input[type=text]
+{
+	background-color: #a5d85f;
+	border:0px;
+	font-family: 'coolvetica_rg';
+	font-size: 22px;
+	vertical-align: top; 
+}
+
+.title_create_article input[type=text]:focus
+{
+	border-color:#093c75;
+	-moz-box-shadow:0 0 3px #85c630;
+	-webkit-box-shadow:0 0 3px #85c630;
+	outline:none; /* Pour enlever le contour jaune lorsque l'on sélectionne un input dans Chrome */
+}
+select{
+	border: 0px;
+	font-size: 22px;
+	font-family: 'coolvetica_rg';
+	background-color: #a5d85f;
+	cursor:pointer;
+	padding:3px;
+	-moz-box-shadow:0 0 3px #aaa;
+	-webkit-box-shadow:0 0 3px #aaa;
+}
+select:active,
+select:focus{
+	border: 5px solid #85c630;
+	outline:none;
+}
+
+input[type=file]
+{
+	font-family: 'coolvetica_rg';
+	font-size: 18px;
+	width: 500px;
+}
+
+input[type=submit],
+a.submit{
+	background-color:#50b326;
+	border:0px;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	color:#fff;
+	cursor:pointer;
+	font-family: 'coolvetica_rg';
+	font-size: 19px;
+	padding: 2px 0px;
+	text-decoration:none;
+	margin-left: 60%;
+}
+input[type=submit]:hover,
+a.submit:hover{
+	text-decoration:none;
+	color:#fffd55;
+}
+input[type=submit]:active,
+input[type=submit]:focus,
+a.submit:active,
+a.submit:focus{
+	background:green;
+	border-color:#093c75;
+	outline:none;
+}
+
+.create_article_errors
+{
+	font-family: "coolvetica_rg";
+	font-size: 22px;
+	position: fixed;
+	color:#fffd55;
+	right: 0px;
+	bottom: 75px;
+	width: 300px;
+	background-color: #50b326;
+	box-shadow: 5px 5px 3px #417324;
+}
+.depulse {
+    left: -26%;
+    position: relative;
+    top: -94px;
+}
+.propulse {
+    left: -5%;
+    position: relative;
+    top: -162px;
+}
+.debate {
+    left: 21%;
+    position: relative;
+    top: -28px;
 }
