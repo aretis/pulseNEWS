@@ -31,10 +31,21 @@ function create_article($article)
 
 	include_once('modeles/db_connect.php');
 	
+	
 	$query = 'INSERT INTO posts VALUES("", "'.$id_user.'", "'.$article['title'].'", "'.$article['description'].'", "'.$article['content'].'", "'.$id_cat.'", "0", NOW(), "'.$id_area.'")';
 	
 	mysql_query($query);
 	
+	
+	
+	$req = call_db('SELECT id_post FROM posts');
+	
+	while($data = mysql_fetch_assoc($req)) 
+    { 
+		$id_post = $data['id_post'];
+    } 
+	
+	transfert($id_post);
 	
 	mysql_close();
 	

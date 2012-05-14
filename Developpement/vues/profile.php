@@ -81,6 +81,9 @@
 
 		while($data = mysql_fetch_assoc($req))
 		{
+		
+		
+		$content = $data['content'];
 	
 		echo"<table cellpadding='0' cellspacing='0' class='article'>";
 		echo"<tr style='height: 10px;'>";
@@ -103,9 +106,30 @@
 		echo"<p>";
 		echo $data['description'];
 		echo"</p>";
-		echo"		<br><img src='design/img/exemple_article.jpg'/><br>";
-		$data['content'] = nl2br( $data['content'] , false );
-		echo $data['content'];
+		
+		$id = $data['id_post'];
+
+	
+		$request = "SELECT picture_id, picture_type, picture_blob FROM pictures WHERE post_id = $id";
+
+		$sucess = mysql_query ($request) or die (mysql_error ());
+		$col = mysql_fetch_assoc($sucess);
+			if ( !$col['picture_id'])
+			{
+				echo "Id d'image inconnu";
+			}
+			else
+			{
+				$image = imagecreatefromstring($col['picture_blob']);
+				ob_start(); //You could also just output the $image via header() and bypass this buffer capture.
+				imagejpeg($image, null, 80);
+				$data = ob_get_contents();
+				ob_end_clean();
+				echo '<br><img src="data:image/jpg;base64,' .  base64_encode($data)  . '" /><br>';
+			}
+			
+		$content = nl2br( $content , false );
+		echo $content;
 		echo"		</div>";
 		echo"	</td>";
 		echo"</tr>";
