@@ -79,10 +79,10 @@
 <td style='width: 80%;'>
 <?php
 
-		$req = view_article_user(1);
+	$req = view_article_user($_SESSION['id_user']);
 
-		while($data = mysql_fetch_assoc($req))
-		{
+	while($data = mysql_fetch_array($req))
+	{
 	
 		$content = $data['content'];
 	

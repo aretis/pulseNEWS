@@ -1,5 +1,5 @@
-<?php
-/* Fonction qui s'occupe de gérer le PROpulse et le DEpulse
+ï»¿<?php
+/* Fonction qui s'occupe de gÃ©rer le PROpulse et le DEpulse
 	Note de l'article
 	07/05/2012
 	Salman ALAMDAR */
@@ -10,33 +10,33 @@
 			or die("Connexion impossible : ".mysql_error());
 		
 		mysql_select_db("pulsenews")
-			or die("Base de données inaccessible.".mysql_error());
-	
+			or die("Base de donnÃ©es inaccessible.".mysql_error());
+		mysql_query("SET NAMES 'utf8'");
 		$query='SELECT id_user, id_post FROM user_ratings WHERE id_user ='.(int)$id_user.' AND id_post ='.(int)$id_post;
 		
 		$result = mysql_query($query);
 		
 		if($result == false)
 		{
-			echo "La requête est incorrect<br />".htmlentities($query).'<br />'.mysql_error();
+			echo "La requÃªte est incorrect<br />".htmlentities($query).'<br />'.mysql_error();
 			return;
 		}
-		$row = mysql_fetch_array($result);
-		
+		$row = mysql_fetch_assoc($result);
 		if($row === false)
 		{
-			// Construction de la requête
+			// Construction de la requÃªte
 			$query='SELECT rate FROM '.$type.' WHERE id_post = '.(int)$id_post;
 			
 			$result = mysql_query($query);
 			if($result === false )
 			{
-				echo "La requête est incorrect<br />".htmlentities($query).'<br />'.mysql_error();
+				echo "La requÃªte est incorrect<br />".htmlentities($query).'<br />'.mysql_error();
 				return;
 			}
 			
-			// Récupération de l'enregistrement du résultat
-			$row = mysql_result($result, 0);
+			
+			// RÃ©cupÃ©ration de l'enregistrement du rÃ©sultat
+			$row = mysql_fetch_assoc($result);
 			
 			if($row === false)
 			{
@@ -55,7 +55,7 @@
 			
 			if(!mysql_query($query) )
 			{
-				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
+				echo "La requÃªte n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
 				return;
 			}
 				
@@ -63,12 +63,12 @@
 			
 			if(!mysql_query($query) )
 			{
-				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
+				echo "La requÃªte n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
 				return;
 			}
 		}
 		else 
 		{
-			echo"Vous avez déja noté cet article !";
+			echo"Vous avez dÃ©ja notÃ© cet article !";
 		}
 }
