@@ -67,7 +67,7 @@
 			<tr>
 				<td style='background-color: #85c630;'>
 					<div class='block_content'>
-					<?php echo $about; ?> 				
+					<?php echo $about;?>				
 					</div>
 				</td>
 			</tr>
