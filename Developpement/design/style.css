@@ -82,7 +82,8 @@ a
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 22px;
-	box-shadow: 5px 5px 3px #417324; 
+	box-shadow: 5px 5px 3px #417324;
+	width: 50px;
 }
 .description
 {
@@ -357,7 +358,7 @@ a
 	-webkit-box-shadow:0 0 3px #85c630;
 	outline:none; /* Pour enlever le contour jaune lorsque l'on sélectionne un input dans Chrome */
 }
-<<<<<<< HEAD
+
 select{
 	border: 0px;
 	font-size: 22px;
@@ -373,10 +374,7 @@ select:focus{
 	border: 5px solid #85c630;
 	outline:none;
 }
-=======
 
-
->>>>>>> 10f91a4cd56c5666f417416c81a55fed595f7546
 .create_article_errors
 {
 	font-family: "coolvetica_rg";
