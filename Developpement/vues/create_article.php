@@ -1,4 +1,5 @@
-﻿<table class='create_article'>
+﻿<link rel="stylesheet" href="design/form.css" />
+<table class='create_article'>
 <form action='#' method='post' enctype="multipart/form-data">
 <tr class='title_create_article'><td>titre</td><td><input style='width: 500px;' type='text' name='title'/></td></tr>
 <tr><td class='title_create_article'>image</td><td><input type='file' name='fichier' size='10'/></td></tr>
