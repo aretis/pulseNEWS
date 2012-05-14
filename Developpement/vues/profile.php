@@ -22,9 +22,10 @@
 		$key = $req2[0];
 		$surname = $req2[3];
 		$mail = $req2[5];
-		$area_name = $req2[7];
+		$area_name = $req2[8];
 		$firstname = $req2[4];
 		$about = $req2[6];
+		$humor = $req[7];
 		
 		/*print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about);*/
 ?>
@@ -44,7 +45,7 @@
 <td>&nbsp;&nbsp;
 </td>
 <td>
-<div class='profile_button_left'>&nbsp;modifier mon profil&nbsp;</div>
+<a href='index.php?page=change_info'><div class='profile_button_left'>&nbsp;modifier mon profil&nbsp;</div></a>
 
 </td>
 </table>
@@ -221,6 +222,7 @@
 					<strong>Prénom: </strong><?php echo $firstname; ?><br>	
 					<strong>Mail: </strong><?php echo $mail; ?><br>
 					<strong>Région: </strong><?php echo $area_name; ?><br>
+					<strong>Humeur : </strong><?php echo $humor; ?><br>
 					</div>
 				</td>
 			</tr>

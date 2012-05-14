@@ -5,7 +5,7 @@
 //22/04/2012
 //--------------------
 
-function print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about)
+function print_profile($key,$pseudo,$surname,$firstname,$mail,$area_name,$about,$humor)
 	{
 	$link = mysql_connect("localhost","root","")
 		or die("Connexion impossible : ".mysql_error());
@@ -15,7 +15,7 @@ function print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name ,
 	
 	mysql_query("SET NAMES 'utf8'");
 	
-	 mysql_query('SELECT * FROM USERS("'.$key.'","'.$pseudo.'","'.$surname.'","'.$area_name.'","'.$firstname.'","'.$mail.'","'.$about.'")');
+	 mysql_query('SELECT * FROM USERS("'.$key.'","'.$pseudo.'","'.$surname.'","'.$area_name.'","'.$firstname.'","'.$mail.'","'.$about.'","'.$humor.'")');
 
 		include('call_db.php');
 	mysql_close();

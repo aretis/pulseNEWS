@@ -1,6 +1,7 @@
 ﻿<?php
 
 include ('/../modeles/profile_print.php');
+include ('/../modeles/call_db.php');
 	$connect = mysql_connect("localhost","root","")
 		or die("Connexion impossible : ".mysql_error());
 		mysql_select_db("pulsenews");
@@ -20,7 +21,20 @@ include ('/../modeles/profile_print.php');
 		
 		/*print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about);*/
 ?>
-
+<?php if(isset($_POST['about_me'])) 
+{
+$id_user = 3;
+	echo " Vos informations ont bien été modifiés !";
+	$query = 'UPDATE users SET about = "'.$_POST['about_me'].'" WHERE id_user = '.$id_user;
+	if ( !mysql_query($query)) echo"La requete n'a pas aboutie";
+}?>
+<?php if(isset($_POST['humor'])) 
+{
+$id_user = 3;
+	echo " Vos informations ont bien été modifiés !";
+	$query = 'UPDATE users SET about = "'.$_POST['humor'].'" WHERE id_user = '.$id_user;
+	if ( !mysql_query($query)) echo"La requete n'a pas aboutie";
+}?>
 
 <div class='profile_ban'>
 	<img src='design/img/ban_exemple.png'/>
@@ -54,7 +68,7 @@ include ('/../modeles/profile_print.php');
 	<td>
 		<div class='change_about_me'>
 		<form action='index.php?page=change_info' method='post'>
-		<br><input id='about' type='text' name ='about_me' VALUE ='<?php if(isset($_POST['about'])) echo $_POST['about']; ?>'><br>
+		<br><input id='about' type='text' name ='about_me' VALUE ='function '><br>
 		<input type="submit" name="about" value=" Envois "/>
 		</form>
 		</div>
@@ -70,10 +84,10 @@ include ('/../modeles/profile_print.php');
 </tr>
 <tr style='background-color: #85c630;'>
 	<td>
-		<div class='humor'>
+		<div class='change_humor'>
 		<form action='index.php?page=change_info' method='post'>
-		<br><input id='humor' type='text' name ='my_humor' VALUE ='<?php if(isset($_POST['humor'])) echo $_POST['humor']; ?>'><br>
-		<input type="submit" name="humor" value=" Envois "/>
+		<br><input id='humor' type='text' name ='humeur' VALUE ='<?php if(isset($_POST['humor'])) echo $_POST['humor']; ?>'><br>
+		<input type="submit" name="humor" value=" Envois  "/>
 		</form>
 		</div>
 	</td>
@@ -101,7 +115,7 @@ include ('/../modeles/profile_print.php');
 					<strong>Prénom: </strong><?php echo $firstname; ?><br>	
 					<strong>Mail: </strong><?php echo $mail; ?><br>
 					<strong>Région: </strong><?php echo $area_name; ?><br>
-						<strong>humor: </strong><?php echo $humor; ?><br>
+						<strong>humeur: </strong><?php echo $humor; ?><br>
 					</div>
 				</td>
 			</tr>
