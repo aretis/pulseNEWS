@@ -44,6 +44,9 @@ function check_connect($pseudo, $password)
 
 	if($field_empty == 0 && $login_ok == 1)
 	{
+		$result = call_db('SELECT id_user FROM users WHERE pseudo = "$pseudo"');
+		$id = mysql_fetch_assoc($result);
+		$_SESSION['id'] = $id;
 		$_SESSION['pseudo'] = $pseudo;
 		header('Location:index.php?page=profile');
 	}

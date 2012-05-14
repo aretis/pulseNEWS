@@ -1,5 +1,5 @@
 ﻿<?php
-
+include ("modeles/transfert.php");
 include_once('modeles/call_db.php');
 include_once('modeles/create_article.php');
 
@@ -9,8 +9,10 @@ if( isset($_POST['area']) || isset($_POST['cat']) )
 {
 
 	
-	if( !empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['content']) && !empty($_POST['area']) && !empty($_POST['cat']))
+	if( !empty($_POST['title']) && isset($_FILES['fichier']) && !empty($_POST['description']) && !empty($_POST['content']) && !empty($_POST['area']) && !empty($_POST['cat']))
 	{
+		
+	
 		$article = array();
 
 		$article['title'] = $_POST['title'];
