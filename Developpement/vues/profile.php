@@ -23,9 +23,10 @@
 		$key = $req2[0];
 		$surname = $req2[3];
 		$mail = $req2[5];
-		$area_name = $req2[7];
+		$area_name = $req2[8];
 		$firstname = $req2[4];
 		$about = $req2[6];
+		$humor = $req[7];
 		
 		/*print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about);*/
 ?>
@@ -45,7 +46,7 @@
 <td>&nbsp;&nbsp;
 </td>
 <td>
-<div class='profile_button_left'>&nbsp;modifier mon profil&nbsp;</div>
+<a href='index.php?page=change_info'><div class='profile_button_left'>&nbsp;modifier mon profil&nbsp;</div></a>
 
 </td>
 </table>
@@ -83,6 +84,8 @@
 		while($data = mysql_fetch_assoc($req))
 		{
 	
+		$content = $data['content'];
+	
 		echo"<table cellpadding='0' cellspacing='0' class='article'>";
 		echo"<tr style='height: 10px;'>";
 		echo"	<td rowspan='1'>";
@@ -104,15 +107,36 @@
 		echo"<p>";
 		echo $data['description'];
 		echo"</p>";
-		echo"		<br><img src='design/img/exemple_article.jpg'/><br>";
-		$data['content'] = nl2br( $data['content'] , false );
-		echo $data['content'];
+		
+		$id = $data['id_post'];
+
+	
+		$request = "SELECT picture_id, picture_type, picture_blob FROM pictures WHERE post_id = $id";
+
+		$sucess = mysql_query ($request) or die (mysql_error ());
+		$col = mysql_fetch_assoc($sucess);
+			if ( !$col['picture_id'])
+			{
+				echo "Id d'image inconnu";
+			}
+			else
+			{
+				$image = imagecreatefromstring($col['picture_blob']);
+				ob_start(); //You could also just output the $image via header() and bypass this buffer capture.
+				imagejpeg($image, null, 80);
+				$data = ob_get_contents();
+				ob_end_clean();
+				echo '<br><img src="data:image/jpg;base64,' .  base64_encode($data)  . '" /><br>';
+			}
+			
+		$content = nl2br( $content , false );
+		echo $content;
 		echo"		</div>";
 		echo"	</td>";
 		echo"</tr>";
 		echo"<tr>";
 		echo"<td>";
-		echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='debattre' /></form></div>";
+		echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='débattre' value='debattre' /></form></div>";
 		echo"	<div class='depulse'>&nbsp;";
 		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
 		echo"	<div class='propulse'>&nbsp;";
@@ -199,6 +223,7 @@
 					<strong>Prénom: </strong><?php echo $firstname; ?><br>	
 					<strong>Mail: </strong><?php echo $mail; ?><br>
 					<strong>Région: </strong><?php echo $area_name; ?><br>
+					<strong>Humeur : </strong><?php echo $humor; ?><br>
 					</div>
 				</td>
 			</tr>
