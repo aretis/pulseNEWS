@@ -6,14 +6,14 @@
 	
 	mysql_query("SET NAMES 'utf8'");
 	
-	$query = 'SELECT news_layout FROM news WHERE id_user='.$_SESSION['id_user'];
+	$query = 'SELECT title FROM posts WHERE id_user='.$_SESSION['id_user'];
 	$result = call_db($query);
 		
 	$news_exists = 0;
 	
 	while($data = mysql_fetch_array($result))
 	{
-		if	(($data['news_layout']) == ($_POST['title']))
+		if	(($data['title']) == ($_POST['title']))
 		{	
 			$news_exists = 1;	
 		}
@@ -22,7 +22,7 @@
 	
 	if($news_exists == 0)
 	{
-		$query='INSERT INTO news VALUES ("", "'.$_POST['title'].'", "'.$_POST['link'].'", "'.$_SESSION['id_user'].'", "'.$_POST['cat'].'", 0)';
+		$query='INSERT INTO posts VALUES ("", "'.$_SESSION['id_user'].'", "1", "'.$_POST['title'].'", "'.$_POST['link'].'", "", "'.$_POST['cat'].'", "0", NOW(), "0")';
 		
 		if(!mysql_query($query) )
 		{

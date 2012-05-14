@@ -32,7 +32,7 @@ function create_article($article)
 	include_once('modeles/db_connect.php');
 	
 	
-	$query = 'INSERT INTO posts VALUES("", "'.$id_user.'", "'.$article['title'].'", "'.$article['description'].'", "'.$article['content'].'", "'.$id_cat.'", "0", NOW(), "'.$id_area.'")';
+	$query = 'INSERT INTO posts VALUES("", "'.$id_user.'", "0", "'.$article['title'].'", "'.$article['description'].'", "'.$article['content'].'", "'.$id_cat.'", "0", NOW(), "'.$id_area.'")';
 	
 	mysql_query($query);
 	

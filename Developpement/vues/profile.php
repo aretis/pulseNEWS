@@ -77,7 +77,7 @@
 			<tr>
 				<td style='background-color: #85c630;'>
 					<div class='block_content'>
-					<?php echo $about;?>				
+					<?php echo $about; ?> 				
 					</div>
 				</td>
 			</tr>
@@ -91,6 +91,10 @@
 	include('modeles/show_posts.php');
 ?>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b514f856c5892bfde32c76d272f88c9466c7f980
 </td>
 
 <td style='vertical-align: top; '>
