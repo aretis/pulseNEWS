@@ -65,10 +65,10 @@ input[type="submit"]:active, input[type="submit"]:focus, a.submit:active, a.subm
     font-family: 'coolvetica_rg';
     font-size: 21px;
     height: 0;
-    left: 543px;
+    left: 1007px;
     padding: 2px;
-    position: relative;
-    top: -39px;
+    position: absolute;
+    top: -6px;
     width: 43%;
     z-index: 4;
 }

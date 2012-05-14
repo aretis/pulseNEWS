@@ -42,9 +42,16 @@ function check_connect($pseudo, $password)
 		}
 	}
 
-	if($field_empty == 0 && $login_ok == 1)
+	if($field_empty == 0 && $login_ok == 1)	
 	{
 		$_SESSION['pseudo'] = $pseudo;
+		$query = 'SELECT id_user FROM users';
+		$result = call_db($query);
+		
+		$donnees = mysql_fetch_array($result);
+		
+		$_SESSION['id_user'] = $donnees['id_user'];
+		
 		header('Location:index.php?page=profile');
 	}
 }

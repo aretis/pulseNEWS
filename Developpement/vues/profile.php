@@ -1,6 +1,16 @@
 ﻿<?php
 
-include ('/../modeles/profile_print.php');
+	include('modeles/pulse.php');
+	
+	if(isset($_POST['PROpulse']))
+	{
+		pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['PROpulse'], $_POST['type']);
+	}
+	else if(isset($_POST['DEpulse']))
+	{
+		pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['DEpulse'], $_POST['type']);
+	}
+
 	$connect = mysql_connect("localhost","root","")
 		or die("Connexion impossible : ".mysql_error());
 		mysql_select_db("pulsenews");
@@ -30,7 +40,9 @@ include ('/../modeles/profile_print.php');
 <td>&nbsp;&nbsp;
 </td>
 <td>
-<div class='profile_name'>&nbsp;<?php echo $pseudo;?>&nbsp;
+<div class='profile_name'>&nbsp;<?php echo $pseudo;?>&nbsp;</div>
+</td>
+<td>&nbsp;&nbsp;
 </td>
 <td>
 <a href='index.php?page=change_info'><div class='profile_button_left'>&nbsp;modifier mon profil&nbsp;</div></a>
@@ -38,7 +50,7 @@ include ('/../modeles/profile_print.php');
 </td>
 </table>
 <table>
-<td>
+<td style='vertical-align: top;'>
 <table cellpadding='0' cellspacing='0' class='about_block'>
 			
 			<tr>
@@ -63,42 +75,111 @@ include ('/../modeles/profile_print.php');
 			</tr>
 	</table>
 </td>
-<td>
-<table cellpadding='0' cellspacing='0' class='article'>
-<tr style='height: 10px;'>
-	<td rowspan='1'>
-	<div class='title_post'>
-		&nbsp;Nom du journal: Titre de l'article
-	</div>
-	</td>
+<td style='width: 80%;'>
+<?php
 
-	<td>
-		<div class='rate'>+128</div>
-	</td>
-</tr>
-<tr style='background-color: #85c630;'>
-	<td>
-		<div class='article_content'>
-		<br><img src='design/img/exemple_article.jpg'/><br>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
-		</div>
-	</td>
-</tr>
-<tr>
-<td>
-	<a href=''><div class='comment_button'>débattre</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>DEpulse!</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>PROpulse!</div></a>
-</td>
-</tr>
-<tr style='height: 100%'>
-</tr>
-</table>
+		$req = view_article_user(1);
+
+		while($data = mysql_fetch_assoc($req))
+		{
+	
+		echo"<table cellpadding='0' cellspacing='0' class='article'>";
+		echo"<tr style='height: 10px;'>";
+		echo"	<td rowspan='1'>";
+		echo"	<div class='title_post'>";
+		echo"		&nbsp;".$data['title'];
+		echo"	</div>";
+		echo"	</td>";
+		echo"";
+		echo"	<td>";
+		echo"		<div class='rate'>";
+		if($data['rate'] > 0) echo" + "; 
+		if($data['rate'] < 0) echo" - "; 
+		echo $data['rate']."</div>";
+		echo"	</td>";
+		echo"</tr>";
+		echo"<tr style='background-color: #85c630;'>";
+		echo"	<td>";
+		echo"		<div class='article_content'>";
+		echo"<p>";
+		echo $data['description'];
+		echo"</p>";
+		echo"		<br><img src='design/img/exemple_article.jpg'/><br>";
+		$data['content'] = nl2br( $data['content'] , false );
+		echo $data['content'];
+		echo"		</div>";
+		echo"	</td>";
+		echo"</tr>";
+		echo"<tr>";
+		echo"<td>";
+		echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='debattre' /></form></div>";
+		echo"	<div class='depulse'>&nbsp;";
+		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+		echo"	<div class='propulse'>&nbsp;";
+		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+		echo"</td>";
+		echo"</tr>";
+		echo"<tr style='height: 30px;'>";
+		echo"</tr>";
+		echo"</table>";
+	}
+?>
+
+<?php
+
+	$query = 'SELECT * FROM news WHERE id_user ='.$_SESSION['id_user'];
+	$result = call_db($query);
+	
+	while($data = mysql_fetch_array($result))
+	{
+
+		echo"<table cellpadding='0' cellspacing='0' class='article'>";
+		echo"<tr style='height: 10px;'>";
+		echo"	<td rowspan='1'>";
+		echo"	<div class='title_post'>";
+		echo"Short news : ".$data['cat']." !";
+		echo"	</div>";
+		echo"	</td>";
+		echo"";
+		echo"	<td>";
+		echo"		<div class='rate'>";
+		if($data['rate'] > 0) echo" + "; 
+		if($data['rate'] < 0) echo" - ";
+		echo $data['rate'];
+		echo "</div>";
+		echo"	</td>";
+		echo"</tr>";
+		echo"<tr style='background-color: #85c630;'>";
+		echo"	<td>";
+		echo"		<div class='article_content'>";
+		echo"<p>";
+		echo $data['news_layout'];
+		echo"</p>";
+		echo"<p>";
+		echo"Lien : ".$data['link'];
+		echo"</p>";
+		echo"		</div>";
+		echo"	</td>";
+		echo"</tr>";
+		echo"<tr>";
+		echo"<td>";
+		echo"	<div class='rate_button'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='debattre' /></form></div>";
+		echo"	<div style='float: right; width: 5%px;'>&nbsp;</div>";
+		echo"	<div class='rate_button'><form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='news' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div>";
+		echo"	<div style='float: right; width: 5%px;'>&nbsp;</div>";
+		echo"	<div class='rate_button'><form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='news' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div>";
+		echo"</td>";
+		echo"</tr>";
+		echo"<tr style='height: 30px;'>";
+		echo"</tr>";
+		echo"</table>";
+
+		
+	}
+?>
 </td>
 
-<td>
+<td style='vertical-align: top; '>
 
 <table cellpadding='0' cellspacing='0' class='profile_block'>
 
@@ -125,7 +206,6 @@ include ('/../modeles/profile_print.php');
 			<tr style='height: 100%'>
 			</tr>
 </table>
-
-
 </td>
+
 </table>
