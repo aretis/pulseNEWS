@@ -1,4 +1,39 @@
-﻿<div class='news_sort'>
+﻿<?php if(isset($_POST['pulse']))
+{
+	include('modeles/call_db.php');
+	
+	// Checking if entry is not a duplicate
+	
+	mysql_query("SET NAMES 'utf8'");
+	
+	$query = 'SELECT news_layout FROM news WHERE id_user='.$_SESSION['id_user'];
+	$result = call_db($query);
+		
+	$news_exists = 0;
+	
+	while($data = mysql_fetch_array($result))
+	{
+		if	(($data['news_layout']) == ($_POST['title']))
+		{	
+			$news_exists = 1;	
+		}
+
+	}
+	
+	if($news_exists == 0)
+	{
+		$query='INSERT INTO news VALUES ("", "'.$_POST['title'].'", "'.$_POST['link'].'", "'.$_SESSION['id_user'].'", "'.$_POST['cat'].'", 0)';
+		
+		if(!mysql_query($query) )
+		{
+			echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
+			return;
+		}
+	}
+}?>
+
+
+<div class='news_sort'>
 TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;économie&nbsp;&nbsp;sport&nbsp;&nbsp;culture&nbsp;&nbsp;faits divers
 </div>
 <br>
@@ -7,6 +42,15 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 <td>
 <table cellpadding='0' cellspacing='0' class='rss_block'>
 
+<?php 
+if(isset($_POST['pulse']))
+{
+	if($news_exists == 1){
+		echo "<span style='color : red'> Vous avez déja pulsé cette news !</span>";}
+		
+	else if($news_exists == 0){
+		echo"<span style='color : red'>Votre news à bien été pulsé !</span>";}
+}?>
 			<tr>
 				<td>
 					<div class='block_title'>&nbsp;politique</div>
@@ -17,8 +61,9 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 					<div class='block_content'>
 					<?php
 					$url= 'news.xml';
-
-					echo RSS_display($url, 3);		
+					$cat = 'politique';
+					
+					echo RSS_display($cat, $url, 3);		
 					?>
 					</div>
 				</td>
@@ -35,8 +80,9 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 					<div class='block_content'>
 					<?php
 					$url= 'news.xml';
-
-					echo RSS_display($url, 3);		
+					$cat = 'économie';
+					
+					echo RSS_display($cat, $url, 3);		
 					?>
 					
 					</div>
@@ -223,8 +269,9 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 					<div class='block_content_right'>
 					<?php
 					$url= 'news.xml';
-
-					echo RSS_display($url, 3);		
+					$cat = 'sport';
+					
+					echo RSS_display($cat, $url, 3);		
 					?>				
 					</div>
 				</td>
@@ -246,8 +293,9 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 					
 					<?php
 					$url= 'news.xml';
-
-					echo RSS_display($url, 3);		
+					$cat = 'écologie';
+					
+					echo RSS_display($cat, $url, 3);		
 					?>					
 					</div>
 				</td>

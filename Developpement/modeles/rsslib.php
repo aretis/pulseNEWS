@@ -135,7 +135,7 @@ function RSS_Links($url, $size = 15)
 
 
 
-function RSS_Display($url, $size = 15, $site = 0)
+function RSS_Display($cat, $url, $size = 15, $site = 0)
 {
 	global $RSS_Content;
 
@@ -170,7 +170,13 @@ function RSS_Display($url, $size = 15, $site = 0)
 		$title = $article["title"];
 		$link = $article["link"];
 		$description = $article["description"];
-		$page .= "<strong><a style='color: black' href=\"$link\">$title</a></strong><a href=''><div class='pulse_button'>pulse!</div></a><br><br>";
+		$page .= "<strong><a style='color: black' href=\"$link\">$title</a></strong><form action='index.php?page=news' method='post'>
+		<input type='hidden' name='title' value='$title'/>
+		<input type='hidden' name='link' value='$link'/>
+		<input type='hidden' name='cat' value='$cat'/>
+		<input class='pulse_button' type='submit' value='p!' name='pulse'/>
+		<br><br><form>";
+
 //	if($description != false)
 	//	{
 	//		$page .= "<br>$description";

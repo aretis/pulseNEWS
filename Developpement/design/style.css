@@ -166,12 +166,10 @@ a
 	float: right;
 	color: white;
 	font-family: 'coolvetica_rg';
-	background-color: #85c630;
 	text-align: center;
-	width: 100px;
+	width: 403px;
 	margin-top: -5px;
 	font-size: 18px;
-	box-shadow: 5px 5px 3px #417324; 
 }
 .rate_button:hover
 {
@@ -420,4 +418,22 @@ a.submit:focus{
 	width: 300px;
 	background-color: #50b326;
 	box-shadow: 5px 5px 3px #417324;
+}
+.depulse
+{
+	top: 50%;
+    left: -5%;
+    position: relative;
+}
+.propulse
+{
+	top: 50%;
+    left: -5%;
+    position: relative;
+}
+.debate
+{
+	top: 50%;
+    left: -5%;
+    position: relative;
 }
