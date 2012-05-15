@@ -64,8 +64,8 @@ a
 }
 .post_news
 {
-	height: 50%;
-	width: 85%;
+	height: 20%;
+	width: 90%;
 	margin: auto;
 }
 .title_post
@@ -74,7 +74,7 @@ a
 	width: 100%;
 	color: white;
 	font-family: 'coolvetica_rg';
-	font-size: 22px;
+	font-size: 20px;
 }
 .rate
 {
@@ -83,7 +83,8 @@ a
 	font-family: 'coolvetica_rg';
 	font-size: 22px;
 	box-shadow: 5px 5px 3px #417324;
-	width: 50px;
+	width: 30px;
+	height: 100%;
 }
 .description
 {
@@ -100,10 +101,10 @@ a
 	border-width:6;
 	border-style:solid;
 	background-color: #50b326;
-	font-size: 20px;
+	font-size: 18px;
 	color: white;
-	box-shadow: 5px 5px 3px #417324; 
 	font-family: 'coolvetica_rg';
+	margin-top: -5px;
 }
 .date_news
 {
@@ -439,16 +440,17 @@ a.submit:focus{
 .depulse 
 {
 	float: right;
-	margin-top: -20px;
+	margin-top: -25px;
 }
 .propulse {
 	float: right;
-	margin-top: -20px;
+	margin-top: -25px;
 	margin-right: 20px;
 }
 .debate 
 {
-	float : right; 
+	float : right;
+	margin-top: -5px;
 }
 .comments
 {

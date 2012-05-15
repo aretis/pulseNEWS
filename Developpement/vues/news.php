@@ -1,6 +1,6 @@
 ﻿<?php if(isset($_POST['pulse']))
 {
-	include('modeles/call_db.php');
+	require_once('modeles/call_db.php');
 	
 	// Checking if entry is not a duplicate
 	
@@ -49,7 +49,7 @@ if(isset($_POST['pulse']))
 		echo "<span style='color : red'> Vous avez déja pulsé cette news !</span>";}
 		
 	else if($news_exists == 0){
-		echo"<span style='color : red'>Votre news à bien été pulsé !</span>";}
+		echo"<span style='color : red'>Votre news à bien été pulsée !</span>";}
 }?>
 			<tr>
 				<td>
@@ -121,8 +121,8 @@ if(isset($_POST['pulse']))
 			echo"	<tr style='background-color: #85c630;'>";
 			echo"		<td>";
 			echo"		<div class='description_news'>";
-			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;&nbsp;lire l'article&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;";
-			echo "pulsé le : ".$data['post_date']." par 'SOLID !'</div>";
+			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;lire l'article&nbsp;&nbsp;</a>";
+			echo "pulsé le : ".$data['post_date']." par 'michmich'</div>";
 			echo"<form action='index.php?page=profile' method='post'/>";
 			echo"<br>";
 			echo'</form>';
@@ -195,125 +195,7 @@ if(isset($_POST['pulse']))
 		}
 	}
 ?>
-<table cellpadding='0' cellspacing='0' class='post_news' >
-<tr style='height: 32px;'>
-	<td rowspan='1'>
-	<div class='title_post'>
-		&nbsp;Nom du journal: Titre de l'article
-	</div>
-	</td>
 
-	<td>
-		<div class='rate'>+128</div>
-	</td>
-</tr>
-<tr style='background-color: #85c630;'>
-	<td>
-		<div class='description'>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
-		</div>
-	</td>
-
-
-
-	<td style='background-color: white;'>
-		<div class='date_news'>
-		Aujourd'hui à 9h15
-		</div>
-		
-	</td>
-
-</tr>
-<tr>
-<td>
-	<a href=''><div class='comment_button'>débattre</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>DEpulse!</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>PROpulse!</div></a>
-</td>
-</tr>
-</table>
-<br>
-<table cellpadding='0' cellspacing='0' class='post_news' >
-<tr style='height: 32px;'>
-	<td rowspan='1'>
-	<div class='title_post'>
-		&nbsp;Nom du journal: Titre de l'article
-	</div>
-	</td>
-
-	<td>
-		<div class='rate'>+128</div>
-	</td>
-</tr>
-<tr style='background-color: #85c630;'>
-	<td>
-		<div class='description'>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
-		</div>
-	</td>
-
-
-
-	<td style='background-color: white;'>
-		<div class='date_news'>
-		Aujourd'hui à 9h15
-		</div>
-		
-	</td>
-
-</tr>
-<tr>
-<td>
-	<a href=''><div class='comment_button'>débattre</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>DEpulse!</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>PROpulse!</div></a>
-</td>
-</tr>
-</table>
-<br>
-<table cellpadding='0' cellspacing='0' class='post_news' >
-<tr style='height: 32px;'>
-	<td rowspan='1'>
-	<div class='title_post'>
-		&nbsp;Nom du journal: Titre de l'article
-	</div>
-	</td>
-
-	<td>
-		<div class='rate'>+128</div>
-	</td>
-</tr>
-<tr style='background-color: #85c630;'>
-	<td>
-		<div class='description'>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
-		</div>
-	</td>
-
-
-
-	<td style='background-color: white;'>
-		<div class='date_news'>
-		Aujourd'hui à 9h15
-		</div>
-		
-	</td>
-
-</tr>
-<tr>
-<td>
-	<a href=''><div class='comment_button'>débattre</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>DEpulse!</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>PROpulse!</div></a>
-</td>
-</tr>
-</table>
 </td>
 <td>
 	<table cellpadding='0' cellspacing='0' class='rss_block'>
