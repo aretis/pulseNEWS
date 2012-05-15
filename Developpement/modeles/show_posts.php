@@ -27,14 +27,16 @@
 			echo"		<div class='description_news'>";
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;&nbsp;lire l'article&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;";
 			echo "pulsé le : ".$data['post_date']." par 'SOLID !'</div>";
-			if(isset($_GET['pseudo']))
+			/*if(isset($_GET['pseudo']))
 			{
-				echo"<form action='index.php?page=profile&pseudo=".$_GET['pseudo']."' method='GET'/>";
+				echo"<form action='index.php' method='GET'/>";
+				echo"<input type='hidden' name='page' value='profile'/>";
+				echo"<input type='hidden' name='pseudo' value='".$_GET['pseudo']."'/>";
 			}
 			else
-			{
+			{*/
 				echo"<form action='index.php?page=profile' method='post'/>";
-			}
+			/*}*/
 			echo"<br>";
 			echo"&nbsp;&nbsp;<input type='text' name='comment' placeholder='Commenter...' size='77%'>";
 			echo"<input type='hidden' name='id_news' value='".$id."' />";

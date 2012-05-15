@@ -34,7 +34,7 @@
 						}
 					?>
 					<div class='header_menu'>
-						<a href='index.php?page=list_users'>Les autres pulseur</a>&nbsp;&nbsp;
+						<a href='index.php?page=list_users'>les pulseurs</a>&nbsp;&nbsp;
 						<a href='index.php?page=news'>fil d'actualités</a>&nbsp;&nbsp;
 						<a href=''>débat du jour</a>&nbsp;&nbsp;
 						<?php if( isset($_SESSION['pseudo'] ))

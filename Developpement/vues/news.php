@@ -1,6 +1,8 @@
-﻿<?php if(isset($_POST['pulse']))
+﻿<?php
+
+ if(isset($_POST['pulse']))
 {
-	require_once('modeles/call_db.php');
+	
 	
 	// Checking if entry is not a duplicate
 	

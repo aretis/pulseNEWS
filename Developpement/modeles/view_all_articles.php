@@ -5,7 +5,6 @@
 
 	function view_all_article()
 	{
-		include('modeles/call_db.php');
 		$article = array();
 		
 		$query = 'SELECT * FROM posts ORDER BY post_date DESC';
