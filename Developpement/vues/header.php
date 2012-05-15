@@ -3,6 +3,7 @@
 
 <html>
 <link rel="stylesheet" href="design/style.css" />
+<meta charset="utf-8"/>
 <link rel="icon" type="image/gif" href="design/img/favicon.gif" />
 <head>
 	<title>pulseNEWS, sponsored by your mind!</title>
@@ -18,8 +19,7 @@
 		</td>
 		<td>
 				<div class='header_info'>
-					Recherche:
-					<input name="search" value='Votre recherche'/>
+				
 					
 					<?php
 						if( isset($_SESSION['pseudo'] ))
@@ -33,6 +33,7 @@
 						}
 					?>
 					<div class='header_menu'>
+						<a href='index.php?page=recherche'>rechercher</a>&nbsp;&nbsp;
 						<a href='index.php?page=news'>fil d'actualités</a>&nbsp;&nbsp;
 						<a href=''>débat du jour</a>&nbsp;&nbsp;
 						<?php if( isset($_SESSION['pseudo'] ))

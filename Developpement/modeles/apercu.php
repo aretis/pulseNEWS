@@ -1,25 +1,23 @@
-<html>
-<head><title>Stock d'images</title></head>
-<body>
 <?php
-
-	if ( isset($_GET['id']) )
+function afficher_image($id)
+{
+	if ( isset ($id))
 	{
-		$id = intval ($_GET['id']);
+		//$id = intval ($id);
 		include ("connexion.php");
 	
-		$request = "SELECT picture_id, picture_type, picture_blob FROM pictures WHERE picture_id = $id";
+		$request = "SELECT id_user, picture_type, picture_blob FROM pictures WHERE id_user = $id";
 
 		$sucess = mysql_query ($request) or die (mysql_error ());
 		$col = mysql_fetch_assoc($sucess);
-			if ( !$col['picture_id'])
+			if ( !$col['id_user'])
 			{
 				echo "Id d'image inconnu";
 			}
 			else
 			{
 			$image = imagecreatefromstring($col['picture_blob']);
-			ob_start(); //You could also just output the $image via header() and bypass this buffer capture.
+			ob_start();
 			imagejpeg($image, null, 80);
 			$data = ob_get_contents();
 			ob_end_clean();
@@ -28,7 +26,10 @@
 			
 			
 			}
-	}	
+	}
+	else 
+	{
+		echo "ya rien";
+	}
+}	
 ?>
-</body>
-</html>

@@ -126,7 +126,11 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;éco
 </tr>
 <tr style='background-color: #85c630;'>
 	<td class= 'size'>
-		<img class='user_picture' src ='moi.jpg'/>
+		<?php
+		include('../modeles/apercu.php');
+		$id=19;
+		afficher_image($id);
+		?>
 	</td>
 	<td style= 'background-color: #85c630;'  rowspan = '2'>
 	<div class='description_comment'>
