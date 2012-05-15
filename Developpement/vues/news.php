@@ -60,7 +60,7 @@ if(isset($_POST['pulse']))
 				<td style='background-color: #85c630;'>
 					<div class='block_content'>
 					<?php
-					$url= 'news.xml';
+					$url= 'politique.xml';
 					$cat = 'politique';
 					
 					echo RSS_display($cat, $url, 3);		
@@ -79,7 +79,7 @@ if(isset($_POST['pulse']))
 				<td style='background-color: #85c630;'>
 					<div class='block_content'>
 					<?php
-					$url= 'news.xml';
+					$url= 'economie.xml';
 					$cat = 'économie';
 					
 					echo RSS_display($cat, $url, 3);		
@@ -124,7 +124,6 @@ if(isset($_POST['pulse']))
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;lire l'article&nbsp;&nbsp;</a>";
 			echo "pulsé le : ".$data['post_date']." par 'michmich'</div>";
 			echo"<form action='index.php?page=profile' method='post'/>";
-			echo"<br>";
 			echo'</form>';
 		echo"	</td>";
 			echo"	<td style='background-color: white;'>";
@@ -193,6 +192,7 @@ if(isset($_POST['pulse']))
 			echo"</table>";
 			echo"<br>";
 		}
+		
 	}
 ?>
 
@@ -213,7 +213,7 @@ if(isset($_POST['pulse']))
 				<td style='background-color: #85c630;'>
 					<div class='block_content_right'>
 					<?php
-					$url= 'news.xml';
+					$url= 'sport.xml';
 					$cat = 'sport';
 					
 					echo RSS_display($cat, $url, 3);		
@@ -237,7 +237,7 @@ if(isset($_POST['pulse']))
 					<div class='block_content_right'>	
 					
 					<?php
-					$url= 'news.xml';
+					$url= 'ecologie.xml';
 					$cat = 'écologie';
 					
 					echo RSS_display($cat, $url, 3);		
