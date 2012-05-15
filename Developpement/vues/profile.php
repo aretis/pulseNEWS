@@ -39,24 +39,60 @@
 		
 		/*print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about);*/
 ?>
+<?php
+	if(isset($_GET['pseudo']))
+	{
+		$query = "SELECT * FROM users WHERE pseudo ='".$_GET['pseudo']."'";
+		$result = call_db($query);
+			
+		while($data = mysql_fetch_array($result))
+		{
+			$visit_surname = $data['surname'];
+			$visit_firstname = $data['firstname'];
+			$visit_mail = $data['mail'];
+			$visit_humor = $data['humor'];
+			$visit_area_name = $data['area_name'];
+			$visit_about = $data['about'];
+		}
+	}
+?>
 <div class='profile_ban'>
 	<img src='design/img/ban_exemple.png'/>
 </div>
 <table style='margin: auto; text-align: center;' cellpadding='0' cellspacing='0'>
 <td>
-<td>
+<?php 
+if(!isset($_GET['pseudo']))
+{
+echo"<td>
 <a href='index.php?page=create_article'><div class='profile_button_right'>&nbsp;rédiger un article&nbsp;</div></a>
+</td>";
+}
+?>
+<td>&nbsp;&nbsp;
+</td>
+<td>
+<div class='profile_name'>&nbsp;
+<?php 
+if(isset($_GET['pseudo']))
+{
+	echo $_GET['pseudo'];
+}
+else
+{
+	echo $_SESSION['pseudo'];
+}
+?>&nbsp;</div>
 </td>
 <td>&nbsp;&nbsp;
 </td>
 <td>
-<div class='profile_name'>&nbsp;<?php echo $pseudo;?>&nbsp;</div>
-</td>
-<td>&nbsp;&nbsp;
-</td>
-<td>
-<a href='index.php?page=change_info'><div class='profile_button_left'>&nbsp;modifier mon profil&nbsp;</div></a>
-
+<?php 
+if(!isset($_GET['pseudo']))
+{
+	echo"<a href='index.php?page=change_info'><div class='profile_button_left'>&nbsp;modifier mon profil&nbsp;</div></a>";
+}
+?>
 </td>
 </table>
 <table>
@@ -77,7 +113,15 @@
 			<tr>
 				<td style='background-color: #85c630;'>
 					<div class='block_content'>
-					<?php echo $about; ?> 				
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_about;
+							}
+							else
+							{
+								echo $about;
+							}
+					?>			
 					</div>
 				</td>
 			</tr>
@@ -87,8 +131,22 @@
 </td>
 <td style='width: 80%;'>
 <?php
-	$req = view_article_user($_SESSION['id_user']);
-	include('modeles/show_posts.php');
+	
+	if(isset($_GET['pseudo']))
+	{
+		$query = "SELECT id_user FROM users WHERE pseudo ='".$_GET['pseudo']."'";
+		$result = call_db($query);
+			
+		$id = mysql_result($result, 0);
+		
+		$req = view_article_user($id);
+		include('modeles/show_posts.php');
+	}
+	else
+	{
+		$req = view_article_user($_SESSION['id_user']);
+		include('modeles/show_posts.php');
+	}
 ?>
 
 
@@ -106,15 +164,68 @@
 			<tr>
 				<td style='background-color: #85c630;'>
 				<div class='block_content'>
-					<?php
+					
 						
-						?>
-					<strong>Pseudo: </strong><?php echo $pseudo;?><br>
-					<strong>Nom: </strong><?php echo $surname;?><br>
-					<strong>Prénom: </strong><?php echo $firstname; ?><br>	
-					<strong>Mail: </strong><?php echo $mail; ?><br>
-					<strong>Région: </strong><?php echo $area_name; ?><br>
-					<strong>Humeur : </strong><?php echo $humor; ?><br>
+					<strong>Pseudo: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $_GET['pseudo'];
+							}
+							else
+							{
+								echo $pseudo;
+							}
+					?><br>
+					<strong>Nom: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_surname;
+							}
+							else
+							{
+								echo $surname;
+							}
+					?><br>
+					<strong>Prénom: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_firstname;
+							}
+							else
+							{
+								echo $firstname;
+							}
+					?><br>
+					<strong>Mail: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_mail;
+							}
+							else
+							{
+								echo $mail;
+							}
+					?><br>
+					<strong>Région: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_area_name;
+							}
+							else
+							{
+								echo $area_name;
+							}
+					?><br>
+					<strong>Humeur : </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_humor;
+							}
+							else
+							{
+								echo $humor;
+							}
+					?><br>
 					</div>
 				</td>
 			</tr>
