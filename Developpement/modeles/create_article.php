@@ -45,9 +45,11 @@ function create_article($article)
 		$id_post = $data['id_post'];
     } 
 	
-	transfert($id_post);
+	$erreur = transfert($id_post);
 	
 	mysql_close();
+	
+	return $erreur;
 	
 }
 
