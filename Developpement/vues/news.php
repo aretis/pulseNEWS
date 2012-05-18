@@ -1,38 +1,36 @@
 ﻿<?php
-
- if(isset($_POST['pulse']))
-{
-	
-	
-	// Checking if entry is not a duplicate
-	
-	mysql_query("SET NAMES 'utf8'");
-	
-	$query = 'SELECT title FROM posts WHERE id_user='.$_SESSION['id_user'];
-	$result = call_db($query);
-		
-	$news_exists = 0;
-	
-	while($data = mysql_fetch_array($result))
+	if(isset($_POST['pulse']))
 	{
-		if	(($data['title']) == ($_POST['title']))
-		{	
-			$news_exists = 1;	
-		}
-
-	}
-	
-	if($news_exists == 0)
-	{
-		$query='INSERT INTO posts VALUES ("", "'.$_SESSION['id_user'].'", "1", "'.$_POST['title'].'", "'.$_POST['link'].'", "", "'.$_POST['cat'].'", "0", NOW(), "0")';
+		// Checking if entry is not a duplicate
 		
-		if(!mysql_query($query) )
+		mysql_query("SET NAMES 'utf8'");
+		
+		$query = 'SELECT title FROM posts WHERE id_user='.$_SESSION['id_user'];
+		$result = call_db($query);
+			
+		$news_exists = 0;
+		
+		while($data = mysql_fetch_array($result))
 		{
-			echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
-			return;
+			if	(($data['title']) == ($_POST['title']))
+			{	
+				$news_exists = 1;	
+			}
+
+		}
+		
+		if($news_exists == 0)
+		{
+			$query='INSERT INTO posts VALUES ("", "'.$_SESSION['id_user'].'", "1", "'.$_POST['title'].'", "'.$_POST['link'].'", "", "'.$_POST['cat'].'", "0", NOW(), "0")';
+			
+			if(!mysql_query($query) )
+			{
+				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
+				return;
+			}
 		}
 	}
-}?>
+?>
 
 
 <div class='news_sort'>

@@ -1,7 +1,11 @@
 ﻿<link rel="stylesheet" href="design/profil.css" />
 
 
-<?php	include('modeles/pulse.php');
+<?php	
+
+	if(isset($_GET['delete'])) include('modeles/delete_comment.php');
+	
+	include('modeles/pulse.php');
 	
 	if(isset($_POST['comment']))
 	{

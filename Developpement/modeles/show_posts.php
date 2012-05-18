@@ -7,65 +7,30 @@
 		
 		if ($data['type'] == 1)
 		{
-		echo"		<table cellpadding='0' cellspacing='0' class='post_news' >";
-		echo"		<tr style='height: 32px;'>";
-		echo"		<td rowspan='1'>";
-		echo"		<div class='title_post'>";
-		echo"			&nbsp;".$data['title'];
-		echo"		</div>";
-		echo"		</td>";
+			echo"		<table cellpadding='0' cellspacing='0' class='post_news' >";
+			echo"		<tr style='height: 32px;'>";
+			echo"		<td rowspan='1'>";
+			echo"		<div class='title_post'>";
+			echo"			&nbsp;".$data['title'];
+			echo"		</div>";
+			echo"		</td>";
 
-		echo"		<td>";
-		echo"			<div class='rate'>";
-		if($data['rate'] > 0) echo" + ";
-		echo $data['rate'];
-		echo "</div>";
-		echo"		</td>";
-		echo"	</tr>";
-		echo"	<tr style='background-color: #85c630;'>";
-		echo"		<td>";
+			echo"		<td>";
+			echo"			<div class='rate'>";
+			if($data['rate'] > 0) echo" + ";
+			echo $data['rate'];
+			echo "</div>";
+			echo"		</td>";
+			echo"	</tr>";
+			echo"	<tr style='background-color: #85c630;'>";
+			echo"		<td>";
 			echo"		<div class='description_news'>";
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;&nbsp;lire l'article&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;";
 			echo "pulsé le : ".$data['post_date']." par 'SOLID !'</div>";
-			/*if(isset($_GET['pseudo']))
-			{
-				echo"<form action='index.php' method='GET'/>";
-				echo"<input type='hidden' name='page' value='profile'/>";
-				echo"<input type='hidden' name='pseudo' value='".$_GET['pseudo']."'/>";
-			}
-			else
-			{*/
-				echo"<form action='index.php?page=profile' method='post'/>";
-			/*}*/
-			echo"<br>";
-			echo"&nbsp;&nbsp;<input type='text' name='comment' placeholder='Commenter...' size='77%'>";
-			echo"<input type='hidden' name='id_news' value='".$id."' />";
-			echo"<input style='display:none' type='submit' />";
-			echo'</form>';
-			$query = "SELECT content, post_date, pseudo FROM comments NATURAL JOIN USERS WHERE id_post = ".$id;
-			$result = call_db($query);
 		
-			while($data = mysql_fetch_array($result))
-			{
-				echo"<span style='font-size:22px; color:white; font-weight:bold;'>";
-				echo "&nbsp;&nbsp;".$data['pseudo']; 
-				echo": <br>";
-				echo"</span>";
-				
-				echo"<span style='font-size:15px;'>";
-				echo "&nbsp;&nbsp;".$data['content'];
-				echo"</span>";
-				
-				echo"<span style='font-size:10px; color:white;'>";
-				echo"<br>&nbsp;&nbsp;Ecrit le ";
-				echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-				echo"<br><HR></span>";
-
-			}
+			include('modeles/comment.php');
+			
 			echo"	</td>";
-
-
-
 			echo"	<td style='background-color: white;'>";
 			echo"		<div class='date_news'>";
 				echo"	</div>";
@@ -139,32 +104,9 @@
 			$content = nl2br( $content , false );
 			echo $content;
 			echo"		</div>";
-			echo"<form action='index.php?page=profile' method='post'/>";
-			echo"<br>";
-			echo"&nbsp;&nbsp;<input type='text' name='comment' placeholder='Commenter...' size='77%'>";
-			echo"<input type='hidden' name='id_news' value='".$id."' />";
-			echo"<input style='display:none' type='submit' />";
-			echo'</form>';
-			$query = "SELECT content, post_date, pseudo FROM comments NATURAL JOIN USERS WHERE id_post = ".$id;
-			$result = call_db($query);
-		
-			while($data = mysql_fetch_array($result))
-			{
-				echo"<span style='font-size:22px; color:white; font-weight:bold;'>";
-				echo "&nbsp;&nbsp;".$data['pseudo']; 
-				echo": <br>";
-				echo"</span>";
-				
-				echo"<span style='font-size:15px;'>";
-				echo "&nbsp;&nbsp;".$data['content'];
-				echo"</span>";
-				
-				echo"<span style='font-size:10px; color:white;'>";
-				echo"<br>&nbsp;&nbsp;Ecrit le ";
-				echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-				echo"<br><HR></span>";
-
-			}
+			
+			include('modeles/comment.php');
+			
 			echo"	</td>";
 			echo"</tr>";
 			echo"<tr>";

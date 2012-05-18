@@ -1,0 +1,43 @@
+<?php
+	
+	/* Comments article
+		14/05/2012
+		Salman Alamdar
+	*/
+	
+	if(isset($_GET['pseudo'])) echo"<form action='index.php?page=profile&pseudo=".$_GET['pseudo']."' method='post'/>";
+	else echo"<form action='index.php?page=profile method='post'/>";
+	
+	echo"<br>";
+	echo"&nbsp;&nbsp;<input type='text' name='comment' placeholder='Commenter...' size='77%'>";
+	echo"<input type='hidden' name='id_news' value='".$id."' />";
+	echo"<input style='display:none' type='submit' />";
+	echo'</form>';
+	$query = "SELECT id_comment, content, post_date, pseudo FROM comments NATURAL JOIN USERS WHERE id_post = ".$id;
+	$result = call_db($query);
+
+	while($data = mysql_fetch_array($result))
+	{
+		echo"<span style='font-size:22px; color:white; font-weight:bold;'>";
+		echo "&nbsp;&nbsp;".$data['pseudo']; 
+		echo": <br>";
+		echo"</span>";
+		
+		echo"<span style='font-size:15px;'>";
+		echo "&nbsp;&nbsp;".$data['content'];
+		echo"</span>";
+		
+		echo"<span style='font-size:10px; color:white;'>";
+		echo"<br>&nbsp;&nbsp;Ecrit le ";
+		echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+		
+		if($data['pseudo'] == $_SESSION['pseudo'])
+		{
+			echo"<div class='delete'>";
+			if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete=".$data['id_comment']."'>X</a>";
+			else echo"<a href='index.php?page=profile&delete=".$data['id_comment']."'>X</a>";
+			echo"</div>";
+		}
+		echo"<br><HR></span>";
+	}
+?>
