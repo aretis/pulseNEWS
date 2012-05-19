@@ -13,7 +13,7 @@
 	echo"<input type='hidden' name='id_news' value='".$id."' />";
 	echo"<input style='display:none' type='submit' />";
 	echo'</form>';
-	$query = "SELECT id_comment, content, post_date, pseudo FROM comments NATURAL JOIN USERS WHERE id_post = ".$id;
+	$query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN USERS ON comments.id_user = users.id_user WHERE id_post = ".$id;
 	$result = call_db($query);
 
 	while($data = mysql_fetch_array($result))

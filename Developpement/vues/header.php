@@ -9,6 +9,7 @@
 	<title>pulseNEWS, sponsored by your mind!</title>
 </head>
 <body>
+<?php include('modeles/connect_db.php'); ?>
 <div class='header'>
 	<table cellspacing="0">
 		<td>

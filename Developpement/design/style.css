@@ -390,3 +390,13 @@ select:active, select:focus {
     width: 0;
     z-index: 0;
 }
+.post_debate {
+    height: 20%;
+    margin: auto;
+    width: 835px;
+}
+.propulse_debate {
+    float: right;
+    margin-right: 20px;
+    margin-top: -25px;
+}
