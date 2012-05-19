@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
+<head>
 
-<html>
+<meta http-equiv="Content-Type" content="text/html; charset='UTF-8'"/>
 <link rel="stylesheet" href="design/style.css" />
 <link rel="icon" type="image/gif" href="design/img/favicon.gif" />
-<head>
+
 	<title>pulseNEWS, sponsored by your mind!</title>
 </head>
 <body>
@@ -36,7 +37,7 @@
 					<div class='header_menu'>
 						<a href='index.php?page=list_users'>les pulseurs</a>&nbsp;&nbsp;
 						<a href='index.php?page=news'>fil d'actualités</a>&nbsp;&nbsp;
-						<a href=''>débat du jour</a>&nbsp;&nbsp;
+						<a href='index.php?page=debate'>débat du jour</a>&nbsp;&nbsp;
 						<?php if( isset($_SESSION['pseudo'] ))
 							{
 								echo"<a href='index.php?page=profile'>".$_SESSION['pseudo']."</a>&nbsp;&nbsp;";
