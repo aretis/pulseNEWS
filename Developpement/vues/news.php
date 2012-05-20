@@ -147,7 +147,7 @@ if(isset($_POST['pulse']))
 			echo"</table>";
 		}		
 		
-		else
+		else if( $data['type'] == 0)
 		{
 			echo"<table cellpadding='0' cellspacing='0' class='post_news' >";
 			echo"<tr style='height: 32px;'>";

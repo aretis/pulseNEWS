@@ -3,7 +3,9 @@
 
 <?php	
 
-	if(isset($_GET['delete'])) include('modeles/delete_comment.php');
+	if(isset($_GET['delete_comment'])) include('modeles/delete_comment.php');
+	
+	if(isset($_GET['delete_post'])) include('modeles/delete_post.php');
 	
 	include('modeles/pulse.php');
 	
@@ -29,8 +31,9 @@
 		or die("Connexion impossible : ".mysql_error());
 		mysql_select_db("pulsenews");
 		mysql_query("SET NAMES 'utf8'");
+		if(isset($_SESSION['pseudo'])){
 		$pseudo = $_SESSION['pseudo'];
-		$req = mysql_query("SELECT * FROM users WHERE pseudo='$pseudo'");
+		$req = mysql_query("SELECT * FROM users WHERE pseudo='".$pseudo."'");
 		$req2 = mysql_fetch_row($req);
 		$pseudo = $req2[1];
 		$key = $req2[0];
@@ -40,7 +43,7 @@
 		$firstname = $req2[4];
 		$about = $req2[6];
 		$humor = $req[7];
-		
+		}
 		/*print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about);*/
 ?>
 <?php
@@ -139,10 +142,10 @@ if(!isset($_GET['pseudo']))
 	if(isset($_GET['pseudo']))
 	{
 		$query = "SELECT id_user FROM users WHERE pseudo ='".$_GET['pseudo']."'";
+		
 		$result = call_db($query);
 			
 		$id = mysql_result($result, 0);
-		
 		$req = view_article_user($id);
 		include('modeles/show_posts.php');
 	}

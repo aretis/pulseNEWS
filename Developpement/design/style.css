@@ -400,4 +400,5 @@ select:active, select:focus {
     left: 513px;
     width: 100px;
     top: -43px;
+	z-index:0;
 }

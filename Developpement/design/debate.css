@@ -42,6 +42,7 @@ input[type="submit"]:hover
     top: 14px;
     width: 838px;
 	margin:auto;
+	z-index:1;
 }
 #menu {
     -moz-transition: all 1s ease 0s;

@@ -11,7 +11,19 @@
 			echo"		<tr style='height: 32px;'>";
 			echo"		<td rowspan='1'>";
 			echo"		<div class='title_post'>";
-			echo"			&nbsp;".$data['title'];
+			
+			if(isset($_SESSION['pseudo']))
+			{
+				if($data['pseudo'] == $_SESSION['pseudo'])
+				{
+					echo"<div class='delete_post'>";
+					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;".$data['title'];
+					else echo"<a href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;".$data['title'];
+					echo"</div>";
+				}
+			}
+			else{
+			echo"			&nbsp;".$data['title'];}
 			echo"		</div>";
 			echo"		</td>";
 
@@ -52,13 +64,25 @@
 			echo"</table>";
 			
 		}
-		else
+		else if($data['type'] == 0)
 		{
 			echo"<table cellpadding='0' cellspacing='0' class='article'>";
 			echo"<tr style='height: 10px;'>";
 			echo"	<td rowspan='1'>";
 			echo"	<div class='title_post'>";
-			echo"		&nbsp;".$data['title'];
+			
+			if(isset($_SESSION['pseudo']))
+			{
+				if($data['pseudo'] == $_SESSION['pseudo'])
+				{
+					echo"<div class='delete_post'>";
+					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					else echo"<a href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					echo"</div>";
+				}
+			}
+			else{
+			echo"		&nbsp;".$data['title'];}
 			echo"	</div>";
 			echo"	</td>";
 			echo"";

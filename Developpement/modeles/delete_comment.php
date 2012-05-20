@@ -4,7 +4,7 @@
 		Salman ALAMDAR
 	*/
 
-	$query = 'DELETE FROM comments WHERE id_comment='.$_GET['delete'];
+	$query = 'DELETE FROM comments WHERE id_comment='.$_GET['delete_comment'];
 	$result = call_db($query);
 
 	if(!mysql_query($query) )

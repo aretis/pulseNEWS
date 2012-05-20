@@ -31,12 +31,15 @@
 		echo"<br>&nbsp;&nbsp;Ecrit le ";
 		echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 		
-		if($data['pseudo'] == $_SESSION['pseudo'])
+		if(isset($_SESSION['pseudo']))
 		{
-			echo"<div class='delete'>";
-			if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete=".$data['id_comment']."'>X</a>";
-			else echo"<a href='index.php?page=profile&delete=".$data['id_comment']."'>X</a>";
-			echo"</div>";
+			if($data['pseudo'] == $_SESSION['pseudo'])
+			{
+				echo"<div class='delete'>";
+				if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment=".$data['id_comment']."'>X</a>";
+				else echo"<a href='index.php?page=profile&delete_comment=".$data['id_comment']."'>X</a>";
+				echo"</div>";
+			}
 		}
 		echo"<br><HR></span>";
 	}
