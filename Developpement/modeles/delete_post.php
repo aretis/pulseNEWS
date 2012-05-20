@@ -3,6 +3,7 @@
 		20/02/2012
 		Salman ALAMDAR */
 	
+
 	$query = 'DELETE FROM posts WHERE id_post='.$_GET['delete_post'];
 	$result = call_db($query);
 
@@ -13,4 +14,5 @@
 	}
 	
 	echo"Votre post à bien été supprimé !";
+
 ?>

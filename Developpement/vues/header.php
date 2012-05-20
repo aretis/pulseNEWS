@@ -28,7 +28,7 @@
 						if( isset($_SESSION['pseudo'] ))
 						{
 							echo "Bonjour, ".$_SESSION['pseudo']." !  ";
-							echo "<a href='index.php?page=disconnect' style='color: white;'>(se déconnecter)</a>";
+							echo "<a href='index.php?page=news&disconnect=1' style='color: white;'>(se déconnecter)</a>";
 						}
 						else
 						{													

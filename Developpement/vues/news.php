@@ -1,4 +1,8 @@
 ﻿<?php
+
+	if(isset($_GET['disconnect'])) unset($_SESSION['pseudo']);
+	if(isset($_GET['delete_post'])) include('modeles/delete_post.php');
+	
 	if(isset($_POST['pulse']))
 	{
 		// Checking if entry is not a duplicate
@@ -107,7 +111,18 @@ if(isset($_POST['pulse']))
 			echo"		<tr style='height: 32px;'>";
 			echo"		<td rowspan='1'>";
 			echo"		<div class='title_post'>";
-			echo"			&nbsp;".$data['title'];
+			if(isset($_SESSION['pseudo']))
+			{
+				if($data['pseudo'] == $_SESSION['pseudo'])
+				{
+					echo"<div class='delete_post'>";
+					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					else echo"<a href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					echo"</div>";
+				}
+			}
+			else{
+			echo"		&nbsp;".$data['title'];}
 			echo"		</div>";
 			echo"		</td>";
 
@@ -136,11 +151,11 @@ if(isset($_POST['pulse']))
 			echo"<tr>";
 			
 			echo"	<td>";
-			echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
+			echo"	<div class='debate'><form action='index.php?page=news' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
 			echo"	<div class='depulse'>&nbsp;";
-			echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+			echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
 			echo"	<div class='propulse'>&nbsp;";
-			echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+			echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
 			echo"</td>";
 			echo"</tr>";
 			
@@ -153,7 +168,18 @@ if(isset($_POST['pulse']))
 			echo"<tr style='height: 32px;'>";
 				echo"<td rowspan='1'>";
 				echo"<div class='title_post'>";
-			echo"		&nbsp;".$data['title'];
+			if(isset($_SESSION['pseudo']))
+			{
+				if($data['pseudo'] == $_SESSION['pseudo'])
+				{
+					echo"<div class='delete_post'>";
+					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					else echo"<a href='index.php?page=news&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					echo"</div>";
+				}
+			}
+			else{
+			echo"		&nbsp;".$data['title'];}
 			echo"	</div>";
 			echo"	</td>";
 

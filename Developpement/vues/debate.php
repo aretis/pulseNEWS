@@ -1,5 +1,11 @@
 <?php
 
+	include('modeles/call_db.php');
+	if(isset($_GET['delete_post'])) 
+	{
+		include('modeles/delete_post.php');
+	}
+	
 	if(isset($_POST['PROpulse']))
 	{
 		include('modeles/pulse.php');
@@ -72,10 +78,9 @@
 				</dd>
 			</dl>
 		</div>
-	</div>
+	</div><br><br><br>
 
 	<?php
-		include('modeles/call_db.php');
 		$query="SELECT pseudo, id_post, title, content, rate, post_date FROM posts INNER JOIN USERS ON posts.id_user = users.id_user WHERE type=2";
 		
 		$result=call_db($query);
@@ -84,9 +89,24 @@
 		{
 			echo"<table cellpadding='0' cellspacing='0' class='post_debate' >";
 			echo"<tr style='height: 32px;'>";
-				echo"<td rowspan='1'>";
-				echo"<div class='title_post'>";
-			echo"		&nbsp;".$data['title'];
+			echo"<td rowspan='1'>";
+			echo"<div class='title_post'>";
+			if(isset($_SESSION['pseudo']))
+			{
+				if($data['pseudo'] == $_SESSION['pseudo'])
+				{
+					echo"<div class='delete_post'>";
+					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=debate&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					else echo"<a href='index.php?page=debate&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					echo"</div>";
+				}
+				else{
+				echo"		&nbsp;".$data['title'];}
+			}
+			else
+			{
+				echo"		&nbsp;".$data['title'];
+			}
 			echo"	</div>";
 			echo"	</td>";
 
