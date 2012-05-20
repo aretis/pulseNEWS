@@ -121,32 +121,26 @@ if(isset($_POST['pulse']))
 					echo"</div>";
 				}
 			}
-			else{
-			echo"		&nbsp;".$data['title'];}
-			echo"		</div>";
-			echo"		</td>";
-
-			echo"		<td>";
-			echo"			<div class='rate'>";
+			else
+			{
+				echo"		&nbsp;".$data['title'];
+			}
+			
+			echo"		</div></td><td>	<div class='rate'>";
 			if($data['rate'] > 0) echo" + ";
 			echo $data['rate'];
-			echo "</div>";
-			echo"		</td>";
-			echo"	</tr>";
+			echo "</div></td></tr>";
 			echo"	<tr style='background-color: #85c630;'>";
 			echo"		<td>";
 			echo"		<div class='description_news'>";
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;lire l'article&nbsp;&nbsp;</a>";
-			echo "pulsé le : ".$data['post_date']." par 'michmich'</div>";
+			echo"<span style='color:white'>&nbsp;&nbsp;Pulsé le ";
+			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+			echo"&nbsp;par ".$data['pseudo']."</div>";
+			echo"	</span></td>";
 			echo"<form action='index.php?page=profile' method='post'/>";
 			echo'</form>';
 		echo"	</td>";
-			echo"	<td style='background-color: white;'>";
-			echo"		<div class='date_news'>";
-				echo"	</div>";
-					
-				echo"</td>";
-
 			echo"</tr>";
 			echo"<tr>";
 			
@@ -194,17 +188,11 @@ if(isset($_POST['pulse']))
 			echo"		<div class='description'>";
 			echo $data['description']; 
 			echo"		</div>";
+			echo"<span style='color:white'>&nbsp;&nbsp;Ecrit le ";
+			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+			echo"&nbsp;par ".$data['pseudo'];
+			echo"	</span></td>";
 			echo"	</td>";
-
-
-
-			echo"	<td style='background-color: white;'>";
-			echo"		<div class='date_news'>";
-			echo $data['post_date'];
-			echo"		</div>";
-					
-			echo"	</td>";
-
 			echo"</tr>";
 			echo"<tr>";
 			echo"<td>";

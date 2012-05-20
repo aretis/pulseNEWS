@@ -38,8 +38,9 @@
 			echo"		<td>";
 			echo"		<div class='description_news'>";
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;&nbsp;lire l'article&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;";
-			echo "pulsé le : ".$data['post_date']." par 'SOLID !'</div>";
-		
+			echo "pulsé le :";
+			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+			echo "par ".$data['pseudo']." !</div>";
 			include('modeles/comment.php');
 			
 			echo"	</td>";
@@ -128,7 +129,10 @@
 			$content = nl2br( $content , false );
 			echo $content;
 			echo"		</div>";
-			
+			echo"<span style='color:white'>&nbsp;&nbsp;Ecrit le";
+			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+			echo"&nbsp;par ".$data['pseudo'];
+			echo"	</span></td>";
 			include('modeles/comment.php');
 			
 			echo"	</td>";
