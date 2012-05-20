@@ -396,7 +396,8 @@ select:active, select:focus {
     width: 835px;
 }
 .propulse_debate {
-    float: right;
-    margin-right: 20px;
-    margin-top: -25px;
+    position: relative;
+    left: 513px;
+    width: 100px;
+    top: -43px;
 }

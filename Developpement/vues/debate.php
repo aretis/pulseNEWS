@@ -1,4 +1,11 @@
 <?php
+
+	if(isset($_POST['PROpulse']))
+	{
+		include('modeles/pulse.php');
+		pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['PROpulse'], $_POST['type']);
+	}
+	
 	if(isset($_POST['suggest']))
 	{
 		if(empty($_POST['title']))
@@ -100,7 +107,6 @@
 			echo"	</span></td>";
 
 			echo"</tr>";
-			
 			echo"<tr>";
 			echo"<td>";
 			echo"	<div class='propulse_debate'>&nbsp;";
