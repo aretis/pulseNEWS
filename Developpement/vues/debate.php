@@ -55,9 +55,10 @@
 	
 	<br><br>
 	<div id="pardessus">
+	
 		<div id="menu">
-			<span class='lol'>Suggérer un thème !</span>
-			<dl>
+			
+			<dl><div class='lol'> Suggérer un thème ! </div>
 			<dt></dt>
 				<dd>
 					<ul>
@@ -79,7 +80,7 @@
 			</dl>
 		</div>
 	</div><br><br><br>
-
+	
 	<?php
 		$query="SELECT pseudo, id_post, title, content, rate, post_date FROM posts INNER JOIN USERS ON posts.id_user = users.id_user WHERE type=2";
 		
@@ -130,7 +131,7 @@
 			echo"<tr>";
 			echo"<td>";
 			echo"	<div class='propulse_debate'>&nbsp;";
-			echo"	<form action='index.php?page=debate' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+			echo"	<form action='index.php?page=debate' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' value='Je vote !' /></form></div></a>";
 			echo"</td>";
 			echo"</tr>";
 			echo"</table>";

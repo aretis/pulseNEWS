@@ -1,19 +1,18 @@
-.presentation
-{
-	background-color: #85C630;
+.presentation {
+    background-color: #85C630;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 10px 10px 8px #417324;
     color: white;
     font-family: "coolvetica_rg";
     font-size: 25px;
     height: 193px;
     margin: auto;
-    width: 838px;
     padding: 1px;
     text-align: center;
-	box-shadow: 10px 10px 8px #417324;
-	border-radius: 5px 5px 5px 5px;
+    width: 838px;
 }
-input[type="submit"]{
-     background-color: #50B326;
+input[type="submit"] {
+    background-color: #50B326;
     border: 0 none;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 3px 3px 2px #417324;
@@ -27,66 +26,52 @@ input[type="submit"]{
     text-decoration: none;
     width: 199px;
 }
-input[type="submit"]:hover
-{
+input[type="submit"]:hover {
     color: #FFFD55;
+    margin: auto;
     text-decoration: none;
-	margin: auto;
 }
 #pardessus {
-    background-color: #85C630;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow: 10px 10px 8px #417324;
-    height: 35px;
+    margin: auto;
     position: relative;
-    top: 14px;
+    top: -93px;
     width: 838px;
-	margin:auto;
-	z-index:1;
+    z-index: 1;
 }
-#menu {
+dl {
     -moz-transition: all 1s ease 0s;
     background-color: #85C630;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 10px 10px 8px #417324;
     color: white;
-    font-family: "coolvetica_rg";
-    font-size: 30px;
-    height: 40px;
-    margin: auto;
-    padding: 2px;
-    text-align: center;
-    width: 838px;
-}
-dl {
-    -moz-transition: all 1s ease 0s;
     display: inline-block;
-    float: left;
-    height: 77px;
-    margin: 0;
-    padding: 0;
+    font-size: 30px;
+    height: 37px;
+    margin: auto;
+    position: absolute;
     text-align: center;
+    top: 88px;
     z-index: -17;
 }
 dt {
     -moz-transition: all 1s ease 0s;
     background-color: #85C630;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 10px 10px 8px #417324;
     color: white;
     cursor: pointer;
     display: inline-block;
     line-height: 18px;
     text-align: center;
     width: 838px;
-	border-radius: 5px 5px 5px 5px;
-    box-shadow: 10px 10px 8px #417324;
 }
 dd {
     -moz-transition: all 1s ease 0s;
+    background-color: #85C630;
     display: inline-block;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #85C630;
 }
 dd ul {
     -moz-transition: all 1s ease 0s;
@@ -97,12 +82,14 @@ dd ul {
 }
 dd ul li {
     -moz-transition: all 1s ease 0s;
+    background-color: red;
     display: block;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 dd ul li a {
+    background-color: red;
     border-bottom: 1px dotted white;
     border-top: 1px dotted white;
     color: white;
@@ -115,6 +102,7 @@ dd ul li a {
 }
 dd ul li a:hover {
     -moz-transition: all 1s ease 0s;
+    background-color: red;
     color: red;
     text-align: center;
 }
@@ -124,11 +112,28 @@ dl dd {
 }
 dl:hover dd {
     -moz-transition: all 1s ease 0s;
+    cursor: pointer;
     display: block;
     text-align: center;
 }
-.lol:hover{
-color:#FFFD55;
+dl:hover {
+    cursor: pointer;
 }
-textarea{
-resize:none;}
+.text {
+    margin: auto;
+}
+.lol {
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    top: -5px;
+    width: 435px;
+    left: 203px;
+}
+.lol:hover {
+    color: #FFFD55;
+}
+textarea {
+    resize: none;
+}
