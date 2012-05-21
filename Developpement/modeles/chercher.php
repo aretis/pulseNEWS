@@ -1,7 +1,7 @@
 <html>
 <body>
 <form method="post" action="index.php?page=recherche">
-vous recherchez?: <input type="text"name="recherche"/>
+<input type="text"name="recherche"/>
 <select name ="mode">
 	<option value="exp_exacte">l'expression exacte</option>
 	<option value="all_mots">tout les mots </option>

@@ -25,6 +25,7 @@
 						if( isset($_SESSION['pseudo'] ))
 						{
 							echo "Bonjour, ".$_SESSION['pseudo']." !  ";
+							echo "<a href='index.php?page=modifier_compte' style='color: white;'>modifier mon compte</a>&nbsp;&nbsp</a>";
 							echo "<a href='index.php?page=disconnect' style='color: white;'>(se déconnecter)</a>";
 						}
 						else
@@ -33,6 +34,7 @@
 						}
 					?>
 					<div class='header_menu'>
+
 						<a href='index.php?page=recherche'>rechercher</a>&nbsp;&nbsp;
 						<a href='index.php?page=news'>fil d'actualités</a>&nbsp;&nbsp;
 						<a href=''>débat du jour</a>&nbsp;&nbsp;

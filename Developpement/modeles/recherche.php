@@ -1,107 +1,124 @@
 <?php
+
 include("connexion.php");
-
-if ((isset($_POST['recherche']) ||(isset($_GET['recherche']))))
+if (isset($_POST['recherche']) || isset($_GET['recherche']))
 {
-	if( isset($_POST['recherche']))
+	if(isset($_POST['recherche']))
 	{
-		$recherche=mysql_real_escape_string(htmlspecialchars($_POST['recherche']));
-		$categorie=mysql_real_escape_string(htmlspecialchars($_POST['categorie']));
-		$mode=mysql_real_escape_string(htmlspecialchars($_POST['mode']));
-		
-		
-		
+		$recherche = mysql_real_escape_string(htmlspecialchars($_POST['recherche'])); 
+		$mode = mysql_real_escape_string(htmlspecialchars($_POST['mode']));
+		$categorie= mysql_real_escape_string(htmlspecialchars($_POST['categorie']));
 	}
-	else 
+	
+	if(isset($_GET['recherche']))
 	{
-		$recherche=mysql_real_escape_string(htmlspecialchars($_GET['recherche']));
+		$recherche = mysql_real_escape_string(htmlspecialchars($_GET['recherche'])); 
 		$mode = mysql_real_escape_string(htmlspecialchars($_GET['mode']));
-		$categorie= mysql_real_escape_string(htmlspecialchars($_GET['categorie']));
+		$categorie= mysql_real_escape_string(htmlspecialchars($_POST['categorie']));
 	}
-	
-	
-	if (isset($mode) == "all_mots")
-	{
-			$mot_connexion = 'AND';
-	}
-	else 
-	{
-			$mot_connexion = 'OR';
-	}
-	
-	
-	
-	if($mode == "exp_exacte") 
-	{
-	
-		$requete = mysql_query("SELECT * FROM posts WHERE content LIKE '%$recherche%' AND cat_name='$categorie'");
+    
+    if ($mode == "exp_exacte")
+    {
+        $liaison = 'AND'; 
+    } 
+    else
+    {
+        $liaison = 'OR';
+    }
+	  
+    if ($mode == "expression_exacte") 
+    {
+		echo $recherche;
+        $requete = mysql_query('SELECT * FROM posts WHERE content LIKE \'%'.$recherche.'%\'');
 		
-		if($requete === false)
-		{
-			echo"la requete est incorrect <br> ".htmlentities($requete)."<br>".mysql_error();
-			return;
-		}
-		$nb_resultat = 0;
-		$nb_resultat = mysql_num_rows($requete);
 		
-		if($nb_resultat == 0)
-		{
-			echo ' Désolé, aucun élément ne correspond à votre recherche ou alors la recherche est mal effectuée.Voulez-vous recommencer?><a href=chercher.php</a>';
-		}
-		else 
-		{
-			echo ' ' .$nb_resultat .' résultats ont été trouvés pour votre recherche :</br>';
-			While($resultats= mysql_fetch_array($requete))
-			{ 
-				echo 'titre: '.$resultats['title'].'   Date :'.$resultats['post_date'].'
-				<a href = "index.php?page=voir_article&id='.$resultats['id'].'&recherche='.$recherche.'&mode='.$mode.'&categorie='.$categorie.'">lire l article!</a> </br>';
-			}
-		
-		}
-	}
-	else 	
-	{ 
-		$mots = explode(" ", $recherche);
-		$nombre_mots = count($mots);
+    }
+    else 
+    {
+        $mots = explode(" ", $recherche); 
+        $nombre_mots = count ($mots); 
+        $valeur_requete = '';
 
-		$part_requete = '';
+        for($nb_boucle = 0; $nb_boucle < $nombre_mots; $nb_boucle++) 
+        {
+            $valeur_requete .= '' . $liaison . ' content LIKE \'%' . $mots[$nb_boucle] . '%\''; 
+        }
+        
+        $valeur_requete = ltrim($valeur_requete,$liaison);
+        $requete= mysql_query("SELECT * FROM posts WHERE $valeur_requete"); 
+    }
+    
+    $nb_resultats = mysql_num_rows($requete);
 	
-		for($boucle=0; $boucle < $nombre_mots; $boucle++)
+
+    if ($nb_resultats == 0) 
+    {
+        echo 'Aucun résultat.';
+    }
+	
+	else
+	{
+		if($nb_resultats==1)
 		{
-			$part_requete .= "$mot_connexion content LIKE '%$mots[$boucle]%'";
-			echo"<br/><br/>";
+			echo"Il n'y a 1 résultat qui correspond a votre recherche";
 		}
-	
-		$part_requete = ltrim($part_requete,$mot_connexion);
-	
-		$requete = mysql_query("SELECT * FROM posts WHERE content LIKE '%$recherche%'AND cat_name='$categorie'");
-	
-		if($requete === false)
+		else if($nb_resultats > 1)
 		{
-			echo"la requete est incorrect <br> ".htmlentities($requete)."<br>".mysql_error();
-			return;
+			echo' Il y a '.$nb_resultats.' résultats qui correspondent à votre recherche';
 		}
-		$nb_resultat = 0;
-		$nb_resultat = mysql_num_rows($requete);
+		while($resultats = mysql_fetch_array($requete) )
+		{
 		
-		if($nb_resultat == 0)
-		{
-			echo ' Désolé, aucun élément ne correspond à votre recherche ou alors la recherche est mal effectuée.Voulez-vous recommencer?><a href=chercher.php</a>';
-		}
-		else 
-		{
-			echo ' ' .$nb_resultat .' résultat ont été trouvés pour votre recherche :</br>';
-			While($resultats= mysql_fetch_array($requete))
-			{ 
-				echo 'titre: '.$resultats['title'].'   Date :'.$resultats['post_date'].'
-				<a href ="index.php?page=lire_article&id='.$resultats['id'].'&recherche='.$recherche.'&mode='.$mode.'">lire l article!</a>';
+			echo"  </td>
+	<td>
+	<table cellpadding='0' cellspacing='0' class='post_news' >
+	<tr style='height: 32px;'>
+		<td rowspan='1'>
+		<div class='title_post'>
+		&nbsp;Nom du journal: ".$resultats['title']."
+		
+		</div>
+		</td>
+
+		<td>
+			<div class='rate'>+128</div>
+		</td>
+		</tr>
+		<tr style='background-color: #85c630;'>
+		<td>
+		<div class='description'>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
+		</div>
+		</td>
+		</div>
+		</td>
+			<td style='background-color: white;'>
+		<div class='date_news'>
+		Aujourd'hui à 9h15
+		</div>
+		
+		</td>
+
+	</tr>
+	<tr>
+	<td>
+		<a href='index.php?page=voir_article&id=".$resultats['id']."&recherche=".$recherche."&mode=".$mode."&categorie=".$categorie."'><div class='comment_button'>lire l'article!</div></a>
+		<div style='float: right; width: 5%px;'>&nbsp;</div>
+	</td>
+	</tr>
+	</table>"; 
+
 			}
 			
 		}
 	}	
-}
-else 
+
+else if ((empty($recherche)) && (!isset($recherche)))
 {
- 
-}	
+ echo'Veuillez saisir une recherche!';
+}
+else
+{
+
+}
 ?>
