@@ -1,75 +1,139 @@
-.post_debates
-{
-	border-radius: 5px 5px 5px 5px;
-	width: 70%;
-	margin: auto;
-}
-
-.comment_debates
-{
-	border-radius: 5px 5px 5px 5px;
-	height: 81px;
-    left: 4%;
-    position: relative;
-    top:33px;
-    width: 50%;
-
-}
-.date_comments
-{
-	margin-top: -7px;
-	background-color: #85c630;
-	color: white;
-	font-size: 10px;
-	height: 78%;
-}
-
-.title_comment
- {
+.presentation {
     background-color: #85C630;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 10px 10px 8px #417324;
     color: white;
+    font-family: "coolvetica_rg";
+    font-size: 25px;
+    height: 193px;
+    margin: auto;
+    padding: 1px;
+    text-align: center;
+    width: 838px;
+}
+input[type="submit"] {
+    background-color: #50B326;
+    border: 0 none;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 3px 3px 2px #417324;
+    color: #FFFFFF;
+    cursor: pointer;
     font-family: 'coolvetica_rg';
-    font-size: 28px;
-    width: 100%;
+    font-size: 19px;
+    left: 76%;
+    padding: 2px 0;
+    position: absolute;
+    text-decoration: none;
+    width: 199px;
 }
-
-.user_picture
-{
-background-color: white;
-	
-	
-
-	
-	border-color:#85c630;
-	border-width:3px;
-	border-style:solid;
-	width:100%
-	
-	
+input[type="submit"]:hover {
+    color: #FFFD55;
+    margin: auto;
+    text-decoration: none;
 }
-
-.description_comment 
-{
-
-    background-color: white;
-    border-color: #85C630;
-    border-style: solid;
-    border-width: 6px;
-    font-size: 11px;
-	
-
+#pardessus {
+    margin: auto;
+    position: relative;
+    top: -93px;
+    width: 838px;
+    z-index: 1;
 }
-
-.size
-{
-height:10%;
-width:15%
+dl {
+    -moz-transition: all 1s ease 0s;
+    background-color: #85C630;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 10px 10px 8px #417324;
+    color: white;
+    display: inline-block;
+    font-size: 30px;
+    height: 37px;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    top: 88px;
+    z-index: -17;
 }
-
-.size_date
-{
-height: 30%;
-width: 3%;
+dt {
+    -moz-transition: all 1s ease 0s;
+    background-color: #85C630;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 10px 10px 8px #417324;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 18px;
+    text-align: center;
+    width: 838px;
 }
-
-
+dd {
+    -moz-transition: all 1s ease 0s;
+    background-color: #85C630;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+dd ul {
+    -moz-transition: all 1s ease 0s;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+dd ul li {
+    -moz-transition: all 1s ease 0s;
+    background-color: red;
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+dd ul li a {
+    background-color: red;
+    border-bottom: 1px dotted white;
+    border-top: 1px dotted white;
+    color: white;
+    display: block;
+    height: 83px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    width: 265px;
+}
+dd ul li a:hover {
+    -moz-transition: all 1s ease 0s;
+    background-color: red;
+    color: red;
+    text-align: center;
+}
+dl dd {
+    display: none;
+    text-align: center;
+}
+dl:hover dd {
+    -moz-transition: all 1s ease 0s;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+}
+dl:hover {
+    cursor: pointer;
+}
+.text {
+    margin: auto;
+}
+.lol {
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    top: -5px;
+    width: 435px;
+    left: 203px;
+}
+.lol:hover {
+    color: #FFFD55;
+}
+textarea {
+    resize: none;
+}

@@ -11,7 +11,7 @@ function transfert ($id_post)
 	$sucess = is_uploaded_file ($_FILES['fichier']['tmp_name']);
 	if ( !$sucess )
 	{
-		echo "Problème de transfert";
+		die ("Problème de transfert");
 		return false;
 	}
 	else
@@ -20,7 +20,7 @@ function transfert ($id_post)
 	$picture_size = $_FILES['fichier']['size'];
 	if ( $picture_size > $picture_max )
 	{
-		echo "le fichier ne peut être enregistré,la taille n'est pas respectée!";
+		die ("le fichier ne peut être enregistré,la taille n'est pas respectée!");
 		return false;
 	}
 	$picture_type = $_FILES['fichier']['type'];
@@ -37,7 +37,7 @@ function transfert ($id_post)
 
 	
 	$sucess = mysql_query ($request) or die (mysql_error ());
-	return true;
+	return;
 	
 	}	
 }

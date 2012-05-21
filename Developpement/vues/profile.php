@@ -1,7 +1,19 @@
 ﻿<link rel="stylesheet" href="design/profil.css" />
 
 
-<?php	include('modeles/pulse.php');
+<?php	
+
+	if(isset($_GET['delete_comment'])) include('modeles/delete_comment.php');
+	
+	if(isset($_GET['delete_post'])) include('modeles/delete_post.php');
+	
+	include('modeles/pulse.php');
+	
+	if(isset($_POST['comment']))
+	{
+		include('modeles/save_comment.php');
+		save_comment($_POST['id_news'], $_SESSION['id_user'], $_POST['comment']);
+	}
 	
 	
 	if(isset($_POST['PROpulse']))
@@ -19,8 +31,9 @@
 		or die("Connexion impossible : ".mysql_error());
 		mysql_select_db("pulsenews");
 		mysql_query("SET NAMES 'utf8'");
+		if(isset($_SESSION['pseudo'])){
 		$pseudo = $_SESSION['pseudo'];
-		$req = mysql_query("SELECT * FROM users WHERE pseudo='$pseudo'");
+		$req = mysql_query("SELECT * FROM users WHERE pseudo='".$pseudo."'");
 		$req2 = mysql_fetch_row($req);
 		$pseudo = $req2[1];
 		$key = $req2[0];
@@ -30,27 +43,63 @@
 		$firstname = $req2[4];
 		$about = $req2[6];
 		$humor = $req[7];
-		
+		}
 		/*print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about);*/
+?>
+<?php
+	if(isset($_GET['pseudo']))
+	{
+		$query = "SELECT * FROM users WHERE pseudo ='".$_GET['pseudo']."'";
+		$result = call_db($query);
+			
+		while($data = mysql_fetch_array($result))
+		{
+			$visit_surname = $data['surname'];
+			$visit_firstname = $data['firstname'];
+			$visit_mail = $data['mail'];
+			$visit_humor = $data['humor'];
+			$visit_area_name = $data['area_name'];
+			$visit_about = $data['about'];
+		}
+	}
 ?>
 <div class='profile_ban'>
 	<img src='design/img/ban_exemple.png'/>
 </div>
 <table style='margin: auto; text-align: center;' cellpadding='0' cellspacing='0'>
 <td>
-<td>
+<?php 
+if(!isset($_GET['pseudo']))
+{
+echo"<td>
 <a href='index.php?page=create_article'><div class='profile_button_right'>&nbsp;rédiger un article&nbsp;</div></a>
+</td>";
+}
+?>
+<td>&nbsp;&nbsp;
+</td>
+<td>
+<div class='profile_name'>&nbsp;
+<?php 
+if(isset($_GET['pseudo']))
+{
+	echo $_GET['pseudo'];
+}
+else
+{
+	echo $_SESSION['pseudo'];
+}
+?>&nbsp;</div>
 </td>
 <td>&nbsp;&nbsp;
 </td>
 <td>
-<div class='profile_name'>&nbsp;<?php echo $pseudo;?>&nbsp;</div>
-</td>
-<td>&nbsp;&nbsp;
-</td>
-<td>
-<a href='index.php?page=change_info'><div class='profile_button_left'>&nbsp;modifier mon profil&nbsp;</div></a>
-
+<?php 
+if(!isset($_GET['pseudo']))
+{
+	echo"<a href='index.php?page=change_info'><div class='profile_button_left'>&nbsp;modifier mon profil&nbsp;</div></a>";
+}
+?>
 </td>
 </table>
 <table>
@@ -71,7 +120,15 @@
 			<tr>
 				<td style='background-color: #85c630;'>
 					<div class='block_content'>
-					<?php echo $about; ?> 				
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_about;
+							}
+							else
+							{
+								echo $about;
+							}
+					?>			
 					</div>
 				</td>
 			</tr>
@@ -81,128 +138,25 @@
 </td>
 <td style='width: 80%;'>
 <?php
-
-	$req = view_article_user($_SESSION['id_user']);
-
-	while($data = mysql_fetch_array($req))
+	
+	if(isset($_GET['pseudo']))
 	{
-	
-		$content = $data['content'];
-		$id_post = $data['id_post'];
-	
-		echo"<table cellpadding='0' cellspacing='0' class='article'>";
-		echo"<tr style='height: 10px;'>";
-		echo"	<td rowspan='1'>";
-		echo"	<div class='title_post'>";
-		echo"		&nbsp;".$data['title'];
-		echo"	</div>";
-		echo"	</td>";
-		echo"";
-		echo"	<td>";
-		echo"		<div class='rate'>";
-		if($data['rate'] > 0) echo" + "; 
-		echo $data['rate']."</div>";
-		echo"	</td>";
-		echo"</tr>";
-		echo"<tr style='background-color: #85c630;'>";
-		echo"	<td>";
-		echo"		<div class='article_content'>";
-		echo"<p>";
-		echo $data['description'];
-		echo"</p>";
+		$query = "SELECT id_user FROM users WHERE pseudo ='".$_GET['pseudo']."'";
 		
-		$id = $data['id_post'];
-		
-	
-		$request = "SELECT picture_id, picture_type, picture_blob FROM pictures WHERE post_id = $id";
-
-		$sucess = mysql_query ($request) or die (mysql_error ());
-		$col = mysql_fetch_assoc($sucess);
-			if ( !$col['picture_id'])
-			{
-				echo "Id d'image inconnu";
-			}
-			else
-			{
-				$image = imagecreatefromstring($col['picture_blob']);
-				ob_start(); //You could also just output the $image via header() and bypass this buffer capture.
-				imagejpeg($image, null, 80);
-				$data = ob_get_contents();
-				ob_end_clean();
-				echo '<br><img src="data:image/jpg;base64,' .  base64_encode($data)  . '" /><br>';
-			}
+		$result = call_db($query);
 			
-		$content = nl2br( $content , false );
-		echo $content;
-		echo"		</div>";
-		echo"	</td>";
-		echo"</tr>";
-		echo"<tr>";
-		echo"<td>";
-		echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
-		echo"	<div class='depulse'>&nbsp;";
-		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
-		echo"	<div class='propulse'>&nbsp;";
-		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$id."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
-		echo"</td>";
-		echo"</tr>";
-		echo"<tr style='height: 30px;'>";
-		echo"</tr>";
-		echo"</table>";
+		$id = mysql_result($result, 0);
+		$req = view_article_user($id);
+		include('modeles/show_posts.php');
 	}
-?>
-
-<?php
-
-	$query = 'SELECT * FROM news WHERE id_user ='.$_SESSION['id_user'];
-	$result = call_db($query);
-	
-	while($data = mysql_fetch_array($result))
+	else
 	{
-
-		echo"<table cellpadding='0' cellspacing='0' class='article'>";
-		echo"<tr style='height: 10px;'>";
-		echo"	<td rowspan='1'>";
-		echo"	<div class='title_post'>";
-		echo"Short news : ".$data['cat']." !";
-		echo"	</div>";
-		echo"	</td>";
-		echo"";
-		echo"	<td>";
-		echo"		<div class='rate'>";
-		if($data['rate'] > 0) echo" + "; 
-		echo $data['rate'];
-		echo "</div>";
-		echo"	</td>";
-		echo"</tr>";
-		echo"<tr style='background-color: #85c630;'>";
-		echo"	<td>";
-		echo"		<div class='article_content'>";
-		echo"<p>";
-		echo $data['news_layout'];
-		echo"</p>";
-		echo"<p>";
-		echo"Lien : ".$data['link'];
-		echo"</p>";
-		echo"		</div>";
-		echo"	</td>";
-		echo"</tr>";
-		echo"<tr>";
-		echo"<td>";
-		echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
-		echo"	<div class='depulse'>&nbsp;";
-		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='news' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div>";
-		echo"	<div class='propulse'>&nbsp;";
-		echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='news' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div>";
-		echo"</td>";
-		echo"</tr>";
-		echo"<tr style='height: 30px;'>";
-		echo"</tr>";
-		echo"</table>";
-
-		
+		$req = view_article_user($_SESSION['id_user']);
+		include('modeles/show_posts.php');
 	}
 ?>
+
+
 </td>
 
 <td style='vertical-align: top; '>
@@ -217,15 +171,68 @@
 			<tr>
 				<td style='background-color: #85c630;'>
 				<div class='block_content'>
-					<?php
+					
 						
-						?>
-					<strong>Pseudo: </strong><?php echo $pseudo;?><br>
-					<strong>Nom: </strong><?php echo $surname;?><br>
-					<strong>Prénom: </strong><?php echo $firstname; ?><br>	
-					<strong>Mail: </strong><?php echo $mail; ?><br>
-					<strong>Région: </strong><?php echo $area_name; ?><br>
-					<strong>Humeur : </strong><?php echo $humor; ?><br>
+					<strong>Pseudo: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $_GET['pseudo'];
+							}
+							else
+							{
+								echo $pseudo;
+							}
+					?><br>
+					<strong>Nom: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_surname;
+							}
+							else
+							{
+								echo $surname;
+							}
+					?><br>
+					<strong>Prénom: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_firstname;
+							}
+							else
+							{
+								echo $firstname;
+							}
+					?><br>
+					<strong>Mail: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_mail;
+							}
+							else
+							{
+								echo $mail;
+							}
+					?><br>
+					<strong>Région: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_area_name;
+							}
+							else
+							{
+								echo $area_name;
+							}
+					?><br>
+					<strong>Humeur : </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_humor;
+							}
+							else
+							{
+								echo $humor;
+							}
+					?><br>
 					</div>
 				</td>
 			</tr>

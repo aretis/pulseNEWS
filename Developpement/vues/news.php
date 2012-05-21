@@ -1,36 +1,40 @@
-﻿<?php if(isset($_POST['pulse']))
-{
-	include('modeles/call_db.php');
-	
-	// Checking if entry is not a duplicate
-	
-	mysql_query("SET NAMES 'utf8'");
-	
-	$query = 'SELECT news_layout FROM news WHERE id_user='.$_SESSION['id_user'];
-	$result = call_db($query);
-		
-	$news_exists = 0;
-	
-	while($data = mysql_fetch_array($result))
-	{
-		if	(($data['news_layout']) == ($_POST['title']))
-		{	
-			$news_exists = 1;	
-		}
+﻿<?php
 
-	}
+	if(isset($_GET['disconnect'])) unset($_SESSION['pseudo']);
+	if(isset($_GET['delete_post'])) include('modeles/delete_post.php');
 	
-	if($news_exists == 0)
+	if(isset($_POST['pulse']))
 	{
-		$query='INSERT INTO news VALUES ("", "'.$_POST['title'].'", "'.$_POST['link'].'", "'.$_SESSION['id_user'].'", "'.$_POST['cat'].'", 0)';
+		// Checking if entry is not a duplicate
 		
-		if(!mysql_query($query) )
+		mysql_query("SET NAMES 'utf8'");
+		
+		$query = 'SELECT title FROM posts WHERE id_user='.$_SESSION['id_user'];
+		$result = call_db($query);
+			
+		$news_exists = 0;
+		
+		while($data = mysql_fetch_array($result))
 		{
-			echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
-			return;
+			if	(($data['title']) == ($_POST['title']))
+			{	
+				$news_exists = 1;	
+			}
+
+		}
+		
+		if($news_exists == 0)
+		{
+			$query='INSERT INTO posts VALUES ("", "'.$_SESSION['id_user'].'", "1", "'.$_POST['title'].'", "'.$_POST['link'].'", "", "'.$_POST['cat'].'", "0", NOW(), "0")';
+			
+			if(!mysql_query($query) )
+			{
+				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
+				return;
+			}
 		}
 	}
-}?>
+?>
 
 
 <div class='news_sort'>
@@ -49,7 +53,7 @@ if(isset($_POST['pulse']))
 		echo "<span style='color : red'> Vous avez déja pulsé cette news !</span>";}
 		
 	else if($news_exists == 0){
-		echo"<span style='color : red'>Votre news à bien été pulsé !</span>";}
+		echo"<span style='color : red'>Votre news à bien été pulsée !</span>";}
 }?>
 			<tr>
 				<td>
@@ -60,7 +64,7 @@ if(isset($_POST['pulse']))
 				<td style='background-color: #85c630;'>
 					<div class='block_content'>
 					<?php
-					$url= 'news.xml';
+					$url= 'politique.xml';
 					$cat = 'politique';
 					
 					echo RSS_display($cat, $url, 3);		
@@ -79,7 +83,7 @@ if(isset($_POST['pulse']))
 				<td style='background-color: #85c630;'>
 					<div class='block_content'>
 					<?php
-					$url= 'news.xml';
+					$url= 'economie.xml';
 					$cat = 'économie';
 					
 					echo RSS_display($cat, $url, 3);		
@@ -92,165 +96,120 @@ if(isset($_POST['pulse']))
 
 </td>
 <td>
-<table cellpadding='0' cellspacing='0' class='post_news' >
-<tr style='height: 32px;'>
-	<td rowspan='1'>
-	<div class='title_post'>
-		&nbsp;Nom du journal: Titre de l'article
-	</div>
-	</td>
+<?php
 
-	<td>
-		<div class='rate'>+128</div>
-	</td>
-</tr>
-<tr style='background-color: #85c630;'>
-	<td>
-		<div class='description'>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
-		</div>
-	</td>
+	include('modeles/view_all_articles.php');
+	
+	$req = view_all_article();
 
-
-
-	<td style='background-color: white;'>
-		<div class='date_news'>
-		Aujourd'hui à 9h15
-		</div>
+	while($data = mysql_fetch_array($req))
+	{
+		if( $data['type'] == 1)
+		{
+	
+			echo"		<table cellpadding='0' cellspacing='0' class='post_news' >";
+			echo"		<tr style='height: 32px;'>";
+			echo"		<td rowspan='1'>";
+			echo"		<div class='title_post'>";
+			if(isset($_SESSION['pseudo']))
+			{
+				if($data['pseudo'] == $_SESSION['pseudo'])
+				{
+					echo"<div class='delete_post'>";
+					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					else echo"<a href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					echo"</div>";
+				}
+			}
+			else
+			{
+				echo"		&nbsp;".$data['title'];
+			}
+			
+			echo"		</div></td><td>	<div class='rate'>";
+			if($data['rate'] > 0) echo" + ";
+			echo $data['rate'];
+			echo "</div></td></tr>";
+			echo"	<tr style='background-color: #85c630;'>";
+			echo"		<td>";
+			echo"		<div class='description_news'>";
+			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;lire l'article&nbsp;&nbsp;</a>";
+			echo"<span style='color:white'>&nbsp;&nbsp;Pulsé le ";
+			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+			echo"&nbsp;par ".$data['pseudo']."</div>";
+			echo"	</span></td>";
+			echo"<form action='index.php?page=profile' method='post'/>";
+			echo'</form>';
+		echo"	</td>";
+			echo"</tr>";
+			echo"<tr>";
+			
+			echo"	<td>";
+			echo"	<div class='debate'><form action='index.php?page=news' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
+			echo"	<div class='depulse'>&nbsp;";
+			echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+			echo"	<div class='propulse'>&nbsp;";
+			echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+			echo"</td>";
+			echo"</tr>";
+			
+			echo"</table>";
+		}		
 		
-	</td>
+		else if( $data['type'] == 0)
+		{
+			echo"<table cellpadding='0' cellspacing='0' class='post_news' >";
+			echo"<tr style='height: 32px;'>";
+				echo"<td rowspan='1'>";
+				echo"<div class='title_post'>";
+			if(isset($_SESSION['pseudo']))
+			{
+				if($data['pseudo'] == $_SESSION['pseudo'])
+				{
+					echo"<div class='delete_post'>";
+					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					else echo"<a href='index.php?page=news&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					echo"</div>";
+				}
+			}
+			else{
+			echo"		&nbsp;".$data['title'];}
+			echo"	</div>";
+			echo"	</td>";
 
-</tr>
-<tr>
-<td>
-	<a href=''><div class='comment_button'>débattre</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>DEpulse!</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>PROpulse!</div></a>
-</td>
-</tr>
-</table>
-<br>
-<table cellpadding='0' cellspacing='0' class='post_news' >
-<tr style='height: 32px;'>
-	<td rowspan='1'>
-	<div class='title_post'>
-		&nbsp;Nom du journal: Titre de l'article
-	</div>
-	</td>
-
-	<td>
-		<div class='rate'>+128</div>
-	</td>
-</tr>
-<tr style='background-color: #85c630;'>
-	<td>
-		<div class='description'>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
-		</div>
-	</td>
-
-
-
-	<td style='background-color: white;'>
-		<div class='date_news'>
-		Aujourd'hui à 9h15
-		</div>
+			echo"	<td>";
+			echo"		<div class='rate'>";
+			if($data['rate'] > 0) echo" + ";
+			echo $data['rate']."</div>";
+			echo"	</td>";
+			echo"</tr>";
+			echo"<tr style='background-color: #85c630;'>";
+			echo"	<td>";
+			echo"		<div class='description'>";
+			echo $data['description']; 
+			echo"		</div>";
+			echo"<span style='color:white'>&nbsp;&nbsp;Ecrit le ";
+			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+			echo"&nbsp;par ".$data['pseudo'];
+			echo"	</span></td>";
+			echo"	</td>";
+			echo"</tr>";
+			echo"<tr>";
+			echo"<td>";
+						echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
+						echo"	<div class='depulse'>&nbsp;";
+						echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+						echo"	<div class='propulse'>&nbsp;";
+						echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+			echo"</td>";
+			echo"</tr>";
+			echo"</table>";
+			echo"<br>";
+		}
 		
-	</td>
+	}
+?>
 
-</tr>
-<tr>
-<td>
-	<a href=''><div class='comment_button'>débattre</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>DEpulse!</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>PROpulse!</div></a>
-</td>
-</tr>
-</table>
-<br>
-<table cellpadding='0' cellspacing='0' class='post_news' >
-<tr style='height: 32px;'>
-	<td rowspan='1'>
-	<div class='title_post'>
-		&nbsp;Nom du journal: Titre de l'article
-	</div>
-	</td>
-
-	<td>
-		<div class='rate'>+128</div>
-	</td>
-</tr>
-<tr style='background-color: #85c630;'>
-	<td>
-		<div class='description'>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
-		</div>
-	</td>
-
-
-
-	<td style='background-color: white;'>
-		<div class='date_news'>
-		Aujourd'hui à 9h15
-		</div>
-		
-	</td>
-
-</tr>
-<tr>
-<td>
-	<a href=''><div class='comment_button'>débattre</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>DEpulse!</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>PROpulse!</div></a>
-</td>
-</tr>
-</table>
-<br>
-<table cellpadding='0' cellspacing='0' class='post_news' >
-<tr style='height: 32px;'>
-	<td rowspan='1'>
-	<div class='title_post'>
-		&nbsp;Nom du journal: Titre de l'article
-	</div>
-	</td>
-
-	<td>
-		<div class='rate'>+128</div>
-	</td>
-</tr>
-<tr style='background-color: #85c630;'>
-	<td>
-		<div class='description'>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
-		</div>
-	</td>
-
-
-
-	<td style='background-color: white;'>
-		<div class='date_news'>
-		Aujourd'hui à 9h15
-		</div>
-		
-	</td>
-
-</tr>
-<tr>
-<td>
-	<a href=''><div class='comment_button'>débattre</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>DEpulse!</div></a>
-	<div style='float: right; width: 5%px;'>&nbsp;</div>
-	<a href=''><div class='rate_button'>PROpulse!</div></a>
-</td>
-</tr>
-</table>
 </td>
 <td>
 	<table cellpadding='0' cellspacing='0' class='rss_block'>
@@ -268,7 +227,7 @@ if(isset($_POST['pulse']))
 				<td style='background-color: #85c630;'>
 					<div class='block_content_right'>
 					<?php
-					$url= 'news.xml';
+					$url= 'sport.xml';
 					$cat = 'sport';
 					
 					echo RSS_display($cat, $url, 3);		
@@ -292,7 +251,7 @@ if(isset($_POST['pulse']))
 					<div class='block_content_right'>	
 					
 					<?php
-					$url= 'news.xml';
+					$url= 'ecologie.xml';
 					$cat = 'écologie';
 					
 					echo RSS_display($cat, $url, 3);		

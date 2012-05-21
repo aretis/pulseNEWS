@@ -15,7 +15,7 @@
 		
 		mysql_query("SET NAMES 'utf8'");
 		
-		$query='INSERT INTO comments VALUES ("", '.$id_user.', '.$id_post.', "", "'.$content.'", NOW())';
+		$query='INSERT INTO comments VALUES ("", '.$id_user.', '.$id_post.', "'.$content.'", NOW())';
 		
 		if(!mysql_query($query) )
 		{

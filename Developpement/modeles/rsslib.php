@@ -175,7 +175,7 @@ function RSS_Display($cat, $url, $size = 15, $site = 0)
 		<input type='hidden' name='link' value='$link'/>
 		<input type='hidden' name='cat' value='$cat'/>
 		<input class='pulse_button' type='submit' value='p!' name='pulse'/>
-		<br><br><form>";
+		<br><br></form>";
 
 //	if($description != false)
 	//	{

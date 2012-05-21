@@ -1,20 +1,22 @@
 <?php
 
-include('save_comment.php');
+	include('save_comment.php');
+	save_comment($id_post, $id_user, $content);
+	$id_post=2;
+	$id_user=2;
+	$content ="OUAIIIII TROP LOL QUOI";
 
-$id_post=1;
-$id_user=1;
-$content ="OUAIIIII TROP LOL QUOI";
-
-save_comment($id_post, $id_user, $content)
-
-	$query = 'SELECT area_name FROM AREAS';
+	
+	ec
+	$query = "SELECT content, post_date, pseudo  FROM comments NATURAL JOIN USERS";
 	include('call_db.php');
 	$result = call_db($query);
 
-	while($donnees = mysql_fetch_array($result))
+	while($data = mysql_fetch_array($result))
 	{
-		echo'<option>'.$donnees['area_name'].'</option>';
+		echo $data['content'];
+		echo $data['post_date'];
+		echo $data['pseudo'];
 	}
 
 ?>		
