@@ -120,13 +120,18 @@ if(isset($_POST['pulse']))
 					else echo"<a href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
 					echo"</div>";
 				}
+				else
+				{
+					echo"		&nbsp;".$data['title'];
+				}
+				
 			}
 			else
 			{
 				echo"		&nbsp;".$data['title'];
 			}
-			
-			echo"		</div></td><td>	<div class='rate'>";
+			echo"</div>";
+			echo"		</td><td>	<div class='rate'>";
 			if($data['rate'] > 0) echo" + ";
 			echo $data['rate'];
 			echo "</div></td></tr>";
@@ -170,6 +175,10 @@ if(isset($_POST['pulse']))
 					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
 					else echo"<a href='index.php?page=news&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
 					echo"</div>";
+				}
+				else
+				{
+					echo"		&nbsp;".$data['title'];
 				}
 			}
 			else{

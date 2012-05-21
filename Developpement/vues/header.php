@@ -36,6 +36,7 @@
 						}
 					?>
 					<div class='header_menu'>
+						<a href='index.php?page=newsfeed'>pulse !</a>&nbsp;&nbsp;
 						<a href='index.php?page=list_users'>les pulseurs</a>&nbsp;&nbsp;
 						<a href='index.php?page=news'>fil d'actualités</a>&nbsp;&nbsp;
 						<a href='index.php?page=debate'>débat du jour</a>&nbsp;&nbsp;

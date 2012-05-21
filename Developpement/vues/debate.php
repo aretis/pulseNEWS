@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 
 	include('modeles/call_db.php');
 	if(isset($_GET['delete_post'])) 
@@ -16,7 +16,7 @@
 	{
 		if(empty($_POST['title']))
 		{
-			echo'Le champ "Nom du thème" est vide !';
+			echo'Le champ "Nom du thÃ¨me" est vide !';
 		}
 		else if(empty($_POST['content']))
 		{
@@ -24,13 +24,15 @@
 		}
 		else
 		{
+			mysql_query("SET NAMES 'utf8'");
+		
 			$query="INSERT INTO posts VALUES(' ',".$_SESSION['id_user'].", 2, '".$_POST['title']."', '', '".$_POST['content']."', ' ', ' ', NOW(), ' ')";
 			if(!mysql_query($query) )
 			{
-				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
+				echo "La requÃªte n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
 				return;
 			}
-			echo"Votre suggestion à bien été prise en compte !";
+			echo"Votre suggestion Ã  bien Ã©tÃ© prise en compte !";
 		}
 	}
 ?>
@@ -44,12 +46,12 @@
 
 	<div class="presentation">
 		
-		Bienvenue sur la page débat du jour !<br><br>
+		Bienvenue sur la page dÃ©bat du jour !<br><br>
 		
-		Sur cette page c'est VOUS qui choisissez le thème du débat qui aura 
-		lieu chaque jour à partir de 20 h ! Pendant la journée vous 
-		pouvez nous suggérer des thèmes pour le débat ou voter pour votre
-		thème préféré dans la liste en dessous !
+		Sur cette page c'est VOUS qui choisissez le thÃ¨me du dÃ©bat qui aura 
+		lieu chaque jour Ã  partir de 20 h ! Pendant la journÃ©e vous 
+		pouvez nous suggÃ©rer des thÃ¨mes pour le dÃ©bat ou voter pour votre
+		thÃ¨me prÃ©fÃ©rÃ© dans la liste en dessous !
 	
 	</div>
 	
@@ -58,7 +60,7 @@
 	
 		<div id="menu">
 			
-			<dl><div class='lol'> Suggérer un thème ! </div>
+			<dl><div class='lol'> SuggÃ©rer un thÃ¨me ! </div>
 			<dt></dt>
 				<dd>
 					<ul>
@@ -66,13 +68,13 @@
 					<br>
 					<form action="index.php?page=debate" method="POST" autocomplete="off">
 					
-						Nom du thème :<br>
+						Nom du thÃ¨me :<br>
 						<input type="text" size="100" name="title">
 						<br><br>
 						Description :<br>
 						<textarea name="content" cols="50" rows="7"> </textarea> 
 						<br><br>
-						<input name="suggest" type="submit" value="Suggérer !">
+						<input name="suggest" type="submit" value="SuggÃ©rer !">
 					</form>
 					<ul> </ul>
 					</ul>
@@ -122,8 +124,8 @@
 			echo"		<div class='description'>";
 			echo $data['content']; 
 			echo"		</div>";
-			echo"<span style='color:white'>&nbsp;&nbsp;Suggérer le ";
-			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+			echo"<span style='color:white'>&nbsp;&nbsp;SuggÃ©rÃ© le ";
+			echo date("d/m/Y Ã  H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par ".$data['pseudo'];
 			echo"	</span></td>";
 
