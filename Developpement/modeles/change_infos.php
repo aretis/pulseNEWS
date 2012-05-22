@@ -7,11 +7,11 @@ $link = mysql_connect("localhost","root","")
 mysql_select_db("pulsenews")
 	or die("Base de données inaccessible.".mysql_error());
 
-
+$id_user = $_SESSION['id_user'];
 
 if(isset($_POST['about_me'])) 
 {
-	$id_user = $_SESSION['id'];
+	
 	
 	$query = 'UPDATE users SET about = "'.$_POST['about_me'].'" WHERE id_user = '.$id_user;
 

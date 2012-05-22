@@ -65,6 +65,7 @@
 ?>
 <div class='profile_ban'>
 	<img src='design/img/ban_exemple.png'/>
+	<div class='humor'>"<?php echo $humor; ?>"</div>
 </div>
 <table style='margin: auto; text-align: center;' cellpadding='0' cellspacing='0'>
 <td>
