@@ -402,3 +402,12 @@ select:active, select:focus {
     top: -43px;
 	z-index:0;
 }
+.humor
+{
+	text-shadow: 1px 1px 5px black;
+	margin-top: -30px;
+	font-family: 'coolvetica_rg';
+	font-size: 18px;
+	background-color: #85C630;
+	color: white;
+}

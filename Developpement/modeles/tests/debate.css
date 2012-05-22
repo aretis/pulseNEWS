@@ -1,0 +1,58 @@
+.post_debates
+{
+	border-radius: 5px 5px 5px 5px;
+	width: 70%;
+	margin: auto;
+}
+
+.comment_debates
+{
+	border-radius: 5px 5px 5px 5px;
+	height: 81px;
+    left: 4%;
+    position: relative;
+    top:33px;
+    width: 30%;
+
+}
+.date_comments
+{
+	margin-top: -19px;
+	background-color: #85c630;
+	color: white;
+	font-size: 10px;
+	height: 60%;
+}
+
+.title_comment
+ {
+    background-color: #85C630;
+    color: white;
+    font-family: 'coolvetica_rg';
+    font-size: 28px;
+    width: 881%;
+}
+
+.user_picture
+{
+background-color: white;
+	
+	
+
+	
+	border-color:#85c630;
+	border-width:6;
+	border-style:solid;
+	background-color: white;
+	font-size: 12px;
+}
+
+.description_comment {
+
+    background-color: white;
+    border-color: #85C630;
+    border-style: solid;
+    border-width: 6px;
+    font-size: 11px;
+}
+

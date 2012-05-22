@@ -49,6 +49,7 @@
 	<img source= 'moi.jpg'>
 <td>
 <?php
+$_SESSION['pseudo']='Christie';
 include ("transfert.php");
 if ( isset($_FILES['fichier']) )
 {

@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 	/* Delete a post
 		20/02/2012
 		Salman ALAMDAR */
@@ -9,10 +9,10 @@
 
 	if(!mysql_query($query) )
 	{
-		echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
+		echo "La requÃªte n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
 		return;
 	}
 	
-	echo"Votre post à bien été supprimé !";
+	echo"Votre post Ã  bien Ã©tÃ© supprimÃ© !";
 
 ?>
