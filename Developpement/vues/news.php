@@ -35,8 +35,38 @@
 		}
 	}
 ?>
-
-
+	<SELECT id='name' select='selected' name='type'>
+		<option>Type de news</option>
+		<option>News rédigé</option>
+		<option>News pulsé</option>
+	</SELECT>
+	<SELECT id='name' select='selected' name='areaname'>
+		<option>région</option>
+		<?php
+			$query = 'SELECT area_name FROM AREAS';
+			$result = call_db($query);
+			
+			while($donnees = mysql_fetch_array($result))
+			{
+				echo'<option>'.$donnees['area_name'].'</option>';
+			}
+		
+		?>
+	</SELECT>
+	<SELECT id='name' select='selected' name='cat'>
+		<option>Catégorie</option>
+		<?php
+			$query = 'SELECT cat_name FROM news_cat';
+			$result = call_db($query);
+			
+			while($data = mysql_fetch_array($result))
+			{
+				echo'<option>'.$data['cat_name'].'</option>';
+			}
+		
+		?>
+	</SELECT>
+<hr>
 <div class='news_sort'>
 TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;économie&nbsp;&nbsp;sport&nbsp;&nbsp;culture&nbsp;&nbsp;faits divers
 </div>
