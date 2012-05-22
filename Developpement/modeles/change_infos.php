@@ -8,7 +8,7 @@ mysql_select_db("pulsenews")
 	or die("Base de données inaccessible.".mysql_error());
 
 $id_user = $_SESSION['id_user'];
-
+	mysql_query("SET NAMES 'utf8'");
 if(isset($_POST['about_me'])) 
 {
 	
