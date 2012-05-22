@@ -35,7 +35,6 @@
 		}
 	}
 ?>
-
 <div class='news_sort'>
 TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;économie&nbsp;&nbsp;sport&nbsp;&nbsp;culture&nbsp;&nbsp;faits divers
 </div>
