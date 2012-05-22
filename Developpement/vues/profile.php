@@ -34,15 +34,15 @@
 		if(isset($_SESSION['pseudo'])){
 		$pseudo = $_SESSION['pseudo'];
 		$req = mysql_query("SELECT * FROM users WHERE pseudo='".$pseudo."'");
-		$req2 = mysql_fetch_row($req);
-		$pseudo = $req2[1];
-		$key = $req2[0];
-		$surname = $req2[3];
-		$mail = $req2[5];
-		$area_name = $req2[8];
-		$firstname = $req2[4];
-		$about = $req2[6];
-		$humor = $req[7];
+		$req2 = mysql_fetch_assoc($req);
+		$pseudo = $req2['pseudo'];
+		$id_user = $req2['id_user'];
+		$surname = $req2['surname'];
+		$mail = $req2['mail'];
+		$area_name = $req2['area_name'];
+		$firstname = $req2['firstname'];
+		$about = $req2['about'];
+		$humor = $req2['humor'];
 		}
 		/*print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about);*/
 ?>
