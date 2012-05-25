@@ -31,6 +31,7 @@
 	</div>
 	</td>
 </tr>
+<form action='index.php?page=change_info' method='post' enctype="multipart/form-data"><input type='file' name='profile_picture' size='10'/><input type='submit' value='upload!'/></form>
 <tr style='background-color: #85c630;'>
 	<td>
 		<div class='change_about_me'>

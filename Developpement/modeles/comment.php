@@ -6,8 +6,7 @@
 	*/
 	
 	if(isset($_GET['pseudo'])) echo"<form action='index.php?page=profile&pseudo=".$_GET['pseudo']."' method='post'/>";
-	else echo"<form action='index.php?page=profile method='post'/>";
-	
+	else echo"<form action='index.php?page=profile' method='post'/>";
 	echo"<br>";
 	echo"&nbsp;&nbsp;<input type='text' name='comment' placeholder='Commenter...' size='77%'>";
 	echo"<input type='hidden' name='id_news' value='".$id."' />";
@@ -18,6 +17,16 @@
 
 	while($data = mysql_fetch_array($result))
 	{
+			if(isset($_SESSION['pseudo']))
+		{
+			if($data['pseudo'] == $_SESSION['pseudo'])
+			{
+				echo"<div class='delete'>";
+				if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment=".$data['id_comment']."'>X</a>";
+				else echo"<a href='index.php?page=profile&delete_comment=".$data['id_comment']."'>X</a>";
+				echo"</div>";
+			}
+		}
 		echo"<span style='font-size:22px; color:white; font-weight:bold;'>";
 		echo "&nbsp;&nbsp;".$data['pseudo']; 
 		echo": <br>";
@@ -31,16 +40,7 @@
 		echo"<br>&nbsp;&nbsp;Ecrit le ";
 		echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 		
-		if(isset($_SESSION['pseudo']))
-		{
-			if($data['pseudo'] == $_SESSION['pseudo'])
-			{
-				echo"<div class='delete'>";
-				if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment=".$data['id_comment']."'>X</a>";
-				else echo"<a href='index.php?page=profile&delete_comment=".$data['id_comment']."'>X</a>";
-				echo"</div>";
-			}
-		}
+
 		echo"<br><HR></span>";
 	}
 ?>

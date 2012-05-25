@@ -30,7 +30,9 @@ a {
     font-size: 22px;
 }
 .header_menu a {
-    -moz-transition: all 0.1s ease-in 0s;
+    -webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
     color: white;
 }
 .header_menu a:hover {

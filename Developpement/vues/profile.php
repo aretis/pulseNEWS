@@ -54,6 +54,7 @@
 			
 		while($data = mysql_fetch_array($result))
 		{
+			$id_user = $data['id_user'];
 			$visit_surname = $data['surname'];
 			$visit_firstname = $data['firstname'];
 			$visit_mail = $data['mail'];
@@ -61,6 +62,10 @@
 			$visit_area_name = $data['area_name'];
 			$visit_about = $data['about'];
 		}
+	}
+	else
+	{
+		$id_user = $_SESSION['id_user'];
 	}
 ?>
 <div class='profile_ban'>
@@ -109,7 +114,29 @@ if(!isset($_GET['pseudo']))
 			
 			<tr>
 				<td>
-					<img src='design/img/exemple_profile.jpg'/>
+				
+				<?php
+				
+			$request = "SELECT profile_picture FROM users WHERE id_user = ".$id_user;
+
+			$sucess = mysql_query ($request) or die (mysql_error ());
+			$col = mysql_fetch_assoc($sucess);
+			if($col === false )
+			{
+				echo"<img src='design/img/exemple_profile.jpg'/>";
+			}
+			else
+			{
+				$image = imagecreatefromstring($col['profile_picture']);
+				ob_start(); //You could also just output the $image via header() and bypass this buffer capture.
+				imagejpeg($image, null, 80);
+				$data = ob_get_contents();
+				ob_end_clean();
+				echo '<br><img src="data:image/jpg;base64,' .  base64_encode($data)  . '" /><br>';
+			}
+				
+				?>
+					
 				</td>
 			</tr>
 

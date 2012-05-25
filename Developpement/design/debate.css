@@ -5,7 +5,6 @@
     color: white;
     font-family: "coolvetica_rg";
     font-size: 25px;
-
     margin: auto;
     padding: 1px;
     text-align: center;
@@ -39,7 +38,6 @@ input[type="submit"]:hover {
     z-index: 1;
 }
 dl {
-    -moz-transition: all 1s ease 0s;
     background-color: #85C630;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 10px 10px 8px #417324;
@@ -54,7 +52,6 @@ dl {
     z-index: -17;
 }
 dt {
-    -moz-transition: all 1s ease 0s;
     background-color: #85C630;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 10px 10px 8px #417324;
@@ -66,7 +63,6 @@ dt {
     width: 838px;
 }
 dd {
-    -moz-transition: all 1s ease 0s;
     background-color: #85C630;
     display: inline-block;
     margin: 0;
@@ -74,14 +70,12 @@ dd {
     text-align: center;
 }
 dd ul {
-    -moz-transition: all 1s ease 0s;
     list-style: none outside none;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 dd ul li {
-    -moz-transition: all 1s ease 0s;
     background-color: red;
     display: block;
     margin: 0;
@@ -101,7 +95,6 @@ dd ul li a {
     width: 265px;
 }
 dd ul li a:hover {
-    -moz-transition: all 1s ease 0s;
     background-color: red;
     color: red;
     text-align: center;
@@ -111,7 +104,6 @@ dl dd {
     text-align: center;
 }
 dl:hover dd {
-    -moz-transition: all 1s ease 0s;
     cursor: pointer;
     display: block;
     text-align: center;

@@ -2,6 +2,10 @@
 
 	while($data = mysql_fetch_array($req))
 	{
+		if( isset($pseudo))
+			{
+				$data['pseudo'] = $pseudo;
+			}
 		$content = $data['content'];
 		$id = $id_post = $data['id_post'];
 		
@@ -40,6 +44,8 @@
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;&nbsp;lire l'article&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;";
 			echo "pulsé le :";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+			
+			echo $pseudo;
 			echo "par ".$data['pseudo']." !</div>";
 			include('modeles/comment.php');
 			
@@ -132,11 +138,13 @@
 			echo"<span style='color:white'>&nbsp;&nbsp;Ecrit le";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par ".$data['pseudo'];
-			echo"	</span></td>";
 			include('modeles/comment.php');
-			
+			echo"	</span></td>";			
 			echo"	</td>";
 			echo"</tr>";
+			echo"<tr><td>";
+			
+			echo"</tr></td>";
 			echo"<tr>";
 			echo"<td>";
 			echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";

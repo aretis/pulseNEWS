@@ -5,23 +5,28 @@ include ('/../modeles/call_db.php');
 	$connect = mysql_connect("localhost","root","")
 		or die("Connexion impossible : ".mysql_error());
 		
-		mysql_select_db("pulsenews");?>
-		<?php if(isset($_POST['about_me'])) 
+		mysql_select_db("pulsenews");
+		mysql_query("SET NAMES 'utf8'");
+		$id_user = $_SESSION['id_user'];
+		if (isset( $_FILES['profile_picture']['tmp_name']))
+		{
+			update_profile_picture($id_user);
+		}
+if(isset($_POST['about_me'])) 
 {
-$id_user = $_SESSION['id_user'];
 	echo " Vos informations ont bien été modifiés !";
 	$query = 'UPDATE users SET about = "'.$_POST['about_me'].'" WHERE id_user = '.$id_user;
 	if ( !mysql_query($query)) echo"La requete n'a pas aboutie";
-}?>
-<?php if(isset($_POST['humeur'])) 
+}
+if(isset($_POST['humeur'])) 
 {
-$id_user = $_SESSION['id_user'];
-echo $_POST['humeur'];
+	echo $_POST['humeur'];
 	echo " Vos informations ont bien été modifiés !";
 	$query = 'UPDATE users SET humor = "'.$_POST['humeur'].'" WHERE id_user = '.$id_user;
 	if ( !mysql_query($query)) echo"La requete n'a pas aboutie";
-}?>
-<?php
+}
+
+
 		mysql_query("SET NAMES 'utf8'");
 		$pseudo = $_SESSION['pseudo'];
 		$req = mysql_query("SELECT * FROM users WHERE pseudo='$pseudo'");
