@@ -143,6 +143,7 @@ a {
     font-size: 24px;
     text-align: right;
     vertical-align: top;
+	border: 2px solid #003e40;
 }
 .block_content_right {
     background-color: white;
@@ -152,6 +153,7 @@ a {
     box-shadow: 5px 5px 3px #003e40;
     font-size: 14px;
     vertical-align: top;
+	border: 2px solid #003e40;
 }
 .pulse_button_right {
     background-color: #85C630;
@@ -160,6 +162,7 @@ a {
     font-family: 'coolvetica_rg';
     font-size: 14px;
     width: 35px;
+	border: 2px solid #003e40;
 }
 .rate_button {
     background-color: #85C630;
@@ -170,6 +173,7 @@ a {
     margin-top: -5px;
     text-align: center;
     width: 100px;
+	border: 2px solid #003e40;
 }
 .rate_button:hover {
     color: #FFFD55;
