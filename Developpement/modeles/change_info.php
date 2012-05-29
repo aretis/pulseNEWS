@@ -8,6 +8,10 @@ include ('/../modeles/call_db.php');
 		mysql_select_db("pulsenews");
 		mysql_query("SET NAMES 'utf8'");
 		$id_user = $_SESSION['id_user'];
+		if (isset( $_FILES['cover_picture']['tmp_name']))
+		{
+			update_cover_picture($id_user);
+		}
 		if (isset( $_FILES['profile_picture']['tmp_name']))
 		{
 			update_profile_picture($id_user);
