@@ -415,3 +415,29 @@ select:active, select:focus {
 	background-color: black;
 	color: white;
 }
+.tri
+{
+	width:37%;
+	margin:auto;
+}
+.tri2
+{
+	width:37%;
+	margin:auto;
+}
+.shorti
+{
+	width:100px;
+	margin:auto;
+	color:white;
+	font-size:26px;
+	font-family:coolvetica_rg;
+}
+#area
+{
+	display:none;
+}
+#cat
+{
+	display:none;
+}

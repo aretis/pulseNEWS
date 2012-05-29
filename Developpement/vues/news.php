@@ -1,4 +1,22 @@
-﻿<?php
+﻿
+<SCRIPT text='JAVASCRIPT'>
+
+function change(num) 
+{
+	if(num == 1)
+	{
+		
+		document.getElementById("area").style.display = "inline";
+	}
+	else if(num == 2)
+	{
+		document.getElementById("cat").style.display = "inline";
+	}
+}
+
+</Script>
+<?php
+
 
 	if(isset($_GET['disconnect'])) unset($_SESSION['pseudo']);
 	if(isset($_GET['delete_post'])) include('modeles/delete_post.php');
@@ -35,8 +53,61 @@
 		}
 	}
 ?>
+<div class='tri'>
+	<div class='shorti'>Trier par : </div>
+	<br>
+	
+	<SELECT name='type' select='selected'>
+		<option value='0'>Date</option>
+		<option value='1'>Les plus récentes</option>
+		<option value='2'>Les moins récentes</option>
+	</SELECT>
+
+	<SELECT onchange='change(this.selectedIndex)'>
+		<option>Type de News</option>
+		<option>News rédigé</option>
+		<option>News pulsé</option>
+	</SELECT>
+
+	<SELECT id='area' name='area' select='selected'>
+	<option>Région</option>
+		<?php
+
+			$query = 'SELECT area_name FROM AREAS';
+			$result = call_db($query);
+
+			while($donnees = mysql_fetch_array($result))
+			{
+				echo'<option>'.$donnees['area_name'].'</option>';
+			}
+
+			mysql_free_result($result);
+			mysql_close($link);
+		?>
+	</SELECT>
 
 
+	<SELECT id='cat' name='cat' select='selected'>
+	<option>Catégorie</option>
+		<?php
+
+			$query = 'SELECT cat_name FROM news_cat';
+			$result = call_db($query);
+
+			while($donnees = mysql_fetch_array($result))
+			{
+				echo'<option>'.$donnees['cat_name'].'</option>';
+			}
+
+			mysql_free_result($result);
+			mysql_close($link);
+		?>
+	</SELECT>
+
+	<input type='submit' value='trier' />
+	<br><br><hr>
+
+</div>
 <div class='news_sort'>
 TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;économie&nbsp;&nbsp;sport&nbsp;&nbsp;culture&nbsp;&nbsp;faits divers
 </div>

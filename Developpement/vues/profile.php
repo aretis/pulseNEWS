@@ -106,6 +106,7 @@ echo"<td>
 </td>
 <td>
 <div class='profile_name'>&nbsp;
+
 <?php 
 if(isset($_GET['pseudo']))
 {
@@ -135,7 +136,7 @@ if(!isset($_GET['pseudo']))
 			<tr>
 				<td>
 				
-				<?php
+				<?php/*
 				
 			$request = "SELECT profile_picture FROM users WHERE id_user = ".$id_user;
 
@@ -155,7 +156,7 @@ if(!isset($_GET['pseudo']))
 				echo '<img src="data:image/jpg;base64,' .  base64_encode($data)  . '" />';
 			}
 				
-				?>
+			*/	?>
 					
 				</td>
 			</tr>
