@@ -62,6 +62,7 @@ a {
     font-family: 'coolvetica_rg';
     font-size: 20px;
     width: 100%;
+	border: 2px solid #003e40;
 }
 .rate {
     background-color: #85C630;
@@ -71,6 +72,7 @@ a {
     font-size: 22px;
     height: 100%;
     width: 30px;
+	border: 2px solid #003e40;
 }
 .description {
     background-color: white;
@@ -80,6 +82,7 @@ a {
     box-shadow: 5px 5px 3px #003e40;
     font-size: 14px;
     margin-top: -5px;
+	border: 2px solid #003e40;
 }
 .description_news {
     background-color: #50B326;
@@ -90,6 +93,7 @@ a {
     font-family: 'coolvetica_rg';
     font-size: 18px;
     margin-top: -5px;
+	border: 2px solid #003e40;
 }
 .date_news {
     background-color: #85C630;
@@ -111,6 +115,7 @@ a {
     font-size: 24px;
     vertical-align: top;
     width: 120px;
+	border: 2px solid #003e40;
 }
 .block_content {
     background-color: white;
@@ -120,6 +125,7 @@ a {
     box-shadow: 5px 5px 3px #003e40;
     font-size: 14px;
     vertical-align: top;
+	border: 2px solid #003e40;
 }
 .pulse_button {
     background-color: #85C630;
@@ -128,6 +134,7 @@ a {
     font-family: 'coolvetica_rg';
     font-size: 14px;
     width: 35px;
+	border: 2px solid #003e40;
 }
 .block_title_right {
     background-color: #85C630;
@@ -198,6 +205,7 @@ a {
     height: 200px;
     margin: auto;
     width: 900px;
+	border: 2px solid #003e40;
 }
 .profile_ban img {
     height: 200px;
@@ -210,6 +218,7 @@ a {
     font-family: 'coolvetica_rg';
     font-size: 24px;
     margin-top: -14px;
+	border: 2px solid #003e40;
 }
 .profile_button_right {
     background-color: #85C630;
@@ -218,6 +227,7 @@ a {
     font-family: 'coolvetica_rg';
     font-size: 24px;
     margin-top: -14px;
+	border: 2px solid #003e40;
 }
 .profile_name {
     background-color: #85C630;
@@ -226,6 +236,7 @@ a {
     font-family: 'coolvetica_rg';
     font-size: 28px;
     margin: -10px auto auto;
+	border: 2px solid #003e40;
 }
 .block_title_about {
     background-color: #85C630;
@@ -351,6 +362,7 @@ select:active, select:focus {
     margin-left: 60%;
     padding: 2px 0;
     text-decoration: none;
+	border: 2px solid #003e40;
 }
 .depulse input[type="submit"]:hover, a.submit:hover, .propulse input[type="submit"]:hover, a.submit:hover, .debate input[type="submit"]:hover, a.submit:hover {
     color: #FFFD55;
