@@ -27,6 +27,7 @@
 				echo"</div>";
 			}
 		}
+		echo"<div class='comment_post'>";
 		echo"<span style='font-size:22px; color:white; font-weight:bold;'>";
 		echo "&nbsp;&nbsp;".$data['pseudo']; 
 		echo": <br>";
@@ -39,8 +40,8 @@
 		echo"<span style='font-size:10px; color:white;'>";
 		echo"<br>&nbsp;&nbsp;Ecrit le ";
 		echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-		
+		echo"</div>";
 
-		echo"<br><HR></span>";
+		echo"</span>";
 	}
 ?>

@@ -3,7 +3,7 @@
     src: url("fonts/coolvetica_rg.ttf") format("truetype");
 }
 body {
-    background-color: #D0E2FF;
+    background-color: #8fcaff;
     font-family: 'Calibri';
 }
 a {
@@ -11,7 +11,7 @@ a {
 }
 .header {
     background-color: #85C630;
-    box-shadow: 10px 10px 8px #417324;
+    box-shadow: 10px 10px 8px #003e40;
     left: 0;
     position: fixed;
     top: 0;
@@ -40,7 +40,7 @@ a {
 }
 .news_sort {
     background-color: #85C630;
-    box-shadow: 10px 10px 8px #417324;
+    box-shadow: 10px 10px 8px #003e40;
     color: white;
     font-family: 'coolvetica_rg';
     font-size: 18px;
@@ -62,24 +62,27 @@ a {
     font-family: 'coolvetica_rg';
     font-size: 20px;
     width: 100%;
+	border: 2px solid #003e40;
 }
 .rate {
-    background-color: #85C630;
-    box-shadow: 5px 5px 3px #417324;
+    background-color: #62a708;
+    box-shadow: 5px 5px 3px #003e40;
     color: white;
     font-family: 'coolvetica_rg';
     font-size: 22px;
     height: 100%;
     width: 30px;
+	border: 2px solid #003e40;
 }
 .description {
     background-color: white;
     border-color: #85C630;
     border-style: solid;
     border-width: 6px;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     font-size: 14px;
     margin-top: -5px;
+	border: 2px solid #003e40;
 }
 .description_news {
     background-color: #50B326;
@@ -90,10 +93,11 @@ a {
     font-family: 'coolvetica_rg';
     font-size: 18px;
     margin-top: -5px;
+	border: 2px solid #003e40;
 }
 .date_news {
     background-color: #85C630;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     color: white;
     font-size: 10px;
     height: 100%;
@@ -105,21 +109,23 @@ a {
 }
 .block_title {
     background-color: #85C630;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     color: white;
     font-family: 'coolvetica_rg';
     font-size: 24px;
     vertical-align: top;
     width: 120px;
+	border: 2px solid #003e40;
 }
 .block_content {
     background-color: white;
     border-color: #85C630;
     border-style: solid;
     border-width: 6px;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     font-size: 14px;
     vertical-align: top;
+	border: 2px solid #003e40;
 }
 .pulse_button {
     background-color: #85C630;
@@ -128,6 +134,7 @@ a {
     font-family: 'coolvetica_rg';
     font-size: 14px;
     width: 35px;
+	border: 2px solid #003e40;
 }
 .block_title_right {
     background-color: #85C630;
@@ -136,15 +143,17 @@ a {
     font-size: 24px;
     text-align: right;
     vertical-align: top;
+	border: 2px solid #003e40;
 }
 .block_content_right {
     background-color: white;
     border-color: #85C630;
     border-style: solid;
     border-width: 6px;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     font-size: 14px;
     vertical-align: top;
+	border: 2px solid #003e40;
 }
 .pulse_button_right {
     background-color: #85C630;
@@ -153,6 +162,7 @@ a {
     font-family: 'coolvetica_rg';
     font-size: 14px;
     width: 35px;
+	border: 2px solid #003e40;
 }
 .rate_button {
     background-color: #85C630;
@@ -163,6 +173,7 @@ a {
     margin-top: -5px;
     text-align: center;
     width: 100px;
+	border: 2px solid #003e40;
 }
 .rate_button:hover {
     color: #FFFD55;
@@ -170,7 +181,7 @@ a {
 }
 .comment_button {
     background-color: #85C630;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     color: white;
     float: right;
     font-family: 'coolvetica_rg';
@@ -194,10 +205,11 @@ a {
     border-color: #85C630;
     border-style: solid;
     border-width: 12px;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     height: 200px;
     margin: auto;
     width: 900px;
+	border: 2px solid #003e40;
 }
 .profile_ban img {
     height: 200px;
@@ -205,35 +217,39 @@ a {
 }
 .profile_button_left {
     background-color: #85C630;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     color: white;
     font-family: 'coolvetica_rg';
     font-size: 24px;
     margin-top: -14px;
+	border: 2px solid #003e40;
 }
 .profile_button_right {
     background-color: #85C630;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     color: white;
     font-family: 'coolvetica_rg';
     font-size: 24px;
     margin-top: -14px;
+	border: 2px solid #003e40;
 }
 .profile_name {
     background-color: #85C630;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     color: white;
     font-family: 'coolvetica_rg';
     font-size: 28px;
     margin: -10px auto auto;
+	border: 2px solid #003e40;
 }
 .block_title_about {
     background-color: #85C630;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     color: white;
     font-family: 'coolvetica_rg';
     font-size: 24px;
     width: 200px;
+	border: 2px solid black;
 }
 .about_block {
     float: left;
@@ -244,7 +260,7 @@ a {
     border-color: #85C630;
     border-style: solid;
     border-width: 8px;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     height: 100px;
 }
 .profile_block {
@@ -263,16 +279,17 @@ a {
     border-color: #85C630;
     border-style: solid;
     border-width: 10px;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     font-size: 16px;
     margin-top: -5px;
     vertical-align: top;
+	border: 2px solid black;
 }
 .article_content img {
     border-color: #85C630;
     border-style: solid;
     border-width: 8px;
-    box-shadow: 3px 3px 2px #417324;
+    box-shadow: 3px 3px 2px #003e40;
     display: block;
     height: 200px;
     margin: auto;
@@ -281,13 +298,13 @@ a {
     border-color: #85C630;
     border-style: solid;
     border-width: 8px;
-    box-shadow: 3px 3px 2px #417324;
+    box-shadow: 3px 3px 2px #003e40;
     display: block;
     margin: auto;
 }
 .create_article {
     background-color: #85C630;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     margin: auto;
     width: 50%;
 }
@@ -325,7 +342,7 @@ select:active, select:focus {
 .create_article_errors {
     background-color: #50B326;
     bottom: 75px;
-    box-shadow: 5px 5px 3px #417324;
+    box-shadow: 5px 5px 3px #003e40;
     color: #FFFD55;
     font-family: "coolvetica_rg";
     font-size: 22px;
@@ -343,7 +360,7 @@ select:active, select:focus {
 .depulse input[type="submit"], a.submit, .propulse input[type="submit"], a.submit, .debate input[type="submit"], a.submit, input[type="submit"]{
     background-color: #50B326;
     border: 0 none;
-    box-shadow: 3px 3px 2px #417324;
+    box-shadow: 3px 3px 2px #003e40;
     color: #FFFFFF;
     cursor: pointer;
     font-family: 'coolvetica_rg';
@@ -351,6 +368,7 @@ select:active, select:focus {
     margin-left: 60%;
     padding: 2px 0;
     text-decoration: none;
+	border: 2px solid #003e40;
 }
 .depulse input[type="submit"]:hover, a.submit:hover, .propulse input[type="submit"]:hover, a.submit:hover, .debate input[type="submit"]:hover, a.submit:hover, input[type="submit"]:hover {
     color: #FFFD55;
@@ -386,7 +404,7 @@ select:active, select:focus {
     font-size: 25px;
     font-style: normal;
     height: 0;
-    left: 94%;
+	left: 45%;
     position: relative;
     top: -15%;
     width: 0;
@@ -415,6 +433,7 @@ select:active, select:focus {
 	background-color: black;
 	color: white;
 }
+<<<<<<< HEAD
 .tri {
     margin: auto;
     width: 46%;
@@ -441,4 +460,38 @@ select:active, select:focus {
     position: absolute;
     top: 167px;
     width: 100px;
+=======
+.tri
+{
+	width:37%;
+	margin:auto;
+}
+.tri2
+{
+	width:37%;
+	margin:auto;
+}
+.shorti
+{
+	width:100px;
+	margin:auto;
+	color:white;
+	font-size:26px;
+	font-family:coolvetica_rg;
+}
+.comment_post
+{
+	background-color: #50B326;
+	color: white;
+	width: 50%;
+	border: 2px solid black;
+}
+#area
+{
+	display:none;
+}
+#cat
+{
+	display:none;
+>>>>>>> 7b679ee464d20cbc0855ad650516837b77566c21
 }
