@@ -83,13 +83,24 @@
 				if($data['pseudo'] == $_SESSION['pseudo'])
 				{
 					echo"<div class='delete_post'>";
-					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
-					else echo"<a href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					if(isset($_GET['pseudo']))
+					{
+						echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					}
+					else 
+					{
+						echo"<a href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					}
 					echo"</div>";
+				}
+				else
+				{
+					echo"		&nbsp;".$data['title'];
 				}
 			}
 			else{
-			echo"		&nbsp;".$data['title'];}
+			echo"		&nbsp;".$data['title'];
+			}
 			echo"	</div>";
 			echo"	</td>";
 			echo"";
@@ -135,15 +146,15 @@
 			$content = nl2br( $content , false );
 			echo $content;
 			echo"		</div>";
-			echo"<span style='color:white'>&nbsp;&nbsp;Ecrit le";
+			echo"<span style='color:white;box-shadow: 5px 5px 3px #003e40;background-color: #85C630;border: 2px solid black;'>&nbsp;&nbsp;Ecrit le";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-			echo"&nbsp;par ".$data['pseudo'];
-			include('modeles/comment.php');
-			echo"	</span></td>";			
+			echo"&nbsp;par ".$data['pseudo']."</span>";
+			
+			echo"	</td>";			
 			echo"	</td>";
 			echo"</tr>";
 			echo"<tr><td>";
-			
+			include('modeles/comment.php');
 			echo"</tr></td>";
 			echo"<tr>";
 			echo"<td>";

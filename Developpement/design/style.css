@@ -65,7 +65,7 @@ a {
 	border: 2px solid #003e40;
 }
 .rate {
-    background-color: #85C630;
+    background-color: #62a708;
     box-shadow: 5px 5px 3px #003e40;
     color: white;
     font-family: 'coolvetica_rg';
@@ -249,6 +249,7 @@ a {
     font-family: 'coolvetica_rg';
     font-size: 24px;
     width: 200px;
+	border: 2px solid black;
 }
 .about_block {
     float: left;
@@ -282,6 +283,7 @@ a {
     font-size: 16px;
     margin-top: -5px;
     vertical-align: top;
+	border: 2px solid black;
 }
 .article_content img {
     border-color: #85C630;
@@ -402,7 +404,7 @@ select:active, select:focus {
     font-size: 25px;
     font-style: normal;
     height: 0;
-    left: 94%;
+	left: 45%;
     position: relative;
     top: -15%;
     width: 0;
@@ -448,6 +450,13 @@ select:active, select:focus {
 	color:white;
 	font-size:26px;
 	font-family:coolvetica_rg;
+}
+.comment_post
+{
+	background-color: #50B326;
+	color: white;
+	width: 50%;
+	border: 2px solid black;
 }
 #area
 {

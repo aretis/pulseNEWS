@@ -244,16 +244,17 @@ if(isset($_POST['pulse']))
 				{
 					echo"<div class='delete_post'>";
 					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
-					else echo"<a href='index.php?page=news&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					else echo"<a href='index.php?page=news&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;";
+					echo"<a href='index.php?page=view_article&id_post=".$data['id_post']."' style='color: white;'>".$data['title']."</a>";
 					echo"</div>";
 				}
 				else
 				{
-					echo"		&nbsp;".$data['title'];
+					echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."' style='color: white;'>".$data['title']."</a>";
 				}
 			}
 			else{
-			echo"		&nbsp;".$data['title'];}
+			echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."' style='color: white;'>".$data['title']."</a>";}
 			echo"	</div>";
 			echo"	</td>";
 
