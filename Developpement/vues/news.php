@@ -1,12 +1,13 @@
 ﻿
 <?php
-	if(isset($_POST['tri']))
-	{
 		$date = 0;
 		$rate = 0;
 		$type = 0;
 		$area = 0;
 		$cat = 0;
+	if(isset($_POST['tri']))
+	{
+		
 		if(!empty($_POST['date']))
 		{
 			if($_POST['date'] == 1)
@@ -71,6 +72,33 @@ function change(num)
 	}
 }
 
+function change2(num) 
+{
+	if(num == 0)
+	{
+		document.getElementById("date").style.display = "inline";
+		document.getElementById("rate").style.display = "inline";
+	}
+	else
+	{
+		document.getElementById("rate").style.display = "none";
+		document.getElementById("date").style.display = "inline";
+	}
+}
+function change3(num) 
+{
+	if(num == 0)
+	{
+		document.getElementById("date").style.display = "inline";
+		document.getElementById("rate").style.display = "inline";
+	}
+	else
+	{
+		document.getElementById("date").style.display = "none";
+		document.getElementById("rate").style.display = "inline";
+	}
+}
+
 </Script>
 <?php
 
@@ -115,13 +143,13 @@ function change(num)
 	<br>
 	<form method='post' action='index.php?page=news'>
 	
-	<SELECT name='date' select='selected'>
+	<SELECT id='date' name='date' select='selected' onchange='change2(this.selectedIndex)'>
 		<option value='0'>Date</option>
 		<option value='1'>Les plus récentes</option>
 		<option value='2'>Les moins récentes</option>
 	</SELECT>
 	
-	<SELECT name='rate' select='selected'>
+	<SELECT id='rate' name='rate' select='selected' onchange='change3(this.selectedIndex)'>
 		<option value='0'>Note</option>
 		<option value='1'>Le top</option>
 		<option value='2'>Le flop</option>
@@ -170,9 +198,6 @@ function change(num)
 	
 	<br><br><hr>
 </form>
-</div>
-<div class='news_sort'>
-TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;économie&nbsp;&nbsp;sport&nbsp;&nbsp;culture&nbsp;&nbsp;faits divers
 </div>
 <br>
 <br>
@@ -234,7 +259,7 @@ if(isset($_POST['pulse']))
 
 	include('modeles/view_all_articles.php');
 	
-	view_all_article($date, $rate, $type, $area, $cat);
+	$req = view_all_article($date, $rate, $type, $area, $cat);
 
 
 	while($data = mysql_fetch_array($req))
