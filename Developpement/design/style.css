@@ -340,7 +340,7 @@ select:active, select:focus {
     font-size: 28px;
     font-weight: bold;
 }
-.depulse input[type="submit"], a.submit, .propulse input[type="submit"], a.submit, .debate input[type="submit"], a.submit {
+.depulse input[type="submit"], a.submit, .propulse input[type="submit"], a.submit, .debate input[type="submit"], a.submit, input[type="submit"]{
     background-color: #50B326;
     border: 0 none;
     box-shadow: 3px 3px 2px #417324;
@@ -352,11 +352,11 @@ select:active, select:focus {
     padding: 2px 0;
     text-decoration: none;
 }
-.depulse input[type="submit"]:hover, a.submit:hover, .propulse input[type="submit"]:hover, a.submit:hover, .debate input[type="submit"]:hover, a.submit:hover {
+.depulse input[type="submit"]:hover, a.submit:hover, .propulse input[type="submit"]:hover, a.submit:hover, .debate input[type="submit"]:hover, a.submit:hover, input[type="submit"]:hover {
     color: #FFFD55;
     text-decoration: none;
 }
-.depulse input[type="submit"]:active, .propulse input[type="submit"]:active, .debate input[type="submit"]:active, .depulse input[type="submit"]:focus, .propulse input[type="submit"]:focus, .debate input[type="submit"]:focus, a.submit:active, a.submit:focus {
+.depulse input[type="submit"]:active, input[type="submit"]:active, .propulse input[type="submit"]:active, .debate input[type="submit"]:active, .depulse input[type="submit"]:focus, .propulse input[type="submit"]:focus, .debate input[type="submit"]:focus, a.submit:active, a.submit:focus {
     background: none repeat scroll 0 0 green;
     border-color: #093C75;
     outline: medium none;
@@ -415,29 +415,30 @@ select:active, select:focus {
 	background-color: black;
 	color: white;
 }
-.tri
-{
-	width:37%;
-	margin:auto;
+.tri {
+    margin: auto;
+    width: 46%;
 }
-.tri2
-{
-	width:37%;
-	margin:auto;
+.tri2 {
+    margin: auto;
+    width: 37%;
 }
-.shorti
-{
-	width:100px;
-	margin:auto;
-	color:white;
-	font-size:26px;
-	font-family:coolvetica_rg;
+.shorti {
+    color: white;
+    font-family: coolvetica_rg;
+    font-size: 26px;
+    margin: auto;
+    width: 100px;
 }
-#area
-{
-	display:none;
+#area {
+    display: none;
 }
-#cat
-{
-	display:none;
+#cat {
+    display: none;
+}
+.lol2 {
+    left: 1278px;
+    position: absolute;
+    top: 167px;
+    width: 100px;
 }

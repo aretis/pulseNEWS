@@ -1,15 +1,72 @@
 ﻿
+<?php
+	if(isset($_POST['tri']))
+	{
+		$date = 0;
+		$rate = 0;
+		$type = 0;
+		$area = 0;
+		$cat = 0;
+		if(!empty($_POST['date']))
+		{
+			if($_POST['date'] == 1)
+			{
+				$date = 1;
+			}
+			else if($_POST['date'] == 2)
+			{
+				$date = 2;
+			}
+		}
+		if(!empty($_POST['rate']))
+		{
+			if($_POST['rate'] == 1)
+			{
+				$rate = 1;
+			}
+			else if($_POST['rate'] == 2)
+			{
+				$date = 2;
+			}
+		}
+		if(!empty($_POST['type']))
+		{
+			if($_POST['type'] == 1)
+			{
+				$type = 1;
+				
+				if(!empty($_POST['area']))
+				{
+					$area = $_POST['area'];
+				}
+			}
+			else if($_POST['type'] == 2)
+			{
+				$type = 2;
+				
+				if(!empty($_POST['cat']))
+				{
+					$cat = $_POST['cat'];
+				}
+			}
+		}
+		
+		
+	}
+
+?>
 <SCRIPT text='JAVASCRIPT'>
 
 function change(num) 
 {
 	if(num == 1)
 	{
-		
+		document.getElementById("cat").style.display = "none";
 		document.getElementById("area").style.display = "inline";
 	}
 	else if(num == 2)
 	{
+		document.getElementById("area").style.display = "none";
 		document.getElementById("cat").style.display = "inline";
 	}
 }
@@ -56,14 +113,21 @@ function change(num)
 <div class='tri'>
 	<div class='shorti'>Trier par : </div>
 	<br>
+	<form method='post' action='index.php?page=news'>
 	
-	<SELECT name='type' select='selected'>
+	<SELECT name='date' select='selected'>
 		<option value='0'>Date</option>
 		<option value='1'>Les plus récentes</option>
 		<option value='2'>Les moins récentes</option>
 	</SELECT>
+	
+	<SELECT name='rate' select='selected'>
+		<option value='0'>Note</option>
+		<option value='1'>Le top</option>
+		<option value='2'>Le flop</option>
+	</SELECT>
 
-	<SELECT onchange='change(this.selectedIndex)'>
+	<SELECT name='type' onchange='change(this.selectedIndex)'>
 		<option>Type de News</option>
 		<option>News rédigé</option>
 		<option>News pulsé</option>
@@ -102,11 +166,10 @@ function change(num)
 			mysql_free_result($result);
 			mysql_close($link);
 		?>
-	</SELECT>
-
-	<input type='submit' value='trier' />
+	</SELECT><div class='lol2'> <input name='tri' type='submit' value='trier' /></div>
+	
 	<br><br><hr>
-
+</form>
 </div>
 <div class='news_sort'>
 TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;économie&nbsp;&nbsp;sport&nbsp;&nbsp;culture&nbsp;&nbsp;faits divers
@@ -171,11 +234,12 @@ if(isset($_POST['pulse']))
 
 	include('modeles/view_all_articles.php');
 	
-	$req = view_all_article();
+	view_all_article($date, $rate, $type, $area, $cat);
+
 
 	while($data = mysql_fetch_array($req))
 	{
-		if( $data['type'] == 1)
+		if($data['type'] == 1)
 		{
 	
 			echo"		<table cellpadding='0' cellspacing='0' class='post_news' >";

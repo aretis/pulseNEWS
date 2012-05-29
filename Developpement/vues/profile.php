@@ -69,7 +69,27 @@
 	}
 ?>
 <div class='profile_ban'>
-	<img src='design/img/ban_exemple.png'/>
+<?php
+				
+			$request = "SELECT cover_picture FROM users WHERE id_user = ".$id_user;
+
+			$sucess = mysql_query ($request) or die (mysql_error ());
+			$col = mysql_fetch_assoc($sucess);
+			if($col === false )
+			{
+				echo"<img src='design/img/ban_exemple.jpg'/>";
+			}
+			else
+			{
+				$image = imagecreatefromstring($col['cover_picture']);
+				ob_start(); //You could also just output the $image via header() and bypass this buffer capture.
+				imagejpeg($image, null, 80);
+				$data = ob_get_contents();
+				ob_end_clean();
+				echo '<img src="data:image/jpg;base64,' .  base64_encode($data)  . '" />';
+			}
+				
+				?>
 	<div class='humor'>"<?php echo $humor; ?>"</div>
 </div>
 <table style='margin: auto; text-align: center;' cellpadding='0' cellspacing='0'>
@@ -116,7 +136,7 @@ if(!isset($_GET['pseudo']))
 			<tr>
 				<td>
 				
-				<?php/*
+				<?php
 				
 			$request = "SELECT profile_picture FROM users WHERE id_user = ".$id_user;
 
@@ -133,10 +153,10 @@ if(!isset($_GET['pseudo']))
 				imagejpeg($image, null, 80);
 				$data = ob_get_contents();
 				ob_end_clean();
-				echo '<br><img src="data:image/jpg;base64,' .  base64_encode($data)  . '" /><br>';
+				echo '<img src="data:image/jpg;base64,' .  base64_encode($data)  . '" />';
 			}
 				
-			*/	?>
+				?>
 					
 				</td>
 			</tr>
