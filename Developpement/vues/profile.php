@@ -75,7 +75,7 @@
 
 			$sucess = mysql_query ($request) or die (mysql_error ());
 			$col = mysql_fetch_assoc($sucess);
-			if($col === false )
+			if(empty($col['cover_picture']))
 			{
 				echo"<img src='design/img/ban_exemple.jpg'/>";
 			}
@@ -136,13 +136,13 @@ if(!isset($_GET['pseudo']))
 			<tr>
 				<td>
 				
-				<?php/*
+				<?php
 				
 			$request = "SELECT profile_picture FROM users WHERE id_user = ".$id_user;
 
-			$sucess = mysql_query ($request) or die (mysql_error ());
+			$sucess = mysql_query ($request) or die (mysql_error());
 			$col = mysql_fetch_assoc($sucess);
-			if($col === false )
+			if (empty($col['profile_picture']))
 			{
 				echo"<img src='design/img/exemple_profile.jpg'/>";
 			}
@@ -156,7 +156,7 @@ if(!isset($_GET['pseudo']))
 				echo '<img src="data:image/jpg;base64,' .  base64_encode($data)  . '" />';
 			}
 				
-			*/	?>
+				?>
 					
 				</td>
 			</tr>
