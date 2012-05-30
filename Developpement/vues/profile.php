@@ -75,11 +75,10 @@
 
 			$sucess = mysql_query ($request) or die (mysql_error ());
 			$col = mysql_fetch_assoc($sucess);
-<<<<<<< HEAD
+
 			if($col === false )
-=======
+			
 			if(empty($col['cover_picture']))
->>>>>>> 7b679ee464d20cbc0855ad650516837b77566c21
 			{
 				echo"<img src='design/img/ban_exemple.jpg'/>";
 			}

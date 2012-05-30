@@ -31,7 +31,7 @@ function check_connect($pseudo, $password)
 	
 	while($donnees = mysql_fetch_array($result))
 	{
-		if	($donnees['pseudo'] == $pseudo)
+		if($donnees['pseudo'] == $pseudo)
 		{
 			$pseudo_not_exists = 1;
 			

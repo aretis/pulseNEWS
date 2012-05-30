@@ -22,7 +22,7 @@
 					</div>
 					
 					<input id='name' type='text'  name="pseudo" VALUE ='<?php if(isset($_POST['pseudo'])) echo $_POST['pseudo']; ?>'/>
-					<input id='password' type='text' name="password" />
+					<input id='password' type='password' name="password" />
 					
 				</div>
 				

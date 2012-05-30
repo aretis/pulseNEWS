@@ -19,7 +19,7 @@ function verif_formulaire()
 	}
 	else
 	{
-		if(pseudo_not_exists == 1)
+		if(pseudo_not_exists == 0)
 		{
 			alert('Ce pseudo n\'existe pas, merci de créer un compte');
 		}

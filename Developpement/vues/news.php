@@ -7,6 +7,7 @@
 		$cat_news = 0;
 	if(isset($_POST['tri']))
 	{
+		
 		if($_POST['date'] == 1) $date = 1;
 		else if($_POST['date'] == 2) $date = 2;
 		
@@ -16,8 +17,17 @@
 		if($_POST['type'] == 1) $type = 1;
 		else if($_POST['type'] == 2) $type = 2;
 
-		if($_POST['area'] != "Région") $news_area = $_POST['area'];
-		if($_POST['cat'] != "Catégorie") $cat_news = $_POST['cat'];
+		if($_POST['area'] != "Région") 
+		{
+			$news_area = $_POST['area'];
+			echo'<style> #area{display:inline;} </style>';
+		}
+		
+		if($_POST['cat'] != "Catégorie") 
+		{
+			$cat_news = $_POST['cat'];
+			echo'<style> #cat{display:inline;} </style>';
+		}
 	}
 ?>
 <SCRIPT text='JAVASCRIPT'>
@@ -112,25 +122,25 @@ function change3(num)
 	<br>
 	<form method='post' action='index.php?page=news'>
 	
-	<SELECT id='date' name='date' select='selected' onchange='change2(this.selectedIndex)'>
+	<SELECT id='date' name='date' selected='selected' ='change2(this.selectedIndex)'>
 		<option value='0'>Date</option>
 		<option value='1'>Les plus récentes</option>
 		<option value='2'>Les moins récentes</option>
 	</SELECT>
 	
-	<SELECT id='rate' name='rate' select='selected' onchange='change3(this.selectedIndex)'>
+	<SELECT id='rate' name='rate' selected='selected' onchange='change3(this.selectedIndex)'>
 		<option value='0'>Note</option>
 		<option value='1'>Le top</option>
 		<option value='2'>Le flop</option>
 	</SELECT>
 
-	<SELECT name='type' onchange='change(this.selectedIndex)'>
+	<SELECT name='type' selected='selected' onchange='change(this.selectedIndex)'>
 		<option value='0'>Type de News</option>
 		<option value='1'>News rédigé</option>
 		<option value='2'>News pulsé</option>
 	</SELECT>
 
-	<SELECT id='area' name='area' select='selected'>
+	<SELECT id='area' name='area' selected='selected'>
 	<option>Région</option>
 		<?php
 
@@ -148,7 +158,7 @@ function change3(num)
 	</SELECT>
 
 
-	<SELECT id='cat' name='cat' select='selected'>
+	<SELECT id='cat' name='cat' selected='selected'>
 	<option>Catégorie</option>
 		<?php
 
