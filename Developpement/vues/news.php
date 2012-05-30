@@ -11,14 +11,13 @@
 		else if($_POST['date'] == 2) $date = 2;
 		
 		if($_POST['rate'] == 1) $rate = 1;
-		else if($_POST['rate'] == 2) $date = 2;
+		else if($_POST['rate'] == 2) $rate = 2;
 		
 		if($_POST['type'] == 1) $type = 1;
 		else if($_POST['type'] == 2) $type = 2;
 
 		if($_POST['area'] != "Région") $news_area = $_POST['area'];
 		if($_POST['cat'] != "Catégorie") $cat_news = $_POST['cat'];
-			
 	}
 ?>
 <SCRIPT text='JAVASCRIPT'>

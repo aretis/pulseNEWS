@@ -29,14 +29,19 @@
 
 		if($type == 1) $query .= 'WHERE type = 0 ';
 		else if ($type == 2) $query .= 'WHERE type = 1 ';
+		else if ($type == NULL) $query .= 'WHERE type IN(0,1) ';
 		
 		if($area != 0) $query .= 'AND area = '.$area;
 		else if($cat != 0) $query .= 'AND cat = '.$cat;
 		
-		if($date == 1) $query .= ' GROUP BY post_date DESC';
-		else if ($date == 2) $query .= ' GROUP BY post_date ASC';
-		else if($rate == 1) $query .= ' GROUP BY rate DESC';
-		else if ($rate == 2) $query .= ' GROUP BY rate ASC';
+		if($date == 1) $query .= ' ORDER BY post_date DESC';
+		else if ($date == 2) $query .= ' ORDER BY post_date ASC';
+		else if($rate == 1) $query .= ' ORDER BY rate DESC';
+		else if ($rate == 2) $query .= ' ORDER BY rate ASC';
+		
+	/*	echo $type;
+		echo'<br><br>';
+		echo $query;*/
 		
 		$article = call_db($query);
 		return $article;
