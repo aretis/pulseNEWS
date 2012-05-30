@@ -433,7 +433,6 @@ select:active, select:focus {
 	background-color: black;
 	color: white;
 }
-<<<<<<< HEAD
 .tri {
     margin: auto;
     width: 46%;
@@ -460,29 +459,12 @@ select:active, select:focus {
     position: absolute;
     top: 167px;
     width: 100px;
-=======
-.tri
-{
-	width:37%;
-	margin:auto;
 }
-.tri2
+.no_news
 {
-	width:37%;
-	margin:auto;
-}
-.shorti
-{
-	width:100px;
-	margin:auto;
-	color:white;
-	font-size:26px;
+	width:100%;
+	color: White;
 	font-family:coolvetica_rg;
+	font-size : 39px;
 }
-.comment_post
-{
-	background-color: #50B326;
-	color: white;
-	width: 50%;
-	border: 2px solid black;
-}
+

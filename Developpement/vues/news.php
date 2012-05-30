@@ -7,8 +7,6 @@
 		$cat_news = 0;
 	if(isset($_POST['tri']))
 	{
-		echo"LOOOOOOOOOOOOOOOOOOOOOOOOL";
-		
 		if($_POST['date'] == 1) $date = 1;
 		else if($_POST['date'] == 2) $date = 2;
 		
@@ -242,10 +240,6 @@ if(isset($_POST['pulse']))
 	
 	while($data = mysql_fetch_assoc($req))
 	{
-		if($data === false)
-		{
-			echo"Désolé, aucune news n'a été trouvée pour ces critères";
-		}
 		if($data['type'] == 1)
 		{
 	
