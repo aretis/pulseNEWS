@@ -3,64 +3,36 @@
 		$date = 0;
 		$rate = 0;
 		$type = 0;
-		$area = 0;
-		$cat = 0;
+		$news_area = 0;
+		$cat_news = 0;
 	if(isset($_POST['tri']))
 	{
+		echo"LOOOOOOOOOOOOOOOOOOOOOOOOL";
 		
-		if(!empty($_POST['date']))
-		{
-			if($_POST['date'] == 1)
-			{
-				$date = 1;
-			}
-			else if($_POST['date'] == 2)
-			{
-				$date = 2;
-			}
-		}
-		if(!empty($_POST['rate']))
-		{
-			if($_POST['rate'] == 1)
-			{
-				$rate = 1;
-			}
-			else if($_POST['rate'] == 2)
-			{
-				$date = 2;
-			}
-		}
-		if(!empty($_POST['type']))
-		{
-			if($_POST['type'] == 1)
-			{
-				$type = 1;
-				
-				if(!empty($_POST['area']))
-				{
-					$area = $_POST['area'];
-				}
-			}
-			else if($_POST['type'] == 2)
-			{
-				$type = 2;
-				
-				if(!empty($_POST['cat']))
-				{
-					$cat = $_POST['cat'];
-				}
-			}
-		}
+		if($_POST['date'] == 1) $date = 1;
+		else if($_POST['date'] == 2) $date = 2;
 		
+		if($_POST['rate'] == 1) $rate = 1;
+		else if($_POST['rate'] == 2) $date = 2;
 		
-	}
+		if($_POST['type'] == 1) $type = 1;
+		else if($_POST['type'] == 2) $type = 2;
 
+		if($_POST['area'] != "Région") $news_area = $_POST['area'];
+		if($_POST['cat'] != "Catégorie") $cat_news = $_POST['cat'];
+			
+	}
 ?>
 <SCRIPT text='JAVASCRIPT'>
 
 function change(num) 
 {
-	if(num == 1)
+	if(num == 0)
+	{
+		document.getElementById("cat").style.display = "none";
+		document.getElementById("area").style.display = "none";
+	}
+	else if(num == 1)
 	{
 		document.getElementById("cat").style.display = "none";
 		document.getElementById("area").style.display = "inline";
@@ -156,9 +128,9 @@ function change3(num)
 	</SELECT>
 
 	<SELECT name='type' onchange='change(this.selectedIndex)'>
-		<option>Type de News</option>
-		<option>News rédigé</option>
-		<option>News pulsé</option>
+		<option value='0'>Type de News</option>
+		<option value='1'>News rédigé</option>
+		<option value='2'>News pulsé</option>
 	</SELECT>
 
 	<SELECT id='area' name='area' select='selected'>
@@ -168,9 +140,9 @@ function change3(num)
 			$query = 'SELECT area_name FROM AREAS';
 			$result = call_db($query);
 
-			while($donnees = mysql_fetch_array($result))
+			while($data = mysql_fetch_array($result))
 			{
-				echo'<option>'.$donnees['area_name'].'</option>';
+				echo'<option>'.$data['area_name'].'</option>';
 			}
 
 			mysql_free_result($result);
@@ -186,9 +158,9 @@ function change3(num)
 			$query = 'SELECT cat_name FROM news_cat';
 			$result = call_db($query);
 
-			while($donnees = mysql_fetch_array($result))
+			while($data = mysql_fetch_array($result))
 			{
-				echo'<option>'.$donnees['cat_name'].'</option>';
+				echo'<option>'.$data['cat_name'].'</option>';
 			}
 
 			mysql_free_result($result);
@@ -259,11 +231,21 @@ if(isset($_POST['pulse']))
 
 	include('modeles/view_all_articles.php');
 	
-	$req = view_all_article($date, $rate, $type, $area, $cat);
+	$req = view_all_article($date, $rate, $type, $news_area, $cat_news);
 
-
-	while($data = mysql_fetch_array($req))
+	$row = mysql_fetch_assoc($req);
+	
+	if($row === false)
 	{
+		echo"<div class='no_news'> Désolé, aucune news n'a été trouvée pour ces critères</div>";
+	}
+	
+	while($data = mysql_fetch_assoc($req))
+	{
+		if($data === false)
+		{
+			echo"Désolé, aucune news n'a été trouvée pour ces critères";
+		}
 		if($data['type'] == 1)
 		{
 	

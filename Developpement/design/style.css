@@ -486,12 +486,3 @@ select:active, select:focus {
 	width: 50%;
 	border: 2px solid black;
 }
-#area
-{
-	display:none;
-}
-#cat
-{
-	display:none;
->>>>>>> 7b679ee464d20cbc0855ad650516837b77566c21
-}
