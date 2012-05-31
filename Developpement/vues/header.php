@@ -28,26 +28,26 @@
 						{
 							echo "Bonjour, ".$_SESSION['pseudo']." !  ";
 							echo "<a href='index.php?page=valid_user' style='color: white;'>modifier mon compte</a>&nbsp;&nbsp</a>";
-							echo "<a href='index.php?page=news&disconnect=1' style='color: white;'>(se déconnecter)</a>";
+							echo "<a href='index.php?page=news&disconnect=1' style='color: white;'>(se déconnecter)&nbsp;&nbsp&nbsp;&nbsp</a>&nbsp;&nbsp;<br>";
 						}
 						else
 						{													
-							echo "<a href='index.php?page=register' style='color: white;'>s'inscrire !</a><br>";
+							echo "<a href='index.php?page=register' style='color: white;'>s'inscrire !</a>&nbsp;&nbsp;<br>";
 						}
 					?>
 					<div class='header_menu'>
-					<img src='design/img/loupe.png'/>&nbsp;<a href='index.php?page=recherche'>rechercher</a>&nbsp;&nbsp;
+					<a href='index.php?page=recherche'><img src='design/img/loupe.png'/>&nbsp;rechercher</a>&nbsp;&nbsp;
 						<a href='index.php?page=newsfeed'>pulse !</a>&nbsp;&nbsp;
 						<a href='index.php?page=list_users'>les pulseurs</a>&nbsp;&nbsp;
 						<a href='index.php?page=news'>fil d'actualités</a>&nbsp;&nbsp;
 						<a href='index.php?page=debate'>débat du jour</a>&nbsp;&nbsp;
 						<?php if( isset($_SESSION['pseudo'] ))
 							{
-								echo"<a href='index.php?page=profile'>".$_SESSION['pseudo']."</a>&nbsp;&nbsp;";
+								echo"<a href='index.php?page=profile'>".$_SESSION['pseudo']."</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							}
 							else
 							{
-								echo"<a href='index.php?page=connect' style='color: white;'>se connecter</a>&nbsp;&nbsp;";
+								echo"<a href='index.php?page=connect' style='color: white;'>se connecter</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							}
 						?>
 					</div>
