@@ -93,7 +93,14 @@
 			}
 				
 				?>
-	<div class='humor'>"<?php echo $humor; ?>"</div>
+	<div class='humor'>"<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_humor;
+							}
+							else
+							{
+								echo $humor;
+							} ?>"</div>
 </div>
 <table style='margin: auto; text-align: center;' cellpadding='0' cellspacing='0'>
 <td>
@@ -276,14 +283,7 @@ if(!isset($_GET['pseudo']))
 							}
 					?><br>
 					<strong>Humeur : </strong>
-					<?php if(isset($_GET['pseudo']))
-							{
-								echo $visit_humor;
-							}
-							else
-							{
-								echo $humor;
-							}
+					<?php 
 					?><br>
 					</div>
 				</td>
