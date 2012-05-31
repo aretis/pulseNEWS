@@ -1,7 +1,4 @@
 <?php
-session_start();
-?>
-<?php
 $prenom=$_SESSION['pseudo'];
 include('connexion.php');
 if ( isset($_POST['prenom']) || isset($_POST['nom']) || isset($_POST['surnom']) || isset($_POST['newPassword']) || isset($_POST['confirmPassword']) || isset($_POST['email']) || isset($_POST['region']))
@@ -14,7 +11,7 @@ if ( isset($_POST['prenom']) || isset($_POST['nom']) || isset($_POST['surnom']) 
 		if ( !empty($_POST['prenom']) )
 		{
 				$nouveau_prenom=$_POST['prenom'];
-				$request = "UPDATE users SET pseudo = '".$nouveau_prenom."' WHERE  id_user=".$data['id_user']."";
+				$request = "UPDATE users SET firstname = '".$nouveau_prenom."' WHERE  id_user=".$data['id_user']."";
 				$resultat = mysql_query ($request) or die (mysql_error ());
 		}
 		
@@ -25,22 +22,11 @@ if ( isset($_POST['prenom']) || isset($_POST['nom']) || isset($_POST['surnom']) 
 				$resultat = mysql_query ($request) or die (mysql_error ());
 			}
 		
-			if ( !empty($_POST['surnom']) )
-			{
-				$nouveau_surnom=$_POST['surnom'];
-				$request = "UPDATE users SET surname = '".$nouveau_surnom."' WHERE  id_user=".$data['id_user']."";
-				$resultat = mysql_query ($request) or die (mysql_error ());
-			}
+			
 		
 			if ((!empty($_POST['newPassword'] )) && (!empty($_POST['confirmPassword'])))
 			{
-				$id=$_SESSION['id_user'];
-				$request = "SELECT password FROM users WHERE id_user=".$id;
-				$succes=mysql_query ($request) or die (mysql_error());
-				while ($resultat=mysql_fetch_assoc($succes))
-				{
-					$password=$resultat['password'];
-					if($_POST['password'] == $password )
+					if($_POST['newPassword'] == $_POST['confirmPassword'])
 					{
 						$nouveau_password=$_POST['newPassword'];
 						$request = "UPDATE users SET password = '".$nouveau_password."' WHERE  id_user=".$data['id_user']."";
@@ -50,7 +36,7 @@ if ( isset($_POST['prenom']) || isset($_POST['nom']) || isset($_POST['surnom']) 
 					{
 						echo"les champs de confirmation de nouveaux mot de passe ne correspondent pas!";
 					}
-				}
+				
 			}
 			else 
 			{
