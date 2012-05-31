@@ -76,7 +76,7 @@
 			$sucess = mysql_query ($request) or die (mysql_error ());
 			$col = mysql_fetch_assoc($sucess);
 
-			if($col === false )
+			
 			
 			if(empty($col['cover_picture']))
 			{
