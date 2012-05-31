@@ -74,6 +74,10 @@
 				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
 				return;
 			}
+			else
+			{
+				echo"Votre news a bien été pulsé !";
+			}
 		}
 		else 
 		{
