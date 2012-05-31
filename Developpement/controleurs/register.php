@@ -32,7 +32,7 @@ if(!isset($_SESSION['js'])) $_SESSION['js'] = true;
 	{
 		// Dans le cas contraire on recharge la page avec le parametre js=no
 		echo '<noscript>
-		<meta http-equiv="Refresh" content="0; URL=register.php?js=no">
+		<meta http-equiv="Refresh" content="0; URL=index.php?page=register&js=no">
 		</noscript>';
 		include('modeles/show_form_errors.js');
 	}
