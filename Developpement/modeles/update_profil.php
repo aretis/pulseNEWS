@@ -1,7 +1,4 @@
 <?php
-session_start();
-?>
-<?php
 $prenom=$_SESSION['pseudo'];
 include('connexion.php');
 if ( isset($_POST['prenom']) || isset($_POST['nom']) || isset($_POST['surnom']) || isset($_POST['newPassword']) || isset($_POST['confirmPassword']) || isset($_POST['email']) || isset($_POST['region']))
