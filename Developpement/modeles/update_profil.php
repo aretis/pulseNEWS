@@ -1,78 +1,74 @@
 <?php
 $prenom=$_SESSION['pseudo'];
 include('connexion.php');
-$requete="SELECT id_user FROM users WHERE pseudo='$prenom'";
-$sucess=mysql_query($requete) or die(mysql_error());
-while($data=mysql_fetch_assoc($sucess))
+if ( isset($_POST['prenom']) || isset($_POST['nom']) || isset($_POST['surnom']) || isset($_POST['newPassword']) || isset($_POST['confirmPassword']) || isset($_POST['email']) || isset($_POST['region']))
 {
-	if ( !empty($_POST['prenom']) )
-	{
-			$nouveau_prenom=$_POST['prenom'];
-			include('connexion.php');
-			$request = "UPDATE users SET pseudo = '".$nouveau_prenom."' WHERE  id_user=".$data['id_user']."";
-			$resultat = mysql_query ($request) or die (mysql_error ());
-			echo 'ok!';
-	}
-	
-		if ( !empty($_POST['nom']) )
-	{
-			$nouveau_nom=$_POST['nom'];
-			include('connexion.php');
-			$request = "UPDATE users SET surname = '".$nouveau_nom."' WHERE  id_user=".$data['id_user']."";
-			$resultat = mysql_query ($request) or die (mysql_error ());
-			echo 'ok!';
-	}
-	
-		if ( !empty($_POST['surnom']) )
-	{
-			$nouveau_surnom=$_POST['surnom'];
-			include('connexion.php');
-			$request = "UPDATE users SET surname = '".$nouveau_surnom."' WHERE  id_user=".$data['id_user']."";
-			$resultat = mysql_query ($request) or die (mysql_error ());
-			echo 'ok!';
-	}
-	
-		if ( !empty($_POST['password']) )
-	{
-			$nouveau_password=$_POST['password'];
-			include('connexion.php');
-			$request = "UPDATE users SET password = '".$nouveau_password."' WHERE  id_user=".$data['id_user']."";
-			$resultat = mysql_query ($request) or die (mysql_error ());
-			echo 'ok!';
-	}
+	$requete="SELECT id_user FROM users WHERE pseudo='".$prenom."'";
+	$result = call_db($requete);
 
-	
-	
-	
-		if ( !empty($_POST['about']) )
+	while($data=mysql_fetch_assoc($result))
 	{
-			$nouveau_about=$_POST['about'];
-			include('connexion.php');
-			$request = "UPDATE users SET about = '".$nouveau_about."' WHERE  id_user=".$data['id_user']."";
-			$resultat = mysql_query ($request) or die (mysql_error ());
-			echo 'ok!';
-	}
-	
-	
-		if ( !empty($_POST['email']) )
-	{
-			$nouveau_email=$_POST['email'];
-			include('connexion.php');
-			$request = "UPDATE users SET mail = '".$nouveau_email."' WHERE  id_user=".$data['id_user']."";
-			$resultat = mysql_query ($request) or die (mysql_error ());
-			echo 'ok!';
-	}
-	
-		if ( !empty($_POST['region']) )
-	{
-			$nouveau_region=$_POST['region'];
-			include('connexion.php');
-			$request = "UPDATE users SET area_name = '".$nouveau_region."' WHERE  id_user=".$data['id_user']."";
-			$resultat = mysql_query ($request) or die (mysql_error ());
-			echo 'ok!';
-	}
+		if ( !empty($_POST['prenom']) )
+		{
+				$nouveau_prenom=$_POST['prenom'];
+				$request = "UPDATE users SET firstname = '".$nouveau_prenom."' WHERE  id_user=".$data['id_user']."";
+				$resultat = mysql_query ($request) or die (mysql_error ());
+		}
+		
+			if ( !empty($_POST['nom']) )
+			{
+				$nouveau_nom=$_POST['nom'];
+				$request = "UPDATE users SET surname = '".$nouveau_nom."' WHERE  id_user=".$data['id_user']."";
+				$resultat = mysql_query ($request) or die (mysql_error ());
+			}
+		
 			
+		
+			if ((!empty($_POST['newPassword'] )) && (!empty($_POST['confirmPassword'])))
+			{
+					if($_POST['newPassword'] == $_POST['confirmPassword'])
+					{
+						$nouveau_password=$_POST['newPassword'];
+						$request = "UPDATE users SET password = '".$nouveau_password."' WHERE  id_user=".$data['id_user']."";
+						$resultat = mysql_query ($request) or die (mysql_error ());
+					}
+					else
+					{
+						echo"les champs de confirmation de nouveaux mot de passe ne correspondent pas!";
+					}
+				
+			}
+			else 
+			{
+				echo'un ou plusieurs des champs de validation de mot de passe sont vide!';
+			}
+
+		
+			if ( !empty($_POST['email']) )
+			{
+				$nouveau_email=$_POST['email'];
+				$request = "UPDATE users SET mail = '".$nouveau_email."' WHERE  id_user=".$data['id_user']."";
+				$resultat = mysql_query ($request) or die (mysql_error ());
+			}
+		
+			if ( !empty($_POST['region']) )
+			{
+				$nouveau_region=$_POST['region'];
+				$request = "UPDATE users SET area_name = '".$nouveau_region."' WHERE  id_user=".$data['id_user']."";
+				$resultat = mysql_query ($request) or die (mysql_error ());
+			}
+			
+			if ( !empty($_POST['delete_profil']))
+			{
+				$request = "DELETE FROM users WHERE id_user =".$data['id_user']."";
+				$resultat = mysql_query ($request) or die (mysql_error());
+				
+				unset($_SESSION['pseudo']);
+				session_destroy();
+			}
+			
+			header('location:index.php?page=news');
+			echo' Votre compte à bien était modifié!';
+	}
 }
-
-
 ?>

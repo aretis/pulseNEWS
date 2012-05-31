@@ -1,5 +1,4 @@
-<?php
-
+﻿<?php
 include("connexion.php");
 if (isset($_POST['recherche']) || isset($_GET['recherche']))
 {
@@ -14,7 +13,7 @@ if (isset($_POST['recherche']) || isset($_GET['recherche']))
 	{
 		$recherche = mysql_real_escape_string(htmlspecialchars($_GET['recherche'])); 
 		$mode = mysql_real_escape_string(htmlspecialchars($_GET['mode']));
-		$categorie= mysql_real_escape_string(htmlspecialchars($_POST['categorie']));
+		$categorie= mysql_real_escape_string(htmlspecialchars($_GET['categorie']));
 	}
     
     if ($mode == "exp_exacte")
@@ -53,18 +52,18 @@ if (isset($_POST['recherche']) || isset($_GET['recherche']))
 
     if ($nb_resultats == 0) 
     {
-        echo 'Aucun r�sultat.';
+        echo 'Aucun rÃ©sultat.';
     }
 	
 	else
 	{
 		if($nb_resultats==1)
 		{
-			echo"Il n'y a 1 r�sultat qui correspond a votre recherche";
+			echo"Il y a 1 rÃ©sultat qui correspond a votre recherche";
 		}
 		else if($nb_resultats > 1)
 		{
-			echo' Il y a '.$nb_resultats.' r�sultats qui correspondent � votre recherche';
+			echo' Il y a '.$nb_resultats.' rÃ©sultats qui correspondent Ã  votre recherche';
 		}
 		while($resultats = mysql_fetch_array($requete) )
 		{
@@ -86,15 +85,19 @@ if (isset($_POST['recherche']) || isset($_GET['recherche']))
 		</tr>
 		<tr style='background-color: #85c630;'>
 		<td>
-		<div class='description'>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
-		</div>
+		<div class='description'>";
+					$chaine = $resultats['content'];
+					couperChaine($chaine,20);
+					$chaineNouvelle=couperChaine($chaine,20);
+					echo $chaineNouvelle;
+					
+		echo"</div>
 		</td>
 		</div>
 		</td>
 			<td style='background-color: white;'>
 		<div class='date_news'>
-		Aujourd'hui � 9h15
+		Aujourd'hui Ã  9h15
 		</div>
 		
 		</td>
@@ -102,7 +105,7 @@ if (isset($_POST['recherche']) || isset($_GET['recherche']))
 	</tr>
 	<tr>
 	<td>
-		<a href='index.php?page=voir_article&id=".$resultats['id']."&recherche=".$recherche."&mode=".$mode."&categorie=".$categorie."'><div class='comment_button'>lire l'article!</div></a>
+		<a href='index.php?page=voir_article&id=".$resultats['id_post']."&recherche=".$recherche."&mode=".$mode."&categorie=".$categorie."'><div class='comment_button'>lire l'article!</div></a>
 		<div style='float: right; width: 5%px;'>&nbsp;</div>
 	</td>
 	</tr>
