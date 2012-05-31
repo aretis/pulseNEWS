@@ -7,8 +7,7 @@
 
 	<form action='index.php?page=modifier_compte' method='post' >
 	 Nom de l'utilisateur<input type="text" name="nom"/><br/>
-	 Prénom<input type="text" name="surnom"/><br/>
-	 Mot de passe actuel<input type="text" name="password"/><br/>
+	 Prénom<input type="text" name="prenom"/><br/>
 	 nouveau mot de passe<input type="text" name="newPassword"/><br/>
 	 confirmation du mot de passe<input type="text" name="confirmPassword"/><br/>
 	 E-mail<input type="text" name="email"/><br/>
