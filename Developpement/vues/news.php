@@ -1,5 +1,21 @@
 ﻿
 <?php
+	include('modeles/pulse.php');
+	
+	if(isset($_SESSION['pseudo']))
+	{
+		if(isset($_POST['PROpulse']))
+		{
+		
+			pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['PROpulse'], $_POST['type']);
+		}
+		else if(isset($_POST['DEpulse']))
+		{
+		
+			pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['DEpulse'], $_POST['type']);
+		}
+	}
+	
 		$date = 0;
 		$rate = 0;
 		$type = 0;
@@ -353,9 +369,9 @@ if(isset($_POST['pulse']))
 			echo"<td>";
 						echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input style='margin-top: -15px;' type='submit' name='debattre' value='débattre' /></form></div>";
 						echo"	<div class='depulse'>&nbsp;";
-						echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' style='margin-top: -15px;' name='DEpulse' value='DEpulse' /></form></div></a>";
+						echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' style='margin-top: -15px;' name='DEpulse' value='DEpulse' /></form></div></a>";
 						echo"	<div class='propulse'>&nbsp;";
-						echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' style='margin-top: -15px;' name='PROpulse' value='PROpulse' /></form></div></a>";
+						echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' style='margin-top: -15px;' name='PROpulse' value='PROpulse' /></form></div></a>";
 			echo"</td>";
 			echo"</tr>";
 			echo"</table>";
