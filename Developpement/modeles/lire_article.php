@@ -6,7 +6,7 @@ $sucess = mysql_query ($requete) or die (mysql_error ());
 while ($resultats=mysql_fetch_assoc($sucess))
 {
 	{ 
-				echo 'titre: '.$resultats['title'].'   Date :'.$resultats['post_date'].'</br>
+				echo 'tite: '.$resultats['title'].'   Date :'.$resultats['post_date'].'</br>
 					'.$resultats['content'];
 	}
 }
