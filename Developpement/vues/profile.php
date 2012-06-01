@@ -159,7 +159,7 @@ if(!isset($_GET['pseudo']))
 			else
 			{
 				$image = imagecreatefromstring($col['profile_picture']);
-				ob_start(); //You could also just output the $image via header() and bypass this buffer capture.
+				ob_start();
 				imagejpeg($image, null, 80);
 				$data = ob_get_contents();
 				ob_end_clean();

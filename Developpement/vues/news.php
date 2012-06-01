@@ -302,7 +302,7 @@ if(isset($_POST['pulse']))
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;lire l'article&nbsp;&nbsp;</a>";
 			echo"<span style='color:white;'>&nbsp;&nbsp;Pulsé le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-			echo"&nbsp;par ".$data['pseudo']."</div>";
+			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>! </div>";
 			echo"	</span></td>";
 			echo"<form action='index.php?page=profile' method='post'/>";
 			echo'</form>';
@@ -361,7 +361,7 @@ if(isset($_POST['pulse']))
 			echo"		</div>";
 			echo"<span style='color:white;border: 2px solid #003e40;background-color: #85c630;'>&nbsp;&nbsp;Ecrit le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-			echo"&nbsp;par ".$data['pseudo'];
+			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!";
 			echo"	</span></td>";
 			echo"	</td>";
 			echo"</tr>";

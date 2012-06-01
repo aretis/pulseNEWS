@@ -1,4 +1,4 @@
 <?php
 	include("vues/header.php");
-	include("modeles/list_users.php");
+	include("vues/list_users.php");
 ?>	
