@@ -76,11 +76,15 @@
 			}
 			else
 			{
-				echo"Votre news a bien été pulsé !";
+				echo"   <div id='note'>
+        Merci d'avoir noté cet article ! <a id='close'>[close]</a>
+    </div>";
 			}
 		}
 		else 
 		{
-			echo"Vous avez déja noté cet article !";
+			echo"   <div id='note'>
+        Vous avez déjà noté cet article ! <a id='close'>[close]</a>
+    </div>";
 		}
 }

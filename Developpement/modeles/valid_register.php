@@ -11,7 +11,7 @@ function valid_register($pseudo,$password,$surname,$firstname,$mail,$areaname)
 	mysql_select_db("pulsenews")
 		or die("Base de données inaccessible.".mysql_error());
 	
-	mysql_query('INSERT INTO users VALUES("","'.$pseudo.'","'.$password.'","'.$surname.'","'.$firstname.'","'.$mail.'","", "", "'.$areaname.'")');
+	mysql_query('INSERT INTO users VALUES("","'.$pseudo.'","'.$password.'","'.$surname.'","'.$firstname.'","'.$mail.'","", "", "'.$areaname.'","","")');
 	
 	mysql_close($link);
 	}
