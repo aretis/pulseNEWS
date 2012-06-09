@@ -209,6 +209,7 @@ if(isset($_POST['pulse']))
 	else if($news_exists == 0){
 		echo"<span style='color : red'>Votre news à bien été pulsée !</span>";}
 }?>
+
 			<tr>
 				<td>
 					<div class='block_title'>&nbsp;politique</div>
@@ -226,6 +227,8 @@ if(isset($_POST['pulse']))
 					</div>
 				</td>
 			</tr>
+		
+		
 			<tr style='height: 25px;'>
 			</tr>
 			<tr>
@@ -246,6 +249,7 @@ if(isset($_POST['pulse']))
 					</div>
 				</td>
 			</tr>
+			
 </table>
 
 </td>
@@ -320,6 +324,7 @@ if(isset($_POST['pulse']))
 			echo"</tr>";
 			
 			echo"</table>";
+			echo"<br>";
 		}		
 		
 		else if( $data['type'] == 0)
@@ -359,7 +364,7 @@ if(isset($_POST['pulse']))
 			echo"		<div class='description'>";
 			echo $data['description']; 
 			echo"		</div>";
-			echo"<span style='color:white;border: 2px solid #003e40;background-color: #85c630;'>&nbsp;&nbsp;Ecrit le ";
+			echo"<span style='color:white;background-color: #85c630;'>&nbsp;&nbsp;Ecrit le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!";
 			echo"	</span></td>";
@@ -387,14 +392,11 @@ if(isset($_POST['pulse']))
 
 			<tr>
 				<td>
-				</td>
-				<td>
 					<div class='block_title'>&nbsp;sport</div>
 				</td>
 			</tr>
 			<tr>
-				<td>
-				</td>
+				
 				<td style='background-color: #85c630;'>
 					<div class='block_content_right'>
 					<?php
@@ -406,18 +408,16 @@ if(isset($_POST['pulse']))
 					</div>
 				</td>
 			</tr>
+		
 			<tr style='height: 25px;'>
 			</tr>
+		
 			<tr>
-			<td>
-			</td>
 				<td>
 					<div class='block_title'>&nbsp;écologie</div>
 				</td>
 			</tr>
 			<tr>
-				<td>
-				</td>
 				<td style='background-color: #85c630;'>
 					<div class='block_content_right'>	
 					
@@ -430,6 +430,7 @@ if(isset($_POST['pulse']))
 					</div>
 				</td>
 			</tr>
+		
 </table>
 </td>
 </table>
