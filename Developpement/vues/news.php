@@ -123,7 +123,7 @@ function change3(num)
 		
 		if($news_exists == 0)
 		{
-			$query='INSERT INTO posts VALUES ("", "'.$_SESSION['id_user'].'", "1", "'.$_POST['title'].'", "'.$_POST['link'].'", "", "'.$_POST['cat'].'", "0", NOW(), "0")';
+			$query='INSERT INTO posts VALUES ("", "'.$_SESSION['id_user'].'", "1", "'.mysql_real_escape_string($_POST['title']).'", "'.$_POST['link'].'", "", "'.$_POST['cat'].'", "0", NOW(), "0")';
 			
 			if(!mysql_query($query) )
 			{
