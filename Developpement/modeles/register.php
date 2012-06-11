@@ -96,7 +96,7 @@ $result = call_db($query);
 </form>
 
 
-
+//?timer
 <pre id='block'>
 <br>
 <span id='title'>pulseNEWS c'est :</span>
