@@ -241,3 +241,7 @@ a.submit:focus{
 	font-size: 14px;
 	border-color:#85c630;
 }
+ul ul {display: none;
+poistion :absolute;}
+li:hover ul.niveau2, li li:hover ul.niveau3 {display:block;
+position:absolute;}
