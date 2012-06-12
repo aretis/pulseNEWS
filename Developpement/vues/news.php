@@ -197,7 +197,7 @@ function change3(num)
 <br>
 <br>
 <table>
-<td>
+<td style='vertical-align: top;'>
 <table cellpadding='0' cellspacing='0' class='rss_block'>
 
 <?php 
@@ -387,8 +387,8 @@ if(isset($_POST['pulse']))
 ?>
 
 </td>
-<td>
-	<table cellpadding='0' cellspacing='0' class='rss_block'>
+<td style='vertical-align: top;'>
+	<table cellpadding='0' cellspacing='0' class='rss_block' >
 
 			<tr>
 				<td>
@@ -408,10 +408,10 @@ if(isset($_POST['pulse']))
 					</div>
 				</td>
 			</tr>
-		
+	
 			<tr style='height: 25px;'>
 			</tr>
-		
+	
 			<tr>
 				<td>
 					<div class='block_title'>&nbsp;écologie</div>
@@ -430,7 +430,7 @@ if(isset($_POST['pulse']))
 					</div>
 				</td>
 			</tr>
-		
+	
 </table>
 </td>
 </table>
