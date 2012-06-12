@@ -876,12 +876,33 @@ border: 1px solid #003e40;
 
 .user_link a
 {
-	background-color: black;
+	-webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   border: 1px solid #003e40;
+   background: #62a708;
+   background: -webkit-gradient(linear, left top, left bottom, from(#85c630), to(#62a708));
+   background: -webkit-linear-gradient(top, #85c630, #62a708);
+   background: -moz-linear-gradient(top, #85c630, #62a708);
+   background: -ms-linear-gradient(top, #85c630, #62a708);
+   background: -o-linear-gradient(top, #85c630, #62a708);
+   padding: 6px -5px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 22px;
+	
 }
+.user_link:hover {
 
+   color: #f5ff63;
+   }
 #footer
 {
 	width: 100%;
