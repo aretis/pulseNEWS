@@ -2,73 +2,153 @@
     font-family: "coolvetica_rg";
     src: url("fonts/coolvetica_rg.ttf") format("truetype");
 }
-body {
-    background-color: white;
-    font-family: 'coolvetica_rg';
+/* 
+    AUTHOR: Chris Coyier
+            chriscoyier@gmail.com
+            http://chriscoyier.net
+*/
+
+* { margin: 0; padding: 0; }
+
+html { overflow-y: scroll; }
+
+.clear {
+	clear: both;
 }
-a {
-    text-decoration: none;
+
+.floatLeft {
+	float: left;
 }
-.header {
-    background-color: #85C630;
-    margin: auto;
-    width: 990px;
-    z-index: 8;
+
+.floatRight {
+	float: right;
 }
-.header_info {
-    color: white;
-    font-size: 12px;
-    height: 63px;
-    text-align: right;
-    width: 349px;
+
+body { 
+	font: 10px/2 "Lucida Grande", Helvetica, Sans-Serif;
+	color: #eee;
 }
-.header_menu {
-    font-family: 'coolvetica_rg';
-    font-size: 23px;
-    height: 34px;
+
+#background {
+	background: url(design/img/background.png) repeat 5% 5%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 100;
 }
-#main {
-    margin: 0 auto;
-    width: 1008px;
+
+#midground {
+	background: url(design/img/midground.png) repeat 20% 20%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 100;
 }
-#content {
-    background-color: #F0F8FF;
-    height: 78%;
-    margin-top: 107px;
-    overflow: hidden;
-    position: absolute;
-    width: 990px;
+
+#foreground {
+	background: url(design/img/foreground.png) repeat 90% 110%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 200;
 }
-input[type="submit"], a.submit {
-    background-color: #50B326;
-    border: 0 none;
-    border-radius: 25px 25px 25px 25px;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-family: 'coolvetica_rg';
-    font-size: 28px;
-    margin-left: 369px;
-    margin-top: -17;
-    text-decoration: none;
+
+#sidebar {
+	width: 160px;
+	float: left;
+	margin-right: 20px;
 }
-input[type="submit"]:hover, a.submit:hover {
-    color: #FFFD55;
-    text-decoration: none;
+
+#main-content {
+	width: 540px;
+	float: right;
 }
-input[type="submit"]:active, input[type="submit"]:focus, a.submit:active, a.submit:focus {
-    background: none repeat scroll 0 0 green;
-    border-color: #093C75;
-    outline: medium none;
+
+#page-wrap {
+	width: 720px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 300;
+	background: rgba(0,0,0,0.7);
+	overflow: hidden;
+	padding: 30px 50px;
+	
+	border-left: 10px solid rgba(255,255,255,0.2);
+	border-right: 10px solid rgba(255,255,255,0.2);
 }
-.erreur {
-    color: red;
-    font-family: 'coolvetica_rg';
-    font-size: 21px;
-    height: 0;
-    left: 1007px;
-    padding: 2px;
-    position: absolute;
-    top: -6px;
-    width: 43%;
-    z-index: 4;
+
+h1 {
+	font: 42px Georgia, Serif;
+	margin: 0 0 10px 0;
+	color: #eee;
+}
+
+h2 {
+	font: 20px Georgia, Serif;
+	margin: 0 0 1px 0;
+	color: #eee;
+}
+
+h2.bump {
+	text-indent: 200px;
+}
+
+p {
+	margin: 0 0 15px 0;
+	color: #999;
+}
+
+code {
+	color: white;
+	margin: -1px 0 0 0;
+	font: 10px Courier;
+}
+
+p.thinParagraph {
+	width: 340px;
+}
+
+blockquote {
+	font: italic 15px/20px Georgia, Serif;
+	width: 180px;
+}
+
+blockquote p {
+	color: white;
+}
+
+blockquote.right {
+	float: right;
+}
+
+ul.meta {
+	width: 180px;
+	margin: 0 10px 0 0;
+	list-style: none;
+	float: left;
+}
+
+ul.meta li {
+	text-align: right;
+}
+
+ul.meta li.author {
+	font: normal small-caps normal 15px Georgia, Serif;
+	margin: 0 0 2px 0;
+	letter-spacing: 2px;
+}
+
+ul.meta li.date {
+	margin: 0 0 10px 0;
+}
+
+ul.meta li.comments {
+	font-style: italic;
+}
+
+.article {
+	float: right;
+	width: 340px;
+}
+
+ol {
+	margin: 20px 0;
+	list-style: inside decimal;
 }

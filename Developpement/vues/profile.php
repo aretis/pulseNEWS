@@ -1,47 +1,8 @@
-﻿<link rel="stylesheet" href="design/profil1.css" />
+﻿<link rel="stylesheet" href="design/profil.css" />
 
 
-<?php
+<?php	
 
-	$user=$_SESSION['id_user'];
-	include('connexion.php');
-	include('/../modeles/couperChaine.php');
-	$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']."";
-	if(!mysql_query($query) )
-			{
-				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
-				return;
-			}
-	$sucess= mysql_query($query) or die (mysql_error());
-	while($resultats=mysql_fetch_assoc($sucess))
-	{
-	echo"<ul class='niveau1'>";
-	echo"  <li>";
-	echo"  <div class='block_title'>&nbsp;vous avez ".$resultats['nb_notif']." notifications! <a href= index.php?page=voir_notif /a></div>";
-	echo"  <ul class='niveau2'>";
-	$requete="SELECT * FROM notification N JOIN comments C ON N.id_comment = C.id_comment JOIN users U ON C.id_user=U.id_user  WHERE N.id_user != ".$_SESSION['id_user']." AND read_confirm='0'" ;
-	$sucess=mysql_query($requete) or die(mysql_error());
-	While($resultats=mysql_fetch_array($sucess))
-	{
-
-	
-    echo" <li>".$resultats['pseudo']." a commenter votre post ";
-	$chaine_nouvelle=couperChaine($resultats['content'],10);
-	echo $chaine_nouvelle;
-	 
-	 
-	echo" </li>";
-      }
-	  
-  echo"  </ul>
-  </li>
-</ul>";
-	/*<td>
-					<div class='block_title'>&nbsp;vous avez ".$resultats['nb_notif']." notifications!</div>
-	</td>";*/
-
-	
-	}
 	if(isset($_GET['delete_comment'])) include('modeles/delete_comment.php');
 	
 	if(isset($_GET['delete_post'])) include('modeles/delete_post.php');
@@ -73,15 +34,15 @@
 		if(isset($_SESSION['pseudo'])){
 		$pseudo = $_SESSION['pseudo'];
 		$req = mysql_query("SELECT * FROM users WHERE pseudo='".$pseudo."'");
-		$req2 = mysql_fetch_row($req);
-		$pseudo = $req2[1];
-		$key = $req2[0];
-		$surname = $req2[3];
-		$mail = $req2[5];
-		$area_name = $req2[8];
-		$firstname = $req2[4];
-		$about = $req2[6];
-		$humor = $req[7];
+		$req2 = mysql_fetch_assoc($req);
+		$pseudo = $req2['pseudo'];
+		$id_user = $req2['id_user'];
+		$surname = $req2['surname'];
+		$mail = $req2['mail'];
+		$area_name = $req2['area_name'];
+		$firstname = $req2['firstname'];
+		$about = $req2['about'];
+		$humor = $req2['humor'];
 		}
 		/*print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about);*/
 ?>
@@ -93,6 +54,7 @@
 			
 		while($data = mysql_fetch_array($result))
 		{
+			$id_user = $data['id_user'];
 			$visit_surname = $data['surname'];
 			$visit_firstname = $data['firstname'];
 			$visit_mail = $data['mail'];
@@ -101,11 +63,12 @@
 			$visit_about = $data['about'];
 		}
 	}
+	else
+	{
+		$id_user = $_SESSION['id_user'];
+	}
 ?>
 <div class='profile_ban'>
-<<<<<<< HEAD
-	<img src='design/img/ban_exemple.png'/>
-=======
 <?php
 				
 			$request = "SELECT cover_picture FROM users WHERE id_user = ".$id_user;
@@ -138,7 +101,6 @@
 							{
 								echo $humor;
 							} ?>"</div>
->>>>>>> 9139caf12fdff13b6520698c531711d16aba79f6
 </div>
 <table style='margin: auto; text-align: center;' cellpadding='0' cellspacing='0'>
 <td>
@@ -154,6 +116,7 @@ echo"<td>
 </td>
 <td>
 <div class='profile_name'>&nbsp;
+
 <?php 
 if(isset($_GET['pseudo']))
 {
@@ -182,9 +145,6 @@ if(!isset($_GET['pseudo']))
 			
 			<tr>
 				<td>
-<<<<<<< HEAD
-					<img src='design/img/exemple_profile.jpg'/>
-=======
 				
 				<?php
 				
@@ -208,7 +168,6 @@ if(!isset($_GET['pseudo']))
 				
 				?>
 					
->>>>>>> 9139caf12fdff13b6520698c531711d16aba79f6
 				</td>
 			</tr>
 
@@ -324,14 +283,7 @@ if(!isset($_GET['pseudo']))
 							}
 					?><br>
 					<strong>Humeur : </strong>
-					<?php if(isset($_GET['pseudo']))
-							{
-								echo $visit_humor;
-							}
-							else
-							{
-								echo $humor;
-							}
+					<?php 
 					?><br>
 					</div>
 				</td>
