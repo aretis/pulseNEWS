@@ -5,9 +5,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset='UTF-8'"/>
 <link rel="stylesheet" href="design/style.css" />
 <link rel="icon" type="image/gif" href="design/img/favicon.gif" />
-<script src="js/jquery-1.3.2.min.js" type="text/javascript"></script>
 <script src="js/modernizr.custom.80028.js"></script>
 	<script src="js/jquery.backgroundPosition.js" type="text/javascript"></script>
+	<script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
+	<script src='js/slotmachine.js'></script>
+	    <script src="js/organictabs.jquery.js"></script>
+    <script>
+        $(function() {
+    
+            $("#example-one").organicTabs();
+            
+            $("#example-two").organicTabs({
+                "speed": 200
+            });
+    
+        });
+    </script>
+
 	<script type="text/javascript">
 		$(function(){
 		

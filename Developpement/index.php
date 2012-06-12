@@ -26,7 +26,7 @@ else
 	}
 
 }
-
+include('vues/footer.php');
 
 
 
