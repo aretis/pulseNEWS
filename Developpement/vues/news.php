@@ -133,6 +133,8 @@ function change3(num)
 		}
 	}
 ?>
+
+
 <div class='tri'>
 	<div class='shorti'>Trier par : </div>
 	<br>
@@ -191,9 +193,10 @@ function change3(num)
 		?>
 	</SELECT><div class='lol2'> <input name='tri' type='submit' value='trier' /></div>
 	
-	<br><br><hr>
+	
 </form>
 </div>
+
 <br>
 <br>
 <table>

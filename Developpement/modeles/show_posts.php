@@ -48,11 +48,7 @@
 			include('modeles/comment.php');
 			
 			echo"	</td>";
-			echo"	<td style='background-color: white;'>";
-			echo"		<div class='date_news'>";
-				echo"	</div>";
-					
-				echo"</td>";
+		
 
 			echo"</tr>";
 			echo"<tr>";
