@@ -903,3 +903,20 @@ border: 1px solid #003e40;
 
 #example-two li a.current,#example-two li a.current:hover { background-color: #eee !important; color: black; }
 #example-two .nav li a:hover, #example-two .nav li a:focus { background: #999;}
+
+
+
+
+
+#accordion {
+  
+   margin: 100px auto; }
+#accordion div {
+   height: 50%;
+   overflow: hidden;}
+#accordion:hover div {
+   height: 20px; }
+#accordion:hover div:hover {
+   height: 340px;
+   overflow: auto; }
+   
