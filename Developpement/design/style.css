@@ -710,7 +710,7 @@ border: 1px solid #003e40;
     font-family: coolvetica_rg;
     font-size: 26px;
     margin: auto;
-    width: 100px;
+    width: 20%;
 }
 #area {
     display: none;
@@ -719,10 +719,8 @@ border: 1px solid #003e40;
     display: none;
 }
 .lol2 {
-    left: 1278px;
-    position: absolute;
-    top: 167px;
-    width: 100px;
+ 
+  
 }
 .no_news
 {
@@ -907,16 +905,4 @@ border: 1px solid #003e40;
 
 
 
-
-#accordion {
-  
-   margin: 100px auto; }
-#accordion div {
-   height: 50%;
-   overflow: hidden;}
-#accordion:hover div {
-   height: 20px; }
-#accordion:hover div:hover {
-   height: 340px;
-   overflow: auto; }
    

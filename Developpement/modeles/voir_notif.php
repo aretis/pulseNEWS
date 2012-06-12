@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 	include('connexion.php');
-	include('couperChaine.php');
+
 	$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']."";
 	if(!mysql_query($query) )
 			{
-				echo "La requ�te n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
+				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
 				return;
 			}
 			
@@ -32,7 +32,7 @@
 		<tr style='background-color: #85c630;'>
 		<td>
 		<div class='description'>
-		 ".$resultats['pseudo']." a commenter votre post:</br>";
+		 ".$resultats['pseudo']." a commenté votre post:</br>";
 		
 		$chaine_nouvelle=couperChaine($resultats['content'],10);
 		echo $chaine_nouvelle;
