@@ -133,12 +133,14 @@ function change3(num)
 		}
 	}
 ?>
+
+
 <div class='tri'>
 	<div class='shorti'>Trier par : </div>
 	<br>
 	<form method='post' action='index.php?page=news'>
 	
-	<SELECT id='date' name='date' selected='selected' ='change2(this.selectedIndex)'>
+	<SELECT id='date' name='date' selected='selected' onchange='change2(this.selectedIndex)'>
 		<option value='0'>Date</option>
 		<option value='1'>Les plus récentes</option>
 		<option value='2'>Les moins récentes</option>
@@ -191,9 +193,10 @@ function change3(num)
 		?>
 	</SELECT><div class='lol2'> <input name='tri' type='submit' value='trier' /></div>
 	
-	<br><br><hr>
+	
 </form>
 </div>
+
 <br>
 <br>
 <table>

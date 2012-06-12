@@ -26,12 +26,13 @@
 			}
 			else
 			{
+				
 				$image = imagecreatefromstring($data['profile_picture']);
 				ob_start();
 				imagejpeg($image, null, 80);
-				$data = ob_get_contents();
+				$img = ob_get_contents();
 				ob_end_clean();
-				echo '<img src="data:image/jpg;base64,' .  base64_encode($data)  . '" />';
+				echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
 			}
 			echo"<div class='user_link'><a href='index.php?page=profile&pseudo=".$data['pseudo']."'>&nbsp;".$data['pseudo']."</a>&nbsp;</div>";
 		}

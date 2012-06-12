@@ -3,6 +3,7 @@
 
 <?php	
 
+<<<<<<< HEAD
 	$user=$_SESSION['id_user'];
 	include('connexion.php');
 	include('/../modeles/couperChaine.php');
@@ -42,8 +43,9 @@
 					<div class='block_title'>&nbsp;vous avez ".$resultats['nb_notif']." notifications!</div>
 	</td>";*/
 
+=======
+>>>>>>> fad0aa274182d321420908e976bbcfd2aeb976e1
 	
-	}
 
 
 

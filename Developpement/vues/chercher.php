@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <body>
 <form method="post" action="index.php?page=recherche">
 Vous rechercher? <input type="text"name="recherche"/>

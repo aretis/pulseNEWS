@@ -1,12 +1,16 @@
+<<<<<<< HEAD
 <link rel="stylesheet" href="design/style.css" />
 <?php
 	$read_confirm='1';
+=======
+﻿<?php
+>>>>>>> fad0aa274182d321420908e976bbcfd2aeb976e1
 	include('connexion.php');
-	include('couperChaine.php');
+
 	$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']."";
 	if(!mysql_query($query) )
 			{
-				echo "La requ�te n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
+				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
 				return;
 			}
 			
@@ -32,6 +36,7 @@
 
 		</tr>
 		<tr style='background-color: #85c630;'>
+<<<<<<< HEAD
 		<td>";
 			if ($resultats['read_confirm']==1)
 			{
@@ -45,6 +50,16 @@
 		$chaineNouvelle=couperChaine($chaine,10);
 		echo $chaineNouvelle;
 		echo"</div>
+=======
+		<td>
+		<div class='description'>
+		 ".$resultats['pseudo']." a commenté votre post:</br>";
+		
+		$chaine_nouvelle=couperChaine($resultats['content'],10);
+		echo $chaine_nouvelle;
+		echo"		
+		</div>
+>>>>>>> fad0aa274182d321420908e976bbcfd2aeb976e1
 		</td>
 		</div>
 		</td>
