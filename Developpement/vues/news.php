@@ -138,7 +138,7 @@ function change3(num)
 	<br>
 	<form method='post' action='index.php?page=news'>
 	
-	<SELECT id='date' name='date' selected='selected' ='change2(this.selectedIndex)'>
+	<SELECT id='date' name='date' selected='selected' onchange='change2(this.selectedIndex)'>
 		<option value='0'>Date</option>
 		<option value='1'>Les plus récentes</option>
 		<option value='2'>Les moins récentes</option>
