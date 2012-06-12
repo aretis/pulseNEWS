@@ -80,7 +80,7 @@
 			
 			if(empty($col['cover_picture']))
 			{
-				echo"<img src='design/img/ban_exemple.jpg'/>";
+				echo"<img src='design/img/ban_exemple.png'/>";
 			}
 			else
 			{
