@@ -1,10 +1,10 @@
 ﻿<link rel="stylesheet" href="design/form.css" />
 <table class='create_article'>
 <form action='#' method='post' enctype="multipart/form-data">
-<tr class='title_create_article'><td>titre</td><td><input style='width: 500px;' type='text' name='title'/></td></tr>
+<tr class='title_create_article'><td>titre</td><td><input style='width: 500px;' type='text' name='title' value='<?php if (isset($article['title'])) echo $article['title']; ?>'/></td></tr>
 <tr><td class='title_create_article'>image</td><td><input type='file' name='fichier' size='10'/></td></tr>
-<tr><td class='title_create_article'>description</td><td><textarea style='width: 500px; height: 75px; font-family: Arial;' type='text' name='description'></textarea></td></tr>
-<tr><td class='title_create_article'>contenu</td><td><textarea style='width: 600px; height: 400px; font-family: Arial;' type='text' name='content'></textarea></td></tr>
+<tr><td class='title_create_article'>description</td><td><textarea style='width: 500px; height: 75px; font-family: Arial;' type='text' name='description'><?php if (isset($article['description'])) echo $article['description']; ?></textarea></td></tr>
+<tr><td class='title_create_article'>contenu</td><td><textarea style='width: 600px; height: 400px; font-family: Arial;' type='text' name='content'><?php if (isset($article['content'])) echo $article['content']; ?></textarea></td></tr>
 <tr><td class='title_create_article'>région</td><td><SELECT id='name' select='selected' name='area'>
 <?php
 

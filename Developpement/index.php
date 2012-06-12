@@ -1,7 +1,7 @@
 ﻿<?php
 
 session_start();
- 
+ $footer = 1;
  	if( isset($_GET['disconnect']))
 	{
 		unset($_SESSION['pseudo']);
@@ -11,6 +11,7 @@ session_start();
 if (!isset($_GET['page']))
 {
 	include('controleurs/home.php');
+	$footer = 0;
 }
 else
 {
@@ -26,9 +27,14 @@ else
 	}
 
 }
-
-
-
+if($footer == 0)
+{
+	
+}
+else
+{
+	include('vues/footer.php');
+}
 
  
  

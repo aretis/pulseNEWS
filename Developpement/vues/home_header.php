@@ -1,8 +1,6 @@
 <head>
 	<title>pulseNEWS, sponsored by your mind!</title>
-<script type="text/javascript" src="modeles/button_input.js"></script>
 <link rel="stylesheet" href="design/home.css" />
-<link rel="icon" type="image/gif" href="favicon.gif" />
 </head>
 <body>
 <div class='header'>
@@ -16,12 +14,12 @@
 				<div class='header_info'>
 				
 					<div class='header_menu'>
-						<form id='start' name='formulaire' action='index.php?page=home' method='post' onSubmit='verif_formulaire()'>
+						<form id='start' name='formulaire' action='index.php?page=home' method='post'>
 						<span style='color: white;'>pseudo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<span style='color: white;'>mot de passe</a>&nbsp;&nbsp;
 					</div>
 					
-					<input id='name' type='text'  name="pseudo" VALUE ='<?php if(isset($_POST['pseudo'])) echo $_POST['pseudo']; ?>'/>
+					<input id='pseudo' type='text'  name="pseudo" value='<?php if(isset($_POST['pseudo'])) echo $_POST['pseudo']; ?>'/>
 					<input id='password' type='password' name="password" />
 					
 				</div>

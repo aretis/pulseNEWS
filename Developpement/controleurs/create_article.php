@@ -28,6 +28,11 @@ if( isset($_POST['area']) || isset($_POST['cat']) )
 	else
 	{
 		$field_errors = 1;
+		$article['title'] = $_POST['title'];
+		$article['description'] = $_POST['description'];
+		$article['content'] = $_POST['content'];
+		$article['area'] = $_POST['area'];
+		$article['cat'] = $_POST['cat'];
 	}
 	
 	

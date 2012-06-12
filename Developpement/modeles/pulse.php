@@ -74,9 +74,17 @@
 				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
 				return;
 			}
+			else
+			{
+				echo"   <div id='note'>
+        Merci d'avoir noté cet article ! <a id='close'>[close]</a>
+    </div>";
+			}
 		}
 		else 
 		{
-			echo"Vous avez déja noté cet article !";
+			echo"   <div id='note'>
+        Vous avez déjà noté cet article ! <a id='close'>[close]</a>
+    </div>";
 		}
 }

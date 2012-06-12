@@ -42,11 +42,9 @@
 			echo"		<td>";
 			echo"		<div class='description_news'>";
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;&nbsp;lire l'article&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;";
-			echo "pulsé le :";
+			echo "pulsé le : ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-			
-			echo $pseudo;
-			echo "par ".$data['pseudo']." !</div>";
+			echo " par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!</div>";
 			include('modeles/comment.php');
 			
 			echo"	</td>";
@@ -148,7 +146,7 @@
 			echo"		</div>";
 			echo"<span style='color:white;box-shadow: 5px 5px 3px #003e40;background-color: #85C630;border: 2px solid black;'>&nbsp;&nbsp;Ecrit le";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-			echo"&nbsp;par ".$data['pseudo']."</span>";
+			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!</span>";
 			
 			echo"	</td>";			
 			echo"	</td>";

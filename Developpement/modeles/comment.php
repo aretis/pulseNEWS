@@ -29,7 +29,7 @@
 		}
 		echo"<div class='comment_post'>";
 		echo"<span style='font-size:22px; color:white; font-weight:bold;'>";
-		echo "&nbsp;&nbsp;".$data['pseudo']; 
+		echo "&nbsp;&nbsp;<a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!"; 
 		echo": <br>";
 		echo"</span>";
 		

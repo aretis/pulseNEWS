@@ -36,117 +36,57 @@
 	}
 ?>
 
+	<div id="page-wrap">
 
-
-<table>
-<td>
-<table cellpadding='0' cellspacing='0' class='rss_block_newsfeed'>
-
-<?php 
-if(isset($_POST['pulse']))
-{
-	if($news_exists == 1){
-		echo "<span style='color : red'> Vous avez déja pulsé cette news !</span>";}
-		
-	else if($news_exists == 0){
-		echo"<span style='color : red'>Votre news à bien été pulsée !</span>";}
-}?>
-			<tr>
-
-				<td>
-					<div class='block_title'>&nbsp;politique</div>
-				</td>
-			</tr>
-			<tr>
-				<td style='background-color: #85c630;'>
-					<div class='block_content'>
-
-					<?php
+	     <div id="example-two">
+					
+    		<ul class="nav">
+                <li class="nav-one"><a href="#featured2" class="current">Politique</a></li>
+                <li class="nav-two"><a href="#core2">Economie</a></li>
+                <li class="nav-three"><a href="#jquerytuts2">Sport</a></li>
+                <li class="nav-four last"><a href="#classics2">Ecologie</a></li>
+            </ul>
+    		
+    		<div class="list-wrap">
+    		
+    			<ul id="featured2">
+    			<?php
 					$url= 'politique.xml';
 					$cat = 'politique';
 					
 					echo RSS_display($cat, $url, 20);		
 					?>
-					</div>
-				</td>
-
-			</tr>
-			<tr style='height: 25px;'>
-			</tr>
-			<tr>
-				<td>
-					<div class='block_title'>&nbsp;économie</div>
-				</td>
-			</tr>
-			<tr>
-				<td style='background-color: #85c630;'>
-					<div class='block_content'>
-					<?php
+    			</ul>
+        		 
+        		 <ul id="core2" class="hide">
+                    <?php
 					$url= 'economie.xml';
 					$cat = 'économie';
 					
 					echo RSS_display($cat, $url, 20);		
 					?>
-					
-					</div>
-				</td>
-			</tr>
-			</div>
-</table>
-
-</td>
-<td>
-
-
-</td>
-<td>
-	<table cellpadding='0' cellspacing='0' class='rss_block'>
-
-			<tr>
-				<td>
-				</td>
-				<td>
-					<div class='block_title'>&nbsp;sport</div>
-				</td>
-			</tr>
-			<tr>
-				<td>
-				</td>
-				<td style='background-color: #85c630;'>
-					<div class='block_content_right'>
-					<?php
+        		 </ul>
+        		 
+        		 <ul id="jquerytuts2" class="hide">
+        		   <?php
 					$url= 'sport.xml';
 					$cat = 'sport';
 					
 					echo RSS_display($cat, $url, 20);		
-					?>				
-					</div>
-				</td>
-			</tr>
-			<tr style='height: 25px;'>
-			</tr>
-			<tr>
-			<td>
-			</td>
-				<td>
-					<div class='block_title'>&nbsp;écologie</div>
-				</td>
-			</tr>
-			<tr>
-				<td>
-				</td>
-				<td style='background-color: #85c630;'>
-					<div class='block_content_right'>	
-					
-					<?php
+					?>
+        		 </ul>
+        		 
+        		 <ul id="classics2" class="hide">
+                    <?php
 					$url= 'ecologie.xml';
 					$cat = 'écologie';
 					
 					echo RSS_display($cat, $url, 20);		
-					?>					
-					</div>
-				</td>
-			</tr>
-</table>
-</td>
-</table>
+					?>
+        		 </ul>
+        		 
+    		 </div> <!-- END List Wrap -->
+		 
+		 </div> <!-- END Organic Tabs (Example One) -->
+		
+	</div>
