@@ -49,7 +49,7 @@ function check_register($pseudo, $password, $confirmpassword, $firstname, $surna
 	{
 		include('modeles/valid_register.php');
 		valid_register($pseudo,$password,$surname,$firstname,$mail,$areaname);
-		header('Location: index.php?page=validation');
+		//header('Location: index.php?page=validation');
 	}
 	
 	echo"<span class='erreur'>";
