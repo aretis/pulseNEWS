@@ -27,7 +27,7 @@
 		$article = array();
 		$query = 'SELECT * FROM posts INNER JOIN users ON posts.id_user = users.id_user ';
 
-		if($type != 0 || $area == 0 || $date == 0 || $rate == 0)
+		if($type == 0 && $area == 0 && $date == 0 && $rate == 0)
 		{
 			$query .= 'ORDER BY post_date DESC';
 		}
@@ -35,7 +35,6 @@
 		{
 			if($type == 1) $query .= 'WHERE type = 0 ';
 			else if ($type == 2) $query .= 'WHERE type = 1 ';
-			else if ($type == NULL) $query .= 'WHERE type IN(0,1) ';
 			
 			if($area != 0) $query .= 'AND area = '.$area;
 			else if($cat != 0) $query .= 'AND cat = '.$cat;

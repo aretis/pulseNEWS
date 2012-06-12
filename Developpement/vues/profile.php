@@ -103,9 +103,7 @@
 	}
 ?>
 <div class='profile_ban'>
-<<<<<<< HEAD
 	<img src='design/img/ban_exemple.png'/>
-=======
 <?php
 				
 			$request = "SELECT cover_picture FROM users WHERE id_user = ".$id_user;
