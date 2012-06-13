@@ -131,15 +131,15 @@
 				$image = imagecreatefromstring($col['picture_blob']);
 				ob_start(); //You could also just output the $image via header() and bypass this buffer capture.
 				imagejpeg($image, null, 80);
-				$data = ob_get_contents();
+				$lol = ob_get_contents();
 				ob_end_clean();
-				echo '<br><img src="data:image/jpg;base64,' .  base64_encode($data)  . '" /><br>';
+				echo '<br><img src="data:image/jpg;base64,' .  base64_encode($lol)  . '" /><br>';
 			}
 				
 			$content = nl2br( $content , false );
 			echo $content;
 			echo"		</div>";
-			echo"<span style='color:white;box-shadow: 5px 5px 3px #003e40;background-color: #85C630;border: 2px solid black;'>&nbsp;&nbsp;Ecrit le";
+			echo"<span style='color:white;box-shadow: 5px 5px 3px #003e40;background-color: #85C630;border: 2px solid black;'>&nbsp;&nbsp;Ecrit le&nbsp;";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!</span>";
 			

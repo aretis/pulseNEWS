@@ -14,9 +14,9 @@
 	
 	$query = "SELECT pseudo FROM users WHERE id_user = ".$id_user;
 	$req = mysql_query($query);
-	while ($data = mysql_fetch_assoc($req))
+	while ($data1 = mysql_fetch_assoc($req))
 	{
-		$pseudo = $data['pseudo'];
+		$pseudo = $data1['pseudo'];
 	}
 	
 	$query = 'SELECT * FROM POSTS WHERE id_post = '.$id_post;

@@ -41,12 +41,12 @@ if(!isset($_SESSION['js'])) $_SESSION['js'] = true;
 	
 	else
 	{
-		// Dans le cas contraire on recharge la page avec le parametre js=yes
-		if(isset($_POST['pseudo']) && isset($_POST['password']) && isset($_POST['confirmpassword']) && isset($_POST['firstname']) && isset($_POST['surname']) && isset($_POST['mail']) && isset($_POST['areaname']))
-		{
 			echo '<script language="JavaScript" type="text/javascript">
 			document.location.href="register.php?js=yes";
 			</script>';
+		// Dans le cas contraire on recharge la page avec le parametre js=yes
+		if(isset($_POST['pseudo']) && isset($_POST['password']) && isset($_POST['confirmpassword']) && isset($_POST['firstname']) && isset($_POST['surname']) && isset($_POST['mail']) && isset($_POST['areaname']))
+		{
 			include('modeles/show_form_errors.php');
 		}
 	}
