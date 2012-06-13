@@ -170,11 +170,10 @@ function RSS_Display($cat, $url, $size = 15, $site = 0)
 		$title = $article["title"];
 		$link = $article["link"];
 		$description = $article["description"];
-		$page .= "<li><a style='color: black' href=\"$link\">$title</a><form action='index.php?page=news' method='post'>
-		<input type='hidden' name='title' value='".addslashes($title)."'/>
+		$page .= "<li><a style='color: black' href='$link'>$title</a><form action='index.php?page=news' method='post'>
+		<input type='hidden' name='title' value=\"".htmlentities($title, NULL, 'UTF-8')."\"/>
 		<input type='hidden' name='link' value='$link'/>
 		<input type='hidden' name='cat' value='$cat'/>
-		<input type='hidden' name='poule' value='lol'/>
 		<input class='pulse_button' type='submit' value='p!' name='pulse'/>
 		</form></li><br><br>";
 

@@ -263,12 +263,8 @@ if(isset($_POST['pulse']))
 	
 	$req = view_all_article($date, $rate, $type, $news_area, $cat_news);
 
-	$row = mysql_fetch_assoc($req);
 	
-	if($row === false)
-	{
-		echo"<div class='no_news'> Désolé, aucune news n'a été trouvée pour ces critères</div>";
-	}
+	
 	
 	while($data = mysql_fetch_assoc($req))
 	{
@@ -386,6 +382,10 @@ if(isset($_POST['pulse']))
 			echo"<br>";
 		}
 		
+	}
+	if($data === false)
+	{
+		echo"<div class='no_news'> Désolé, aucune news n'a été trouvée pour ces critères</div>";
 	}
 ?>
 
