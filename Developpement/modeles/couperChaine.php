@@ -8,7 +8,7 @@
 //-----------------------------------------------------------------------------------------------
 function couperChaine($chaine, $nbrMotMax)
 {
-	$chaineNouvelle = "";
+	$chaineNouvelle= "";
 	$t_chaineNouvelle = explode(" ",$chaine);
 	
 	foreach($t_chaineNouvelle as $cle => $mot)

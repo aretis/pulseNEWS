@@ -1,5 +1,12 @@
-﻿<?php	
+﻿<form>
+<input type='search' name='pulseur'>
+<input type='submit' name ='valider'>
+</form>
+<br>
 
+
+<?php	
+	
 	include('modeles/call_db.php');
 	
 	$query = "SELECT * FROM users";

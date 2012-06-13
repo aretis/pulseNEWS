@@ -58,19 +58,20 @@ while($data=mysql_fetch_assoc($sucess))
 		if ( !empty($_POST['email']) )
 	{
 			$nouveau_email=$_POST['email'];
-			include('connexion.php');
+	
 			$request = "UPDATE users SET mail = '".$nouveau_email."' WHERE  id_user=".$data['id_user']."";
 			$resultat = mysql_query ($request) or die (mysql_error ());
-			echo 'ok!';
+		
 	}
 	
-		if ( !empty($_POST['region']) )
+		if ( $_POST['modif_ville']== 'valid2' )
 	{
-			$nouveau_region=$_POST['region'];
-			include('connexion.php');
+	zehgijokptmelkdsijhu
+			$nouveau_region=$_POST['jiji'];
+
 			$request = "UPDATE users SET area_name = '".$nouveau_region."' WHERE  id_user=".$data['id_user']."";
 			$resultat = mysql_query ($request) or die (mysql_error ());
-			echo 'ok!';
+		
 	}
 			
 }

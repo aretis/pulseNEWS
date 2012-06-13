@@ -3,6 +3,8 @@
 
 <?php	
 
+
+
 	
 
 
@@ -35,7 +37,8 @@
 		or die("Connexion impossible : ".mysql_error());
 		mysql_select_db("pulsenews");
 		mysql_query("SET NAMES 'utf8'");
-		if(isset($_SESSION['pseudo'])){
+		if(isset($_SESSION['pseudo']))
+		{
 		$pseudo = $_SESSION['pseudo'];
 		$req = mysql_query("SELECT * FROM users WHERE pseudo='".$pseudo."'");
 		$req2 = mysql_fetch_assoc($req);
@@ -296,5 +299,5 @@ if(!isset($_GET['pseudo']))
 			</tr>
 </table>
 </td>
-
 </table>
+

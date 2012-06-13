@@ -51,7 +51,8 @@ if ( isset($_POST['prenom']) || isset($_POST['nom']) || isset($_POST['surnom']) 
 				$resultat = mysql_query ($request) or die (mysql_error ());
 			}
 		
-			if ( !empty($_POST['region']) )
+		
+			if ( !empty($_POST['modif_ville']) )
 			{
 				$nouveau_region=$_POST['region'];
 				$request = "UPDATE users SET area_name = '".$nouveau_region."' WHERE  id_user=".$data['id_user']."";

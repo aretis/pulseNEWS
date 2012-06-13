@@ -86,7 +86,7 @@
 						$user=$_SESSION['id_user'];
 						include('connexion.php');
 						include('/../modeles/couperChaine.php');
-						$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']."";
+						$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']." AND read_confirm='0'";
 						if(!mysql_query($query) )
 								{
 									echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
