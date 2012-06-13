@@ -3,7 +3,7 @@
     src: url("fonts/coolvetica_rg.ttf") format("truetype");
 }
 body {
-	background: silver;
+	background-color: #7cc5da;
     font-family: 'Calibri';
 }
 a {
@@ -861,51 +861,33 @@ border: 1px solid #003e40;
 	top: 0; left: 0; right: 0; bottom: 0;
 	z-index: 200;
 }
-#photos {
-   /* Prevent vertical gaps */
-   line-height: 0;
 
-   -webkit-column-count: 5;
-   -webkit-column-gap:   0px;
-   -moz-column-count:    5;
-   -moz-column-gap:      0px;
-   column-count:         5;
-   column-gap:           0px;
+#photos
+{
 
 }
-#photos img {
-  /* Just in case there are inline attributes */
-  width: 100% !important;
-  height: auto !important;
-}
 
-@media (max-width: 1200px) {
-  #photos {
-  -moz-column-count:    4;
-  -webkit-column-count: 4;
-  column-count:         4;
-  }
-}
-@media (max-width: 1000px) {
-  #photos {
-  -moz-column-count:    3;
-  -webkit-column-count: 3;
-  column-count:         3;
-  }
-}
-@media (max-width: 800px) {
-  #photos {
-  -moz-column-count:    2;
-  -webkit-column-count: 2;
-  column-count:         2;
-  }
-}
-@media (max-width: 400px) {
-  #photos {
-  -moz-column-count:    1;
-  -webkit-column-count: 1;
-  column-count:         1;
-  }
+#photos img
+{
+	-webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   border: 1px solid #003e40;
+   background: #62a708;
+   background: -webkit-gradient(linear, left top, left bottom, from(#85c630), to(#62a708));
+   background: -webkit-linear-gradient(top, #85c630, #62a708);
+   background: -moz-linear-gradient(top, #85c630, #62a708);
+   background: -ms-linear-gradient(top, #85c630, #62a708);
+   background: -o-linear-gradient(top, #85c630, #62a708);
+   padding: 6px -5px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+	height: 100px;
 }
 .edit_profile
 {
