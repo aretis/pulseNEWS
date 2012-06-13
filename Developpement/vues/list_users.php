@@ -1,4 +1,4 @@
-﻿<form>
+﻿<form action='index.php?page=recherche_pulseur' method='post'>
 <input type='search' name='pulseur'>
 <input type='submit' name ='valider'>
 </form>

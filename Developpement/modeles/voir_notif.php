@@ -1,7 +1,16 @@
-
-<link rel="stylesheet" href="design/style.css" />
+<html>
+<body>
+<link rel="stylesheet" href="design/profile1.css" />
 
 ﻿<?php
+	if(isset($_GET['delete_notif'])) 
+	{
+	$requete="DELETE FROM notification WHERE id_comment = ".$_GET['delete_notif']."";
+	$sucess=mysql_query($requete) or die(mysql_error());
+	echo "la notification a bien été supprimée";
+	
+	}
+	
 	$read_confirm='1';
 	include('connexion.php');
 
@@ -27,8 +36,13 @@
 						JOIN comments C ON N.id_comment = C.id_comment 
 						JOIN users U ON C.id_user=U.id_user 
 						WHERE  N.id_user != ".$_SESSION['id_user']." 
-						AND  id_pulseur =".$_SESSION['id_user']." 
-						";
+						AND  id_pulseur =".$_SESSION['id_user']." ";
+						
+						/*AND WHERE N.id_post=(SELECT N.id_post FROM notification 
+						WHERE N.id_user=".$_SESSION['id_user'].")
+						ORDER BY post_date DESC ";*/
+						
+						//SELECT * FROM notification WHERE 
 						/*UNION ALL  (SELECT content FROM comments C 
 						JOIN notification N ON C.id_comment = N.id_comment
 						WHERE N.id_post=(SELECT N.id_post FROM notification 
@@ -40,7 +54,7 @@
 			
 			echo" <br> <br> 
 	
-	<table width = 60% cellpadding='3' cellspacing='3' class='notif' >
+	<table width = 60% class='post_news' cellspading='0' >
 	<tr style='height: 12px'width=60%>
 
 		</tr>
@@ -68,6 +82,9 @@
 		".$resultats['post_date']."
 		</div>
 		
+		</td>
+		<td>
+		<a href='index.php?page=voir_notif&delete_notif=".$resultats['id_comment']."'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X</a>&nbsp;&nbsp;
 		</td>
 
 	</tr>
@@ -97,3 +114,5 @@
 	
 
 ?>
+</body>
+</html>

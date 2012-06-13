@@ -11,7 +11,16 @@ if(isset($_POST['password']))
 		{
 			header('location:index.php?page=modifier_compte');
 		}
-		
+		else 
+		{
+			echo "
+			
+			<br>
+			
+			<br>
+			
+			votre mot de passe est incorrect!";
+		}
 	}
 }
 ?>
