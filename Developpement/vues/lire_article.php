@@ -1,5 +1,6 @@
 ﻿<?php
 include("connexion.php");
+	mysql_query("SET NAMES 'utf8'");
 $id_article = $_GET['id'];
 $requete ="SELECT * FROM posts WHERE id_post=$id_article";
 $sucess = mysql_query ($requete) or die (mysql_error ());
@@ -31,7 +32,7 @@ while ($resultats=mysql_fetch_assoc($sucess))
 		</td>
 			<td style='background-color: white;'>
 		<div class='date_news'>
-		Aujourd'hui à 9h15
+		 ".$resultats['post_date']."
 		</div>
 		
 		</td>
@@ -44,7 +45,10 @@ while ($resultats=mysql_fetch_assoc($sucess))
 	</tr>
 	</table>"; 
 
-
+	echo"	<td>
+	<a href ='index.php?page=view_article&id_post=".$resultats['id_post']."' ><div class='comment_button'>voir l'article en entier!</div></a>";
+			echo"</tr>";
+			
 
 		
 	}

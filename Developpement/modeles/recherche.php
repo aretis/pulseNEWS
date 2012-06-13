@@ -1,6 +1,7 @@
 ﻿<?php
 include("connexion.php");
-if (isset($_POST['recherche']) || isset($_GET['recherche']))
+	mysql_query("SET NAMES 'utf8'");
+if ((isset($_POST['recherche']) && !empty($_POST['recherche']))||( isset($_GET['recherche'])  && !empty($_GET['recherche'] )))
 {
 	if(isset($_POST['recherche']))
 	{
@@ -28,7 +29,7 @@ if (isset($_POST['recherche']) || isset($_GET['recherche']))
     if ($mode == "expression_exacte") 
     {
 		echo $recherche;
-        $requete = mysql_query('SELECT * FROM posts WHERE content LIKE \'%'.$recherche.'%\'');
+        $requete = mysql_query('SELECT * FROM posts WHERE content AND title LIKE \'%'.$recherche.'%\'');
 		
 		
     }
@@ -52,20 +53,20 @@ if (isset($_POST['recherche']) || isset($_GET['recherche']))
 
     if ($nb_resultats == 0) 
     {
-        echo 'Aucun rÃ©sultat.';
+        echo 'Aucun résultat.';
     }
 	
 	else
 	{
 		if($nb_resultats==1)
 		{
-			echo"Il y a 1 rÃ©sultat qui correspond a votre recherche";
+			echo"Il y a 1 résultat qui correspond a votre recherche";
 		}
 		else if($nb_resultats > 1)
 		{
-			echo' Il y a '.$nb_resultats.' rÃ©sultats qui correspondent Ã  votre recherche';
+			echo' Il y a '.$nb_resultats.' résultats qui correspondent à votre recherche';
 		}
-		while($resultats = mysql_fetch_array($requete) )
+		while($resultats = mysql_fetch_array($requete))
 		{
 		
 			echo"  </td>
@@ -97,7 +98,7 @@ if (isset($_POST['recherche']) || isset($_GET['recherche']))
 		</td>
 			<td style='background-color: white;'>
 		<div class='date_news'>
-		Aujourd'hui Ã  9h15
+		".$resultats['post_date']."
 		</div>
 		
 		</td>
@@ -109,19 +110,20 @@ if (isset($_POST['recherche']) || isset($_GET['recherche']))
 		<div style='float: right; width: 5%px;'>&nbsp;</div>
 	</td>
 	</tr>
-	</table>"; 
+	
+	</table>
+	</br>
+	"; 
 
 			}
 			
 		}
 	}	
 
-else if ((empty($recherche)) && (!isset($recherche)))
-{
- echo'Veuillez saisir une recherche!';
-}
-else
-{
 
+
+else if (empty($_POST['recherche']))
+{
+	echo'veuillez saisir une recherche!';
 }
 ?>
