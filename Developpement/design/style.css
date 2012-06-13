@@ -309,6 +309,8 @@ border: 1px solid #003e40;
     font-family: 'coolvetica_rg';
     font-size: 14px;
     width: 35px;
+	margin-top: -10px;
+	margin-left: 20px;
 }
 .block_title_right {
 border: 1px solid #003e40;
@@ -462,8 +464,21 @@ border: 1px solid #003e40;
     width: 900px;
 }
 .profile_button_left {
-    background-color: #85C630;
-    box-shadow: 5px 5px 3px #003e40;
+     background: #62a708;
+   background: -webkit-gradient(linear, left top, left bottom, from(#85c630), to(#62a708));
+   background: -webkit-linear-gradient(top, #85c630, #62a708);
+   background: -moz-linear-gradient(top, #85c630, #62a708);
+   background: -ms-linear-gradient(top, #85c630, #62a708);
+   background: -o-linear-gradient(top, #85c630, #62a708);
+   padding: 6px -5px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    
     color: white;
     font-family: 'coolvetica_rg';
     font-size: 24px;
@@ -471,8 +486,20 @@ border: 1px solid #003e40;
 	border: 2px solid #003e40;
 }
 .profile_button_right {
-    background-color: #85C630;
-    box-shadow: 5px 5px 3px #003e40;
+         background: #62a708;
+   background: -webkit-gradient(linear, left top, left bottom, from(#85c630), to(#62a708));
+   background: -webkit-linear-gradient(top, #85c630, #62a708);
+   background: -moz-linear-gradient(top, #85c630, #62a708);
+   background: -ms-linear-gradient(top, #85c630, #62a708);
+   background: -o-linear-gradient(top, #85c630, #62a708);
+   padding: 6px -5px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
     color: white;
     font-family: 'coolvetica_rg';
     font-size: 24px;
@@ -480,8 +507,20 @@ border: 1px solid #003e40;
 	border: 2px solid #003e40;
 }
 .profile_name {
-    background-color: #85C630;
-    box-shadow: 5px 5px 3px #003e40;
+         background: #62a708;
+   background: -webkit-gradient(linear, left top, left bottom, from(#85c630), to(#62a708));
+   background: -webkit-linear-gradient(top, #85c630, #62a708);
+   background: -moz-linear-gradient(top, #85c630, #62a708);
+   background: -ms-linear-gradient(top, #85c630, #62a708);
+   background: -o-linear-gradient(top, #85c630, #62a708);
+   padding: 6px -5px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
     color: white;
     font-family: 'coolvetica_rg';
     font-size: 28px;
@@ -489,8 +528,20 @@ border: 1px solid #003e40;
 	border: 2px solid #003e40;
 }
 .block_title_about {
-    background-color: #85C630;
-    box-shadow: 5px 5px 3px #003e40;
+         background: #62a708;
+   background: -webkit-gradient(linear, left top, left bottom, from(#85c630), to(#62a708));
+   background: -webkit-linear-gradient(top, #85c630, #62a708);
+   background: -moz-linear-gradient(top, #85c630, #62a708);
+   background: -ms-linear-gradient(top, #85c630, #62a708);
+   background: -o-linear-gradient(top, #85c630, #62a708);
+   padding: 6px -5px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
     color: white;
     font-family: 'coolvetica_rg';
     font-size: 24px;
@@ -503,6 +554,20 @@ border: 1px solid #003e40;
     width: 200px;
 }
 .about_block img {
+     background: #62a708;
+   background: -webkit-gradient(linear, left top, left bottom, from(#85c630), to(#62a708));
+   background: -webkit-linear-gradient(top, #85c630, #62a708);
+   background: -moz-linear-gradient(top, #85c630, #62a708);
+   background: -ms-linear-gradient(top, #85c630, #62a708);
+   background: -o-linear-gradient(top, #85c630, #62a708);
+   padding: 6px -5px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
     border-color: #85C630;
     border-style: solid;
     border-width: 8px;
@@ -964,15 +1029,15 @@ border: 1px solid #003e40;
 #example-two ul li a:hover { background: #85C630; color: white; }
 #example-two ul li:last-child a { border: none; }
 
-#example-two .nav { overflow: hidden; }
+#example-two .nav { overflow: hidden;  }
 #example-two .nav li { width: 97px; float: left; margin: 0 10px 0 0; }
 #example-two .nav li.last { margin-right: 0; }
-#example-two .nav li a { display: block; padding: 5px; background: #666; color: white; font-size: 10px; text-align: center; border: 0; }
+#example-two .nav li a { display: block; padding: 5px; background: #666; color: white; font-size: 10px; text-align: center; border: 0; font-size: 16px;}
 
 #example-two li a.current,#example-two li a.current:hover { background-color: #eee !important; color: black; }
 #example-two .nav li a:hover, #example-two .nav li a:focus { background: #999;}
 
-<<<<<<< HEAD
+
 .notif {
     margin: auto;
     width: 30%;
@@ -992,9 +1057,4 @@ border: 1px solid #003e40;
    box-shadow: rgba(0,0,0,1) 0 1px 0;
        box-shadow: 3px 3px 2px #003e40;
 }
-=======
 
-
-
-   
->>>>>>> fad0aa274182d321420908e976bbcfd2aeb976e1
