@@ -7,7 +7,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Animated Landscape Header with jQuery</title>
+<title>pulseNEWS, sponsored by YOUR mind !</title>
 
 
 
