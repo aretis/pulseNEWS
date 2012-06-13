@@ -25,11 +25,6 @@ input[type="submit"] {
     text-decoration: none;
     width: 199px;
 }
-input[type="submit"]:hover {
-    color: #FFFD55;
-    margin: auto;
-    text-decoration: none;
-}
 #pardessus {
     margin: auto;
     position: relative;

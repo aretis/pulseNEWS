@@ -3,7 +3,7 @@
     src: url("fonts/coolvetica_rg.ttf") format("truetype");
 }
 body {
-    background-color: #8fcaff;
+	background: silver;
     font-family: 'Calibri';
 }
 a {
