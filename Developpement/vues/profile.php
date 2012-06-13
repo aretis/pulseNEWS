@@ -288,10 +288,7 @@ if(!isset($_GET['pseudo']))
 							{
 								echo $area_name;
 							}
-					?><br>
-					<strong>Humeur : </strong>
-					<?php 
-					?><br>
+					?>
 					</div>
 				</td>
 			</tr>

@@ -277,8 +277,8 @@ if(isset($_POST['pulse']))
 				if($data['pseudo'] == $_SESSION['pseudo'])
 				{
 					echo"<div class='delete_post'>";
-					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
-					else echo"<a href='index.php?page=news&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					if(isset($_GET['pseudo'])) echo"<a  style='color:red' href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					else echo"<a style='color:red' href='index.php?page=news&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
 					echo"</div>";
 				}
 				else
@@ -311,7 +311,6 @@ if(isset($_POST['pulse']))
 			echo"<tr>";
 			
 			echo"	<td>";
-			echo"	<div class='debate'><form action='index.php?page=news' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
 			echo"	<div class='depulse'>&nbsp;";
 			echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
 			echo"	<div class='propulse'>&nbsp;";
@@ -333,8 +332,8 @@ if(isset($_POST['pulse']))
 				if($data['pseudo'] == $_SESSION['pseudo'])
 				{
 					echo"<div class='delete_post'>";
-					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
-					else echo"<a href='index.php?page=news&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;";
+					if(isset($_GET['pseudo'])) echo"<a style='color:red' href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					else echo"<a style='color:red' href='index.php?page=news&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;";
 					echo"<a href='index.php?page=view_article&id_post=".$data['id_post']."' style='color: white;'>".$data['title']."</a>";
 					echo"</div>";
 				}
@@ -367,7 +366,6 @@ if(isset($_POST['pulse']))
 			echo"</tr>";
 			echo"<tr>";
 			echo"<td>";
-						echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input style='margin-top: -15px;' type='submit' name='debattre' value='débattre' /></form></div>";
 						echo"	<div class='depulse'>&nbsp;";
 						echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' style='margin-top: -15px;' name='DEpulse' value='DEpulse' /></form></div></a>";
 						echo"	<div class='propulse'>&nbsp;";

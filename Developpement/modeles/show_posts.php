@@ -21,8 +21,8 @@
 				if($data['pseudo'] == $_SESSION['pseudo'])
 				{
 					echo"<div class='delete_post'>";
-					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;".$data['title'];
-					else echo"<a href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;".$data['title'];
+					if(isset($_GET['pseudo'])) echo"<a style='color:red' href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;".$data['title'];
+					else echo"<a style='color:red' href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;".$data['title'];
 					echo"</div>";
 				}
 			}
@@ -54,7 +54,6 @@
 			echo"<tr>";
 			
 			echo"	<td>";
-			echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
 			echo"	<div class='depulse'>&nbsp;";
 			echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
 			echo"	<div class='propulse'>&nbsp;";
@@ -79,11 +78,11 @@
 					echo"<div class='delete_post'>";
 					if(isset($_GET['pseudo']))
 					{
-						echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+						echo"<a style='color:red' href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
 					}
 					else 
 					{
-						echo"<a href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+						echo"<a style='color:red' href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
 					}
 					echo"</div>";
 				}
@@ -132,15 +131,15 @@
 				$image = imagecreatefromstring($col['picture_blob']);
 				ob_start(); //You could also just output the $image via header() and bypass this buffer capture.
 				imagejpeg($image, null, 80);
-				$data = ob_get_contents();
+				$lol = ob_get_contents();
 				ob_end_clean();
-				echo '<br><img src="data:image/jpg;base64,' .  base64_encode($data)  . '" /><br>';
+				echo '<br><img src="data:image/jpg;base64,' .  base64_encode($lol)  . '" /><br>';
 			}
 				
 			$content = nl2br( $content , false );
 			echo $content;
 			echo"		</div>";
-			echo"<span style='color:white;box-shadow: 5px 5px 3px #003e40;background-color: #85C630;border: 2px solid black;'>&nbsp;&nbsp;Ecrit le";
+			echo"<span style='color:white;box-shadow: 5px 5px 3px #003e40;background-color: #85C630;border: 2px solid black;'>&nbsp;&nbsp;Ecrit le&nbsp;";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!</span>";
 			
@@ -148,11 +147,10 @@
 			echo"	</td>";
 			echo"</tr>";
 			echo"<tr><td>";
-			include('modeles/comment.php');
+			if(isset($_SESSION['pseudo'])) include('modeles/comment.php');
 			echo"</tr></td>";
 			echo"<tr>";
 			echo"<td>";
-			echo"	<div class='debate'><form action='index.php?page=profile' method='POST'/><input type='submit' name='debattre' value='débattre' /></form></div>";
 			echo"	<div class='depulse'>&nbsp;";
 			echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
 			echo"	<div class='propulse'>&nbsp;";

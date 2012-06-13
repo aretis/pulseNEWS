@@ -17,20 +17,19 @@
 
 	while($data = mysql_fetch_array($result))
 	{
+		
+		echo"<div class='comment_post'>";
+		echo"<span style='font-size:22px; color:white; font-weight:bold;'>";
 			if(isset($_SESSION['pseudo']))
 		{
 			if($data['pseudo'] == $_SESSION['pseudo'])
 			{
-				echo"<div class='delete'>";
 				if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment=".$data['id_comment']."'>X</a>";
 				else echo"<a href='index.php?page=profile&delete_comment=".$data['id_comment']."'>X</a>";
-				echo"</div>";
 			}
 		}
-		echo"<div class='comment_post'>";
-		echo"<span style='font-size:22px; color:white; font-weight:bold;'>";
-		echo "&nbsp;&nbsp;<a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!"; 
-		echo": <br>";
+		echo "&nbsp;&nbsp;<a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>"; 
+		echo": &nbsp;&nbsp;";
 		echo"</span>";
 		
 		echo"<span style='font-size:15px;'>";
@@ -42,6 +41,6 @@
 		echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 		echo"</div>";
 
-		echo"</span>";
+		echo"</span><hr>";
 	}
 ?>

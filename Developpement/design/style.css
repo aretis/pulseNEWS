@@ -3,7 +3,7 @@
     src: url("fonts/coolvetica_rg.ttf") format("truetype");
 }
 body {
-    background-color: #8fcaff;
+	background: silver;
     font-family: 'Calibri';
 }
 a {
@@ -810,7 +810,7 @@ border: 1px solid #003e40;
    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
    box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   width: 900px;
+   width: 924px;
    height: 75px;
 }
 .tri2 {
@@ -825,11 +825,9 @@ border: 1px solid #003e40;
    float: left;
 }
 #area {
-	float: left;
     display: none;
 }
 #cat {
-	float: left;
     display: none;
 }
 .lol2 {

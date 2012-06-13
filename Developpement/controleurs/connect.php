@@ -3,7 +3,7 @@
 /* Salman ALAMDAR 
 	connexion page
 	12/04/12*/
-	include(dirname(__FILE__).'/../vues/header.php');
+	include(dirname(__FILE__).'/../vues/header1.php');
 
 	if(isset($_POST['pseudo']) && isset($_POST['password']))
 	{
