@@ -147,7 +147,7 @@
 			echo"	</td>";
 			echo"</tr>";
 			echo"<tr><td>";
-			include('modeles/comment.php');
+			if(isset($_SESSION['pseudo'])) include('modeles/comment.php');
 			echo"</tr></td>";
 			echo"<tr>";
 			echo"<td>";
