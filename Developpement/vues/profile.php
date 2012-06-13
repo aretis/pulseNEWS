@@ -3,48 +3,8 @@
 
 <?php	
 
-<<<<<<< HEAD
-	$user=$_SESSION['id_user'];
-	include('connexion.php');
-	include('/../modeles/couperChaine.php');
-	$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']." AND read_confirm='0'";
-	if(!mysql_query($query) )
-			{
-				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
-				return;
-			}
-	$sucess= mysql_query($query) or die (mysql_error());
-	while($resultats=mysql_fetch_assoc($sucess))
-	{
 
-	echo"  <div class='block_title'&nbsp;> <a href= index.php?page=voir_notif >vous avez ".$resultats['nb_notif']." notifications! </a></div>";
 
-/*	$requete="SELECT * FROM notification N JOIN comments C ON N.id_comment = C.id_comment JOIN users U ON C.id_user=U.id_user  WHERE N.id_user != ".$_SESSION['id_user']." AND read_confirm='0'" ;
-	$sucess=mysql_query($requete) or die(mysql_error());
-	While($resultats=mysql_fetch_array($sucess))
-	{
-
-	
-    echo" <li>".$resultats['pseudo']." a commenter votre post ";
-					$chaine = $resultats['content'];
-					couperChaine($chaine,5);
-					$chaineNouvelle=couperChaine($chaine,5);
-					echo $chaineNouvelle;
-
-	 
-	 
-	echo" </li>";
-      }
-	  
-  echo"  </ul>
-  </li>
-</ul>";
-	// <td>
-					<div class='block_title'>&nbsp;vous avez ".$resultats['nb_notif']." notifications!</div>
-	</td>";*/
-
-=======
->>>>>>> fad0aa274182d321420908e976bbcfd2aeb976e1
 	
 
 
@@ -77,7 +37,8 @@
 		or die("Connexion impossible : ".mysql_error());
 		mysql_select_db("pulsenews");
 		mysql_query("SET NAMES 'utf8'");
-		if(isset($_SESSION['pseudo'])){
+		if(isset($_SESSION['pseudo']))
+		{
 		$pseudo = $_SESSION['pseudo'];
 		$req = mysql_query("SELECT * FROM users WHERE pseudo='".$pseudo."'");
 		$req2 = mysql_fetch_assoc($req);
@@ -338,5 +299,5 @@ if(!isset($_GET['pseudo']))
 			</tr>
 </table>
 </td>
-
 </table>
+

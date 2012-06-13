@@ -7,7 +7,6 @@ include('vues/header.php');
  
 include('vues/view_article.php');
 
-include('modeles/read_confim.php');
 
 
 
