@@ -45,7 +45,7 @@
 	</script>
 	<title>pulseNEWS, sponsored by your mind!</title>
 </head>
-<body>
+<body onload='verif_formulaire()'>
 <?php
 
 

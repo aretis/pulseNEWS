@@ -263,9 +263,6 @@ if(isset($_POST['pulse']))
 	
 	$req = view_all_article($date, $rate, $type, $news_area, $cat_news);
 
-	
-	
-	
 	while($data = mysql_fetch_assoc($req))
 	{
 		if($data['type'] == 1)
@@ -309,7 +306,7 @@ if(isset($_POST['pulse']))
 			echo"	</span></td>";
 			echo"<form action='index.php?page=profile' method='post'/>";
 			echo'</form>';
-		echo"	</td>";
+			echo"	</td>";
 			echo"</tr>";
 			echo"<tr>";
 			
@@ -325,8 +322,7 @@ if(isset($_POST['pulse']))
 			echo"</table>";
 			echo"<br>";
 		}		
-		
-		else if( $data['type'] == 0)
+		else if($data['type'] == 0)
 		{
 			echo"<table cellpadding='0' cellspacing='0' class='post_news' >";
 			echo"<tr style='height: 32px;'>";

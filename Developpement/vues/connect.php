@@ -8,28 +8,6 @@
 	
 
 	<link rel="stylesheet" href="design/register.css" />
-
-<script language="JavaScript" type="text/javascript"> 
-	
-function verif_formulaire()
-{
-	if(field_empty == 1)
-	{
-		alert('Un ou plusieurs champ(s) sont vide(s)');
-	}
-	else
-	{
-		if(pseudo_not_exists == 0)
-		{
-			alert('Ce pseudo n\'existe pas, merci de créer un compte');
-		}
-		else if(login_ok == 0)
-		{
-			alert('Le pseudo ou le mot de passe sont incorrects');
-		}
-	}
-}
-</script>
 <br>
 <br>
 <form id='start' name='formulaire' action='index.php?page=connect' method='post' onSubmit='verif_formulaire()'>
