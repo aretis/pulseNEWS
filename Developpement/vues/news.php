@@ -377,7 +377,7 @@ if(isset($_POST['pulse']))
 		}
 		
 	}
-	if($data === false)
+	if(mysql_num_rows($req) == 0)
 	{
 		echo"<div class='no_news'> Désolé, aucune news n'a été trouvée pour ces critères</div>";
 	}
