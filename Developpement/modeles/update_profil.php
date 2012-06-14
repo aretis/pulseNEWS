@@ -65,7 +65,7 @@ if ( isset($_POST['prenom']) || isset($_POST['nom']) || isset($_POST['surnom']) 
 				$resultat = mysql_query ($request) or die (mysql_error());
 				
 				unset($_SESSION['pseudo']);
-				$session_destroy();
+				session_destroy();
 			}
 			
 			header('location:index.php?page=news');
