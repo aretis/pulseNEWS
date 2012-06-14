@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <body>
 <link rel="stylesheet" href="design/profile1.css" />
 
@@ -67,7 +67,7 @@
 			}
 			else 
 			echo"<div class='description_notif'>";
-		echo  $resultats['pseudo'] . " &nbsp; a commenter votre post:</br>";
+		echo  $resultats['pseudo'] . " &nbsp; a commenté votre post:</br>";
 		$chaine = $resultats['content'];
 		couperChaine($chaine,10);
 		$chaineNouvelle=couperChaine($chaine,10);
