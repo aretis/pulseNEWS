@@ -311,10 +311,13 @@ if(isset($_POST['pulse']))
 			echo"<tr>";
 			
 			echo"	<td>";
-			echo"	<div class='depulse'>&nbsp;";
-			echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
-			echo"	<div class='propulse'>&nbsp;";
-			echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+			if(isset($_SESSION['pseudo']))
+			{
+				echo"	<div class='depulse'>&nbsp;";
+				echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+				echo"	<div class='propulse'>&nbsp;";
+				echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+			}
 			echo"</td>";
 			echo"</tr>";
 			
@@ -366,10 +369,13 @@ if(isset($_POST['pulse']))
 			echo"</tr>";
 			echo"<tr>";
 			echo"<td>";
-						echo"	<div class='depulse'>&nbsp;";
-						echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' style='margin-top: -15px;' name='DEpulse' value='DEpulse' /></form></div></a>";
-						echo"	<div class='propulse'>&nbsp;";
-						echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' style='margin-top: -15px;' name='PROpulse' value='PROpulse' /></form></div></a>";
+			if(isset($_SESSION['pseudo']))
+			{
+				echo"	<div class='depulse'>&nbsp;";
+				echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' style='margin-top: -15px;' name='DEpulse' value='DEpulse' /></form></div></a>";
+				echo"	<div class='propulse'>&nbsp;";
+				echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' style='margin-top: -15px;' name='PROpulse' value='PROpulse' /></form></div></a>";
+			}
 			echo"</td>";
 			echo"</tr>";
 			echo"</table>";
