@@ -2,13 +2,6 @@
 
 
 <?php	
-
-
-
-	
-
-
-
 	if(isset($_GET['delete_comment'])) include('modeles/delete_comment.php');
 	
 	if(isset($_GET['delete_post'])) include('modeles/delete_post.php');

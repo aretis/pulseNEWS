@@ -162,7 +162,7 @@ function change3(num)
 	<option>Région</option>
 		<?php
 
-			$query = 'SELECT area_name FROM AREAS';
+			$query = 'SELECT area_name FROM areas';
 			$result = call_db($query);
 
 			while($data = mysql_fetch_array($result))

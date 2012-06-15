@@ -1,6 +1,6 @@
 ﻿<?php
 
-include('/../vues/header.php');
+include('vues/header.php');
 
-include('/../vues/debate.php');
+include('vues/debate.php');
 ?>
