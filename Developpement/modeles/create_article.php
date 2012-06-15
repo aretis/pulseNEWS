@@ -1,13 +1,9 @@
-﻿
-
-<?php
+﻿<?php
 
 /*Fonction créée par Michel GILLE le 02/05/12*/
 
 function create_article($article)
 {
-	
-		
 	$req = call_db('SELECT id_user FROM users WHERE pseudo = "'.$_SESSION['pseudo'].'"');
 	
 	while($data = mysql_fetch_assoc($req)) 

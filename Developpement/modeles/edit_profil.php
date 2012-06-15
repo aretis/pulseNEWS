@@ -1,7 +1,3 @@
-
-
-	
-
 <?php	
 	
 	if(isset($_POST['upload']))
@@ -14,8 +10,5 @@
 	$query = 'SELECT * FROM users';
 	include('call_db.php');
 	$result = call_db($query);
-	
-	
-		
 	
 ?>

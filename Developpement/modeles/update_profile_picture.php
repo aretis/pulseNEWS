@@ -26,7 +26,7 @@ function update_profile_picture($id_user)
 	$picture_type = $_FILES['profile_picture']['type'];
 	$picture_name = $_FILES['profile_picture']['name'];
 	
-	include('connexion.php');
+	include('modeles/connect_db.php');
 	
 	
 	$picture_blob =  file_get_contents ($_FILES['profile_picture']['tmp_name']);
@@ -43,7 +43,7 @@ function update_profile_picture($id_user)
 	
 	
 	
-	function update_cover_picture($id_user)
+function update_cover_picture($id_user)
 {
 	$sucess = false;
 	$picture_blob = '';
@@ -70,7 +70,7 @@ function update_profile_picture($id_user)
 	$picture_type = $_FILES['cover_picture']['type'];
 	$picture_name = $_FILES['cover_picture']['name'];
 	
-	include('connexion.php');
+	include('modeles/connect_db.php');
 	
 	
 	$picture_blob =  file_get_contents ($_FILES['cover_picture']['tmp_name']);
@@ -84,8 +84,4 @@ function update_profile_picture($id_user)
 	
 	}	
 }
-	
-	
-	
-
 ?>

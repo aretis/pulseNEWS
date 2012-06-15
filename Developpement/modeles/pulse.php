@@ -8,11 +8,7 @@
 	{
 	
 		$pulse1 = $pulse;
-		$link = mysql_connect("localhost","root","")
-			or die("Connexion impossible : ".mysql_error());
-		
-		mysql_select_db("pulsenews")
-			or die("Base de données inaccessible.".mysql_error());
+		include('modeles/connect_db.php');
 		mysql_query("SET NAMES 'utf8'");
 		$query='SELECT id_user, id_post FROM user_ratings WHERE id_user ='.(int)$id_user.' AND id_post ='.(int)$id_post;
 		

@@ -26,19 +26,6 @@
 	mysql_free_result($result);
 	mysql_close($link);
 
-
-/*<select name ="categorie">
-	<option value="politique">politique</option>
-	<option value="Economie">Economie </option>
-	<option value="Faits_divers">Faits divers </option>
-	<option value="sport">Sport</option>
-	<option value="culture">Culture</option>
-	<option value="Ecologie">Ecologie</option>
-	</select>
-<input type="submit" value ="rechercher" name ="rechercher"/>
-	</form>
-
-</body></html> */
 ?>
 <html>
 <body>
