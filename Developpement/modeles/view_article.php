@@ -9,7 +9,6 @@ if ( isset($_GET['read_confirm']))
 
 	function view_article_user($id_user)
 	{
-		echo"". $id_user. "dans la fonction view_article";
 		$article = array();
 		
 		$query = 'SELECT * FROM posts INNER JOIN users ON posts.id_user = users.id_user WHERE posts.id_user = '.$id_user.' ORDER BY post_date DESC';
@@ -17,6 +16,5 @@ if ( isset($_GET['read_confirm']))
 		$article = call_db($query);
 		
 		return $article;
-	
 	}
 ?>
