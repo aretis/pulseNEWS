@@ -1037,4 +1037,15 @@ border: 1px solid #003e40;
    box-shadow: rgba(0,0,0,1) 0 1px 0;
        box-shadow: 3px 3px 2px #003e40;
 }
+.search_pulseur
+{
+	background: -moz-linear-gradient(center top , #85C630, #62A708) repeat scroll 0 0 transparent;
+    border: 1px solid #003E40;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px 0 #000000;
+    height: 75px;
+    margin: auto;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    width: 924px;
+}
 

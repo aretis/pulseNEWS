@@ -2,6 +2,7 @@
 
 	while($data = mysql_fetch_array($req))
 	{
+<<<<<<< HEAD
 		if( isset($pseudo))
 			{
 				echo$id;
@@ -10,6 +11,8 @@
 				echo"je passe";
 				echo$data['pseudo'];
 			}
+=======
+>>>>>>> 6b1a1fc29824e97043667a5c85b6a5036fd189e3
 		$content = $data['content'];
 		$id = $id_post = $data['id_post'];
 		//si le post est un flux RSS pulsé
@@ -29,9 +32,9 @@
 					else echo"<a style='color:red' href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;".$data['title'];
 					echo"</div>";
 				}
+				else echo"&nbsp;".$data['title'];
 			}
-			else{
-			echo"			&nbsp;".$data['title'];}
+			
 			echo"		</div>";
 			echo"		</td>";
 
@@ -60,10 +63,14 @@
 			echo"<tr>";
 			
 			echo"	<td>";
-			echo"	<div class='depulse'>&nbsp;";
-			echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
-			echo"	<div class='propulse'>&nbsp;";
-			echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$id."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+			if(isset($_SESSION['pseudo']))
+			{
+				echo"	<div class='depulse'>&nbsp;";
+				echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+				echo"	<div class='propulse'>&nbsp;";
+				echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$id."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+			}
+			
 			echo"</td>";
 			echo"</tr>";
 			
@@ -158,10 +165,13 @@
 			echo"</tr></td>";
 			echo"<tr>";
 			echo"<td>";
-			echo"	<div class='depulse'>&nbsp;";
-			echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
-			echo"	<div class='propulse'>&nbsp;";
-			echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$id."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+			if(isset($_SESSION['pseudo']))
+			{
+				echo"	<div class='depulse'>&nbsp;";
+				echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+				echo"	<div class='propulse'>&nbsp;";
+				echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$id."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+			}
 			echo"</td>";
 			echo"</tr>";
 			echo"<tr style='height: 30px;'>";

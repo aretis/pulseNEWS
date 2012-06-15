@@ -30,23 +30,23 @@
 		mysql_query("SET NAMES 'utf8'");
 		if(isset($_SESSION['pseudo']))
 		{
-		$pseudo = $_SESSION['pseudo'];
-		$req = mysql_query("SELECT * FROM users WHERE pseudo='".$pseudo."'");
-		$req2 = mysql_fetch_assoc($req);
-		$pseudo = $req2['pseudo'];
-		$id_user = $req2['id_user'];
-		$surname = $req2['surname'];
-		$mail = $req2['mail'];
-		$area_name = $req2['area_name'];
-		$firstname = $req2['firstname'];
-		$about = $req2['about'];
-		$humor = $req2['humor'];
+			$pseudo = $_SESSION['pseudo'];
+			$req = mysql_query("SELECT * FROM users WHERE pseudo='".$pseudo."'");
+			$req2 = mysql_fetch_assoc($req);
+			$pseudo = $req2['pseudo'];
+			$id_user = $req2['id_user'];
+			$surname = $req2['surname'];
+			$mail = $req2['mail'];
+			$area_name = $req2['area_name'];
+			$firstname = $req2['firstname'];
+			$about = $req2['about'];
+			$humor = $req2['humor'];
 		}
-		/*print_profile($key,$pseudo, $surname , $firstname ,$mail , $area_name , $about);*/
 ?>
 <?php
 	if(isset($_GET['pseudo']))
 	{
+
 		$query = "SELECT * FROM users WHERE pseudo ='".$_GET['pseudo']."'";
 		$result = call_db($query);
 			
