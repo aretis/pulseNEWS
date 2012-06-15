@@ -2,17 +2,6 @@
 
 	while($data = mysql_fetch_array($req))
 	{
-<<<<<<< HEAD
-		if( isset($pseudo))
-			{
-				echo$id;
-				echo $pseudo;
-				//$data['pseudo'] = $pseudo;
-				echo"je passe";
-				echo$data['pseudo'];
-			}
-=======
->>>>>>> 6b1a1fc29824e97043667a5c85b6a5036fd189e3
 		$content = $data['content'];
 		$id = $id_post = $data['id_post'];
 		//si le post est un flux RSS pulsé

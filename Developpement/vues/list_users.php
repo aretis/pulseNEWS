@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-﻿<form>
-<input type='search' name='pulseur' placeholder='recherche'>
-<input type='submit' name ='valider'>
-</form>
-=======
-﻿<div class='search_pulseur'>
+<div class='search_pulseur'>
 	<form>
 		<div style='margin:auto;'>Rechercher un pulseur :</div>
-		<input type='search' name='pulseur'>
+		<input type='search' name='pulseur' placeholder='recherche'>
 		<input type='submit' name ='valider'>
 	</form>
 </div>
->>>>>>> 6b1a1fc29824e97043667a5c85b6a5036fd189e3
 <br>
 
 
