@@ -68,8 +68,6 @@
 		$requete="DELETE FROM notification WHERE id_comment = ".$_GET['delete_notif']."";
 		$sucess=mysql_query($requete) or die(mysql_error());
 		echo "la notification a bien été supprimée";
-<<<<<<< HEAD
-	
 	}
 	
 	$read_confirm='1';
@@ -84,26 +82,6 @@
 	?>
 	<section class="slide-up-boxes">
 	<?php
-=======
-	}
-	
-	$read_confirm='1';
-	include('modeles/connect_db.php');
-
-	$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']." AND  read_confirm='0'";
-	if(!mysql_query($query) )
-	{
-		echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
-		return;
-	}
-			
-	/*echo"<br>
-	<br>
-	<br>
-	<br>
-	<table align=center border='2px' bordercolor='#85C630'>
-	<caption>  NOTIFICATIONS<caption/>";*/
->>>>>>> 0a13aa9ae3f2a0fd413a1996e4ebbcf96b4119b3
 	$sucess= mysql_query($query) or die (mysql_error());
 	while($resultats=mysql_fetch_assoc($sucess))
 	{
@@ -206,11 +184,8 @@
 			</tr>
 			</td>";*/
 		}
-<<<<<<< HEAD
 
 	}
-=======
->>>>>>> 0a13aa9ae3f2a0fd413a1996e4ebbcf96b4119b3
 ?>
 </section>
 			
