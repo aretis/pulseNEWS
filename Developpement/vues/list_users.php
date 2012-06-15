@@ -1,19 +1,10 @@
-<<<<<<< HEAD
-
-﻿<div class='search_pulseur'>
-=======
 <div class='search_pulseur'>
->>>>>>> 4ceb2492114be96c9f078ef162e4e317bf51bf83
 	<form>
 		<div style='margin:auto;'>Rechercher un pulseur :</div>
 		<input type='search' name='pulseur' placeholder='recherche'>
 		<input type='submit' name ='valider'>
 	</form>
 </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 4ceb2492114be96c9f078ef162e4e317bf51bf83
 <br>
 
 
