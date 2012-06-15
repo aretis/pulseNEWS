@@ -5,21 +5,20 @@
 ﻿<?php
 	if(isset($_GET['delete_notif'])) 
 	{
-	$requete="DELETE FROM notification WHERE id_comment = ".$_GET['delete_notif']."";
-	$sucess=mysql_query($requete) or die(mysql_error());
-	echo "la notification a bien été supprimée";
-	
+		$requete="DELETE FROM notification WHERE id_comment = ".$_GET['delete_notif']."";
+		$sucess=mysql_query($requete) or die(mysql_error());
+		echo "la notification a bien été supprimée";
 	}
 	
 	$read_confirm='1';
-	include('connexion.php');
+	include('modeles/connect_db.php');
 
 	$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']." AND  read_confirm='0'";
 	if(!mysql_query($query) )
-			{
-				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
-				return;
-			}
+	{
+		echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
+		return;
+	}
 			
 	/*echo"<br>
 	<br>
@@ -109,10 +108,6 @@
 			</tr>
 			</td>";*/
 		}
-	
-	
-	
-
 ?>
 </body>
 </html>

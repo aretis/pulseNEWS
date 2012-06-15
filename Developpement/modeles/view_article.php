@@ -1,8 +1,7 @@
 ﻿<?php
 if ( isset($_GET['read_confirm']))
-{	
-	
-	include('/../modeles/connexion.php');
+{
+	include('modeles/connect_db.php');
 	$requete="UPDATE notification SET read_confirm =1 WHERE id_comment=".$_GET['id_comment']."";
 	$sucess=mysql_query($requete) or die(mysql_error());
 }
@@ -19,9 +18,4 @@ if ( isset($_GET['read_confirm']))
 		return $article;
 	
 	}
-/*if ( isset($_GET['read_confirm']) && ($_GET['read_confirm']==1))
-{
-	$requete="UPDATE notification SET read_confirm =1";
-	$sucess=mysql_query($requete) or die(mysql_error());
-}*/
 ?>

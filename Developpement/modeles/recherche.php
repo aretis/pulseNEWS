@@ -1,5 +1,5 @@
 ﻿<?php
-include("connexion.php");
+include('modeles/connect_db.php');
 	mysql_query("SET NAMES 'utf8'");
 if ((isset($_POST['recherche']) && !empty($_POST['recherche']))||( isset($_GET['recherche'])  && !empty($_GET['recherche'] )))
 {

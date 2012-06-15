@@ -2,7 +2,7 @@
 <head><title>Stock d'images</title></head>
 <body>
 <?php
-	include ("connexion.php");
+	include('modeles/connect_db.php');
 	$request = 'SELECT * FROM pictures ORDER BY picture_name';
 	$sucess = mysql_query ($request) or die (mysql_error ());
 	while ( $col = mysql_fetch_assoc($sucess) )

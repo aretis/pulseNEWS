@@ -1,6 +1,6 @@
 <?php
 $prenom=$_SESSION['pseudo'];
-include('connexion.php');
+include('modeles/connect_db.php');
 if ( isset($_POST['prenom']) || isset($_POST['nom']) || isset($_POST['surnom']) || isset($_POST['newPassword']) || isset($_POST['confirmPassword']) || isset($_POST['email']) || isset($_POST['region']))
 {
 	$requete="SELECT id_user FROM users WHERE pseudo='".$prenom."'";
