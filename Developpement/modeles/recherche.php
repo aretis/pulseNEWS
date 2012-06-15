@@ -81,7 +81,7 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche']))||( isset($_GET['
 		</td>
 
 		<td>
-			<div class='rate'>+128</div>
+			<div class='rate'>".$resultats['rate']."</div>
 		</td>
 		</tr>
 		<tr style='background-color: #85c630;'>
