@@ -33,9 +33,7 @@
 		pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['DEpulse'], $_POST['type']);
 	}
 
-	$connect = mysql_connect("localhost","root","")
-		or die("Connexion impossible : ".mysql_error());
-		mysql_select_db("pulsenews");
+	include('/../modeles/connect_db.php');
 		mysql_query("SET NAMES 'utf8'");
 		if(isset($_SESSION['pseudo']))
 		{

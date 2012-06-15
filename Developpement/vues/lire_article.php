@@ -1,5 +1,5 @@
 ﻿<?php
-include("connexion.php");
+	include('/../modeles/connect_db.php');
 	mysql_query("SET NAMES 'utf8'");
 $id_article = $_GET['id'];
 $requete ="SELECT * FROM posts WHERE id_post=$id_article";
