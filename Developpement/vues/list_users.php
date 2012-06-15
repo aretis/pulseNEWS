@@ -1,7 +1,10 @@
-﻿<form>
-<input type='search' name='pulseur'>
-<input type='submit' name ='valider'>
-</form>
+﻿<div class='search_pulseur'>
+	<form>
+		<div style='margin:auto;'>Rechercher un pulseur :</div>
+		<input type='search' name='pulseur'>
+		<input type='submit' name ='valider'>
+	</form>
+</div>
 <br>
 
 

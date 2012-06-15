@@ -25,7 +25,7 @@ function create_article($article)
 		$id_area = $data['id_area'];
     } 
 
-	include_once('modeles/db_connect.php');
+	include_once('modeles/connect_db.php');
 	
 	
 	$query = 'INSERT INTO posts VALUES("", "'.$id_user.'", "0", "'.$article['title'].'", "'.$article['description'].'", "'.$article['content'].'", "'.$id_cat.'", "0", NOW(), "'.$id_area.'")';
