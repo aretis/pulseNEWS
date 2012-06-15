@@ -4,11 +4,15 @@
 	{
 		if( isset($pseudo))
 			{
-				$data['pseudo'] = $pseudo;
+				echo$id;
+				echo $pseudo;
+				//$data['pseudo'] = $pseudo;
+				echo"je passe";
+				echo$data['pseudo'];
 			}
 		$content = $data['content'];
 		$id = $id_post = $data['id_post'];
-		
+		//si le post est un flux RSS pulsé
 		if ($data['type'] == 1)
 		{
 			echo"		<table cellpadding='0' cellspacing='0' class='post_news' >";
@@ -44,7 +48,9 @@
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;&nbsp;lire l'article&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;";
 			echo "pulsé le : ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-			echo " par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!</div>";
+			echo $data['pseudo'];
+			echo $data['id_user'];
+			echo " par <a href='index.php?page=profile&pseudo=".$data['pseudo']."' coucou>".$data['pseudo']." </a>!</div>";
 			include('modeles/comment.php');
 			
 			echo"	</td>";
@@ -64,6 +70,7 @@
 			echo"</table>";
 			
 		}
+		// si le post a été rédigé par un utilisateur
 		else if($data['type'] == 0)
 		{
 			echo"<table cellpadding='0' cellspacing='0' class='article'>";
@@ -129,7 +136,7 @@
 			else
 			{
 				$image = imagecreatefromstring($col['picture_blob']);
-				ob_start(); //You could also just output the $image via header() and bypass this buffer capture.
+				ob_start(); 
 				imagejpeg($image, null, 80);
 				$lol = ob_get_contents();
 				ob_end_clean();

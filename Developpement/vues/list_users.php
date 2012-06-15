@@ -1,5 +1,5 @@
 ﻿<form>
-<input type='search' name='pulseur'>
+<input type='search' name='pulseur' placeholder='recherche'>
 <input type='submit' name ='valider'>
 </form>
 <br>

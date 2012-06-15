@@ -4,7 +4,7 @@
 <div class='post_news'   >
 
 <form method="post" action="index.php?page=recherche">
-Vous rechercher? <input type="text"name="recherche"/>
+Vous rechercher? <input type="search"name="recherche"/>
 <select name ="mode">
 	<option value="exp_exacte">l'expression exacte</option>
 	<option value="all_mots">tout les mots </option>

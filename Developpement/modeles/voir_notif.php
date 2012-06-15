@@ -5,6 +5,7 @@
 	<meta charset='UTF-8'>
 	<title>Slideup Boxes</title>
 	<link rel='stylesheet' href='design/notif.css'>
+
 	
 	<style>
 		.slide-up-boxes a { 
@@ -132,23 +133,29 @@
 				<h5>
 				<?php
 	
-				//echo"<div style= 'background-color:green'>";
-					
+				echo"<div style= 'background-color:green'>";
+			
+				
+				echo" <div class=\"userbox\" style=\"width: 10px; height: 10px; position: relative; z-index: 1; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;\">\n";
+						
 				if (empty($resultats['profile_picture']))
 				{
-					//echo"<img src='design/img/exemple_profile.jpg'/>";
+					echo"<img src='design/img/exemple_profile.jpg'/>";
 				}
 				else
 				{
-						
 					$image = imagecreatefromstring($resultats['profile_picture']);
 					ob_start();
 					imagejpeg($image, null, 80);
 					$img = ob_get_contents();
 					ob_end_clean();
 					echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
+					
 				}
-				echo "".$resultats['pseudo']." a commenté votre post!" ;
+				
+				echo"<div><style> slide-up-boxes div { background: grey;  17px 17px no-repeat; padding-left: 120px; } </style>";
+				echo"<div class='user_link' style=\"position: absolute; bottom: 5px; left: 5px; z-index: 2; border: none !important;\">";
+				echo "".$resultats['pseudo']." a commenté votre post! </h5>";
 				echo"<div>";
 				$chaine = $resultats['content'];
 				couperChaine($chaine,10);
@@ -163,22 +170,26 @@
 				<h5>
 				<?php
 				
-				//echo"<div style= 'background-color : #85C630;'>";
+				echo"<div style= 'background-color : #85C630;'>";
 				
+					echo "<div class=\"userbox\" style=\"width: 200px; height: 200px; position: relative; z-index: 1; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;\">\n";
 				if (empty($resultats['profile_picture']))
 				{
-					//echo"<img src='design/img/exemple_profile.jpg'/>";
+					echo"<img src='design/img/exemple_profile.jpg'/>";
 				}
 				else
 				{
-						
+				
 					$image = imagecreatefromstring($resultats['profile_picture']);
 					ob_start();
 					imagejpeg($image, null, 80);
 					$img = ob_get_contents();
 					ob_end_clean();
 					echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
+		
 				}
+				
+					echo"<div class='user_link' style=\"position: absolute; bottom: 5px; left: 5px; z-index: 2; border: none !important;\">";
 				echo "".$resultats['pseudo']." a commenté votre post!" ;
 				echo"</h5>";
 				echo"<div>";
