@@ -4,25 +4,28 @@
 <head>
 	<meta charset='UTF-8'>
 	<title>Slideup Boxes</title>
-	<link rel='stylesheet' href='css/style.css'>
+	<link rel='stylesheet' href='design/notif.css'>
 	
 	<style>
 		.slide-up-boxes a { 
 			display: block; 
 			height: 130px; 
-			margin: 0 0 20px 0; 
-			background: rgba(215, 215, 215, 0.5); 
+			margin: 0 0 20px 0; // espace en
+			background: rgba(215, 215, 215); 
 			border: 1px solid #ccc; 
-			height: 65px; 
+			height: 60px; 
 			overflow: hidden; 
+			
+			background-color:blue;
 		}
 		
-		.slide-up-boxes h5 { 
+		.slide-up-boxes h5 {
+			background-position:repeat;
 			color: #333; 
 			text-align: center;
-			height: 65px; 
-			font: italic 18px/65px Georgia, Serif;    /* Vertically center text by making line height equal to height */
-			 opacity: 1;
+			height: 35px; 
+			font: italic 18px Georgia, Serif;    /* Vertically center text by making line height equal to height */
+			 //opacity: 1;
 			 -webkit-transition: all 0.2s linear; 
 			 -moz-transition: all 0.2s linear; 
 			 -o-transition: all 0.2s linear;
@@ -34,10 +37,11 @@
 		}
 		
 		.slide-up-boxes div { 
+		
 			position: relative; 
 			color: white; 
 			font: 12px/15px Georgia, Serif;
-			height: 45px; 
+			height: 70px; 
 			padding: 10px; 
 			opacity: 0; 
 			-webkit-transform: rotate(6deg); 
@@ -53,14 +57,14 @@
 			-moz-transform: rotate(0); 
 			-o-transform: rotate(0); 
 		}
-		.slide-up-boxes a:nth-child(1) div { background: #c73b1b url(images/wufoo.png) 17px 17px no-repeat; padding-left: 120px; }
-		.slide-up-boxes a:nth-child(2) div { background: #367db2 url(images/diw.png) 21px 10px no-repeat; padding-left: 90px; }
-		.slide-up-boxes a:nth-child(3) div { background: #393838 url(images/qod.png) 14px 16px no-repeat; padding-left: 133px; }
+		.slide-up-boxes div { background: grey;  17px 17px no-repeat; padding-left: 120px; }
+		//.slide-up-boxes   div  { background: #367db2 url(images/diw.png) 21px 10px no-repeat; padding-left: 90px; }
+		//.slide-up-boxes a:nth-child(3) div { background: #393838 url(images/qod.png) 14px 16px no-repeat; padding-left: 133px; }
 	</style>
 </head>
 <body>
 
-<link rel="stylesheet" href="design/notif.css" />
+
 <div id="page-wrap">
 ﻿<?php
 	if(isset($_GET['delete_notif'])) 
@@ -79,9 +83,7 @@
 				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
 				return;
 			}
-	?>
-	<section class="slide-up-boxes">
-	<?php
+
 	$sucess= mysql_query($query) or die (mysql_error());
 	while($resultats=mysql_fetch_assoc($sucess))
 	{
@@ -101,7 +103,7 @@
 						JOIN comments C ON N.id_comment = C.id_comment 
 						JOIN users U ON C.id_user=U.id_user 
 						WHERE N.id_user!=".$_SESSION['id_user']." 
-						AND N.id_pulseur =".$_SESSION['id_user']."";
+						AND N.id_pulseur =".$_SESSION['id_user']." ORDER BY post_date DESC";
 						//OR  N.id_user=".$_SESSION['id_user']."";
 					
 
@@ -119,12 +121,76 @@
 		$sucess=mysql_query($requete) or die(mysql_error());
 		While($resultats=mysql_fetch_array($sucess))
 		{
-			?>
-			<a href="/../design/img/wufoo.com">
-				<h5><?php echo $resultats['pseudo']; ?></h5>
-				<div>Wufoo is an online form builder that makes building even the most complex forms so easy, it's fun!</div>				
-			</a>
-			<?php	
+			
+		?>	
+		
+			<section class="slide-up-boxes">
+		<?php
+		if($resultats['read_confirm']==0)
+		{
+				echo"<a style='background-color:green' href='index.php?page=view_article&id_post=".$resultats['id_post']."&read_confirm=".$read_confirm."&id_comment=".$resultats['id_comment']."'>"; ?>
+				<h5>
+				<?php
+	
+				//echo"<div style= 'background-color:green'>";
+					
+				if (empty($resultats['profile_picture']))
+				{
+					//echo"<img src='design/img/exemple_profile.jpg'/>";
+				}
+				else
+				{
+						
+					$image = imagecreatefromstring($resultats['profile_picture']);
+					ob_start();
+					imagejpeg($image, null, 80);
+					$img = ob_get_contents();
+					ob_end_clean();
+					echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
+				}
+				echo "".$resultats['pseudo']." a commenté votre post!" ;
+				echo"<div>";
+				$chaine = $resultats['content'];
+				couperChaine($chaine,10);
+				$chaineNouvelle=couperChaine($chaine,10);
+				echo $chaineNouvelle;
+				echo"</div>";
+				echo"</a>";
+			}		
+			else
+			{
+				echo"<a style='background-color:#85C630;' href='index.php?page=view_article&id_post=".$resultats['id_post']."&read_confirm=".$read_confirm."&id_comment=".$resultats['id_comment']."'>"; ?>
+				<h5>
+				<?php
+				
+				//echo"<div style= 'background-color : #85C630;'>";
+				
+				if (empty($resultats['profile_picture']))
+				{
+					//echo"<img src='design/img/exemple_profile.jpg'/>";
+				}
+				else
+				{
+						
+					$image = imagecreatefromstring($resultats['profile_picture']);
+					ob_start();
+					imagejpeg($image, null, 80);
+					$img = ob_get_contents();
+					ob_end_clean();
+					echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
+				}
+				echo "".$resultats['pseudo']." a commenté votre post!" ;
+				echo"</h5>";
+				echo"<div>";
+				$chaine = $resultats['content'];
+				couperChaine($chaine,10);
+				$chaineNouvelle=couperChaine($chaine,10);
+				echo $chaineNouvelle;
+				
+				echo"</div>";
+			echo"</a>";
+			}
+
 			
 	/*		echo" <br> <br> 
 	
