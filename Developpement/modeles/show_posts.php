@@ -4,6 +4,16 @@
 	{
 		$content = $data['content'];
 		$id = $id_post = $data['id_post'];
+		if(isset($id_user))
+		{
+				$requete="SELECT pseudo FROM users WHERE id_user= ".$id_user."";
+				$sucess=mysql_query($requete) or die(mysql_error());
+				while($resultats=mysql_fetch_assoc($sucess))
+				{
+					$data['pseudo'] = $resultats['pseudo'];
+				}
+		
+		}
 		//si le post est un flux RSS pulsé
 		if ($data['type'] == 1)
 		{
@@ -39,10 +49,8 @@
 			echo"		<div class='description_news'>";
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;&nbsp;lire l'article&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;";
 			echo "pulsé le : ";
-			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-			echo $data['pseudo'];
-			echo $data['id_user'];
-			echo " par <a href='index.php?page=profile&pseudo=".$data['pseudo']."' coucou>".$data['pseudo']." </a>!</div>";
+			echo date("d/m/Y à H\hi", strtotime($data['post_date']));	
+			echo " par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!</div>";
 			include('modeles/comment.php');
 			
 			echo"	</td>";

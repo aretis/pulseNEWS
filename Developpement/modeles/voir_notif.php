@@ -17,7 +17,9 @@
 			height: 60px; 
 			overflow: hidden; 
 			
-			background-color:blue;
+			background-color:green
+			;
+		
 		}
 		
 		.slide-up-boxes h5 {
@@ -132,12 +134,12 @@
 				echo"<a style='background-color:green' href='index.php?page=view_article&id_post=".$resultats['id_post']."&read_confirm=".$read_confirm."&id_comment=".$resultats['id_comment']."'>"; ?>
 				<h5>
 				<?php
-	
-				echo"<div style= 'background-color:green'>";
+	echo "hello";
+				echo"<div>";
 			
 				
-				echo" <div class=\"userbox\" style=\"width: 10px; height: 10px; position: relative; z-index: 1; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;\">\n";
-						
+				echo" <a class=\"userbox\" style=\"width: 50%; height: 10%; position: relative; z-index: 1; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;\">\n";
+				echo"<div>";		
 				if (empty($resultats['profile_picture']))
 				{
 					echo"<img src='design/img/exemple_profile.jpg'/>";
@@ -152,8 +154,6 @@
 					echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
 					
 				}
-				
-				echo"<div><style> slide-up-boxes div { background: grey;  17px 17px no-repeat; padding-left: 120px; } </style>";
 				echo"<div class='user_link' style=\"position: absolute; bottom: 5px; left: 5px; z-index: 2; border: none !important;\">";
 				echo "".$resultats['pseudo']." a commenté votre post! </h5>";
 				echo"<div>";
@@ -166,16 +166,16 @@
 			}		
 			else
 			{
-				echo"<a style='background-color:#85C630;' href='index.php?page=view_article&id_post=".$resultats['id_post']."&read_confirm=".$read_confirm."&id_comment=".$resultats['id_comment']."'>"; ?>
-				<h5>
-				<?php
 				
-				echo"<div style= 'background-color : #85C630;'>";
 				
-					echo "<div class=\"userbox\" style=\"width: 200px; height: 200px; position: relative; z-index: 1; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;\">\n";
+		
+				
+			
+				echo "<a href='index.php?page=view_article&id_post=".$resultats['id_post']."&read_confirm=".$read_confirm."&id_comment=".$resultats['id_comment']."'>"; ">\n";
+				echo"<h5 >";
 				if (empty($resultats['profile_picture']))
 				{
-					echo"<img src='design/img/exemple_profile.jpg'/>";
+					echo"<img src='design/img/exemple_profile.jpg' class=\"userbox\" style=\"background-color : #85C630; width: 50px; height: 40px; position: relative; z-index: 1; display:inline-block; border-width: 1px; border-color: green; border-style: dashed; />";
 				}
 				else
 				{
@@ -185,14 +185,14 @@
 					imagejpeg($image, null, 80);
 					$img = ob_get_contents();
 					ob_end_clean();
-					echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
+					echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '"  class=\"userbox\" style=\"background-color : #85C630; width: 50%px; height: 50%px; position: relative; z-index: 1; display:inline-block; border-width: 1px; border-color: green; border-style: dashed; />';
 		
 				}
-				
-					echo"<div class='user_link' style=\"position: absolute; bottom: 5px; left: 5px; z-index: 2; border: none !important;\">";
+				echo"<h5>";	
 				echo "".$resultats['pseudo']." a commenté votre post!" ;
-				echo"</h5>";
-				echo"<div>";
+					echo"<h5 class='user_link' style=\"position: absolute; bottom: 5px; left: 5px; z-index: 2; border: none !important;\">";
+				echo'</h5>';
+				echo"<div style='background-color:grey'>";
 				$chaine = $resultats['content'];
 				couperChaine($chaine,10);
 				$chaineNouvelle=couperChaine($chaine,10);

@@ -206,14 +206,13 @@ if(!isset($_GET['pseudo']))
 		$req = view_article_user($id);
 		
 		include('modeles/show_posts.php');
-		echo"". $id." dans la page profile"; // ok
-		echo "toi";
+
 	}
 	else
 	{
 		$req = view_article_user($_SESSION['id_user']);
 		include('modeles/show_posts.php');
-		echo" moi";
+
 	}
 ?>
 
