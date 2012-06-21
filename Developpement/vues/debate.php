@@ -101,10 +101,9 @@
 					echo"<div class='delete_post'>";
 					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=debate&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
 					else echo"<a href='index.php?page=debate&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
-					echo"</div>";
+					echo"</div>";	
 				}
-				else{
-				echo"		&nbsp;".$data['title'];}
+				else echo"&nbsp;".$data['title'];
 			}
 			else
 			{
@@ -132,8 +131,11 @@
 			echo"</tr>";
 			echo"<tr>";
 			echo"<td>";
-			echo"	<div class='propulse_debate'>&nbsp;";
-			echo"	<form action='index.php?page=debate' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' value='Je vote !' /></form></div></a>";
+			if(isset($_SESSION['pseudo']))
+			{
+				echo"	<div class='propulse_debate'>&nbsp;";
+				echo"	<form action='index.php?page=debate' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' value='Je vote !' /></form></div></a>";
+			}
 			echo"</td>";
 			echo"</tr>";
 			echo"</table>";
