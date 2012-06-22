@@ -46,8 +46,9 @@
 	<title>pulseNEWS, sponsored by your mind!</title>
 </head>
 <body>
-<?php
 
+
+<?php
 
 
 
@@ -55,8 +56,7 @@
 <div class='header'>
 	<table cellspacing="0">
 		<td>
-				<img style='height: 75px;' src='design/img/logo_header.png'/>
-				
+				<img style='height: 75px;' src='design/img/logo_header.png'/>			
 		</td>
 		<td style='width: 100%;'>
 		</td>

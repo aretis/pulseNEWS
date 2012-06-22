@@ -134,7 +134,7 @@
 				echo"<a style='background-color:green' href='index.php?page=view_article&id_post=".$resultats['id_post']."&read_confirm=".$read_confirm."&id_comment=".$resultats['id_comment']."'>"; ?>
 				<h5>
 				<?php
-	echo "hello";
+	echo $resultats['pseudo']." a commenté votre post!";
 				echo"<div>";
 			
 				
@@ -185,13 +185,13 @@
 					imagejpeg($image, null, 80);
 					$img = ob_get_contents();
 					ob_end_clean();
-					echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '"  class=\"userbox\" style=\"background-color : #85C630; width: 50%px; height: 50%px; position: relative; z-index: 1; display:inline-block; border-width: 1px; border-color: green; border-style: dashed; />';
+					echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '"  class=\"userbox\" style=\"background-color : #85C630; width: 50px; height: 40px; position: relative; z-index: 1; display:inline-block; border-width: 1px; border-color: green; border-style: dashed; />';
 		
 				}
 				echo"<h5>";	
 				echo "".$resultats['pseudo']." a commenté votre post!" ;
 					echo"<h5 class='user_link' style=\"position: absolute; bottom: 5px; left: 5px; z-index: 2; border: none !important;\">";
-				echo'</h5>';
+				echo $resultats['pseudo']." a commenté votre post!</h5>";
 				echo"<div style='background-color:grey'>";
 				$chaine = $resultats['content'];
 				couperChaine($chaine,10);
