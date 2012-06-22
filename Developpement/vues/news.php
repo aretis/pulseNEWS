@@ -200,7 +200,7 @@ function change3(num)
 <br>
 <br>
 <table>
-<td style='vertical-align: top;'>
+<td style='vertical-align: top; width:20%'>
 <table cellpadding='0' cellspacing='0' class='rss_block'>
 
 <?php 
@@ -257,6 +257,7 @@ if(isset($_POST['pulse']))
 
 </td>
 <td>
+<div id='pardessus'>
 <?php
 
 	include('modeles/view_all_articles.php');
@@ -388,7 +389,7 @@ if(isset($_POST['pulse']))
 		echo"<div class='no_news'> Désolé, aucune news n'a été trouvée pour ces critères</div>";
 	}
 ?>
-
+</div>
 </td>
 <td style='vertical-align: top;'>
 	<table cellpadding='0' cellspacing='0' class='rss_block' >
