@@ -302,6 +302,7 @@ border: 1px solid #003e40;
    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
    box-shadow: rgba(0,0,0,1) 0 1px 0;
+      text-shadow: 0 0 0 black;
 
 }
 .pulse_button {
@@ -361,6 +362,7 @@ border: 1px solid #003e40;
    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
    box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: 0 0 0 black;
 
 }
 .pulse_button_right {
