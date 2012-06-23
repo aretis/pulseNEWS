@@ -85,7 +85,6 @@
 					
 						$user=$_SESSION['id_user'];
 						include('/../modeles/connect_db.php');
-						include('/../modeles/couperChaine.php');
 						$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']." AND read_confirm='0'";
 						if(!mysql_query($query) )
 								{
@@ -123,7 +122,7 @@
 					
 					
 					
-					<a href='index.php?page=recherche'><img src='design/img/loupe.png'/>&nbsp;rechercher</a>&nbsp;&nbsp;
+					&nbsp;
 						<a href='index.php?page=newsfeed'>pulse !</a>&nbsp;&nbsp;
 						<a href='index.php?page=list_users'>les pulseurs</a>&nbsp;&nbsp;
 						<a href='index.php?page=news'>fil d'actualités</a>&nbsp;&nbsp;

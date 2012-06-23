@@ -196,7 +196,31 @@ function change3(num)
 	
 </form>
 </div>
+<div class='post_news'>
+	<form method="post" action="index.php?page=news">
+		<input type="search"name="recherche"/>
+		<select name ="mode">
+			<option value="exp_exacte">l'expression exacte</option>
+			<option value="all_mots">tout les mots </option>
+			<option value="un_mot">Au moins un mot</option>
+		</select>
+		<SELECT name="categorie">
+			<?php
+				$query = 'SELECT cat_name FROM news_cat';
+				$result = call_db($query);
 
+				while($data = mysql_fetch_assoc($result))
+				{
+					echo'<option>'.$data['cat_name'].'</option>';
+				}
+				
+				mysql_free_result($result);
+				mysql_close($link);
+			?>
+		</select>
+		<input type="submit" value ="rechercher" name ="rechercher"/>
+	</form>
+</div>
 <br>
 <br>
 <table>
@@ -257,6 +281,7 @@ if(isset($_POST['pulse']))
 
 </td>
 <td>
+<?php if((!isset($_POST['recherche'])) || (empty($_POST['recherche'])) || $nb_resultats == 0) {?>
 <div id='pardessus'>
 <?php
 
@@ -388,7 +413,7 @@ if(isset($_POST['pulse']))
 	{
 		echo"<div class='no_news'> Désolé, aucune news n'a été trouvée pour ces critères</div>";
 	}
-?>
+}?>
 </div>
 </td>
 <td style='vertical-align: top;'>
