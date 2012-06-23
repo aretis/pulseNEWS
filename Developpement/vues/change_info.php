@@ -34,7 +34,7 @@
 	</td>
 </tr>
 
-<tr style='background-color: #85c630;'>
+<tr style='background-color: #58b54c;'>
 	<td>
 		<div class='change_about_me'>
 		<form action='index.php?page=change_info' method='post'>
@@ -53,7 +53,7 @@
 	</td>
 </tr>
 
-<tr style='background-color: #85c630;'>
+<tr style='background-color: #58b54c;'>
 	<td>
 		<div class='change_humor'>
 		<form action='index.php?page=change_info' method='post'>

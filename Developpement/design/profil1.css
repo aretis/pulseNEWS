@@ -3,7 +3,7 @@
 
 .deco
 {
-	background-color:  #85c630;
+	background-color:  #58b54c;
 	float: right;
 	width: 100px;
 	margin-right: 10px;
@@ -12,7 +12,7 @@
 .profile_ban
 {
 	margin: auto;
-	border-color:#85c630;
+	border-color:#58b54c;
 	border-width: 12px;
 	border-style:solid;
 	height: 200px;
@@ -26,7 +26,7 @@
 }
 .profile_button_left
 {
-	background-color: #85c630;
+	background-color: #58b54c;
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 24px;
@@ -35,7 +35,7 @@
 }
 .profile_button_right
 {
-	background-color: #85c630;
+	background-color: #58b54c;
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 24px;
@@ -45,7 +45,7 @@
 .profile_name
 {
 	margin: auto;
-	background-color: #85c630;
+	background-color: #58b54c;
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 28px;
@@ -56,7 +56,7 @@
 
 .block_title_about
 {
-	background-color: #85c630;
+	background-color: #58b54c;
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 24px;
@@ -72,7 +72,7 @@
 }
 .about_block img
 {
-	border-color:#85c630;
+	border-color:#58b54c;
 	border-width: 8px;
 	border-style:solid;
 	height: 100px;
@@ -98,7 +98,7 @@
 
 .article_content
 {
-	border-color:#85c630;
+	border-color:#58b54c;
 	border-width:10;
 	border-style:solid;
 	background-color: white;
@@ -111,7 +111,7 @@
 	display: block;
 	margin: auto;
 	height: 200px;
-	border-color:#85c630;
+	border-color:#58b54c;
 	border-width: 8px;
 	border-style:solid;
 	box-shadow: 3px 3px 2px #417324; 
@@ -121,7 +121,7 @@
 {
 	display: block;
 	margin: auto;
-	border-color:#85c630;
+	border-color:#58b54c;
 	border-width: 8px;
 	border-style:solid;
 	box-shadow: 3px 3px 2px #417324; 
@@ -132,7 +132,7 @@
 {
 	width: 50%;
 	margin: auto;
-	background-color: #85c630;
+	background-color: #58b54c;
 	box-shadow: 5px 5px 3px #417324;
 }
 
@@ -156,8 +156,8 @@
 .title_create_article input[type=text]:focus
 {
 	border-color:#093c75;
-	-moz-box-shadow:0 0 3px #85c630;
-	-webkit-box-shadow:0 0 3px #85c630;
+	-moz-box-shadow:0 0 3px #58b54c;
+	-webkit-box-shadow:0 0 3px #58b54c;
 	outline:none; /* Pour enlever le contour jaune lorsque l'on sélectionne un input dans Chrome */
 }
 select{
@@ -172,7 +172,7 @@ select{
 }
 select:active,
 select:focus{
-	border: 5px solid #85c630;
+	border: 5px solid #58b54c;
 	outline:none;
 }
 
@@ -239,7 +239,7 @@ a.submit:focus{
 .comments
 {
 	font-size: 14px;
-	border-color:#85c630;
+	border-color:#58b54c;
 }
 ul ul {display: none;
 poistion :absolute;}

@@ -10,7 +10,7 @@ select{
 }
 select:active,
 select:focus{
-	border: 5px solid #85c630;
+	border: 5px solid #58b54c;
 	outline:none;
 }
 

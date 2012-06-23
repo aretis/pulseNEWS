@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	
 	/* Comments article
 		14/05/2012
@@ -28,7 +28,7 @@
 				else echo"<a href='index.php?page=profile&delete_comment=".$data['id_comment']."'>X</a>";
 			}
 		}
-		echo "&nbsp;&nbsp;<a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>"; 
+		echo "&nbsp;&nbsp;<a style='color: black;' href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>"; 
 		echo": &nbsp;&nbsp;";
 		echo"</span>";
 		
@@ -38,7 +38,7 @@
 		
 		echo"<span style='font-size:10px; color:white;'>";
 		echo"<br>&nbsp;&nbsp;Ecrit le ";
-		echo date("d/m/Y � H\hi", strtotime($data['post_date']));
+		echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 		echo"</div>";
 
 		echo"</span><hr>";

@@ -2,7 +2,7 @@
 
 .deco
 {
-	background-color:  #85c630;
+	background-color:  #58b54c;
 	float: right;
 	width: 100px;
 	margin-right: 10px;
@@ -11,14 +11,14 @@
 .profile_ban
 {
 	margin: auto;
-	border-color:#85c630;
+	border-color:#58b54c;
 	border-width: 12px;
 	border-style:solid;
 	width: 920px;
 }
 .profile_button_left
 {
-	background-color: #85c630;
+	background-color: #58b54c;
 	
 	color: white;
 	font-family: 'coolvetica_rg';
@@ -27,7 +27,7 @@
 }
 .profile_button_right
 {
-	background-color: #85c630;
+	background-color: #58b54c;
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 24px;
@@ -36,7 +36,7 @@
 .profile_name
 {
 	margin: auto;
-	background-color: #85c630;
+	background-color: #58b54c;
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 28px;
@@ -45,7 +45,7 @@
 	
 .title_about
 {
-	background-color: #85c630;
+	background-color: #58b54c;
 	border-radius: 5px 5px 0px 0px;
 	color: white;
 	font-family:'coolvetica_rg';
@@ -54,7 +54,7 @@
 }
 .block_title_about
 {
-	background-color: #85c630;
+	background-color: #58b54c;
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 24px;
@@ -84,7 +84,7 @@
 
 .article_content
 {
-	border-color:#85c630;
+	border-color:#58b54c;
 	border-width:10;
 	border-style:solid;
 	background-color: white;

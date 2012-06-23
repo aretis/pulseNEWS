@@ -20,7 +20,7 @@ body{
 
 form{
 	float: left;
-	background:#85c630; /* Firefox */
+	background:#58b54c; /* Firefox */
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
 	-moz-box-shadow:0 0 15px black;
@@ -32,7 +32,7 @@ form{
 }
 #block{
 	float: right;
-	background:#85c630; /* Firefox */
+	background:#58b54c; /* Firefox */
 	font-family: 'coolvetica_rg';
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
@@ -97,8 +97,8 @@ input[type=password]{
 input[type=text]:focus,
 input[type=password]:focus{
 	border-color:#093c75;
-	-moz-box-shadow:0 0 3px #85c630;
-	-webkit-box-shadow:0 0 3px #85c630;
+	-moz-box-shadow:0 0 3px #58b54c;
+	-webkit-box-shadow:0 0 3px #58b54c;
 	outline:none; /* Pour enlever le contour jaune lorsque l'on sélectionne un input dans Chrome */
 }
 select{

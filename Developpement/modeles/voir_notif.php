@@ -78,7 +78,8 @@
 	}
 	
 	$read_confirm='1';
-	include('/../modeles/call_db.php');
+	include('modeles/call_db.php');
+	include('modeles/couperChaine.php');
 
 	$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']." AND  read_confirm='0'";
 	if(!mysql_query($query) )
@@ -129,12 +130,13 @@
 		
 			<section class="slide-up-boxes">
 		<?php
+			
 		if($resultats['read_confirm']==0)
 		{
 				echo"<a style='background-color:green' href='index.php?page=view_article&id_post=".$resultats['id_post']."&read_confirm=".$read_confirm."&id_comment=".$resultats['id_comment']."'>"; ?>
 				<h5>
 				<?php
-	echo $resultats['pseudo']." a commenté votre post!";
+				echo $resultats['pseudo']." a commenté votre post!";
 				echo"<div>";
 			
 				
@@ -151,7 +153,7 @@
 					imagejpeg($image, null, 80);
 					$img = ob_get_contents();
 					ob_end_clean();
-					echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
+					echo '<img style="width: 30px;" src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
 					
 				}
 				echo"<div class='user_link' style=\"position: absolute; bottom: 5px; left: 5px; z-index: 2; border: none !important;\">";
@@ -209,7 +211,7 @@
 	<tr style='height: 12px'width=60%>
 
 		</tr>
-		<tr style='background-color: #85c630;'>
+		<tr style='background-color: #58b54c;'>
 
 		<td>";
 			if ($resultats['read_confirm']==1)
@@ -267,5 +269,8 @@
 </section>
 			
 	</div>
+	
+
+	
 </body>
 </html>

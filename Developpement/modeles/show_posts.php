@@ -44,13 +44,13 @@
 			echo "</div>";
 			echo"		</td>";
 			echo"	</tr>";
-			echo"	<tr style='background-color: #85c630;'>";
+			echo"	<tr style='background-color: #58b54c;'>";
 			echo"		<td>";
 			echo"		<div class='description_news'>";
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;&nbsp;lire l'article&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;";
 			echo "pulsé le : ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));	
-			echo " par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!</div>";
+			echo " par <a style='color: white;' href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!</div>";
 			include('modeles/comment.php');
 			
 			echo"	</td>";
@@ -114,7 +114,7 @@
 			echo $data['rate']."</div>";
 			echo"	</td>";
 			echo"</tr>";
-			echo"<tr style='background-color: #85c630;'>";
+			echo"<tr style='background-color: #58b54c;'>";
 			echo"	<td>";
 			echo"		<div class='article_content'>";
 			echo"<p>";

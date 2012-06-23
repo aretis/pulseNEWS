@@ -48,7 +48,7 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 				</td>
 			</tr>
 			<tr>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #58b54c;'>
 					<div class='block_content'>
 					<?php
 					$url= 'http://news.google.fr/news?pz=1&cf=all&ned=fr&hl=fr&output=rss';
@@ -66,7 +66,7 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 				</td>
 			</tr>
 			<tr>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #58b54c;'>
 					<div class='block_content'>
 					<?php
 					$url= 'http://news.google.fr/news?pz=1&cf=all&ned=fr&hl=fr&topic=b&output=rss';
@@ -93,7 +93,7 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 		<div class='rate'>+128</div>
 	</td>
 </tr>
-<tr style='background-color: #85c630;'>
+<tr style='background-color: #58b54c;'>
 	<td>
 		<div class='description'>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
@@ -133,7 +133,7 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 		<div class='rate'>+128</div>
 	</td>
 </tr>
-<tr style='background-color: #85c630;'>
+<tr style='background-color: #58b54c;'>
 	<td>
 		<div class='description'>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
@@ -173,7 +173,7 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 		<div class='rate'>+128</div>
 	</td>
 </tr>
-<tr style='background-color: #85c630;'>
+<tr style='background-color: #58b54c;'>
 	<td>
 		<div class='description'>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
@@ -213,7 +213,7 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 		<div class='rate'>+128</div>
 	</td>
 </tr>
-<tr style='background-color: #85c630;'>
+<tr style='background-color: #58b54c;'>
 	<td>
 		<div class='description'>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt neque eget eros viverra tincidunt nec nec lacus. Mauris ullamcorper consequat dolor at sagittis. Nulla sed nunc semper lectus malesuada tristique et et sem. Vivamus at nisl velit, ut volutpat est. Nam a justo nibh. In consequat nunc id ante blandit in pellentesque turpis interdum. 
@@ -254,7 +254,7 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 			<tr>
 				<td>
 				</td>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #58b54c;'>
 					<div class='block_content_right'>
 					<?php
 					$url= 'http://news.google.fr/news?pz=1&cf=all&ned=fr&hl=fr&topic=s&output=rss';
@@ -276,7 +276,7 @@ TOUS&nbsp;&nbsp;ma région&nbsp;&nbsp;membres&nbsp;&nbsp;politique&nbsp;&nbsp;é
 			<tr>
 				<td>
 				</td>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #58b54c;'>
 					<div class='block_content_right'>	
 					
 					<?php

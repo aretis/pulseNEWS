@@ -135,7 +135,11 @@ function change3(num)
 ?>
 
 
-<div class='tri'>
+
+
+<div id="volet_clos">
+		<div id="volet">
+		<div class='tri'>
 	<div class='shorti'>Trier par : </div>
 	<br>
 	<form method='post' action='index.php?page=news'>
@@ -191,12 +195,17 @@ function change3(num)
 			mysql_free_result($result);
 			mysql_close($link);
 		?>
-	</SELECT><div class='lol2'> <input name='tri' type='submit' value='trier' /></div>
+	</SELECT><div> <input name='tri' type='submit' value='trier' /></div>
 	
 	
 </form>
 </div>
-<div class='post_news'>
+		
+		
+	
+		
+			<div class='search_news'>
+			<div class='shorti'>Rechercher : </div>
 	<form method="post" action="index.php?page=news">
 		<input type="search"name="recherche"/>
 		<select name ="mode">
@@ -221,6 +230,13 @@ function change3(num)
 		<input type="submit" value ="rechercher" name ="rechercher"/>
 	</form>
 </div>
+			
+			<a href="#volet" class="ouvrir" aria-hidden="true">Trier !</a>
+			<a href="#volet_clos" class="fermer" aria-hidden="true">Fermer</a>
+		</div>
+	</div>
+
+
 <br>
 <br>
 <table>
@@ -243,7 +259,7 @@ if(isset($_POST['pulse']))
 				</td>
 			</tr>
 			<tr>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #58b54c;'>
 					<div class='block_content'>
 					<?php
 					$url= 'politique.xml';
@@ -264,7 +280,7 @@ if(isset($_POST['pulse']))
 				</td>
 			</tr>
 			<tr>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #58b54c;'>
 					<div class='block_content'>
 					<?php
 					$url= 'economie.xml';
@@ -322,13 +338,13 @@ if(isset($_POST['pulse']))
 			if($data['rate'] > 0) echo" + ";
 			echo $data['rate'];
 			echo "</div></td></tr>";
-			echo"	<tr style='background-color: #85c630;'>";
+			echo"	<tr style='background-color: #58b54c;'>";
 			echo"		<td>";
 			echo"		<div class='description_news'>";
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;lire l'article&nbsp;&nbsp;</a>";
 			echo"<span style='color:white;'>&nbsp;&nbsp;Pulsé le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>! </div>";
+			echo"&nbsp;par <a style='color:white;' href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>! </div>";
 			echo"	</span></td>";
 			echo"<form action='index.php?page=profile' method='post'/>";
 			echo'</form>';
@@ -387,7 +403,7 @@ if(isset($_POST['pulse']))
 			echo"		<div class='description'>";
 			echo $data['description']; 
 			echo"		</div>";
-			echo"<span style='color:white;background-color: #85c630;'>&nbsp;&nbsp;Ecrit le ";
+			echo"<span style='color:white;background-color: #58b54c;'>&nbsp;&nbsp;Ecrit le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!";
 			echo"	</span></td>";
@@ -426,7 +442,7 @@ if(isset($_POST['pulse']))
 			</tr>
 			<tr>
 				
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #58b54c;'>
 					<div class='block_content_right'>
 					<?php
 					$url= 'sport.xml';
@@ -447,7 +463,7 @@ if(isset($_POST['pulse']))
 				</td>
 			</tr>
 			<tr>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #58b54c;'>
 					<div class='block_content_right'>	
 					
 					<?php
