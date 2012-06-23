@@ -185,7 +185,7 @@ input[type=file]
 
 input[type=submit],
 a.submit{
-	background-color:#50b326;
+	background-color:#375D81;
 	border:0px;
 	-moz-border-radius:15px;
 	-webkit-border-radius:15px;
@@ -220,7 +220,7 @@ a.submit:focus{
 	right: 0px;
 	bottom: 75px;
 	width: 300px;
-	background-color: #50b326;
+	background-color: #375D81;
 	box-shadow: 5px 5px 3px #417324;
 }
 .depulse {
