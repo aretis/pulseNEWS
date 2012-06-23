@@ -195,8 +195,7 @@ function change3(num)
 	
 	
 </form>
-</div>
-<div class='post_news'>
+
 	<form method="post" action="index.php?page=news">
 		<input type="search"name="recherche"/>
 		<select name ="mode">
@@ -220,6 +219,7 @@ function change3(num)
 		</select>
 		<input type="submit" value ="rechercher" name ="rechercher"/>
 	</form>
+
 </div>
 <br>
 <br>
