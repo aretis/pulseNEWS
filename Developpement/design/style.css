@@ -5,7 +5,7 @@
 html { overflow-y: scroll; }
 
 body {
-	background-color: #7cc5da;
+	background-color: #E2EDEB;
     font-family: 'Calibri';
 }
 a {
@@ -55,7 +55,7 @@ a {
 	10%, 90% { -moz-transform: translateY(0px); }
 }
 .header {
-    background-color: #85C630;
+    background-color: #046380;
     box-shadow: 10px 10px 8px #003e40;
     left: 0;
     position: fixed;
