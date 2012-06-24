@@ -1164,4 +1164,11 @@ border: 1px solid #003e40;
 #pardessus {
   width:96%;
 }
+#no_result{
+color:red;
+  Margin-left:764px;
+  margin-top:24px;
+  width:500px;
+  font-size:20px;
+}
 
