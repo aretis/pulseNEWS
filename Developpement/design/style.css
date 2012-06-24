@@ -2,8 +2,13 @@
   overflow-y:scroll;
 }
 body {
+<<<<<<< HEAD
   background-color:#5F8CA3;
   font-family:Calibri;
+=======
+	background-color: #62b763;
+    font-family: 'Calibri';
+>>>>>>> 630ff51deaa10e774329160bc8994e11f10935e6
 }
 a {
   text-decoration:none;
