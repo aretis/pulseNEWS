@@ -25,6 +25,10 @@ function create_article($article)
 		$id_area = $data['id_area'];
     } 
 
+	
+	$article['content'] = str_replace("\"","'",$article['content']);
+	
+	
 	include_once('modeles/connect_db.php');
 	
 	

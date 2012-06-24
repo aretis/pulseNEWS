@@ -2,6 +2,8 @@
     font-family: "coolvetica_rg";
     src: url("fonts/coolvetica_rg.ttf") format("truetype");
 }
+html { overflow-y: scroll; }
+
 body {
 	background-color: #7cc5da;
     font-family: 'Calibri';
@@ -282,6 +284,25 @@ border: 1px solid #003e40;
     vertical-align: top;
     width: 120px;
 	border: 2px solid #003e40;
+}
+.block_content {
+    background-color: white;
+    border-color: #85C630;
+    border-style: solid;
+    border-width: 6px;
+    box-shadow: 5px 5px 3px #003e40;
+    font-size: 14px;
+    vertical-align: top;
+	border: 2px solid #003e40;
+  
+   padding: 6px -5px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
 }
 .block_content {
     background-color: white;
@@ -842,21 +863,21 @@ border: 1px solid #003e40;
 	font-size : 39px;
 }
 #background {
-	background: url(design/img/background.png) repeat 5% 5%;
+	background: url(img/background.png) repeat 5% 5%;
 	position: absolute;
 	top: 0; left: 0; right: 0; bottom: 0;
 	z-index: 100;
 }
 
 #midground {
-	background: url(design/img/midground.png) repeat 20% 20%;
+	background: url(img/midground.png) repeat 20% 20%;
 	position: absolute;
 	top: 0; left: 0; right: 0; bottom: 0;
 	z-index: 100;
 }
 
 #foreground {
-	background: url(design/img/foreground.png) repeat 90% 110%;
+	background: url(img/foreground.png) repeat 90% 110%;
 	position: absolute;
 	top: 0; left: 0; right: 0; bottom: 0;
 	z-index: 200;
@@ -1047,5 +1068,10 @@ border: 1px solid #003e40;
     margin: auto;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
     width: 924px;
+}
+#pardessus {
+  height:630px;
+  overflow:auto;
+  width:96%;
 }
 
