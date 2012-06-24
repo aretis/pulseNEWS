@@ -101,7 +101,7 @@ a {
 }
 .post_news {
   -webkit-box-shadow:#000000 0 1px 0;
-  background-color:powderBlue;
+  background-color:#8fcaff;
   border:1px solid #003E40;
   border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
@@ -122,7 +122,7 @@ a {
   border-top-right-radius:6px;
   box-shadow:#003E40 2px 2px 2px;
   color:white;
-  font-family:coolvetica_rg;
+  font-family:Tahoma;
   font-size:25px;
   font-weight:bold;
   text-decoration:none;
@@ -1047,5 +1047,6 @@ select:active, select:focus {
 }
 .cat_color {
   color:red;
-  font-size:22px;
+  font-size:18px;
+  font-family:fantasy;
 }
