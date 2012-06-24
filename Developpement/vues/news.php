@@ -243,7 +243,7 @@ if(isset($_POST['pulse']))
 				</td>
 			</tr>
 			<tr>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #E1E6FA;'>
 					<div class='block_content'>
 					<?php
 					$url= 'politique.xml';
@@ -264,7 +264,7 @@ if(isset($_POST['pulse']))
 				</td>
 			</tr>
 			<tr>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #E1E6FA;'>
 					<div class='block_content'>
 					<?php
 					$url= 'economie.xml';
@@ -322,7 +322,7 @@ if(isset($_POST['pulse']))
 			if($data['rate'] > 0) echo" + ";
 			echo $data['rate'];
 			echo "</div></td></tr>";
-			echo"	<tr style='background-color: #85c630;'>";
+			echo"	<tr style='background-color: #E1E6FA;'>";
 			echo"		<td>";
 			echo"		<div class='description_news'>";
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;lire l'article&nbsp;&nbsp;</a>";
@@ -387,7 +387,7 @@ if(isset($_POST['pulse']))
 			echo"		<div class='description'>";
 			echo $data['description']; 
 			echo"		</div>";
-			echo"<span style='color:white;background-color: #85c630;'>&nbsp;&nbsp;Ecrit le ";
+			echo"<span style='color:white;background-color: #E1E6FA;'>&nbsp;&nbsp;Ecrit le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!";
 			echo"	</span></td>";
@@ -426,7 +426,7 @@ if(isset($_POST['pulse']))
 			</tr>
 			<tr>
 				
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #E1E6FA;'>
 					<div class='block_content_right'>
 					<?php
 					$url= 'sport.xml';
@@ -447,7 +447,7 @@ if(isset($_POST['pulse']))
 				</td>
 			</tr>
 			<tr>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #E1E6FA;'>
 					<div class='block_content_right'>	
 					
 					<?php
