@@ -1130,7 +1130,13 @@ border: 1px solid #003e40;
     height: 75px;
     margin: auto;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-    width: 924px;
+    width: 334px;
+}
+#search_button
+{
+	margin-left: 227px;
+    margin-top: -31px;
+    width: 0px;
 }
 .search_news {
   

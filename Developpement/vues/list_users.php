@@ -1,8 +1,8 @@
 <div class='search_pulseur'>
 	<form>
-		<div style='margin:auto;'>Rechercher un pulseur :</div>
-		<input type='search' name='pulseur' placeholder='recherche'>
-		<input type='submit' name ='valider'>
+		<div style='margin:auto; text-align:center; font-size:22px;'>Rechercher un pulseur :</div><br>
+		&nbsp;&nbsp;<input type='search' name='pulseur' placeholder='recherche'>
+		<div id='search_button'><input type='submit' name ='valider' value='Rechercher'></div>
 	</form>
 </div>
 <br>
