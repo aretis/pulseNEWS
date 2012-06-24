@@ -248,10 +248,10 @@ function change3(num)
 if(isset($_POST['pulse']))
 {
 	if($news_exists == 1){
-		echo "<span style='color : red'> Vous avez déja pulsé cette news !</span>";}
+		echo "<div id='box'> Vous avez déja pulsé cette news !</div>";}
 		
 	else if($news_exists == 0){
-		echo"<span style='color : red'>Votre news à bien été pulsée !</span>";}
+		echo"<div id='box'>Votre news à bien été pulsée !</div>";}
 }?>
 
 			<tr>
@@ -339,8 +339,7 @@ if(isset($_POST['pulse']))
 			if($data['rate'] > 0) echo" + ";
 			echo $data['rate'];
 			echo "</div></td></tr>";
-			echo"	<tr style='background-color: #E1E6FA;'>";
-			echo"	<tr style='background-color: #58b54c;'>";
+			echo"	<tr>";
 			echo"		<td>";
 			echo"		<div class='description_news'>";
 			echo"<a href=\"".$data['description']."\" >
@@ -349,9 +348,9 @@ if(isset($_POST['pulse']))
 				onmouseout=\"this.src='design/img/news_1.png';\"/>
 			</a>";
 			
-			echo"<span style='color:white;'>&nbsp;&nbsp;Pulsé le ";
+			echo"<span>&nbsp;&nbsp;Pulsé le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-			echo"&nbsp;par <a style='color:white;' href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>! </div>";
+			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>! </div>";
 			echo"	</span></td>";
 			echo"<form action='index.php?page=profile' method='post'/>";
 			echo'</form>';
@@ -406,16 +405,16 @@ if(isset($_POST['pulse']))
 					echo"<div class='delete_post'>";
 					if(isset($_GET['pseudo'])) echo"<a style='color:red' href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
 					else echo"<a style='color:red' href='index.php?page=news&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;";
-					echo"<a href='index.php?page=view_article&id_post=".$data['id_post']."' style='color: white;'>".$data['title']."</a>";
+					echo"<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";
 					echo"</div>";
 				}
 				else
 				{
-					echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."' style='color: white;'>".$data['title']."</a>";
+					echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";
 				}
 			}
 			else{
-			echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."' style='color: white;'>".$data['title']."</a>";}
+			echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";}
 			echo"	</div>";
 			echo"	</td>";
 
@@ -430,8 +429,7 @@ if(isset($_POST['pulse']))
 			echo"		<div class='description'>";
 			echo $data['description']; 
 			echo"		</div>";
-			echo"<span style='color:white;background-color: #E1E6FA;'>&nbsp;&nbsp;Ecrit le ";
-			echo"<span style='color:white;background-color: #58b54c;'>&nbsp;&nbsp;Ecrit le ";
+			echo"<span>&nbsp;&nbsp;Ecrit le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!";
 			echo"	</span></td>";
