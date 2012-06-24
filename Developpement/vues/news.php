@@ -199,9 +199,6 @@ function change3(num)
 	
 	
 </form>
-<<<<<<< HEAD
-
-=======
 </div>
 		
 		
@@ -209,7 +206,6 @@ function change3(num)
 		
 			<div class='search_news'>
 			<div class='shorti'>Rechercher : </div>
->>>>>>> 4cfd7cd3f39272c1b363acbeb28e546a27b035f9
 	<form method="post" action="index.php?page=news">
 		<input type="search"name="recherche"/>
 		<select name ="mode">
@@ -264,11 +260,7 @@ if(isset($_POST['pulse']))
 				</td>
 			</tr>
 			<tr>
-<<<<<<< HEAD
-				<td style='background-color: #E1E6FA;'>
-=======
-				<td style='background-color: #58b54c;'>
->>>>>>> 4cfd7cd3f39272c1b363acbeb28e546a27b035f9
+				<td>
 					<div class='block_content'>
 					<?php
 					$url= 'politique.xml';
@@ -289,11 +281,7 @@ if(isset($_POST['pulse']))
 				</td>
 			</tr>
 			<tr>
-<<<<<<< HEAD
-				<td style='background-color: #E1E6FA;'>
-=======
-				<td style='background-color: #58b54c;'>
->>>>>>> 4cfd7cd3f39272c1b363acbeb28e546a27b035f9
+				<td>
 					<div class='block_content'>
 					<?php
 					$url= 'economie.xml';
@@ -351,11 +339,8 @@ if(isset($_POST['pulse']))
 			if($data['rate'] > 0) echo" + ";
 			echo $data['rate'];
 			echo "</div></td></tr>";
-<<<<<<< HEAD
 			echo"	<tr style='background-color: #E1E6FA;'>";
-=======
 			echo"	<tr style='background-color: #58b54c;'>";
->>>>>>> 4cfd7cd3f39272c1b363acbeb28e546a27b035f9
 			echo"		<td>";
 			echo"		<div class='description_news'>";
 			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;lire l'article&nbsp;&nbsp;</a>";
@@ -420,11 +405,8 @@ if(isset($_POST['pulse']))
 			echo"		<div class='description'>";
 			echo $data['description']; 
 			echo"		</div>";
-<<<<<<< HEAD
 			echo"<span style='color:white;background-color: #E1E6FA;'>&nbsp;&nbsp;Ecrit le ";
-=======
 			echo"<span style='color:white;background-color: #58b54c;'>&nbsp;&nbsp;Ecrit le ";
->>>>>>> 4cfd7cd3f39272c1b363acbeb28e546a27b035f9
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!";
 			echo"	</span></td>";
@@ -462,12 +444,7 @@ if(isset($_POST['pulse']))
 				</td>
 			</tr>
 			<tr>
-				
-<<<<<<< HEAD
-				<td style='background-color: #E1E6FA;'>
-=======
-				<td style='background-color: #58b54c;'>
->>>>>>> 4cfd7cd3f39272c1b363acbeb28e546a27b035f9
+				<td>
 					<div class='block_content_right'>
 					<?php
 					$url= 'sport.xml';
@@ -488,11 +465,7 @@ if(isset($_POST['pulse']))
 				</td>
 			</tr>
 			<tr>
-<<<<<<< HEAD
-				<td style='background-color: #E1E6FA;'>
-=======
-				<td style='background-color: #58b54c;'>
->>>>>>> 4cfd7cd3f39272c1b363acbeb28e546a27b035f9
+				<td>
 					<div class='block_content_right'>	
 					
 					<?php
