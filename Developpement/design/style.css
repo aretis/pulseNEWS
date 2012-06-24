@@ -1221,6 +1221,54 @@ border: 1px solid #003e40;
 	background: #95B1CE;
 	}
 	
+	
+	
+	#wrapper_notif {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+	
+	.accordionButton_notif {	
+	width: 800px;
+	float: left;
+	_float: none;  /* Float works in all browsers but IE6 */
+border: 1px solid #003e40;
+   background: #1f6e86;
+   background: -webkit-gradient(linear, left top, left bottom, from(#1a9dc5), to(#1f6e86));
+   background: -webkit-linear-gradient(top, #1a9dc5, #1f6e86);
+   background: -moz-linear-gradient(top, #1a9dc5, #1f6e86);
+   background: -ms-linear-gradient(top, #1a9dc5, #1f6e86);
+   background: -o-linear-gradient(top, #1a9dc5, #1f6e86);
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: 2px 2px 5px black;
+   color: white;
+   font-size: 20px;
+   font-family: 'coolvetica_rg';
+	cursor: pointer;
+	}
+	
+.accordionContent_notif {	
+	width: 800px;
+	float: left;
+	_float: none; /* Float works in all browsers but IE6 */
+	background: #95B1CE;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 /***********************************************************************************************************************
  EXTRA STYLES ADDED FOR MOUSEOVER / ACTIVE EVENTS
 ************************************************************************************************************************/

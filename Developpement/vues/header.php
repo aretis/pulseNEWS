@@ -99,28 +99,8 @@
 						$sucess= mysql_query($query) or die (mysql_error());
 						while($resultats=mysql_fetch_assoc($sucess))
 						{
-						
+					
 							echo" <a href='index.php?page=voir_notif' >".$resultats['nb_notif']." <img style='margin-bottom: -5px;' src='design/img/notif_icon.png'/></a>";
-							/*
-							$requete="SELECT * FROM notification N JOIN comments C ON N.id_comment = C.id_comment JOIN users U ON C.id_user=U.id_user  WHERE N.id_user != ".$_SESSION['id_user']." AND read_confirm='0'" ;
-							$sucess=mysql_query($requete) or die(mysql_error());
-							While($resultats=mysql_fetch_array($sucess))
-							{
-
-							
-							echo" <li>".$resultats['pseudo']." a commenté votre post ";
-							$chaine_nouvelle=couperChaine($resultats['content'],10);
-							echo $chaine_nouvelle;
-							 
-							 
-							
-							  }
-							  
-							<td>
-											<div class='block_title'>&nbsp;vous avez ".$resultats['nb_notif']." notifications!</div>
-							</td>";*/
-
-						
 						}
 					}
 			?>		
