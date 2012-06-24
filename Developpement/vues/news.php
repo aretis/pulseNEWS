@@ -4,15 +4,15 @@
 	
 	if(isset($_SESSION['pseudo']))
 	{
-		if(isset($_POST['PROpulse']))
+		if(isset($_GET['PROpulse']))
 		{
 		
-			pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['PROpulse'], $_POST['type']);
+			pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['PROpulse'], $_GET['type']);
 		}
-		else if(isset($_POST['DEpulse']))
+		else if(isset($_GET['DEpulse']))
 		{
 		
-			pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['DEpulse'], $_POST['type']);
+			pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['DEpulse'], $_GET['type']);
 		}
 	}
 	
@@ -363,9 +363,20 @@ if(isset($_POST['pulse']))
 			if(isset($_SESSION['pseudo']))
 			{
 				echo"	<div class='depulse'>&nbsp;";
-				echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+				
+				echo"<a href=\"index.php?page=news&type=posts&id_news=".$data['id_post']."&DEpulse=DEpulse\" >
+					<img id=\"myDiv\" src='design/img/down.png' 
+					onmouseover=\"this.src='design/img/down_plein.png';\" 
+					onmouseout=\"this.src='design/img/down.png';\"/>
+				</a></div>";
+			
 				echo"	<div class='propulse'>&nbsp;";
-				echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+				
+				echo"<a href=\"index.php?page=news&type=posts&id_news=".$data['id_post']."&PROpulse=PROpulse\" >
+					<img id=\"myDiv\" src='design/img/up.png' 
+					onmouseover=\"this.src='design/img/up_plein.png';\" 
+					onmouseout=\"this.src='design/img/up.png';\"/>
+				</a></div>";
 			}
 			echo"</td>";
 			echo"</tr>";
@@ -422,9 +433,20 @@ if(isset($_POST['pulse']))
 			if(isset($_SESSION['pseudo']))
 			{
 				echo"	<div class='depulse'>&nbsp;";
-				echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' style='margin-top: -15px;' name='DEpulse' value='DEpulse' /></form></div></a>";
+				
+				echo"<a href=\"index.php?page=news&type=posts&id_news=".$data['id_post']."&DEpulse=DEpulse\" >
+					<img id=\"myDiv\" src='design/img/down.png' 
+					onmouseover=\"this.src='design/img/down_plein.png';\" 
+					onmouseout=\"this.src='design/img/down.png';\"/>
+				</a></div>";
+			
 				echo"	<div class='propulse'>&nbsp;";
-				echo"	<form action='index.php?page=news' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input type='submit' style='margin-top: -15px;' name='PROpulse' value='PROpulse' /></form></div></a>";
+				
+				echo"<a href=\"index.php?page=news&type=posts&id_news=".$data['id_post']."&PROpulse=PROpulse\" >
+					<img id=\"myDiv\" src='design/img/up.png' 
+					onmouseover=\"this.src='design/img/up_plein.png';\" 
+					onmouseout=\"this.src='design/img/up.png';\"/>
+				</a></div>";
 			}
 			echo"</td>";
 			echo"</tr>";
