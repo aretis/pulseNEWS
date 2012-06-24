@@ -10,6 +10,7 @@
 	<script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
 	<script src='js/slotmachine.js'></script>
 	    <script src="js/organictabs.jquery.js"></script>
+		<script src="js/script.js" type="text/javascript"></script>
     <script>
         $(function() {
     
@@ -43,6 +44,7 @@
 			
 		});
 	</script>
+	
 	<title>pulseNEWS, sponsored by your mind!</title>
 </head>
 <body>
