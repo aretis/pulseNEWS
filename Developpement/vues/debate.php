@@ -74,15 +74,15 @@
 						Description :<br>
 						<textarea name="content" cols="50" rows="7"> </textarea> 
 						<br><br>
-						<input name="suggest" type="submit" value="Suggérer !">
+						<input style='margin-top: -50px;' name="suggest" type="submit" value="Suggérer !">
 					</form>
 					<ul> </ul>
 					</ul>
 				</dd>
 			</dl>
 		</div>
-	</div><br><br><br>
-	
+	</div>
+
 	<?php
 		$query="SELECT pseudo, id_post, title, content, rate, post_date FROM posts INNER JOIN USERS ON posts.id_user = users.id_user WHERE type=2";
 		
@@ -118,7 +118,7 @@
 			echo $data['rate']."</div>";
 			echo"	</td>";
 			echo"</tr>";
-			echo"<tr style='background-color: #85c630;'>";
+			echo"<tr style='background-color: #58b54c;'>";
 			echo"	<td>";
 			echo"		<div class='description'>";
 			echo $data['content']; 

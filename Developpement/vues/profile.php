@@ -175,7 +175,7 @@ if(!isset($_GET['pseudo']))
 				</td>
 			</tr>
 			<tr>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #58b54c;'>
 					<div class='block_content'>
 					<?php if(isset($_GET['pseudo']))
 							{
@@ -229,7 +229,7 @@ if(!isset($_GET['pseudo']))
 				</td>
 			</tr>
 			<tr>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #58b54c;'>
 				<div class='block_content'>
 					
 						

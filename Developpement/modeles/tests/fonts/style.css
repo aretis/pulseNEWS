@@ -16,7 +16,7 @@ a
 }
 .header
 {
-	background-color: #85c630;
+	background-color: #58b54c;
 	width: 100%;
 }
 .header_info
@@ -35,7 +35,7 @@ a
 .news_sort
 {
 	float: right;
-	background-color: #85c630;
+	background-color: #58b54c;
 	color: white;
 	font-size: 18px;
 	font-family: 'coolvetica_rg';
@@ -51,7 +51,7 @@ a
 }
 .title_post
 {
-	background-color: #85c630;
+	background-color: #58b54c;
 	width: 100%;
 	color: white;
 	font-family: 'coolvetica_rg';
@@ -59,7 +59,7 @@ a
 }
 .rate
 {
-	background-color: #85c630;
+	background-color: #58b54c;
 	width: 60px;
 	color: white;
 	font-family: 'coolvetica_rg';
@@ -67,7 +67,7 @@ a
 }
 .description
 {
-	border-color:#85c630;
+	border-color:#58b54c;
 	border-width:6;
 	border-style:solid;
 	background-color: white;
@@ -76,7 +76,7 @@ a
 .date_news
 {
 	margin-top: -36px;
-	background-color: #85c630;
+	background-color: #58b54c;
 	color: white;
 	font-size: 10px;
 	height: 100%;
@@ -87,7 +87,7 @@ a
 }
 .block_title
 {
-	background-color: #85c630;
+	background-color: #58b54c;
 	color: white;
 	font-family: 'coolvetica_rg';
 	font-size: 24px;
@@ -97,7 +97,7 @@ a
 	float: right;
 	color: white;
 	font-family: 'coolvetica_rg';
-	background-color: #85c630;
+	background-color: #58b54c;
 	text-align: center;
 	width: 100px;
 	margin-top: -5px;
@@ -108,7 +108,7 @@ a
 	float: right;
 	color: white;
 	font-family: 'coolvetica_rg';
-	background-color: #85c630;
+	background-color: #58b54c;
 	text-align: center;
 	width: 100px;
 	margin-top: -5px;
