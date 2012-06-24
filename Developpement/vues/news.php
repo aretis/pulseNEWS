@@ -305,9 +305,10 @@ if(isset($_POST['pulse']))
 	include('modeles/view_all_articles.php');
 	
 	$req = view_all_article($date, $rate, $type, $news_area, $cat_news);
-
+echo'<div id="rehan">';
 	while($data = mysql_fetch_assoc($req))
 	{
+	
 		if($data['type'] == 1)
 		{
 	
@@ -383,7 +384,7 @@ if(isset($_POST['pulse']))
 
 			while($toto = mysql_fetch_assoc($result))
 			{
-				echo $toto['cat_name'];
+				echo "<div class='cat_color'>".$toto['cat_name']."</div>";
 			}
 			echo"</td>";
 			
@@ -460,7 +461,7 @@ if(isset($_POST['pulse']))
 
 			while($toto = mysql_fetch_assoc($result))
 			{
-				echo $toto['cat_name'];
+				echo "<div class='cat_color'>".$toto['cat_name']."</div>";
 			}
 			echo"</td>";
 			
@@ -475,6 +476,7 @@ if(isset($_POST['pulse']))
 	{
 		echo"<div class='no_news'> Désolé, aucune news n'a été trouvée pour ces critères</div>";
 	}
+	echo'</div>';
 }?>
 </div>
 </td>
