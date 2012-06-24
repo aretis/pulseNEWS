@@ -1123,7 +1123,7 @@ border: 1px solid #003e40;
 }
 .search_pulseur
 {
-	background: -moz-linear-gradient(center top , #1a9dc5, #1f6e86) repeat scroll 0 0 transparent;
+	background-color:#1f6e86;
     border: 1px solid #003E40;
     border-radius: 6px 6px 6px 6px;
     box-shadow: 0 1px 0 #000000;
@@ -1135,7 +1135,7 @@ border: 1px solid #003e40;
 #search_button
 {
 	margin-left: 227px;
-    margin-top: -31px;
+    margin-top: -41px;
     width: 0px;
 }
 .search_news {
