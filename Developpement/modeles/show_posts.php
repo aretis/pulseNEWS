@@ -150,14 +150,14 @@
 			$content = nl2br( $content , false );
 			echo $content;
 			echo"		</div>";
-			echo"<span style='color:white;box-shadow: 5px 5px 3px #003e40;background-color: #85C630;border: 2px solid black;'>&nbsp;&nbsp;Ecrit le&nbsp;";
+			echo"<span style='box-shadow: 5px 5px 3px #003e40;border: 2px solid black;'>&nbsp;&nbsp;Ecrit le&nbsp;";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!</span>";
 			
 			echo"	</td>";			
 			echo"	</td>";
 			echo"</tr>";
-			echo"<tr><td style='background-color: 85c630;'>";
+			echo"<tr><td>";
 			if(isset($_SESSION['pseudo'])) include('modeles/comment.php');
 			echo"</tr></td>";
 			echo"<tr>";

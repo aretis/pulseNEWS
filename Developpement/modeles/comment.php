@@ -4,18 +4,10 @@
 		14/05/2012
 		Salman Alamdar
 	*/
-	
-	if(isset($_GET['pseudo'])) echo"<form action='index.php?page=profile&pseudo=".$_GET['pseudo']."' method='post'/>";
-	else echo"<form action='index.php?page=profile' method='post'/>";
-	echo"<br>";
-	echo"&nbsp;&nbsp;<input type='text' name='comment' placeholder='Commenter...' size='77%'>";
-	echo"<input type='hidden' name='id_news' value='".$id."' />";
-	echo"<input style='display:none' type='submit' />";
-	echo'</form>';
-	$query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN USERS ON comments.id_user = users.id_user WHERE id_post = ".$id;
+
+
+$query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN USERS ON comments.id_user = users.id_user WHERE id_post = ".$id;
 	$result = call_db($query);
-
-
 	?>
 	
 		<div id="wrapper">
@@ -52,7 +44,15 @@
 		echo"</span>";
 	}
 	
-
+	
+	if(isset($_GET['pseudo'])) echo"<form action='index.php?page=profile&pseudo=".$_GET['pseudo']."' method='post'/>";
+	else echo"<form action='index.php?page=profile' method='post'/>";
+	echo"<br>";
+	echo"&nbsp;&nbsp;<input type='text' name='comment' placeholder='Commenter...' size='77%'>";
+	echo"<input type='hidden' name='id_news' value='".$id."' />";
+	echo"<input style='display:none' type='submit' />";
+	echo'</form>';
+	
 	?>
 	
 	
