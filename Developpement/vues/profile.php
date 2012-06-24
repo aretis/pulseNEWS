@@ -18,12 +18,12 @@
 	if(isset($_GET['PROpulse']))
 	{
 	
-		pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['PROpulse'], $_GET['type']);
+		pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['PROpulse']);
 	}
 	else if(isset($_GET['DEpulse']))
 	{
 	
-		pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['DEpulse'], $_GET['type']);
+		pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['DEpulse']);
 	}
 
 	include('/../modeles/connect_db.php');

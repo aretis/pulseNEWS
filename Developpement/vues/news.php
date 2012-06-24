@@ -7,12 +7,12 @@
 		if(isset($_GET['PROpulse']))
 		{
 		
-			pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['PROpulse'], $_GET['type']);
+			pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['PROpulse']);
 		}
 		else if(isset($_GET['DEpulse']))
 		{
 		
-			pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['DEpulse'], $_GET['type']);
+			pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['DEpulse']);
 		}
 	}
 	
@@ -368,7 +368,7 @@ if(isset($_POST['pulse']))
 			{
 				echo"	<div class='depulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=news&type=posts&id_news=".$data['id_post']."&DEpulse=DEpulse\" >
+				echo"<a href=\"index.php?page=news&id_news=".$data['id_post']."&DEpulse=DEpulse\" >
 					<img id=\"myDiv\" src='design/img/down.png' 
 					onmouseover=\"this.src='design/img/down_plein.png';\" 
 					onmouseout=\"this.src='design/img/down.png';\"/>
@@ -376,7 +376,7 @@ if(isset($_POST['pulse']))
 			
 				echo"	<div class='propulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=news&type=posts&id_news=".$data['id_post']."&PROpulse=PROpulse\" >
+				echo"<a href=\"index.php?page=news&id_news=".$data['id_post']."&PROpulse=PROpulse\" >
 					<img id=\"myDiv\" src='design/img/up.png' 
 					onmouseover=\"this.src='design/img/up_plein.png';\" 
 					onmouseout=\"this.src='design/img/up.png';\"/>
@@ -449,7 +449,7 @@ if(isset($_POST['pulse']))
 			{
 				echo"	<div class='depulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=news&type=posts&id_news=".$data['id_post']."&DEpulse=DEpulse\" >
+				echo"<a href=\"index.php?page=news&id_news=".$data['id_post']."&DEpulse=DEpulse\" >
 					<img id=\"myDiv\" src='design/img/down.png' 
 					onmouseover=\"this.src='design/img/down_plein.png';\" 
 					onmouseout=\"this.src='design/img/down.png';\"/>
@@ -457,7 +457,7 @@ if(isset($_POST['pulse']))
 			
 				echo"	<div class='propulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=news&type=posts&id_news=".$data['id_post']."&PROpulse=PROpulse\" >
+				echo"<a href=\"index.php?page=news&id_news=".$data['id_post']."&PROpulse=PROpulse\" >
 					<img id=\"myDiv\" src='design/img/up.png' 
 					onmouseover=\"this.src='design/img/up_plein.png';\" 
 					onmouseout=\"this.src='design/img/up.png';\"/>

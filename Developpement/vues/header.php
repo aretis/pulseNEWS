@@ -5,12 +5,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset='UTF-8'"/>
 <link rel="stylesheet" href="design/style.css" />
 <link rel="icon" type="image/gif" href="design/img/favicon.gif" />
+
+<link rel="stylesheet" type="text/css" href="design/bounce_box.css" />
+
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.bouncebox.1.0.js"></script>
+<script type="text/javascript" src="js/bounce_script.js"></script>
+
 <script src="js/modernizr.custom.80028.js"></script>
-	<script src="js/jquery.backgroundPosition.js" type="text/javascript"></script>
-	<script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
-	<script src='js/slotmachine.js'></script>
-	    <script src="js/organictabs.jquery.js"></script>
-		<script src="js/script.js" type="text/javascript"></script>
+<script src="js/jquery.backgroundPosition.js" type="text/javascript"></script>
+<script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src='js/slotmachine.js'></script>
+<script src="js/organictabs.jquery.js"></script>
+<script src="js/script.js" type="text/javascript"></script>
     <script>
         $(function() {
     
