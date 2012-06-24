@@ -7,12 +7,12 @@
 		if(isset($_GET['PROpulse']))
 		{
 		
-			pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['PROpulse']);
+			pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['PROpulse'], $_GET['type']);
 		}
 		else if(isset($_GET['DEpulse']))
 		{
 		
-			pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['DEpulse']);
+			pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['DEpulse'], $_GET['type']);
 		}
 	}
 	
@@ -57,7 +57,7 @@ function change(num)
 	}
 	else if(num == 1)
 	{
-		document.getElementById("cat").style.display = "inline";
+		document.getElementById("cat").style.display = "none";
 		document.getElementById("area").style.display = "inline";
 	}
 	else if(num == 2)
@@ -339,16 +339,7 @@ if(isset($_POST['pulse']))
 			if($data['rate'] > 0) echo" + ";
 			echo $data['rate'];
 			echo "</div></td></tr>";
-<<<<<<< HEAD
 			echo"	<tr>";
-=======
-			
-			/* -----------------------------------------
-			// COULEUR DU ECRIT LE ....
-			---------------------------------------*/
-			
-			echo"	<tr style='background-color: #58b54c;'>";
->>>>>>> 882bbbce7c968bec43758930e5c15d71f546afbb
 			echo"		<td>";
 			echo"		<div class='description_news'>";
 			echo"<a href=\"".$data['description']."\" >
@@ -372,7 +363,7 @@ if(isset($_POST['pulse']))
 			{
 				echo"	<div class='depulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=news&id_news=".$data['id_post']."&DEpulse=DEpulse\" >
+				echo"<a href=\"index.php?page=news&type=posts&id_news=".$data['id_post']."&DEpulse=DEpulse\" >
 					<img id=\"myDiv\" src='design/img/down.png' 
 					onmouseover=\"this.src='design/img/down_plein.png';\" 
 					onmouseout=\"this.src='design/img/down.png';\"/>
@@ -380,7 +371,7 @@ if(isset($_POST['pulse']))
 			
 				echo"	<div class='propulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=news&id_news=".$data['id_post']."&PROpulse=PROpulse\" >
+				echo"<a href=\"index.php?page=news&type=posts&id_news=".$data['id_post']."&PROpulse=PROpulse\" >
 					<img id=\"myDiv\" src='design/img/up.png' 
 					onmouseover=\"this.src='design/img/up_plein.png';\" 
 					onmouseout=\"this.src='design/img/up.png';\"/>
@@ -438,14 +429,7 @@ if(isset($_POST['pulse']))
 			echo"		<div class='description'>";
 			echo $data['description']; 
 			echo"		</div>";
-<<<<<<< HEAD
 			echo"<span>&nbsp;&nbsp;Ecrit le ";
-=======
-			/* -----------------------------------------
-			// COULEUR DU ECRIT LE ....
-			---------------------------------------*/
-			echo"<span style='color:white;background-color: #58b54c;'>&nbsp;&nbsp;Ecrit le ";
->>>>>>> 882bbbce7c968bec43758930e5c15d71f546afbb
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!";
 			echo"	</span></td>";
@@ -457,7 +441,7 @@ if(isset($_POST['pulse']))
 			{
 				echo"	<div class='depulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=news&id_news=".$data['id_post']."&DEpulse=DEpulse\" >
+				echo"<a href=\"index.php?page=news&type=posts&id_news=".$data['id_post']."&DEpulse=DEpulse\" >
 					<img id=\"myDiv\" src='design/img/down.png' 
 					onmouseover=\"this.src='design/img/down_plein.png';\" 
 					onmouseout=\"this.src='design/img/down.png';\"/>
@@ -465,7 +449,7 @@ if(isset($_POST['pulse']))
 			
 				echo"	<div class='propulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=news&id_news=".$data['id_post']."&PROpulse=PROpulse\" >
+				echo"<a href=\"index.php?page=news&type=posts&id_news=".$data['id_post']."&PROpulse=PROpulse\" >
 					<img id=\"myDiv\" src='design/img/up.png' 
 					onmouseover=\"this.src='design/img/up_plein.png';\" 
 					onmouseout=\"this.src='design/img/up.png';\"/>

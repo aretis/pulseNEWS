@@ -60,24 +60,12 @@
 			echo"<tr>";
 			
 			echo"	<td>";
-
 			if(isset($_SESSION['pseudo']))
 			{
 				echo"	<div class='depulse'>&nbsp;";
-				
-				echo"<a href=\"index.php?page=profile&id_news=".$id."&DEpulse=DEpulse\" >
-					<img id=\"myDiv\" src='design/img/down.png' 
-					onmouseover=\"this.src='design/img/down_plein.png';\" 
-					onmouseout=\"this.src='design/img/down.png';\"/>
-				</a></div>";
-			
+				echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
 				echo"	<div class='propulse'>&nbsp;";
-				
-				echo"<a href=\"index.php?page=profile&id_news=".$id."&PROpulse=PROpulse\" >
-					<img id=\"myDiv\" src='design/img/up.png' 
-					onmouseover=\"this.src='design/img/up_plein.png';\" 
-					onmouseout=\"this.src='design/img/up.png';\"/>
-				</a></div>";
+				echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$id."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
 			}
 			
 			echo"</td>";
@@ -177,20 +165,9 @@
 			if(isset($_SESSION['pseudo']))
 			{
 				echo"	<div class='depulse'>&nbsp;";
-				
-				echo"<a href=\"index.php?page=profile&id_news=".$id."&DEpulse=DEpulse\" >
-					<img id=\"myDiv\" src='design/img/down.png' 
-					onmouseover=\"this.src='design/img/down_plein.png';\" 
-					onmouseout=\"this.src='design/img/down.png';\"/>
-				</a></div>";
-			
+				echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
 				echo"	<div class='propulse'>&nbsp;";
-				
-				echo"<a href=\"index.php?page=profile&id_news=".$id."&PROpulse=PROpulse\" >
-					<img id=\"myDiv\" src='design/img/up.png' 
-					onmouseover=\"this.src='design/img/up_plein.png';\" 
-					onmouseout=\"this.src='design/img/up.png';\"/>
-				</a></div>";
+				echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$id."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
 			}
 			echo"</td>";
 			echo"</tr>";
