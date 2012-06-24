@@ -264,7 +264,7 @@ if(isset($_POST['pulse']))
 					<div class='block_content'>
 					<?php
 					$url= 'politique.xml';
-					$cat = 'politique';
+					$cat = 1;
 					
 					echo RSS_display($cat, $url, 3);		
 					?>
@@ -285,7 +285,7 @@ if(isset($_POST['pulse']))
 					<div class='block_content'>
 					<?php
 					$url= 'economie.xml';
-					$cat = 'économie';
+					$cat = 2;
 					
 					echo RSS_display($cat, $url, 3);		
 					?>
@@ -378,7 +378,16 @@ if(isset($_POST['pulse']))
 					onmouseout=\"this.src='design/img/up.png';\"/>
 				</a></div>";
 			}
+			
+			$query = 'SELECT cat_name FROM news_cat WHERE id_cat ='.$data['cat'];
+			$result = call_db($query);
+
+			while($toto = mysql_fetch_assoc($result))
+			{
+				echo $toto['cat_name'];
+			}
 			echo"</td>";
+			
 			echo"</tr>";
 			
 			echo"</table>";
@@ -448,8 +457,17 @@ if(isset($_POST['pulse']))
 					onmouseout=\"this.src='design/img/up.png';\"/>
 				</a></div>";
 			}
+			$query = 'SELECT cat_name FROM news_cat WHERE id_cat ='.$data['cat'];
+			$result = call_db($query);
+
+			while($toto = mysql_fetch_assoc($result))
+			{
+				echo $toto['cat_name'];
+			}
 			echo"</td>";
+			
 			echo"</tr>";
+			
 			echo"</table>";
 			echo"<br>";
 		}
@@ -475,7 +493,7 @@ if(isset($_POST['pulse']))
 					<div class='block_content_right'>
 					<?php
 					$url= 'sport.xml';
-					$cat = 'sport';
+					$cat = '5';
 					
 					echo RSS_display($cat, $url, 3);		
 					?>				
@@ -497,7 +515,7 @@ if(isset($_POST['pulse']))
 					
 					<?php
 					$url= 'ecologie.xml';
-					$cat = 'écologie';
+					$cat = 3;
 					
 					echo RSS_display($cat, $url, 3);		
 					?>					
