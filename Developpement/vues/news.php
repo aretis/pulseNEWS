@@ -57,7 +57,7 @@ function change(num)
 	}
 	else if(num == 1)
 	{
-		document.getElementById("cat").style.display = "none";
+		document.getElementById("cat").style.display = "inline";
 		document.getElementById("area").style.display = "inline";
 	}
 	else if(num == 2)
@@ -339,7 +339,11 @@ if(isset($_POST['pulse']))
 			if($data['rate'] > 0) echo" + ";
 			echo $data['rate'];
 			echo "</div></td></tr>";
-			echo"	<tr style='background-color: #E1E6FA;'>";
+			
+			/* -----------------------------------------
+			// COULEUR DU ECRIT LE ....
+			---------------------------------------*/
+			
 			echo"	<tr style='background-color: #58b54c;'>";
 			echo"		<td>";
 			echo"		<div class='description_news'>";
@@ -430,7 +434,9 @@ if(isset($_POST['pulse']))
 			echo"		<div class='description'>";
 			echo $data['description']; 
 			echo"		</div>";
-			echo"<span style='color:white;background-color: #E1E6FA;'>&nbsp;&nbsp;Ecrit le ";
+			/* -----------------------------------------
+			// COULEUR DU ECRIT LE ....
+			---------------------------------------*/
 			echo"<span style='color:white;background-color: #58b54c;'>&nbsp;&nbsp;Ecrit le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!";

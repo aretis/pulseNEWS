@@ -15,15 +15,15 @@
 	}
 	
 	
-	if(isset($_POST['PROpulse']))
+	if(isset($_GET['PROpulse']))
 	{
 	
-		pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['PROpulse'], $_POST['type']);
+		pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['PROpulse'], $_GET['type']);
 	}
-	else if(isset($_POST['DEpulse']))
+	else if(isset($_GET['DEpulse']))
 	{
 	
-		pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['DEpulse'], $_POST['type']);
+		pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['DEpulse'], $_GET['type']);
 	}
 
 	include('/../modeles/connect_db.php');
