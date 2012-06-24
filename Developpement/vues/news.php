@@ -343,9 +343,11 @@ if(isset($_POST['pulse']))
 			echo"	<tr style='background-color: #58b54c;'>";
 			echo"		<td>";
 			echo"		<div class='description_news'>";
-			echo"<a href='".$data['description']."'  
-			onMouseOver=\"document.img_1.src='design/img/news_2.png';\"  								onMouseOut=\"document.img_1.src='design/img/news_1.png';\"> 
-			<img class='img' name='img_1' src='design/img/news_1.png'> </a>";
+			echo"<a href=\"".$data['description']."\" >
+				<img id=\"myDiv\" src='design/img/news_1.png' 
+				onmouseover=\"this.src='design/img/news_2.png';\" 
+				onmouseout=\"this.src='design/img/news_1.png';\"/>
+			</a>";
 			
 			echo"<span style='color:white;'>&nbsp;&nbsp;Pulsé le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
