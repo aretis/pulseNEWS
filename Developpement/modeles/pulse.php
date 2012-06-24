@@ -72,12 +72,12 @@
 			}
 			else
 			{
-				echo"   <div id=\"box\">Merci d'avoir noté cet article !</div>";
+				echo"   Merci d'avoir noté cet article !";
 			}
 		}
 		else 
 		{
-			echo"   <div id=\"box\">
-        Vous avez déjà noté cet article !</div>";
+			echo"
+        Vous avez déjà noté cet article !";
 		}
 }
