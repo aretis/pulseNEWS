@@ -4,7 +4,7 @@
 	07/05/2012
 	Salman ALAMDAR */
 
-	function pulse($id_post, $id_user, $pulse, $type)
+	function pulse($id_post, $id_user, $pulse)
 	{
 	
 		$pulse1 = $pulse;
@@ -25,7 +25,7 @@
 			
 			
 			// Construction de la requête
-			$query='SELECT rate FROM '.$type.' WHERE id_post = '.(int)$id_post;
+			$query='SELECT rate FROM posts WHERE id_post = '.(int)$id_post;
 			
 			$result = mysql_query($query);
 			if($result === false )
@@ -55,7 +55,7 @@
 			}
 
 			
-			$query='UPDATE '.$type.' SET rate='.(int)$row['rate'].' WHERE id_post ='.(int)$id_post;
+			$query='UPDATE posts SET rate='.(int)$row['rate'].' WHERE id_post ='.(int)$id_post;
 			
 			if(!mysql_query($query) )
 			{
@@ -72,15 +72,24 @@
 			}
 			else
 			{
+<<<<<<< HEAD
 				echo"   <div id='box'>
         Merci d'avoir noté cet article ! <a id='close'>[close]</a>
     </div>";
+=======
+				echo"   Merci d'avoir noté cet article !";
+>>>>>>> 882bbbce7c968bec43758930e5c15d71f546afbb
 			}
 		}
 		else 
 		{
+<<<<<<< HEAD
 			echo"   <div id='box'>
         Vous avez déjà noté cet article ! <a id='close'>[close]</a>
     </div>";
+=======
+			echo"
+        Vous avez déjà noté cet article !";
+>>>>>>> 882bbbce7c968bec43758930e5c15d71f546afbb
 		}
 }
