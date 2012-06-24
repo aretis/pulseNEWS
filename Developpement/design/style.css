@@ -78,11 +78,11 @@ a {
 }
 .header_menu a {
    border: 1px solid #003e40;
-   background: -webkit-gradient(linear, left top, left bottom, from(#1a9dc5), to(#7FC6BC));
-   background: -webkit-linear-gradient(top, #1a9dc5, #7FC6BC);
-   background: -moz-linear-gradient(top, #1a9dc5, #7FC6BC);
-   background: -ms-linear-gradient(top, #1a9dc5, #7FC6BC);
-   background: -o-linear-gradient(top, #1a9dc5, #7FC6BC);
+   background: -webkit-gradient(linear, left top, left bottom, from(#1a9dc5), to(#1cabd7));
+   background: -webkit-linear-gradient(top, #1a7895, #1cabd7);
+   background: -moz-linear-gradient(top, #1a7895, #1cabd7);
+   background: -ms-linear-gradient(top, #1a7895, #1cabd7);
+   background: -o-linear-gradient(top, #1a7895, #1cabd7);
    padding: 4px 8px;
    -webkit-border-radius: 6px;
    -moz-border-radius: 6px;
@@ -90,7 +90,7 @@ a {
    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
    box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: 2px 2px 5px black;
+   text-shadow: 2px 2px 3px black;
    color: white;
    font-size: 20px;
    font-family: 'coolvetica_rg';
@@ -100,7 +100,6 @@ a {
    }
 .header_menu a:hover {
    border-top-color: #00ad23;
-   background: #7FC6BC;
    color: #f5ff63;
    }
 .header_menu a:active {
