@@ -23,7 +23,7 @@ body{
 }
 
 form{
-	background:#58b54c; /* Firefox */
+	background:#8FCAFF; /* Firefox */
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
 	-moz-box-shadow:0 0 15px black;
@@ -103,7 +103,7 @@ form label:hover:after{
 }
 input[type=text],
 input[type=password]{
-	background:#a5d85f; /* Firefox */
+	background:#7FC6BC; /* Firefox */
 	border:0px;
 	font-size: 22px;
 	font-family:'coolvetica_rg';
@@ -122,7 +122,7 @@ select{
 	border: 0px;
 	font-size: 22px;
 	font-family: 'coolvetica_rg';
-	background-color: #a5d85f;
+	background-color: #7FC6BC;
 	cursor:pointer;
 	padding:3px;
 	-moz-box-shadow:0 0 3px #aaa;

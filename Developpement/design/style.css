@@ -1,4 +1,8 @@
-﻿html {
+﻿@font-face {
+    font-family: "coolvetica_rg";
+    src: url("fonts/coolvetica_rg.ttf") format("truetype");
+}
+html {
   overflow-y:scroll;
 }
 body {
