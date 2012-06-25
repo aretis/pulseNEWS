@@ -259,6 +259,7 @@ if(isset($_POST['pulse']))
 					<div class='block_title'>politique</div>
 				</td>
 			</tr>
+			<tr><td><hr></td></tr>
 			<tr>
 				<td>
 					<div class='block_content'>
@@ -280,6 +281,7 @@ if(isset($_POST['pulse']))
 					<div class='block_title'>économie</div>
 				</td>
 			</tr>
+			<tr><td><hr></td></tr>
 			<tr>
 				<td>
 					<div class='block_content'>
@@ -343,8 +345,8 @@ if(isset($_POST['pulse']))
 			if($data['rate'] > 0) echo" + ";
 			echo $data['rate'];
 			echo "</div></td></tr>";
-			echo"	<tr>";
-			echo"		<td>";
+			echo"	<tr><td>";
+			
 			echo"		<div class='description_news'>";
 			echo"<a href=\"".$data['description']."\" >
 				<img id=\"myDiv\" src='design/img/news_1.png' 
@@ -379,7 +381,7 @@ if(isset($_POST['pulse']))
 					<img id=\"myDiv\" src='design/img/up.png' 
 					onmouseover=\"this.src='design/img/up_plein.png';\" 
 					onmouseout=\"this.src='design/img/up.png';\"/>
-				</a></div>";
+				</a></div><div class='cat_news'>";
 			}
 			
 			$query = 'SELECT cat_name FROM news_cat WHERE id_cat ='.$data['cat'];
@@ -389,7 +391,7 @@ if(isset($_POST['pulse']))
 			{
 				echo $toto['cat_name'];
 			}
-			echo"</td>";
+			echo"</div></td>";
 			
 			echo"</tr>";
 			
@@ -433,7 +435,7 @@ if(isset($_POST['pulse']))
 			echo"		<div class='description'>";
 			echo $data['description']; 
 			echo"		</div>";
-			echo"<span>&nbsp;&nbsp;Ecrit le ";
+			echo"<span class='info_post'>&nbsp;&nbsp;Ecrit le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!";
 			echo"	</span></td>";
@@ -500,6 +502,7 @@ else
 					<div class='block_title'>sport</div>
 				</td>
 			</tr>
+			<tr><td><hr></td></tr>
 			<tr>
 				<td>
 					<div class='block_content'>
@@ -521,6 +524,7 @@ else
 					<div class='block_title'>écologie</div>
 				</td>
 			</tr>
+			<tr><td><hr></td></tr>
 			<tr>
 				<td>
 					<div class='block_content'>	
