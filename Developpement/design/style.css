@@ -4,10 +4,11 @@
 body {
   background-color:#5F8CA3;
   font-family:Calibri;
-    font-family: 'Calibri';
 }
 a {
   text-decoration:none;
+  color:white;
+  font-weight:bold;
 }
 #note {
   -webkit-box-shadow:black 0 0 5px;
@@ -101,7 +102,7 @@ a {
 }
 .post_news {
   -webkit-box-shadow:#000000 0 1px 0;
-  background-color:#8fcaff;
+  background-color:#8FCAFF;
   border:1px solid #003E40;
   border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
@@ -181,7 +182,7 @@ a {
 }
 .rss_block {
   -webkit-box-shadow:#000000 0 1px 0;
-  background-color:#183152;
+  background-color:#8FCAFF;
   border:1px solid #003E40;
   border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
@@ -197,7 +198,6 @@ a {
 }
 .block_title {
   -webkit-box-shadow:#000000 0 1px 0;
-  background-image:-webkit-linear-gradient(top, #1A9DC5, #1F6E86);
   border:2px solid #003E40;
   border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
@@ -205,12 +205,14 @@ a {
   border-top-right-radius:6px;
   box-shadow:#000000 0 1px 0;
   color:white;
-  font-family:coolvetica_rg;
+  font-family:fantasy;
   font-size:24px;
   text-decoration:none;
   text-shadow:black 2px 2px 5px;
   vertical-align:top;
   width:120px;
+  background-color:#183152;
+  text-align:center;
 }
 .block_content {
   -webkit-box-shadow:#000000 0 1px 0;
@@ -978,103 +980,14 @@ select:active, select:focus {
   width:500px;
 }
 #wrapper {
-<<<<<<< HEAD
-	width: 800px;
-	margin-left: auto;
-	margin-right: auto;
-	}
-
-.accordionButton {	
-	width: 800px;
-	float: left;
-	_float: none;  /* Float works in all browsers but IE6 */
-border: 1px solid #003e40;
-   background: #1f6e86;
-   background: -webkit-gradient(linear, left top, left bottom, from(#1a9dc5), to(#1f6e86));
-   background: -webkit-linear-gradient(top, #1a9dc5, #1f6e86);
-   background: -moz-linear-gradient(top, #1a9dc5, #1f6e86);
-   background: -ms-linear-gradient(top, #1a9dc5, #1f6e86);
-   background: -o-linear-gradient(top, #1a9dc5, #1f6e86);
-   -webkit-border-radius: 6px;
-   -moz-border-radius: 6px;
-   border-radius: 6px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: 2px 2px 5px black;
-   color: white;
-   font-size: 20px;
-   font-family: 'coolvetica_rg';
-	cursor: pointer;
-	}
-	
-.accordionContent {	
-	width: 800px;
-	float: left;
-	_float: none; /* Float works in all browsers but IE6 */
-	background: #95B1CE;
-	}
-	
-	
-	
-	#wrapper_notif {
-	width: 800px;
-	margin-left: auto;
-	margin-right: auto;
-	}
-	
-	
-	.accordionButton_notif {	
-	width: 800px;
-	float: left;
-	_float: none;  /* Float works in all browsers but IE6 */
-border: 1px solid #003e40;
-   background: #1f6e86;
-   background: -webkit-gradient(linear, left top, left bottom, from(#1a9dc5), to(#1f6e86));
-   background: -webkit-linear-gradient(top, #1a9dc5, #1f6e86);
-   background: -moz-linear-gradient(top, #1a9dc5, #1f6e86);
-   background: -ms-linear-gradient(top, #1a9dc5, #1f6e86);
-   background: -o-linear-gradient(top, #1a9dc5, #1f6e86);
-   -webkit-border-radius: 6px;
-   -moz-border-radius: 6px;
-   border-radius: 6px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: 2px 2px 5px black;
-   color: white;
-   font-size: 20px;
-   font-family: 'coolvetica_rg';
-	cursor: pointer;
-	}
-	
-.accordionContent_notif {	
-	width: 800px;
-	float: left;
-	_float: none; /* Float works in all browsers but IE6 */
-	background: #95B1CE;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-/***********************************************************************************************************************
- EXTRA STYLES ADDED FOR MOUSEOVER / ACTIVE EVENTS
-************************************************************************************************************************/
-
-=======
   margin-left:auto;
   margin-right:auto;
-  width:800px;
 }
 .accordionbutton {
   -webkit-box-shadow:#000000 0 1px 0;
   background-image:-webkit-linear-gradient(top, #1A9DC5, #1F6E86);
+  background-position:initial initial;
+  background-repeat:initial initial;
   border:1px solid #003E40;
   border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
@@ -1091,12 +1004,46 @@ border: 1px solid #003e40;
 }
 .accordioncontent {
   background-color:#95B1CE;
+  background-position:initial initial;
+  background-repeat:initial initial;
   float:left;
   width:800px;
 }
->>>>>>> 59469a0298f35e5cb1952e3ff338509ff3aa3fdf
-.on {
-  background-color:#41BFE6;
+#wrapper_notif {
+  margin-left:auto;
+  margin-right:auto;
+  width:800px;
+}
+.accordionbutton_notif {
+  -webkit-box-shadow:#000000 0 1px 0;
+  background-image:-webkit-linear-gradient(top, #1A9DC5, #1F6E86);
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border:1px solid #003E40;
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  box-shadow:#000000 0 1px 0;
+  color:white;
+  cursor:pointer;
+  float:left;
+  font-family:coolvetica_rg;
+  font-size:20px;
+  text-shadow:black 2px 2px 5px;
+  width:800px;
+}
+.accordioncontent_notif {
+  background-color:#95B1CE;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  float:left;
+  width:800px;
+}
+.accordioncontent {
+  background-color:#95B1CE;
+  float:left;
+  width:800px;
 }
 .over {
   background-color:#41BFE6;
@@ -1138,6 +1085,6 @@ border: 1px solid #003e40;
 }
 .cat_color {
   color:red;
-  font-size:18px;
   font-family:fantasy;
+  font-size:18px;
 }
