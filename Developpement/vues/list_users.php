@@ -1,8 +1,8 @@
-<div class='search_pulseur'>
-	<form>
-		<div style='margin:auto;'>Rechercher un pulseur :</div>
-		<input type='search' name='pulseur' placeholder='recherche'>
-		<input type='submit' name ='valider'>
+﻿<div class='search_pulseur'>
+	<form action='index.php?page=list_users' method='POST'>
+		<div style='margin:auto; text-align:center; font-size:22px;'>Rechercher un pulseur :</div><br>
+		&nbsp;&nbsp;<input type='search' name='pulseur' placeholder='recherche'>
+		<div id='search_button'><input type='submit' name ='valider' value='Rechercher'></div>
 	</form>
 </div>
 <br>
@@ -12,8 +12,10 @@
 	
 	include('modeles/call_db.php');
 	
-	$query = "SELECT * FROM users";
+	if(isset($_POST['valider']) && !empty($_POST['pulseur'])) $query="SELECT * FROM users WHERE pseudo LIKE '%".$_POST['pulseur']."%'";
+	else $query = "SELECT * FROM users";
 	$result = call_db($query);
+	
 	echo"<section style=\"font-size: 0;\">";
 	while($data = mysql_fetch_array($result))
 	{
@@ -43,5 +45,8 @@
 			echo "\n</div>\n";
 		}
 	}
+	
+	
 	echo"</section>";
+	if(mysql_num_rows($result) == 0) echo"<div id='no_result' >Désolé, il n'existe pas de pulseur \" ".$_POST['pulseur']." \" </div>";
 ?>

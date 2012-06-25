@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="design/register.css" />
 <br>
 <br>
-<form id='start' name='formulaire' action='index.php?page=connect' method='post' onSubmit='verif_formulaire()'>
+<form id='start' name='formulaire' action='index.php?page=connect' method='post'>
 <br>
 <span id='title'>connexion</span></br>
 <br><br>

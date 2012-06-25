@@ -52,7 +52,7 @@ function check_register($pseudo, $password, $confirmpassword, $firstname, $surna
 		header('Location: index.php?page=validation');
 	}
 	
-	echo"<span class='erreur'>";
+	echo"<div id='box'>";
 	
 	if($field_empty == 1)
 	{
@@ -70,7 +70,7 @@ function check_register($pseudo, $password, $confirmpassword, $firstname, $surna
 	{
 		echo'<br>Les deux mots de passe ne correspondent pas !';
 	}
-	echo"</span>";
+	echo"</div>";
 }
 
 

@@ -15,15 +15,15 @@
 	}
 	
 	
-	if(isset($_POST['PROpulse']))
+	if(isset($_GET['PROpulse']))
 	{
 	
-		pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['PROpulse'], $_POST['type']);
+		pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['PROpulse']);
 	}
-	else if(isset($_POST['DEpulse']))
+	else if(isset($_GET['DEpulse']))
 	{
 	
-		pulse($_POST['id_news'], $_SESSION['id_user'], $_POST['DEpulse'], $_POST['type']);
+		pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['DEpulse']);
 	}
 
 	include('/../modeles/connect_db.php');
@@ -175,7 +175,7 @@ if(!isset($_GET['pseudo']))
 				</td>
 			</tr>
 			<tr>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #58b54c;'>
 					<div class='block_content'>
 					<?php if(isset($_GET['pseudo']))
 							{
@@ -229,7 +229,7 @@ if(!isset($_GET['pseudo']))
 				</td>
 			</tr>
 			<tr>
-				<td style='background-color: #85c630;'>
+				<td style='background-color: #58b54c;'>
 				<div class='block_content'>
 					
 						

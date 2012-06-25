@@ -44,10 +44,14 @@
 			echo "</div>";
 			echo"		</td>";
 			echo"	</tr>";
-			echo"	<tr style='background-color: #85c630;'>";
+			echo"	<tr>";
 			echo"		<td>";
 			echo"		<div class='description_news'>";
-			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;&nbsp;lire l'article&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;";
+			echo"<a href=\"".$data['description']."\" >
+				<img id=\"myDiv\" src='design/img/news_1.png' 
+				onmouseover=\"this.src='design/img/news_2.png';\" 
+				onmouseout=\"this.src='design/img/news_1.png';\"/>
+			</a>";
 			echo "pulsé le : ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));	
 			echo " par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!</div>";
@@ -63,9 +67,20 @@
 			if(isset($_SESSION['pseudo']))
 			{
 				echo"	<div class='depulse'>&nbsp;";
-				echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+				
+				echo"<a href=\"index.php?page=profile&id_news=".$id."&DEpulse=DEpulse\" >
+					<img id=\"myDiv\" src='design/img/down.png' 
+					onmouseover=\"this.src='design/img/down_plein.png';\" 
+					onmouseout=\"this.src='design/img/down.png';\"/>
+				</a></div>";
+			
 				echo"	<div class='propulse'>&nbsp;";
-				echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$id."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+				
+				echo"<a href=\"index.php?page=profile&id_news=".$id."&PROpulse=PROpulse\" >
+					<img id=\"myDiv\" src='design/img/up.png' 
+					onmouseover=\"this.src='design/img/up_plein.png';\" 
+					onmouseout=\"this.src='design/img/up.png';\"/>
+				</a></div>";
 			}
 			
 			echo"</td>";
@@ -114,7 +129,7 @@
 			echo $data['rate']."</div>";
 			echo"	</td>";
 			echo"</tr>";
-			echo"<tr style='background-color: #85c630;'>";
+			echo"<tr>";
 			echo"	<td>";
 			echo"		<div class='article_content'>";
 			echo"<p>";
@@ -150,14 +165,14 @@
 			$content = nl2br( $content , false );
 			echo $content;
 			echo"		</div>";
-			echo"<span style='color:white;box-shadow: 5px 5px 3px #003e40;background-color: #85C630;border: 2px solid black;'>&nbsp;&nbsp;Ecrit le&nbsp;";
+			echo"<span style='box-shadow: 5px 5px 3px #003e40;border: 2px solid black;'>&nbsp;&nbsp;Ecrit le&nbsp;";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!</span>";
 			
 			echo"	</td>";			
 			echo"	</td>";
 			echo"</tr>";
-			echo"<tr><td style='background-color: 85c630;'>";
+			echo"<tr><td>";
 			if(isset($_SESSION['pseudo'])) include('modeles/comment.php');
 			echo"</tr></td>";
 			echo"<tr>";
@@ -165,10 +180,22 @@
 			if(isset($_SESSION['pseudo']))
 			{
 				echo"	<div class='depulse'>&nbsp;";
-				echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='id_news' value='".$id."' /><input type='hidden' name='DEpulse' value='DEpulse' /><input type='submit' name='DEpulse' value='DEpulse' /></form></div></a>";
+				
+				echo"<a href=\"index.php?page=profile&id_news=".$id."&DEpulse=DEpulse\" >
+					<img id=\"myDiv\" src='design/img/down.png' 
+					onmouseover=\"this.src='design/img/down_plein.png';\" 
+					onmouseout=\"this.src='design/img/down.png';\"/>
+				</a></div>";
+			
 				echo"	<div class='propulse'>&nbsp;";
-				echo"	<form action='index.php?page=profile' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$id."' /><input type='submit' name='PROpulse' value='PROpulse' /></form></div></a>";
+				
+				echo"<a href=\"index.php?page=profile&id_news=".$id."&PROpulse=PROpulse\" >
+					<img id=\"myDiv\" src='design/img/up.png' 
+					onmouseover=\"this.src='design/img/up_plein.png';\" 
+					onmouseout=\"this.src='design/img/up.png';\"/>
+				</a></div>";
 			}
+
 			echo"</td>";
 			echo"</tr>";
 			echo"<tr style='height: 30px;'>";

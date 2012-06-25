@@ -10,6 +10,10 @@
 	<script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
 	<script src='js/slotmachine.js'></script>
 	    <script src="js/organictabs.jquery.js"></script>
+		<script src="js/script.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/jquery.bouncebox.1.0.js"></script>
+<script type="text/javascript" src="js/bounce_script.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
     <script>
         $(function() {
     
@@ -43,6 +47,7 @@
 			
 		});
 	</script>
+	
 	<title>pulseNEWS, sponsored by your mind!</title>
 </head>
 <body>
@@ -56,7 +61,7 @@
 <div class='header'>
 	<table cellspacing="0">
 		<td>
-				<img style='height: 75px;' src='design/img/logo_header.png'/>			
+				<img style='height: 50px;' src='design/img/logo_header.png'/>			
 		</td>
 		<td style='width: 100%;'>
 		</td>
@@ -85,7 +90,10 @@
 					
 						$user=$_SESSION['id_user'];
 						include('/../modeles/connect_db.php');
+<<<<<<< HEAD
 //include('/../modeles/couperChaine.php');
+=======
+>>>>>>> 2b1b8aaf08aa34299377a83148d6a8163a894cd0
 						$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']." AND read_confirm='0'";
 						if(!mysql_query($query) )
 								{
@@ -95,35 +103,15 @@
 						$sucess= mysql_query($query) or die (mysql_error());
 						while($resultats=mysql_fetch_assoc($sucess))
 						{
-						
+					
 							echo" <a href='index.php?page=voir_notif' >".$resultats['nb_notif']." <img style='margin-bottom: -5px;' src='design/img/notif_icon.png'/></a>";
-							/*
-							$requete="SELECT * FROM notification N JOIN comments C ON N.id_comment = C.id_comment JOIN users U ON C.id_user=U.id_user  WHERE N.id_user != ".$_SESSION['id_user']." AND read_confirm='0'" ;
-							$sucess=mysql_query($requete) or die(mysql_error());
-							While($resultats=mysql_fetch_array($sucess))
-							{
-
-							
-							echo" <li>".$resultats['pseudo']." a commenté votre post ";
-							$chaine_nouvelle=couperChaine($resultats['content'],10);
-							echo $chaine_nouvelle;
-							 
-							 
-							
-							  }
-							  
-							<td>
-											<div class='block_title'>&nbsp;vous avez ".$resultats['nb_notif']." notifications!</div>
-							</td>";*/
-
-						
 						}
 					}
 			?>		
 					
 					
 					
-					<a href='index.php?page=recherche'><img src='design/img/loupe.png'/>&nbsp;rechercher</a>&nbsp;&nbsp;
+					&nbsp;
 						<a href='index.php?page=newsfeed'>pulse !</a>&nbsp;&nbsp;
 						<a href='index.php?page=list_users'>les pulseurs</a>&nbsp;&nbsp;
 						<a href='index.php?page=news'>fil d'actualités</a>&nbsp;&nbsp;

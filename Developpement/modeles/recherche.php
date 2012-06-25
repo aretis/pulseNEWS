@@ -1,7 +1,7 @@
 ﻿<?php
 include('modeles/connect_db.php');
 	mysql_query("SET NAMES 'utf8'");
-if ((isset($_POST['recherche']) && !empty($_POST['recherche']))||( isset($_GET['recherche'])  && !empty($_GET['recherche'] )))
+if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 {
 	if(isset($_POST['recherche']))
 	{
@@ -84,7 +84,7 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche']))||( isset($_GET['
 			<div class='rate'>".$resultats['rate']."</div>
 		</td>
 		</tr>
-		<tr style='background-color: #85c630;'>
+		<tr style='background-color: #58b54c;'>
 		<td>
 		<div class='description'>";
 					$chaine = $resultats['content'];

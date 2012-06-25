@@ -84,7 +84,7 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche']))||( isset($_GET['
 			<div class='rate'>+128</div>
 		</td>
 		</tr>
-		<tr style='background-color: #85c630;'>
+		<tr style='background-color: #58b54c;'>
 		<td>
 		<div class='description'>";
 					$chaine = $resultats['content'];

@@ -66,6 +66,6 @@
 		}
 		else 
 		{
-			echo"Vous avez déja noté cet article !";
+			echo"<div id='box'>Vous avez déja noté cet article !</div>";
 		}
 }?>

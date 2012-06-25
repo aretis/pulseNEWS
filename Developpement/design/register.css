@@ -23,7 +23,7 @@ body{
 }
 
 form{
-	background:#85c630; /* Firefox */
+	background:#8FCAFF; /* Firefox */
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
 	-moz-box-shadow:0 0 15px black;
@@ -36,7 +36,7 @@ form{
 }
 .erreur
 {
-	background:#85c630; /* Firefox */
+	background:#58b54c; /* Firefox */
 	font-family: 'coolvetica_rg';
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
@@ -52,7 +52,7 @@ form{
 }
 #block{
 	float: right;
-	background:#85c630; /* Firefox */
+	background:#58b54c; /* Firefox */
 	font-family: 'coolvetica_rg';
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
@@ -103,7 +103,7 @@ form label:hover:after{
 }
 input[type=text],
 input[type=password]{
-	background:#a5d85f; /* Firefox */
+	background:#7FC6BC; /* Firefox */
 	border:0px;
 	font-size: 22px;
 	font-family:'coolvetica_rg';
@@ -114,15 +114,15 @@ input[type=password]{
 input[type=text]:focus,
 input[type=password]:focus{
 	border-color:#093c75;
-	-moz-box-shadow:0 0 3px #85c630;
-	-webkit-box-shadow:0 0 3px #85c630;
+	-moz-box-shadow:0 0 3px #58b54c;
+	-webkit-box-shadow:0 0 3px #58b54c;
 	outline:none; /* Pour enlever le contour jaune lorsque l'on sélectionne un input dans Chrome */
 }
 select{
 	border: 0px;
 	font-size: 22px;
 	font-family: 'coolvetica_rg';
-	background-color: #a5d85f;
+	background-color: #7FC6BC;
 	cursor:pointer;
 	padding:3px;
 	-moz-box-shadow:0 0 3px #aaa;
@@ -135,7 +135,7 @@ select:focus{
 }
 input[type=submit],
 a.submit{
-	background-color:#50b326;
+	background-color:#375D81;
 	border:0px;
 	-moz-border-radius:15px;
 	-webkit-border-radius:15px;

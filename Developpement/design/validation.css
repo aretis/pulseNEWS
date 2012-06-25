@@ -34,7 +34,7 @@ a{
 	text-decoration:underline;
 }
 form{
-	background:#85c630;
+	background:#8FCAFF;
 	margin:40px auto 0;
 	padding:73px;
 	width:653px;
@@ -100,7 +100,7 @@ select:focus{
 }
 input[type=submit],
 a.submit{
-	background-color:#50b326;
+	background-color:#375D81;
 	color:#fff;
 	cursor:pointer;
 	font-family:Arial,sans-serif;

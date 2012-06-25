@@ -72,14 +72,14 @@
 			}
 			else
 			{
-				echo"   <div id='note'>
+				echo"   <div id='box'>
         Merci d'avoir noté cet article ! <a id='close'>[close]</a>
     </div>";
 			}
 		}
 		else 
 		{
-			echo"   <div id='note'>
+			echo"   <div id='box'>
         Vous avez déjà noté cet article ! <a id='close'>[close]</a>
     </div>";
 		}
