@@ -206,7 +206,7 @@ function change3(num)
 		
 			<div class='search_news'>
 			<div class='shorti'>Rechercher : </div>
-	<form method="post" action="index.php?page=recherche">
+	<form method="post" action="index.php?page=news">
 		<input type="search"name="recherche"/>
 		<select name ="mode">
 			<option value="exp_exacte">l'expression exacte</option>
@@ -298,7 +298,8 @@ if(isset($_POST['pulse']))
 
 </td>
 <td>
-<?php if((!isset($_POST['recherche'])) || (empty($_POST['recherche'])) || $nb_resultats == 0) {?>
+
+<?php  if((!isset($_POST['recherche'])) || (empty($_POST['recherche'])) ) {?>
 <div id='pardessus'>
 <?php
 
@@ -480,7 +481,15 @@ if(isset($_POST['pulse']))
 	{
 		echo"<div class='no_news'> Désolé, aucune news n'a été trouvée pour ces critères</div>";
 	}
-}?>
+}
+else
+{
+	echo "<div id='pardessus'>";
+	include('modeles/recherche.php');
+	echo "<div>";
+	
+}
+?>
 </div>
 </td>
 <td style='vertical-align: top;'>

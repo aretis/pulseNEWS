@@ -53,18 +53,18 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 
     if ($nb_resultats == 0) 
     {
-        echo 'Aucun résultat.';
+        echo '<div id="box">Aucun résultat</div>';
     }
 	
 	else
 	{
 		if($nb_resultats==1)
 		{
-			echo"Il y a 1 résultat qui correspond a votre recherche";
+			echo"<div id='box'>Il y a 1 résultat qui correspond a votre recherche<br></div>";
 		}
 		else if($nb_resultats > 1)
 		{
-			echo' Il y a '.$nb_resultats.' résultats qui correspondent à votre recherche';
+			echo'<div id="box">Il y a '.$nb_resultats.' résultats qui correspondent à votre recherche</div>';
 		}
 		while($resultats = mysql_fetch_array($requete))
 		{

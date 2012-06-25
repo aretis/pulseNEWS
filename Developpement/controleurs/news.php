@@ -4,7 +4,7 @@
 require_once("modeles/rsslib.php");
 
 include('modeles/couperChaine.php');
-include('modeles/recherche.php');
+
 
 include('vues/header.php');
  
