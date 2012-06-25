@@ -2,7 +2,20 @@ select{
 	border: 0px;
 	font-size: 22px;
 	font-family: 'coolvetica_rg';
-	background-color: #a5d85f;
+	border: 1px solid #003e40;
+   background: #1f6e86;
+   background: -webkit-gradient(linear, left top, left bottom, from(#1a9dc5), to(#1f6e86));
+   background: -webkit-linear-gradient(top, #1a9dc5, #1f6e86);
+   background: -moz-linear-gradient(top, #1a9dc5, #1f6e86);
+   background: -ms-linear-gradient(top, #1a9dc5, #1f6e86);
+   background: -o-linear-gradient(top, #1a9dc5, #1f6e86);
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: 2px 2px 5px black;
 	cursor:pointer;
 	padding:3px;
 	-moz-box-shadow:0 0 3px #aaa;
@@ -44,7 +57,7 @@ input[type=submit]:active,
 input[type=submit]:focus,
 a.submit:active,
 a.submit:focus{
-	background:green;
+	
 	border-color:#093c75;
 	outline:none;
 }

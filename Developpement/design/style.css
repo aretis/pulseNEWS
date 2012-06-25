@@ -6,7 +6,7 @@ html {
   overflow-y:scroll;
 }
 body {
-  background-color:#5F8CA3;
+  background-color: #c0deed;
   font-family:Calibri;
 }
 a {
@@ -32,7 +32,7 @@ a {
   -webkit-transform:translateY(-50px);
 }
 #close {
-  background-image:url(http://localhost/pulseNEWS/Developpement/design/design/img/close.png);
+  background-image:url(img/close.png);
   cursor:pointer;
   height:16px;
   position:absolute;
@@ -45,43 +45,52 @@ a {
   display:none;
 }
 .header {
-  background-color:#046380;
-  box-shadow:#003E40 10px 10px 8px;
+     background: -webkit-gradient(linear, left top, left bottom, from(#00a0d1), to#008eb9));
+   background: -webkit-linear-gradient(top, #00a0d1, #008eb9);
+   background: -moz-linear-gradient(top, #00a0d1, #008eb9);
+   background: -ms-linear-gradient(top, #00a0d1, #008eb9);
+   background: -o-linear-gradient(top, #00a0d1, #008eb9);
+  box-shadow: 1px 1px 3px #111111;
   left:0;
   position:fixed;
   top:0;
   width:100%;
   z-index:1;
+  height: 50px;
 }
 .header_info {
   color:white;
   font-size:12px;
-  height:75px;
+  height: 50px;
   text-align:right;
   width:1024px;
 }
 .header_menu {
   font-family:coolvetica_rg;
   font-size:22px;
-  height:25px;
+  margin-top: -10px;
   width:100%;
 }
 .header_menu a {
   -webkit-box-shadow:#000000 0 1px 0;
-  background-image:-webkit-linear-gradient(top, #1A7895, #1CABD7);
-  border:1px solid #003E40;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#d9d9d9));
+   background: -webkit-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -moz-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -ms-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -o-linear-gradient(top, #f7f7f7, #d9d9d9);
+ 
   border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
   border-top-left-radius:6px;
   border-top-right-radius:6px;
   box-shadow:#003E40 2px 2px 2px;
-  color:white;
-  font-family:coolvetica_rg;
-  font-size:20px;
+  color: #333333;
+  font-family: Arial;
+  font-size: 16px;
   padding:4px 8px;
   text-decoration:none;
-  text-shadow:black 2px 2px 3px;
   vertical-align:middle;
+  text-align: right;
 }
 .header_menu a:hover {
   border-top-color:#00AD23;
@@ -185,80 +194,59 @@ a {
   height:100%;
 }
 .rss_block {
-  -webkit-box-shadow:#000000 0 1px 0;
-  background-color:#8FCAFF;
-  border:1px solid #003E40;
-  border-bottom-left-radius:6px;
+     background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
+   background: -webkit-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -moz-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -ms-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -o-linear-gradient(top, #f9f9f9, #e0e0e0);
+     border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
   border-top-left-radius:6px;
   border-top-right-radius:6px;
-  box-shadow:#003E40 2px 2px 2px;
+  box-shadow: 1px 1px 3px #111111;
   float:right;
   margin:auto;
   padding:6px 5px;
-  text-shadow:black 2px 2px 5px;
   vertical-align:top;
   width:100%;
 }
 .block_title {
-  -webkit-box-shadow:#000000 0 1px 0;
-  border:2px solid #003E40;
-  border-bottom-left-radius:6px;
-  border-bottom-right-radius:6px;
-  border-top-left-radius:6px;
-  border-top-right-radius:6px;
-  box-shadow:#000000 0 1px 0;
-  color:white;
-  font-family:fantasy;
-  font-size:24px;
+
+  color: #333333;
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 18px;
   text-decoration:none;
-  text-shadow:black 2px 2px 5px;
   vertical-align:top;
   width:120px;
-  background-color:#183152;
   text-align:center;
 }
 .block_content {
-  -webkit-box-shadow:#000000 0 1px 0;
-  background-color:white;
-  border:2px solid #003E40;
+  
   border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
   border-top-left-radius:6px;
   border-top-right-radius:6px;
-  box-shadow:#000000 0 1px 0;
-  font-size:18px;
+  font-size:12px;
+  text-shadow:black 0 0 0;
+  vertical-align:top;
+  color: #333333;
+}
+.block_content a
+{
+	display: block;
+}
+.block_content a:hover {
+  background-color: #e0eef5;
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  font-size:12px;
   text-shadow:black 0 0 0;
   vertical-align:top;
 }
-.pulse_button {
-  background-color:#5BB64F;
-  color:white;
-  float:right;
-  font-family:coolvetica_rg;
-  font-size:14px;
-  margin-left:20px;
-  margin-top:-10px;
-  width:35px;
-}
-.block_title_right {
-  -webkit-box-shadow:#000000 0 1px 0;
-  background-color:#5BB64F;
-  background-image:-webkit-linear-gradient(top, #5BB64F, #34782A);
-  border:2px solid #003E40;
-  border-bottom-left-radius:6px;
-  border-bottom-right-radius:6px;
-  border-top-left-radius:6px;
-  border-top-right-radius:6px;
-  box-shadow:#003E40 2px 2px 2px;
-  color:white;
-  font-family:coolvetica_rg;
-  font-size:24px;
-  text-align:right;
-  text-decoration:none;
-  text-shadow:black 2px 2px 5px;
-  vertical-align:top;
-}
+
 .block_content_right {
   -webkit-box-shadow:#000000 0 1px 0;
   background-color:white;
@@ -268,19 +256,34 @@ a {
   border-top-left-radius:6px;
   border-top-right-radius:6px;
   box-shadow:#000000 0 1px 0;
+  color: #333333;
   font-size:18px;
   text-shadow:black 0 0 0;
   vertical-align:top;
 }
 .pulse_button {
-  background-color:blue;
-  color:white;
-  float:right;
-  font-family:coolvetica_rg;
-  font-size:14px;
+   background: -webkit-gradient(linear, left top, left bottom, from(#fedb4c), to(#fd9613));
+   background: -webkit-linear-gradient(top, #fedb4c, #fd9613);
+   background: -moz-linear-gradient(top, #fedb4c, #fd9613);
+   background: -ms-linear-gradient(top, #fedb4c, #fd9613);
+   background: -o-linear-gradient(top, #fedb4c, #fd9613);
+  color: #333333;
+  font-family: Arial;
+  font-size:12px;
   margin-left:20px;
   margin-top:-10px;
-  width:35px;
+  width: 25px;
+  border: 1px solid #ec8b11;
+  float: right;
+}
+.pulse_button :hover
+{
+	 background: -webkit-gradient(linear, left top, left bottom, from(#feeba1), to(#fd9613));
+   background: -webkit-linear-gradient(top, #feeba1, #fd9613);
+   background: -moz-linear-gradient(top, #feeba1, #fd9613);
+   background: -ms-linear-gradient(top, #feeba1, #fd9613);
+   background: -o-linear-gradient(top, #feeba1, #fd9613);
+    color: #222222;
 }
 .pulse_button_right {
   background-color:blue;
@@ -555,19 +558,8 @@ select:active, select:focus {
   text-decoration:none;
   vertical-align:middle;
 }
-.depulse input[type="submit"]:hover, a.submit:hover, .propulse input[type="submit"]:hover, a.submit:hover, .debate input[type="submit"]:hover, a.submit:hover, input[type="submit"]:hover {
-  color:#FFFD55;
-  text-decoration:none;
-}
-.depulse input[type="submit"]:active, input[type="submit"]:active, .propulse input[type="submit"]:active, .debate input[type="submit"]:active, .depulse input[type="submit"]:focus, .propulse input[type="submit"]:focus, .debate input[type="submit"]:focus, a.submit:active, a.submit:focus {
-  background-attachment:scroll;
-  background-color:green;
-  background-image:none;
-  background-position:0 0;
-  background-repeat:repeat repeat;
-  border-color:#093C75;
-  outline:none medium;
-}
+
+
 .depulse {
   float:right;
   margin-top:-25px;
@@ -718,7 +710,7 @@ select:active, select:focus {
   width:100%;
 }
 #background {
-  background-image:url(http://localhost/pulseNEWS/Developpement/design/img/background.png);
+  background-image:url(img/background.png);
   background-position:5% 5%;
   background-repeat:repeat repeat;
   bottom:0;
@@ -729,7 +721,7 @@ select:active, select:focus {
   z-index:100;
 }
 #midground {
-  background-image:url(http://localhost/pulseNEWS/Developpement/design/img/midground.png);
+  background-image:url(img/midground.png);
   background-position:20% 20%;
   background-repeat:repeat repeat;
   bottom:0;
@@ -740,7 +732,7 @@ select:active, select:focus {
   z-index:100;
 }
 #foreground {
-  background-image:url(http://localhost/pulseNEWS/Developpement/design/img/foreground.png);
+  background-image:url(img/foreground.png);
   background-position:90% 110%;
   background-repeat:repeat repeat;
   bottom:0;
@@ -1072,7 +1064,7 @@ select:active, select:focus {
   width:400px;
 }
 #box p {
-  background-image:url(http://localhost/pulseNEWS/Developpement/design/img/warning.png);
+  background-image:url(img/warning.png);
   background-position:10px 50%;
   background-repeat:no-repeat no-repeat;
   font-size:25px;

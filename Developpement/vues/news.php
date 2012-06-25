@@ -206,7 +206,7 @@ function change3(num)
 		
 			<div class='search_news'>
 			<div class='shorti'>Rechercher : </div>
-	<form method="post" action="index.php?page=news">
+	<form method="post" action="index.php?page=recherche">
 		<input type="search"name="recherche"/>
 		<select name ="mode">
 			<option value="exp_exacte">l'expression exacte</option>
@@ -256,7 +256,7 @@ if(isset($_POST['pulse']))
 
 			<tr>
 				<td>
-					<div class='block_title'>&nbsp;politique</div>
+					<div class='block_title'>politique</div>
 				</td>
 			</tr>
 			<tr>
@@ -277,7 +277,7 @@ if(isset($_POST['pulse']))
 			</tr>
 			<tr>
 				<td>
-					<div class='block_title'>&nbsp;économie</div>
+					<div class='block_title'>économie</div>
 				</td>
 			</tr>
 			<tr>
@@ -305,9 +305,11 @@ if(isset($_POST['pulse']))
 	include('modeles/view_all_articles.php');
 	
 	$req = view_all_article($date, $rate, $type, $news_area, $cat_news);
-echo'<div id="rehan">';
+
 	while($data = mysql_fetch_assoc($req))
 	{
+	
+	$id = $id_post = $data['id_post'];
 	
 		if($data['type'] == 1)
 		{
@@ -321,19 +323,19 @@ echo'<div id="rehan">';
 				if($data['pseudo'] == $_SESSION['pseudo'])
 				{
 					echo"<div class='delete_post'>";
-					if(isset($_GET['pseudo'])) echo"<a  style='color:red' href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
-					else echo"<a style='color:red' href='index.php?page=news&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					if(isset($_GET['pseudo'])) echo"<a style='color:red' href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+					else echo"<a style='color:red' href='index.php?page=news&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";;
 					echo"</div>";
 				}
 				else
 				{
-					echo"		&nbsp;".$data['title'];
+					echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";
 				}
 				
 			}
 			else
 			{
-				echo"		&nbsp;".$data['title'];
+				echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";
 			}
 			echo"</div>";
 			echo"		</td><td>	<div class='rate'>";
@@ -384,7 +386,7 @@ echo'<div id="rehan">';
 
 			while($toto = mysql_fetch_assoc($result))
 			{
-				echo "<div class='cat_color'>".$toto['cat_name']."</div>";
+				echo $toto['cat_name'];
 			}
 			echo"</td>";
 			
@@ -455,14 +457,16 @@ echo'<div id="rehan">';
 					onmouseover=\"this.src='design/img/up_plein.png';\" 
 					onmouseout=\"this.src='design/img/up.png';\"/>
 				</a></div>";
+				
 			}
 			$query = 'SELECT cat_name FROM news_cat WHERE id_cat ='.$data['cat'];
 			$result = call_db($query);
 
 			while($toto = mysql_fetch_assoc($result))
 			{
-				echo "<div class='cat_color'>".$toto['cat_name']."</div>";
+				echo $toto['cat_name'];
 			}
+			
 			echo"</td>";
 			
 			echo"</tr>";
@@ -476,7 +480,6 @@ echo'<div id="rehan">';
 	{
 		echo"<div class='no_news'> Désolé, aucune news n'a été trouvée pour ces critères</div>";
 	}
-	echo'</div>';
 }?>
 </div>
 </td>
@@ -485,12 +488,12 @@ echo'<div id="rehan">';
 
 			<tr>
 				<td>
-					<div class='block_title'>&nbsp;sport</div>
+					<div class='block_title'>sport</div>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<div class='block_content_right'>
+					<div class='block_content'>
 					<?php
 					$url= 'sport.xml';
 					$cat = '5';
@@ -506,12 +509,12 @@ echo'<div id="rehan">';
 	
 			<tr>
 				<td>
-					<div class='block_title'>&nbsp;écologie</div>
+					<div class='block_title'>écologie</div>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<div class='block_content_right'>	
+					<div class='block_content'>	
 					
 					<?php
 					$url= 'ecologie.xml';

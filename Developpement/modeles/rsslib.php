@@ -172,12 +172,12 @@ function RSS_Display($cat, $url, $size = 15, $site = 0)
 		$description = $article["description"];
 		if(isset($_SESSION['pseudo']))
 		{
-			$page .= "<li><a style='color: black' href='$link'>$title</a><form action='index.php?page=news' method='post'>
+			$page .= "<li><a style='color: #333333;' href='$link'>$title</a><form action='index.php?page=news' method='post'>
 			<input type='hidden' name='title' value=\"".htmlentities($title, NULL, 'UTF-8')."\"/>
 			<input type='hidden' name='link' value='$link'/>
 			<input type='hidden' name='cat' value='$cat'/>
 			<input class='pulse_button' type='submit' value='p!' name='pulse'/>
-			</form></li><br><br>";
+			</form></li><br>";
 		}
 		else
 		{

@@ -61,7 +61,7 @@
 <div class='header'>
 	<table cellspacing="0">
 		<td>
-				<img style='height: 75px;' src='design/img/logo_header.png'/>			
+				<img style='height: 50px;' src='design/img/logo_header.png'/>			
 		</td>
 		<td style='width: 100%;'>
 		</td>
