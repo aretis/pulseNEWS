@@ -90,6 +90,10 @@
 					
 						$user=$_SESSION['id_user'];
 						include('/../modeles/connect_db.php');
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6efe2ae225c25e61964b6508b409070153e7fec2
 						$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']." AND read_confirm='0'";
 						if(!mysql_query($query) )
 								{
