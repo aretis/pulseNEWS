@@ -47,7 +47,11 @@
 			echo"	<tr>";
 			echo"		<td>";
 			echo"		<div class='description_news'>";
-			echo"			<a class='news_link' href='".$data['description']."'>&nbsp;&nbsp;&nbsp;lire l'article&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;";
+			echo"<a href=\"".$data['description']."\" >
+				<img id=\"myDiv\" src='design/img/news_1.png' 
+				onmouseover=\"this.src='design/img/news_2.png';\" 
+				onmouseout=\"this.src='design/img/news_1.png';\"/>
+			</a>";
 			echo "pulsé le : ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));	
 			echo " par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!</div>";
