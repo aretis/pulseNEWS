@@ -11,7 +11,7 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 	?>
 	
 		<div id="wrapper">
-		<div class="accordionButton">Commentaires</div>
+		<div class="accordionButton">afficher les commentaires...</div>
 		<div class="accordionContent">
 		
 	<?php
@@ -19,7 +19,7 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 	{
 		
 		echo"<div class='comment_post'>";
-		echo"<span style='font-size:22px;  font-weight:bold;'>";
+		echo"<span  font-weight:bold;'>";
 			if(isset($_SESSION['pseudo']))
 		{
 			if($data['pseudo'] == $_SESSION['pseudo'])
@@ -28,11 +28,11 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 				else echo"<a href='index.php?page=profile&delete_comment=".$data['id_comment']."'>X</a>";
 			}
 		}
-		echo "&nbsp;&nbsp;<a style='color: black;' href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>"; 
+		echo "&nbsp;&nbsp;<a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>"; 
 		echo": &nbsp;&nbsp;";
 		echo"</span>";
 		
-		echo"<span style='font-size:15px;'>";
+		echo"<span>";
 		echo "&nbsp;&nbsp;".$data['content'];
 		echo"</span>";
 		
