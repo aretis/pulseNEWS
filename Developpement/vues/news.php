@@ -458,7 +458,7 @@ if(isset($_POST['pulse']))
 					<img id=\"myDiv\" src='design/img/up.png' 
 					onmouseover=\"this.src='design/img/up_plein.png';\" 
 					onmouseout=\"this.src='design/img/up.png';\"/>
-				</a></div>";
+				</a></div><div class='cat_news'>";
 				
 			}
 			$query = 'SELECT cat_name FROM news_cat WHERE id_cat ='.$data['cat'];
@@ -469,7 +469,7 @@ if(isset($_POST['pulse']))
 				echo $toto['cat_name'];
 			}
 			
-			echo"</td>";
+			echo"</div></td>";
 			
 			echo"</tr>";
 			
