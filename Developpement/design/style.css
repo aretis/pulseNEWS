@@ -1061,7 +1061,7 @@ select:active, select:focus {
   border-top-left-radius:6px;
   border-top-right-radius:6px;
   box-shadow:#000000 0 1px 0;
-  color:red;
+  color:white;
   font-family:coolvetica_rg;
   font-size:20px;
   height:30px;
@@ -1088,7 +1088,7 @@ select:active, select:focus {
   width:104%;
 }
 .cat_color {
-  color:red;
+  color:#1f6e86;
   font-family:fantasy;
   font-size:18px;
 }

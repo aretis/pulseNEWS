@@ -206,7 +206,7 @@ function change3(num)
 		
 			<div class='search_news'>
 			<div class='shorti'>Rechercher : </div>
-	<form method="post" action="index.php?page=news">
+	<form method="post" action="index.php?page=recherche">
 		<input type="search"name="recherche"/>
 		<select name ="mode">
 			<option value="exp_exacte">l'expression exacte</option>
@@ -351,7 +351,7 @@ echo'<div id="rehan">';
 			
 			echo"<span>&nbsp;&nbsp;Pulsé le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>! </div>";
+			echo"&nbsp;par <a style='color: black;' href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>! </div>";
 			echo"	</span></td>";
 			echo"<form action='index.php?page=profile' method='post'/>";
 			echo'</form>';
@@ -432,7 +432,7 @@ echo'<div id="rehan">';
 			echo"		</div>";
 			echo"<span>&nbsp;&nbsp;Ecrit le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-			echo"&nbsp;par <a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!";
+			echo"&nbsp;par <a style='color: black;' href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!";
 			echo"	</span></td>";
 			echo"	</td>";
 			echo"</tr>";
