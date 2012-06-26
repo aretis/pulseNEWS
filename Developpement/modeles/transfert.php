@@ -20,7 +20,9 @@ function transfert ($id_post)
 	$picture_size = $_FILES['fichier']['size'];
 	if ( $picture_size > $picture_max )
 	{
-		die ("le fichier ne peut être enregistré,la taille n'est pas respectée!");
+		echo "probleme";
+		header('location:index.php?page=create_article');
+		die("probleme");
 		return false;
 	}
 	$picture_type = $_FILES['fichier']['type'];
