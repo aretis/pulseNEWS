@@ -1,9 +1,7 @@
 ﻿<?php
 
-/* Salman ALAMDAR 
-	connexion page
-	12/04/12*/
-	include('vues/header1.php');
+
+	include('vues/header.php');
 
 	if(isset($_POST['pseudo']) && isset($_POST['password']))
 	{

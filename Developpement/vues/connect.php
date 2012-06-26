@@ -12,10 +12,7 @@
 <br>
 <form id='start' name='formulaire' action='index.php?page=connect' method='post'>
 <br>
-<span id='title'>connexion</span></br>
-<br><br>
-<br>
-<br>
+<div class='block_title'>connexion</div><hr>
 <label for='name'>pseudo</label>
 <input id='name' type='text' name='pseudo' VALUE ='<?php if(isset($_POST['pseudo'])) echo $_POST['pseudo']; ?>'>
 <br>
@@ -27,5 +24,3 @@
 
 </form>
 
-</body>
-</html>

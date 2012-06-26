@@ -203,6 +203,6 @@
 			echo"</table>";
 		}
 			
-			echo"<br><br><br>";
+			echo"<br><br><br><br>";
 	}
 ?>

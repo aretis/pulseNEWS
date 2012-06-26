@@ -2,11 +2,10 @@
 <link rel="stylesheet" href="design/register.css" />
 
 <form id='start' name='formulaire' action='index.php?page=register' method='post' onSubmit='return verif_formulaire();'>
-<br>
-<span id='title'>inscription</span></br>
-<br><br>
-<br>
-<br>
+
+<div class='block_title'>inscription</div>
+<hr>
+
 <label for='name'>pseudo</label>
 <input id='pseudo' type='text' name='pseudo' onblur='verifPseudo(this)' VALUE ='<?php if(isset($_POST['pseudo'])) echo $_POST['pseudo']; ?>'>
 <br>
