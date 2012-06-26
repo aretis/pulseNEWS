@@ -1084,3 +1084,21 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   font-size:18px;
   text-align:center;
 }
+#comment_comment
+{
+	left:44%;
+  position:relative;
+  top:0%;
+  width:0px;
+}
+#input_comment
+{
+	left:35%;
+	position:relative;
+	top:0;
+	width:387;
+}
+#all_comment_comment{
+	position:relative;
+	left:30%;
+}
