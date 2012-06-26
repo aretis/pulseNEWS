@@ -19,6 +19,9 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 	{
 		
 		echo"<div class='comment_post'>";
+		
+
+		
 		echo"<span  font-weight:bold;'>";
 			if(isset($_SESSION['pseudo']))
 		{
@@ -28,6 +31,23 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 				else echo"<a href='index.php?page=profile&delete_comment=".$data['id_comment']."'>X</a>";
 			}
 		}
+		$request = "SELECT profile_picture FROM users WHERE pseudo = '".$data['pseudo']."'";
+
+			$sucess = mysql_query ($request) or die (mysql_error());
+			$col = mysql_fetch_assoc($sucess);
+			if (empty($col['profile_picture']))
+			{
+				echo"<img src='design/img/exemple_profile.jpg'/>";
+			}
+			else
+			{
+				$image = imagecreatefromstring($col['profile_picture']);
+				ob_start();
+				imagejpeg($image, null, 80);
+				$img = ob_get_contents();
+				ob_end_clean();
+				echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
+			}
 		echo "&nbsp;&nbsp;<a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>"; 
 		echo": &nbsp;&nbsp;";
 		echo"</span>";

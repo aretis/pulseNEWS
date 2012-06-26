@@ -586,6 +586,15 @@ select:active, select:focus {
   position:relative;
 
 }
+.comment_post img
+{
+	 border: 1px solid #333333;
+    border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+    border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  width: 50px;
+}
 .comment_post :hover
 {
 	background-color: #f5f5f5;
