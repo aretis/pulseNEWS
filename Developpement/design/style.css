@@ -1051,7 +1051,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   border-bottom-right-radius:6px;
 
   box-shadow:#000000 0 1px 0;
-  color: #333333;
+  color: white;
   font-family: Arial;
   font-weight: bold;
   font-size: 16px;
@@ -1060,6 +1060,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   height:30px;
   text-align:center;
   width:400px;
+  text-align:center;
 }
 #box p {
   background-image:url(img/warning.png);
@@ -1078,7 +1079,8 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   width:104%;
 }
 .cat_color {
-  color:red;
+  color:white;
   font-family:fantasy;
   font-size:18px;
+  text-align:center;
 }
