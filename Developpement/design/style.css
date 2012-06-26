@@ -57,16 +57,18 @@ a {
   height: 50px;
 }
 .header_info {
-  color:white;
+  color:#f5f5f5;
   font-size:12px;
   height: 50px;
   text-align:right;
-  width:1024px;
+  width: 1024px;
+  margin-left: -20px;
 }
 .header_menu {
 margin-top: 5px;
   font-size:22px;
-  width:100%;
+  width: 1024px;
+  text-align: right;
 }
 .header_menu a {
   -webkit-box-shadow:#000000 0 1px 0;
@@ -210,7 +212,7 @@ color: #333333;
 }
 .block_title {
 
-  color: #333333;
+  color: #777777;
   font-weight: bold;
   font-family: Arial;
   font-size: 18px;
@@ -399,17 +401,20 @@ font-weight: bold;
   font-size: 20px;
 }
 .block_title_about {
-  -webkit-box-shadow:#000000 0 1px 0;
-  background-image:-webkit-linear-gradient(top, #1A9DC5, #1F6E86);
-  border:2px solid black;
-  border-bottom-left-radius:6px;
+     background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
+   background: -webkit-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -moz-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -ms-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -o-linear-gradient(top, #f9f9f9, #e0e0e0);
+     border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
   border-top-left-radius:6px;
   border-top-right-radius:6px;
-  box-shadow:#000000 0 1px 0;
-  color:white;
-  font-size:24px;
-  text-shadow:black 2px 2px 5px;
+  box-shadow: 1px 1px 3px #111111;
+  color: #777777;
+  font-weight: bold;
+  padding: 6px 5px;
+  font-size: 16px;
   width:200px;
 }
 .about_block {
@@ -417,17 +422,13 @@ font-weight: bold;
   height:400px;
   width:200px;
 }
-.about_block img {
-  -webkit-box-shadow:#000000 0 1px 0;
-  background-image:-webkit-linear-gradient(top, #1A9DC5, #1F6E86);
-  border:8px solid #1A9DC5;
-  border-bottom-left-radius:6px;
+.rss_block img {
+   border: 1px solid #333333;
+    border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
-  border-top-left-radius:6px;
+    border-top-left-radius:6px;
   border-top-right-radius:6px;
-  box-shadow:#003E40 5px 5px 3px;
-  height:100px;
-  text-shadow:black 2px 2px 5px;
+  width: 200px;
 }
 .profile_block {
   float:right;
@@ -436,27 +437,35 @@ font-weight: bold;
   width:200px;
 }
 .article {
-  border-bottom-left-radius:5px;
-  border-bottom-right-radius:5px;
-  border-top-left-radius:5px;
-  border-top-right-radius:5px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
+   background: -webkit-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -moz-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -ms-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -o-linear-gradient(top, #f9f9f9, #e0e0e0);
+     border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  box-shadow: 1px 1px 3px #111111;
+  float:right;
   margin:auto;
-  width:100%;
+  padding:6px 5px;
+  border: 1px solid #333333;
 }
 .article_content {
-  background-color:white;
-  border:2px solid black;
-  box-shadow:#003E40 5px 5px 3px;
-  font-size:16px;
-  margin-top:-5px;
-  vertical-align:top;
+  padding:6px 5px;
+  font-size:12px;
 }
 .article_content img {
-  border:8px solid #1A9DC5;
-  box-shadow:#003E40 3px 3px 2px;
   display:block;
   height:200px;
   margin:auto;
+   border: 1px solid #333333;
+    border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+    border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  width: 200px;
 }
 .article_content iframe {
   border:8px solid #1A9DC5;
@@ -571,22 +580,11 @@ select:active, select:focus {
   margin-top:-5px;
 }
 .comment_post {
-    background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#d9d9d9));
-   background: -webkit-linear-gradient(top, #f7f7f7, #d9d9d9);
-   background: -moz-linear-gradient(top, #f7f7f7, #d9d9d9);
-   background: -ms-linear-gradient(top, #f7f7f7, #d9d9d9);
-   background: -o-linear-gradient(top, #f7f7f7, #d9d9d9);
- 
-  border-bottom-left-radius:6px;
-  border-bottom-right-radius:6px;
-  border-top-left-radius:6px;
-  border-top-right-radius:6px;
-  box-shadow:#003E40 2px 2px 2px;
-  border: 1px solid #333333;
+
   font-size: 12px;
   height:100%;
   position:relative;
-  width:64%;
+
 }
 .comment_post :hover
 {

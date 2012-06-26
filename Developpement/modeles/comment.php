@@ -33,15 +33,15 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		echo"</span>";
 		
 		echo"<span>";
-		echo "&nbsp;&nbsp;".$data['content'];
+		echo "&nbsp;&nbsp;&nbsp;&nbsp;".$data['content'];
 		echo"</span>";
 		
 		echo"<span style='font-size:10px;'>";
-		echo"<br>&nbsp;&nbsp;Ecrit le ";
+		echo"<br>Le ";
 		echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 		echo"</div>";
 
-		echo"</span>";
+		echo"</span><hr>";
 	}
 	
 	
