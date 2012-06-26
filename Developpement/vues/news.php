@@ -135,7 +135,6 @@ function change3(num)
 ?>
 
 
-
 <div id="wrapper">
 <div class='tri_news'>
 		<div class="accordionButton">Trier les informations</div>
@@ -201,7 +200,7 @@ function change3(num)
 </form>
 </div>
 		
-		
+		<hr>
 	
 		
 			<div class='search_news'>
@@ -238,6 +237,7 @@ function change3(num)
 	</div>
 </div>
 <br>
+
 <table>
 <td style='vertical-align: top; width:20%'>
 <table cellpadding='0' cellspacing='0' class='rss_block'>
