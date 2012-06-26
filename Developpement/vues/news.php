@@ -135,13 +135,12 @@ function change3(num)
 ?>
 
 
-
-
-<div id="volet_clos">
-		<div id="volet">
+<div id="wrapper">
+<div class='tri_news'>
+		<div class="accordionButton">Trier les informations</div>
+		<div class="accordionContent">
 		<div class='tri'>
 	<div class='shorti'>Trier par : </div>
-	<br>
 	<form method='post' action='index.php?page=news'>
 	
 	<SELECT id='date' name='date' selected='selected' onchange='change2(this.selectedIndex)'>
@@ -195,13 +194,13 @@ function change3(num)
 			mysql_free_result($result);
 			mysql_close($link);
 		?>
-	</SELECT><div> <input name='tri' type='submit' value='trier' /></div>
+	</SELECT><div class='link_submit'> <input name='tri' type='submit' value='trier' /></div>
 	
 	
 </form>
 </div>
 		
-		
+		<hr>
 	
 		
 			<div class='search_news'>
@@ -227,19 +226,18 @@ function change3(num)
 				mysql_close($link);
 			?>
 		</select>
-		<input type="submit" value ="rechercher" name ="rechercher"/>
+		<div class='link_submit'><input type="submit" value ="rechercher" name ="rechercher"/></div>
 	</form>
 
 </div>
 			
-			<a href="#volet" class="ouvrir" aria-hidden="true">Trier !</a>
-			<a href="#volet_clos" class="fermer" aria-hidden="true">Fermer</a>
+		
 		</div>
+
 	</div>
-
-
+</div>
 <br>
-<br>
+
 <table>
 <td style='vertical-align: top; width:20%'>
 <table cellpadding='0' cellspacing='0' class='rss_block'>
