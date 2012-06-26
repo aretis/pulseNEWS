@@ -4,9 +4,9 @@
 	07/05/2012
 	Salman ALAMDAR */
 
-	function pulse($id_post, $id_user, $pulse, $type)
+	function pulse($id_post, $id_user, $pulse)
 	{
-	
+		$type="posts";
 		$pulse1 = $pulse;
 		include('modeles/connect_db.php');
 		mysql_query("SET NAMES 'utf8'");

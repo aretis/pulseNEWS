@@ -43,7 +43,7 @@ a {
   display:none;
 }
 .header {
-     background: -webkit-gradient(linear, left top, left bottom, from(#00a0d1), to#008eb9));
+    background: -webkit-gradient(linear, left top, left bottom, from(#00a0d1), to#008eb9));
    background: -webkit-linear-gradient(top, #00a0d1, #008eb9);
    background: -moz-linear-gradient(top, #00a0d1, #008eb9);
    background: -ms-linear-gradient(top, #00a0d1, #008eb9);
@@ -124,7 +124,7 @@ margin-top: 5px;
   border-bottom-right-radius:6px;
   border-top-left-radius:6px;
   border-top-right-radius:6px;
-  box-shadow:#003E40 3px 3px 2px;
+  box-shadow:#777777 2px 2px 1px;
   margin:auto;
   padding:4px 8px;
   width:90%;
@@ -262,18 +262,14 @@ color: #333333;
   vertical-align:top;
 }
 .pulse_button {
-   background: -webkit-gradient(linear, left top, left bottom, from(#fedb4c), to(#fd9613));
-   background: -webkit-linear-gradient(top, #fedb4c, #fd9613);
-   background: -moz-linear-gradient(top, #fedb4c, #fd9613);
-   background: -ms-linear-gradient(top, #fedb4c, #fd9613);
-   background: -o-linear-gradient(top, #fedb4c, #fd9613);
+
   color: #333333;
   font-family: Arial;
   font-weight: bold;
   font-size:12px;
   margin-top: -5px;
   width: 25px;
-  border: 1px solid #ec8b11;
+
   float: right;
 }
 .pulse_button :hover
@@ -585,6 +581,15 @@ select:active, select:focus {
   height:100%;
   position:relative;
 
+}
+.comment_post img
+{
+	 border: 1px solid #333333;
+    border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+    border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  width: 50px;
 }
 .comment_post :hover
 {
