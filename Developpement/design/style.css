@@ -338,8 +338,8 @@ color: #333333;
   width:100px;
 }
 .profile_ban {
-  border:2px solid #003E40;
-  box-shadow:#003E40 5px 5px 3px;
+ 
+  
   height:200px;
   margin:auto;
   width:900px;
@@ -347,6 +347,11 @@ color: #333333;
 .profile_ban img {
   height:200px;
   width:900px;
+  border: 1px solid #333333;
+    border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+    border-top-left-radius:6px;
+  border-top-right-radius:6px;
 }
 .profile_button_left {
  background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
@@ -357,11 +362,11 @@ color: #333333;
      border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
   box-shadow: 1px 1px 3px #111111;
-  margin-top: -6px;
+  margin-top: -3px;
 font-weight: bold;
   padding:3px 2px;
   color: #333333;
-  font-size: 18px;
+  font-size: 14px;
 }
 .profile_button_right {
  background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
@@ -372,11 +377,11 @@ font-weight: bold;
      border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
   box-shadow: 1px 1px 3px #111111;
-  margin-top: -6px;
+  margin-top: -3px;
 	font-weight: bold;
   padding:3px 2px;
   color: #333333;
-  font-size: 18px;
+  font-size: 14px;
 }
 .profile_name {
  background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
@@ -387,7 +392,7 @@ font-weight: bold;
      border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
   box-shadow: 1px 1px 3px #111111;
-  margin-top: -6px;
+  margin-top: 0px;
 font-weight: bold;
   padding:3px 2px;
   color: #333333;
@@ -621,6 +626,8 @@ select:active, select:focus {
    background: -o-linear-gradient(top, #f7f7f7, #d9d9d9);
   border-top-left-radius:3px;
   border-top-right-radius:3px;
+    border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
   
 margin-top: -22px;
   position:relative;
