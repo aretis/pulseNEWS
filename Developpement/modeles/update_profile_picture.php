@@ -6,7 +6,7 @@ function update_profile_picture($id_user)
 	$picture_size = 0;
 	$picture_type = '';
 	$picture_name = '';
-	$picture_max = 64000;
+	$picture_max = 1500000;
 	
 	$sucess = is_uploaded_file ($_FILES['profile_picture']['tmp_name']);
 	if ( !$sucess )

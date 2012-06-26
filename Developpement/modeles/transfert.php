@@ -6,7 +6,7 @@ function transfert ($id_post)
 	$picture_size = 0;
 	$picture_type = '';
 	$picture_name = '';
-	$picture_max = 64000;
+	$picture_max = 1500000;
 	
 	$sucess = is_uploaded_file ($_FILES['fichier']['tmp_name']);
 	if ( !$sucess )
@@ -26,7 +26,7 @@ function transfert ($id_post)
 	$picture_type = $_FILES['fichier']['type'];
 	$picture_name = $_FILES['fichier']['name'];
 	
-	include('connexion.php');
+	include('modeles/connect_db.php');
 	
 	
 	$picture_blob =  file_get_contents ($_FILES['fichier']['tmp_name']);

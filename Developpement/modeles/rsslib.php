@@ -176,7 +176,7 @@ function RSS_Display($cat, $url, $size = 15, $site = 0)
 			<input type='hidden' name='title' value=\"".htmlentities($title, NULL, 'UTF-8')."\"/>
 			<input type='hidden' name='link' value='$link'/>
 			<input type='hidden' name='cat' value='$cat'/>
-			<input class='pulse_button' type='submit' value='p!' name='pulse'/>
+			<input class='pulse_button' value='submit'  type=image src='design/img/pulse_button.png' name='pulse'/>
 			</form></li><br>";
 		}
 		else

@@ -100,14 +100,14 @@
 			}
 				
 				?>
-	<div class='humor'>"<?php if(isset($_GET['pseudo']))
+	<div class='humor'><?php if(isset($_GET['pseudo']))
 							{
 								echo $visit_humor;
 							}
 							else
 							{
 								echo $humor;
-							} ?>"</div>
+							} ?></div>
 </div>
 <table style='margin: auto; text-align: center;' cellpadding='0' cellspacing='0'>
 <td>
@@ -148,8 +148,22 @@ if(!isset($_GET['pseudo']))
 </table>
 <table>
 <td style='vertical-align: top;'>
-<table cellpadding='0' cellspacing='0' class='about_block'>
-			
+<table cellpadding='0' cellspacing='0' class='rss_block'>
+			<tr>
+				<td>
+					<div class='block_title'><?php 
+							if(isset($_GET['pseudo']))
+							{
+								echo $_GET['pseudo'];
+							}
+							else
+							{
+								echo $_SESSION['pseudo'];
+							}
+							?></div>
+				</td>
+			</tr>
+			<tr><td><hr></td></tr>
 			<tr>
 				<td>
 				
@@ -177,14 +191,16 @@ if(!isset($_GET['pseudo']))
 					
 				</td>
 			</tr>
-
+			<tr><td><br></td></tr>
+			<tr>
+			<td>
+			<div class='block_title'>à propos de moi</div>
+			</td>
+			</tr>
+			
+			<tr><td><hr></td></tr>
 			<tr>
 				<td>
-					<div class='block_title_about'>&nbsp;à propos de moi</div>
-				</td>
-			</tr>
-			<tr>
-				<td style='background-color: #58b54c;'>
 					<div class='block_content'>
 					<?php if(isset($_GET['pseudo']))
 							{
@@ -196,11 +212,12 @@ if(!isset($_GET['pseudo']))
 							}
 					?>			
 					</div>
+				
 				</td>
 			</tr>
-			<tr style='height: 100%;'>
-			</tr>
+			
 	</table>
+	
 </td>
 <td style='width: 80%;'>
 <?php
@@ -230,15 +247,16 @@ if(!isset($_GET['pseudo']))
 
 <td style='vertical-align: top; '>
 
-<table cellpadding='0' cellspacing='0' class='profile_block'>
+<table cellpadding='0' cellspacing='0' class='rss_block'>
 
 			<tr>
 				<td>
-					<div class='block_title'>&nbsp;mon profil</div>
+					<div class='block_title'>mon profil</div>
 				</td>
 			</tr>
+			<tr><td><hr></td></hr>
 			<tr>
-				<td style='background-color: #58b54c;'>
+				<td>
 				<div class='block_content'>
 					
 						

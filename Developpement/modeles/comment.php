@@ -19,6 +19,9 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 	{
 		
 		echo"<div class='comment_post'>";
+		
+
+		
 		echo"<span  font-weight:bold;'>";
 			if(isset($_SESSION['pseudo']))
 		{
@@ -28,16 +31,33 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 				else echo"<a href='index.php?page=profile&delete_comment=".$data['id_comment']."'>X</a>";
 			}
 		}
+		$request = "SELECT profile_picture FROM users WHERE pseudo = '".$data['pseudo']."'";
+
+			$sucess = mysql_query ($request) or die (mysql_error());
+			$col = mysql_fetch_assoc($sucess);
+			if (empty($col['profile_picture']))
+			{
+				echo"<img src='design/img/exemple_profile.jpg'/>";
+			}
+			else
+			{
+				$image = imagecreatefromstring($col['profile_picture']);
+				ob_start();
+				imagejpeg($image, null, 80);
+				$img = ob_get_contents();
+				ob_end_clean();
+				echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
+			}
 		echo "&nbsp;&nbsp;<a href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>"; 
 		echo": &nbsp;&nbsp;";
 		echo"</span>";
 		
 		echo"<span>";
-		echo "&nbsp;&nbsp;".$data['content'];
+		echo "&nbsp;&nbsp;&nbsp;&nbsp;".$data['content'];
 		echo"</span>";
 		
 		echo"<span style='font-size:10px;'>";
-		echo"<br>&nbsp;&nbsp;Ecrit le ";
+		echo"<br>Le ";
 		echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 		echo"<a id='comment_comment' href='index.php?page=";
 		if($_GET['page'] == "profile") echo "profile";
@@ -47,6 +67,7 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		
 		
 		echo"</div>";
+<<<<<<< HEAD
 		if(isset($_GET['comment_to_comment']) && $data['id_comment'] == $_GET['id_comment']){
 		
 			echo"<br><form action'index.php?page=";
@@ -95,6 +116,10 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		
 		echo"</span>";
 		
+=======
+
+		echo"</span><hr>";
+>>>>>>> 428e35afa7d179bb6358eca95774933563180403
 	}
 	
 	

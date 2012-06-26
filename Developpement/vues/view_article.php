@@ -1,3 +1,6 @@
+
+<div style='width: 60%; margin: auto;'>
+
 <?php
 
 	mysql_query("SET NAMES 'utf8'");
@@ -24,3 +27,4 @@
 
 	include('modeles/show_posts.php');
 ?>
+</div>

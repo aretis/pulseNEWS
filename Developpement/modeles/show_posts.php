@@ -183,7 +183,7 @@
 			$content = nl2br( $content , false );
 			echo $content;
 			echo"		</div>";
-			echo"<span style='box-shadow: 5px 5px 3px #003e40;border: 2px solid black;'>&nbsp;&nbsp;Ecrit le&nbsp;";
+			echo"<span class='info_post'>&nbsp;&nbsp;Ecrit le&nbsp;";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a style='color: black;' href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!</span>";
 			
