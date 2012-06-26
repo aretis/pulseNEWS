@@ -11,8 +11,28 @@ q:before,q:after{ content:'';}
 abbr,acronym{ border:0;}
 
 
+<<<<<<< HEAD
 
 
+=======
+form{
+	background: #1f6e86;
+   background: -webkit-gradient(linear, left top, left bottom, from(#1a9dc5), to(#1f6e86));
+   background: -webkit-linear-gradient(top, #1a9dc5, #1f6e86);
+   background: -moz-linear-gradient(top, #1a9dc5, #1f6e86);
+   background: -ms-linear-gradient(top, #1a9dc5, #1f6e86);
+   background: -o-linear-gradient(top, #1a9dc5, #1f6e86);
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-box-shadow:0 0 15px black;
+	-webkit-box-shadow:0 0 15px black;
+	font-family: 'coolvetica_rg';
+	margin : auto;
+	padding:15px;
+	margin-top:15px;
+	width: 500px;
+}
+>>>>>>> 053bed89a7744bf7b0007c6b367c31d3d124becb
 .erreur
 {
 	background:#58b54c; /* Firefox */

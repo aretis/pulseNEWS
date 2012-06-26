@@ -13,6 +13,6 @@
 		return;
 	}
 	
-	echo"Votre post à bien été supprimé !";
+	echo"<div id='box'>Votre post à bien été supprimé !</div>";
 
 ?>
