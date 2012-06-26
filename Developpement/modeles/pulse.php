@@ -25,7 +25,7 @@
 			
 			
 			// Construction de la requête
-			$query='SELECT rate FROM '.$type.' WHERE id_post = '.(int)$id_post;
+			$query='SELECT rate FROM posts WHERE id_post = '.(int)$id_post;
 			
 			$result = mysql_query($query);
 			if($result === false )
@@ -55,7 +55,7 @@
 			}
 
 			
-			$query='UPDATE '.$type.' SET rate='.(int)$row['rate'].' WHERE id_post ='.(int)$id_post;
+			$query='UPDATE posts SET rate='.(int)$row['rate'].' WHERE id_post ='.(int)$id_post;
 			
 			if(!mysql_query($query) )
 			{

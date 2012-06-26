@@ -56,6 +56,10 @@
 	</div>
 	
 	<br><br>
+	<?php
+	
+	if(isset($_SESSION['pseudo'])){
+	?>
 	<div id="pardessus">
 	
 		<div id="menu">
@@ -82,6 +86,9 @@
 			</dl>
 		</div>
 	</div>
+	<?php
+	}
+	?>
 <br><br><br><br><br>
 	<?php
 		$query="SELECT pseudo, id_post, title, content, rate, post_date FROM posts INNER JOIN USERS ON posts.id_user = users.id_user WHERE type=2";

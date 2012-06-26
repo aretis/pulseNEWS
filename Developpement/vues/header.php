@@ -74,8 +74,8 @@
 						if( isset($_SESSION['pseudo'] ))
 						{
 							echo "Bonjour, ".$_SESSION['pseudo']." !  ";
-							echo "<a href='index.php?page=valid_user' style='color: white;'>modifier mon compte</a>&nbsp;&nbsp</a>";
-							echo "<a href='index.php?page=news&disconnect=1' style='color: white;'>(se déconnecter)&nbsp;&nbsp&nbsp;&nbsp</a>&nbsp;&nbsp;<br>";
+							echo "<a href='index.php?page=valid_user' style='color: #f5f5f5;'>modifier mon compte</a>&nbsp;&nbsp</a>";
+							echo "<a href='index.php?page=news&disconnect=1' style='color: #f5f5f5;'>(se déconnecter)&nbsp;&nbsp&nbsp;&nbsp</a>&nbsp;&nbsp;<br>";
 						}
 						else
 						{													
@@ -118,7 +118,7 @@
 							}
 							else
 							{
-								echo"<a href='index.php?page=connect' style='color: white;'>se connecter</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+								echo"<a href='index.php?page=connect'>se connecter</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							}
 						?>
 					</div>

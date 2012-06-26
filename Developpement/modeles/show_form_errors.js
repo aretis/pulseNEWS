@@ -1,6 +1,4 @@
-﻿/* Function which display errors of the form in JS
-	Salman ALAMDAR
-	19/04/12*/
+﻿
 
 <script type="text/javascript">
 <!--

@@ -1,5 +1,4 @@
-﻿
-html {
+﻿html {
   overflow-y:scroll;
 }
 body {
@@ -82,7 +81,7 @@ margin-top: 5px;
   border-bottom-right-radius:6px;
   border-top-left-radius:6px;
   border-top-right-radius:6px;
-  box-shadow:#003E40 2px 2px 2px;
+  box-shadow:#333333 2px 2px 2px;
   color: #333333;
   font-family: Arial;
   font-size: 16px;
@@ -93,7 +92,7 @@ margin-top: 5px;
 }
 .header_menu a:hover {
   border-top-color:#00AD23;
-  box-shadow:#003E40 3px 3px 10px;
+  box-shadow:##6099be 3px 3px 10px;
 }
 .header_menu a:active {
   background-color:#1A9DC5;
@@ -279,9 +278,27 @@ color: #333333;
    background: -moz-linear-gradient(top, #feeba1, #fd9613);
    background: -ms-linear-gradient(top, #feeba1, #fd9613);
    background: -o-linear-gradient(top, #feeba1, #fd9613);
+   
     color: #222222;
 }
-
+#start
+{
+	 background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
+   background: -webkit-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -moz-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -ms-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -o-linear-gradient(top, #f9f9f9, #e0e0e0);
+    border:1px solid #333333;
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  box-shadow:#777777 2px 2px 1px;
+  margin: auto;
+  width: 50%;
+  padding: 6px 5px;
+  font-family: Arial;
+}
 
 .rate_button {
   -webkit-box-shadow:#000000 0 1px 0;
@@ -1055,7 +1072,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   border-bottom-right-radius:6px;
 
   box-shadow:#000000 0 1px 0;
-  color: #333333;
+  color: white;
   font-family: Arial;
   font-weight: bold;
   font-size: 16px;
@@ -1064,6 +1081,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   height:30px;
   text-align:center;
   width:400px;
+  text-align:center;
 }
 #box p {
   background-image:url(img/warning.png);
@@ -1082,7 +1100,26 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   width:104%;
 }
 .cat_color {
-  color:red;
+  color:white;
   font-family:fantasy;
   font-size:18px;
+  text-align:center;
+}
+#comment_comment
+{
+	left:44%;
+  position:relative;
+  top:0%;
+  width:0px;
+}
+#input_comment
+{
+	left:35%;
+	position:relative;
+	top:0;
+	width:387;
+}
+#all_comment_comment{
+	position:relative;
+	left:30%;
 }
