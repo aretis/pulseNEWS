@@ -1123,3 +1123,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
 	position:relative;
 	left:30%;
 }
+#new_debate{
+	margin:auto;
+	width:455px;
+}
