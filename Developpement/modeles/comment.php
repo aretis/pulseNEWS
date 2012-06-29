@@ -59,26 +59,18 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		echo"<span style='font-size:10px;'>";
 		echo"<br>Le ";
 		echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-		
-		echo"<a id='comment_comment' href='index.php?page=";
-		if($_GET['page'] == "profile") echo "profile";
-		else if($_GET['page'] == "news") echo "news";
-		else if($_GET['page'] == "view_post") echo "view_post";
-		echo"&id_comment=".$data['id_comment']."&comment_to_comment=comment'>Répondre</a>";
-		
-		
+			
 		
 		echo"</div>";
 
 		
 		echo"<div id='wrapper'>
-		<div class='accordionButton2' style='text-align:center;'>afficher les commentaires...</div>
+		<div class='accordionButton2' style='text-align:center;'>Répondre...</div>
 		<div class='accordionContent2'>";
 		
 		
 		
-		/*if(isset($_GET['comment_to_comment']) && $data['id_comment'] == $_GET['id_comment']){*/
-		
+	
 			echo"<br><form action'index.php?page=";
 			if($_GET['page'] == "profile") echo "profile";
 			else if($_GET['page'] == "news") echo "news";
@@ -89,7 +81,7 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 			
 			<input style='display:none' type='submit'/>
 			</form><br>";
-		/*}*/
+		
   echo"</div></div>";
   
 
@@ -110,8 +102,7 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 					else echo"<a href='index.php?page=profile&delete_comment_of_comment=".$data2['id']."'>X</a>";
 				}
 			}
-			$request = "SELECT profile_picture FROM users WHERE pseudo = '".$data['pseudo']."'";
-
+			$request = "SELECT profile_picture FROM users WHERE pseudo = '".$data2['pseudo']."'";
 			$sucess = mysql_query ($request) or die (mysql_error());
 			$col = mysql_fetch_assoc($sucess);
 			if (empty($col['profile_picture']))
@@ -153,7 +144,7 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 	if(isset($_GET['pseudo'])) echo"<form action='index.php?page=profile&pseudo=".$_GET['pseudo']."' method='post'/>";
 	else echo"<form action='index.php?page=profile' method='post'/>";
 	echo"<br>";
-	echo"&nbsp;&nbsp;<input type='text' name='comment' placeholder='Commenter...' size='87%'>";
+	echo"&nbsp;&nbsp;<span style='font-size: 12px; font-weight: bold;' >Nouveau commentaire : </span><input type='text' name='comment' placeholder='Commenter...' size='87%'>";
 	echo"<input type='hidden' name='id_news' value='".$id."' />";
 	echo"<input style='display:none' type='submit' />";
 	echo'</form>';

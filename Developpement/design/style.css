@@ -1053,23 +1053,13 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
 
 
 .accordionbutton2 {
-background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
-   background: -webkit-linear-gradient(top, #f9f9f9, #e0e0e0);
-   background: -moz-linear-gradient(top, #f9f9f9, #e0e0e0);
-   background: -ms-linear-gradient(top, #f9f9f9, #e0e0e0);
-   background: -o-linear-gradient(top, #f9f9f9, #e0e0e0);
-  border:1px solid #003E40;
-  border-bottom-left-radius:3px;
-  border-bottom-right-radius:3px;
-  border-top-left-radius:3px;
-  border-top-right-radius:3px;
-  box-shadow:#000000 0 1px 0;
+text-align: right;
   color: #333333;
   cursor:pointer;
-  float:left;
-  font-size: 14px;
-  width:500px;
+
+  font-size: 12px;
   font-weight: bold;
+  
 }
 .accordionbutton2 :hover
 {
@@ -1078,8 +1068,8 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
 .accordioncontent2 {
   background-position:initial initial;
   background-repeat:initial initial;
-  float:left;
-  width: 600px;
+
+
     -webkit-box-shadow:#000000 0 1px 0;
     background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#d9d9d9));
    background: -webkit-linear-gradient(top, #f7f7f7, #d9d9d9);
