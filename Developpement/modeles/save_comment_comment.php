@@ -7,6 +7,7 @@
 	
 	function save_comment($id_post, $id_user, $id_parent, $content)
 	{
+		$type_notif='commenter2';
 		include('modeles/connect_db.php');
 		
 		mysql_query("SET NAMES 'utf8'");
@@ -28,7 +29,7 @@
 			
 			$id_pulseur = $resultats['id_user'];
 		}
-			$query='INSERT INTO notification VALUES ('.$dernier_id.','.$id_user.','.$id_post.','.$id_pulseur.',"0")';
+			$query='INSERT INTO notification VALUES ('.$dernier_id.','.$id_user.','.$id_post.','.$id_pulseur.',"0",'.$type_notif.')';
 			$sucess = mysql_query($query) or die(mysql_error());
 	}
 ?>

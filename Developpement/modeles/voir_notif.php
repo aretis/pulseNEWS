@@ -67,13 +67,14 @@
 
 <div id="page-wrap">
 ﻿<?php
+
 	if(isset($_GET['delete_notif'])) 
 	{
 		$requete="DELETE FROM notification WHERE id_comment = ".$_GET['delete_notif']."";
 		$sucess=mysql_query($requete) or die(mysql_error());
 		echo "la notification a bien été supprimée";
 	}
-	
+
 	$read_confirm='1';
 	include('/../modeles/call_db.php');
 	include('/../modeles/couperChaine.php');
@@ -88,7 +89,7 @@
 	$sucess= mysql_query($query) or die (mysql_error());
 	while($resultats=mysql_fetch_assoc($sucess))
 	{
-
+	
 
 		$requete=/*"SELECT * FROM notification N 
 						JOIN comments C ON N.id_comment = C.id_comment 
@@ -122,19 +123,27 @@
 		$sucess=mysql_query($requete) or die(mysql_error());
 		While($resultats=mysql_fetch_array($sucess))
 		{
-			
+		
 		?>	
 		
 			<section class="slide-up-boxes">
 		<?php
+		
 		if($resultats['read_confirm']==0)
 		{
+	
 		echo"<a style='background-color:#8bb8c6;' href='index.php?page=view_article&id_post=".$resultats['id_post']."&read_confirm=".$read_confirm."&id_comment=".$resultats['id_comment']."'>"; ?>
 				<h5>
 				<?php
 			
-				
+				if($resultats['type_de_notif']== 1)
+				{
 				echo "".$resultats['pseudo']." a commenté votre post!" ;
+				}
+				else
+				{
+				echo"".$resultats['pseudo']." a répondu a votre commentaire!";
+				}
 				echo"</h5>";?>
 			<div>	
 					<style class=\"userbox\" style=\" width: 10px; height: 10px;  z-index: 1; position:relative; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;">
@@ -176,9 +185,15 @@
 				echo"<a style='background-color:#d5e5ea;' href='index.php?page=view_article&id_post=".$resultats['id_post']."&read_confirm=".$read_confirm."&id_comment=".$resultats['id_comment']."'>"; ?>
 				<h5>
 				<?php
+				if($resultats['type_de_notif'] == 1)
+				{
+					echo "".$resultats['pseudo']." a commenté votre post!" ;
+				}
+				else
+				{
+					echo"".$resultats['pseudo']." a répondu a votre commentaire!";
+				}
 			
-				
-				echo "".$resultats['pseudo']." a commenté votre post!" ;
 				echo"</h5>";?>
 			<div>	
 					<style class=\"userbox\" style=\" width: 10px; height: 10px;  z-index: 1; position:relative; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;">
