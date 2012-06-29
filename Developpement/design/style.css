@@ -1135,15 +1135,6 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   box-shadow:#003E40 2px 2px 2px;
 }
 
-
-
-
-
-
-
-
-
-
 .over {
   background-color:#41BFE6;
 }
@@ -1209,13 +1200,10 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
 	position:relative;
 	left:30%;
 }
-<<<<<<< HEAD
 #new_debate{
 	margin:auto;
 	width:455px;
 }
-=======
-
 
 .comment_a_comment1 {
     width:250px;
@@ -1248,4 +1236,4 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   }
   #comment_a_comment:target + p {
     height:70px;
->>>>>>> ca0af6d2780d63ed5144c3c89696caed3a1557fe
+}
