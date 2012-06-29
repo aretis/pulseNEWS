@@ -59,16 +59,25 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		echo"<span style='font-size:10px;'>";
 		echo"<br>Le ";
 		echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+		
 		echo"<a id='comment_comment' href='index.php?page=";
 		if($_GET['page'] == "profile") echo "profile";
 		else if($_GET['page'] == "news") echo "news";
-		echo"&id_comment=".$data['id_comment']."&comment_to_comment=comment'>&laquo; Commenter &raquo;</a>";
+		else if($_GET['page'] == "view_post") echo "view_post";
+		echo"&id_comment=".$data['id_comment']."&comment_to_comment=comment'>Répondre</a>";
 		
 		
 		
 		echo"</div>";
 
-		if(isset($_GET['comment_to_comment']) && $data['id_comment'] == $_GET['id_comment']){
+		
+		echo"<div id='wrapper'>
+		<div class='accordionButton2' style='text-align:center;'>afficher les commentaires...</div>
+		<div class='accordionContent2'>";
+		
+		
+		
+		/*if(isset($_GET['comment_to_comment']) && $data['id_comment'] == $_GET['id_comment']){*/
 		
 			echo"<br><form action'index.php?page=";
 			if($_GET['page'] == "profile") echo "profile";
@@ -79,8 +88,11 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 			<input id='input_comment' type='text' name='comment_a_comment' placeholder='Commenter...'/>
 			
 			<input style='display:none' type='submit'/>
-			</form>";
-		}
+			</form><br>";
+		/*}*/
+  echo"</div></div>";
+  
+
 		
 		$request = "SELECT id, content, post_date, pseudo FROM comment_a_comment INNER JOIN USERS ON comment_a_comment.id_user = users.id_user WHERE id_post = ".$id." AND id_parent=".$data['id_comment'];
 		$resultat = call_db($request);
