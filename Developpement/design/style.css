@@ -261,7 +261,11 @@ color: #333333;
   vertical-align:top;
 }
 .pulse_button {
-
+	 background: -webkit-gradient(linear, left top, left bottom, from(#feeba1), to(#fd9613));
+   background: -webkit-linear-gradient(top, #feeba1, #fd9613);
+   background: -moz-linear-gradient(top, #feeba1, #fd9613);
+   background: -ms-linear-gradient(top, #feeba1, #fd9613);
+   background: -o-linear-gradient(top, #feeba1, #fd9613);
   color: #333333;
   font-family: Arial;
   font-weight: bold;
@@ -865,11 +869,13 @@ margin-top: -22px;
 .tabs li a {
   background-color:#EEEEEE;
   border:1px solid #CCCCCC;
-  color:black;
+  color: #333333;
   display:block;
   float:left;
   margin:0 0 0 -1px;
   padding:4px 8px;
+  font-weight: bold;
+ font-size: 14px;
 }
 .tabs li a.current {
   background-color:white;
@@ -894,6 +900,7 @@ margin-top: -22px;
   position:absolute;
   top:20px;
   width:658px;
+  font-size: 14px;
 }
 .current {
   z-index:100;
@@ -1052,12 +1059,91 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
 }
 
 
+.accordionbutton2 {
+text-align: right;
+  color: #333333;
+  cursor:pointer;
 
-.accordioncontent {
-  display: block;
-  float:left;
-  width:600px;
+  font-size: 12px;
+  font-weight: bold;
+  
 }
+.accordionbutton2 :hover
+{
+	color: #333333;
+}
+.accordioncontent2 {
+  background-position:initial initial;
+  background-repeat:initial initial;
+
+
+    -webkit-box-shadow:#000000 0 1px 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#d9d9d9));
+   background: -webkit-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -moz-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -ms-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -o-linear-gradient(top, #f7f7f7, #d9d9d9);
+ 
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  box-shadow:#003E40 2px 2px 2px;
+}
+
+
+
+.accordionbutton3 {
+background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
+   background: -webkit-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -moz-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -ms-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -o-linear-gradient(top, #f9f9f9, #e0e0e0);
+  border:1px solid #003E40;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:#000000 0 1px 0;
+  color: #333333;
+  cursor:pointer;
+
+  font-size: 14px;
+
+  font-weight: bold;
+}
+.accordionbutton3 :hover
+{
+	color: #333333;
+}
+.accordioncontent3 {
+  background-position:initial initial;
+  background-repeat:initial initial;
+
+
+    -webkit-box-shadow:#000000 0 1px 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#d9d9d9));
+   background: -webkit-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -moz-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -ms-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -o-linear-gradient(top, #f7f7f7, #d9d9d9);
+ 
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  box-shadow:#003E40 2px 2px 2px;
+}
+
+
+
+
+
+
+
+
+
+
 .over {
   background-color:#41BFE6;
 }
@@ -1072,7 +1158,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   border-bottom-right-radius:6px;
 
   box-shadow:#000000 0 1px 0;
-  color: white;
+  color: #333333;
   font-family: Arial;
   font-weight: bold;
   font-size: 16px;
@@ -1123,3 +1209,36 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
 	position:relative;
 	left:30%;
 }
+
+
+.comment_a_comment1 {
+    width:250px;
+    background:#fff;
+    border-radius:5px;
+    -webkit-box-shadow:0 1px 3px rgba(0,0,0,.3);
+    box-shadow:0 1px 3px rgba(0,0,0,.3);
+  }
+  .comment_a_comment1 p {
+    height:0;
+    padding:0 15px;
+    overflow:hidden;
+    -webkit-transition:height .4s ease-out, padding .4s ease-out;
+    -moz-transition:height .4s ease-out, padding .4s ease-out;
+    -o-transition:height .4s ease-out, padding .4s ease-out;
+    -ms-transition:height .4s ease-out, padding .4s ease-out;
+    transition:height .4s ease-out, padding .4s ease-out;
+  }
+
+
+  #comment_a_comment {
+    border-radius:2px 2px 0 0;
+  }
+
+
+
+  .comment_a_comment1 :target + p {
+    padding:10px 15px;
+    border-bottom:1px solid #ccc;
+  }
+  #comment_a_comment:target + p {
+    height:70px;

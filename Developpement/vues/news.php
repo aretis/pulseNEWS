@@ -137,8 +137,8 @@ function change3(num)
 
 <div id="wrapper">
 <div class='tri_news'>
-		<div class="accordionButton">Trier les informations</div>
-		<div class="accordionContent">
+		<div class="accordionButton3">Trier les informations</div>
+		<div class="accordionContent3">
 		<div class='tri'>
 	<div class='shorti'>Trier par : </div>
 	<form method='post' action='index.php?page=news'>
