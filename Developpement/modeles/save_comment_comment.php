@@ -7,7 +7,7 @@
 	
 	function save_comment($id_post, $id_user, $id_parent, $content)
 	{
-		$type_notif='commenter2';
+		$type_notif= 2;
 		include('modeles/connect_db.php');
 		
 		mysql_query("SET NAMES 'utf8'");

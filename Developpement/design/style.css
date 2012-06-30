@@ -983,7 +983,7 @@ margin-top: -22px;
   width:30%;
 }
 .search_pulseur {
-  background-color:#1F6E86;
+  background-image : -webkit-linear-gradient(top, #F9F9F9, #E0E0E0);
   border:1px solid #003E40;
   border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
@@ -1227,9 +1227,6 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   #comment_a_comment {
     border-radius:2px 2px 0 0;
   }
-
-
-
   .comment_a_comment1 :target + p {
     padding:10px 15px;
     border-bottom:1px solid #ccc;
