@@ -29,7 +29,7 @@
 			
 			$id_pulseur = $resultats['id_user'];
 		}
-			$query='INSERT INTO notification VALUES ('.$dernier_id.','.$id_user.','.$id_post.','.$id_pulseur.',"0",'.$type_de_notif.')';
+			$query='INSERT INTO notification VALUES ('.$dernier_id.','.$id_user.','.$id_post.','.$id_pulseur.',"0",'.$type_de_notif.', NOW())';
 			$sucess = mysql_query($query) or die(mysql_error());
 	}
 ?>
