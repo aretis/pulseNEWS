@@ -302,6 +302,8 @@ color: #333333;
   width: 570px;
   padding: 6px 5px;
   font-family: Arial;
+  top:163px;
+  position:relative;
 }
 
 .rate_button {

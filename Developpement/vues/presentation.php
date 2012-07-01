@@ -12,9 +12,9 @@
 		<div id="impress" class="impress-not-supported">
 			
 			<div id="intro" class="step" data-x="0" data-y="0">
-				<div id="text_pn">
 				
-					<h2>Presentation de pulseNEWS</h2>
+				
+					<h2>Presentation de pulseNEWS</h2><div id="text_pn">
 					<p>pulseNEWS est un réseau social basé sur l'information. <br>En plus de pouvoir créer votre propre blog personnalisable, <br>vous avez accès aux dernières actualités <br> en provenance de TOUS les journaux en ligne ! <br>Tous les membres peuvent débattre sur les articles tirés<br> de journaux ou rédigés par d'autres utilisateurs. <br>L'esprit pulseNEWS c'est VOUS !</p>
 				</div>
 				<!--<p>Réseau social basé sur l'information</br>Blog personnalisable </br>Accés aux dernières actualités de TOUS les journaux en ligne</br>Débat ouvert sur les articles tirés de journaux ou rédigé </br>L'esprit pulseNEWS c'est VOUS !</p>-->
