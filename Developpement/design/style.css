@@ -496,17 +496,8 @@ font-weight: bold;
   margin:auto;
   width:50%;
 }
-.title_create_article {
-  color:white;
-  font-size:26px;
-  vertical-align:top;
-}
-.title_create_article input[type="text"] {
-  background-color:#A5D85F;
-  border:0 none;
-  font-size:22px;
-  vertical-align:top;
-}
+
+
 .title_create_article input[type="text"]:focus {
   border-color:#093C75;
   box-shadow:#1A9DC5 0 0 3px;
@@ -564,7 +555,7 @@ select:active, select:focus {
 .news_link:active {
   border-top-color:#1B435E;
 }
-.depulse input[type="submit"], a.submit, .propulse input[type="submit"], a.submit, .debate input[type="submit"], a.submit, input[type="submit"] {
+.depulse input[type="submit"], a.submit, .propulse input[type="submit"], a.submit, .debate input[type="submit"], a.submit {
   -webkit-box-shadow:#000000 0 1px 0;
   background-color:#ABC8E2;
   border:1px solid #003E40;
@@ -581,6 +572,28 @@ select:active, select:focus {
   text-decoration:none;
   vertical-align:middle;
 }
+input[type="submit"]
+{
+	-webkit-box-shadow:#000000 0 1px 0;
+  border:1px solid #003E40;
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  box-shadow:#003E40 2px 2px 2px;
+  color:black;
+  cursor:pointer;
+  font-size:20px;
+  margin-left:60%;
+  padding:2px 0;
+  text-decoration:none;
+  vertical-align:middle;
+}
+input[type="submit"] :hover
+{
+	box-shadow:#0092bf 2px 2px 10px;
+}
+
 
 
 .depulse {
@@ -633,8 +646,8 @@ select:active, select:focus {
   width:835px;
 }
 .propulse_debate {
-  left:513px;
-  position:relative;
+
+ margin: right;
   top:-43px;
   width:100px;
   z-index:0;

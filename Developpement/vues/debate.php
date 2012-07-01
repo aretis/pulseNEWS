@@ -45,8 +45,8 @@
 <body>
 
 	<div class="presentation">
-		
-		Bienvenue sur la page débat du jour !<br><br>
+		<div class="block_title">débat du jour</div><hr>
+		Bienvenue sur le débat du jour !<br><br>
 		
 		Sur cette page c'est VOUS qui choisissez le thème du débat qui aura 
 		lieu chaque jour à partir de 20 h ! Pendant la journée vous 
@@ -60,16 +60,12 @@
 	
 	if(isset($_SESSION['pseudo'])){
 	?>
-	<div id="pardessus">
-	
-		<div id="menu">
+	<div id="wrapper" style='width: 768px'>
+
+		<div class="accordionButton3"><div class='lol'> Suggérer un thème ! </div></div>
+		<div class="accordionContent3">
 			
-			<dl><div class='lol'> Suggérer un thème ! </div>
-			<dt></dt>
-				<dd>
-					<ul>
 					
-					<br>
 					<form action="index.php?page=debate" method="POST" autocomplete="off">
 					
 						Nom du thème :<br>
@@ -80,16 +76,15 @@
 						<br><br>
 						<input style='margin-top: -50px;' name="suggest" type="submit" value="Suggérer !">
 					</form>
-					<ul> </ul>
-					</ul>
-				</dd>
-			</dl>
+					
+				
 		</div>
 	</div>
 	<?php
 	}
 	?>
-<br><br><br><br><br>
+<br>
+<table><tr><td style='width: 40%'></td><td>
 	<?php
 		$query="SELECT pseudo, id_post, title, content, rate, post_date FROM posts INNER JOIN USERS ON posts.id_user = users.id_user WHERE type=2";
 		
@@ -97,7 +92,7 @@
 		
 		while($data = mysql_fetch_array($result))
 		{
-			echo"<table cellpadding='0' cellspacing='0' class='post_debate' >";
+			echo"<table cellpadding='0' cellspacing='0' class='article' style='float: left; width: 500px;' >";
 			echo"<tr style='height: 32px;'>";
 			echo"<td rowspan='1'>";
 			echo"<div class='title_post'>";
@@ -125,12 +120,12 @@
 			echo $data['rate']."</div>";
 			echo"	</td>";
 			echo"</tr>";
-			echo"<tr style='background-color: #8FCAFF;'>";
+			echo"<tr>";
 			echo"	<td>";
 			echo"		<div class='description'>";
 			echo $data['content']; 
 			echo"		</div>";
-			echo"<span style='color:white'>&nbsp;&nbsp;Suggéré le ";
+			echo"<span class='info_post'>&nbsp;&nbsp;Suggéré le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par ".$data['pseudo'];
 			echo"	</span></td>";
@@ -149,6 +144,7 @@
 			echo"<br>";
 		}
 	?>
+	</td><td style='width: 100%'></td></tr></table>
 </body>
 
 </html>
