@@ -1,3 +1,5 @@
+
+<br><br>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -85,3 +87,4 @@
 	
 ?>
 </div>
+<br><br>
