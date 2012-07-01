@@ -1,3 +1,13 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 
 <div style='width: 60%; margin: auto;'>
 
@@ -62,5 +72,16 @@
 	$req = mysql_query($query);
 
 	include('modeles/show_posts.php');
+	
+	
+	$link = $_SERVER['SCRIPT_FILENAME'].$_SERVER['QUERY_STRING'];
+	
+	
+
+	
+	echo"<div class='fb'>Cet article vous a plu ?<br> <span style='font-size: 24px' >Partagez-le sur Facebook !</span><br><br>";
+	echo'<div class="fb-like" data-href="'.$link.'" data-send="false" data-layout="box_count" data-width="300" data-show-faces="true" data-action="recommend" data-font="arial"></div>';
+	echo"</div>";
+	
 ?>
 </div>
