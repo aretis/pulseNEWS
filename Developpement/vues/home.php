@@ -98,7 +98,7 @@
 		<div id="content">
 
 			
-			<div class='entrer'><a href='index.php?page=register'>Presentation</a></div><br><br><br><br>
+			<div class='entrer'><a href='index.php?page=presentation'>Presentation</a></div><br><br><br><br>
 <div class='entrer'><a href='index.php?page=news'>ENTRER</a></div>
        
 

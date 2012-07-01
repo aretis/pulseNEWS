@@ -6,19 +6,19 @@
 <div class='block_title'>inscription</div>
 <hr>
 
-<label for='name'>pseudo</label>
+<label for='name'>&nbsp;&nbsp;pseudo</label>
 <input id='pseudo' type='text' name='pseudo' onblur='verifPseudo(this)' VALUE ='<?php if(isset($_POST['pseudo'])) echo $_POST['pseudo']; ?>'>
-<br>
+<br><br>
 <?php $name = 'nom'; ?>
-<label for='name'>nom</label>
+<label for='name'>&nbsp;&nbsp;nom</label>
 <input id='surname' type='text' name='surname' onblur='verifName(this)' VALUE ='<?php if(isset($_POST['surname'])) echo $_POST['surname']; ?>'>
 
-<br>
+<br><br>
 <?php $name = 'prénom'; ?>
-<label for='name'>prénom</label>
+<label for='name'>&nbsp;&nbsp;prénom</label>
 <input id='firstname' type='text' name='firstname' onblur='verifName(this)' VALUE ='<?php if(isset($_POST['firstname'])) echo $_POST['firstname']; ?>'>
-<br>
-<label for='name'>région</label>
+<br><br>
+<label for='name'>&nbsp;&nbsp;région</label>
 <SELECT id='areaname' select='selected' name='areaname'>
 <?php
 
@@ -33,18 +33,18 @@ $result = call_db($query);
 	mysql_free_result($result);
 	mysql_close($link);?>
   </SELECT>
-<br><br>
-<label for='password'>mot de passe</label>
+<br><br><br>
+<label for='password'>&nbsp;&nbsp;mot de passe</label>
 <input id='password' type='password' name='password'/>
 
-<br>
-<label for='password'>confirmation</label>
+<br><br>
+<label for='password'>&nbsp;&nbsp;confirmation</label>
 <input id='confirmpassword' type='password' name='confirmpassword'/>
 
-<br>
-<label for='name'>adresse e-mail</label>
+<br><br>
+<label for='name'>&nbsp;&nbsp;adresse e-mail</label>
 <input id='mail' type='text' name='mail' onblur='verifMail(this)' size='30' VALUE ='<?php if(isset($_POST['mail'])) echo $_POST['mail']; ?>'/>
-<br>
+<br><br>
 <input type="submit" value=" s'inscrire ! "/>
 
 </form>
