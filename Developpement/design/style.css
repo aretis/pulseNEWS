@@ -1264,3 +1264,29 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   #comment_a_comment:target + p {
     height:70px;
 }
+
+.fb
+{
+	position: fixed;
+	right: 30px;
+	top: 150px;
+	-webkit-box-shadow:#000000 0 1px 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#d9d9d9));
+   background: -webkit-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -moz-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -ms-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -o-linear-gradient(top, #f7f7f7, #d9d9d9);
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+    border-top-left-radius:6px;
+  border-top-right-radius:6px;
+padding: 6px 5px;
+  box-shadow:#333333 2px 2px 2px;
+  color: #333333;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 16px;
+  width: 150px;
+
+	
+}

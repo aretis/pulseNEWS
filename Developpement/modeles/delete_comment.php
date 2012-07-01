@@ -13,5 +13,5 @@
 		return;
 	}
 	
-	echo"<div id='box'>Votre commentaire à bien été supprimé !</div>";
+	echo"<div id='box'>Votre commentaire a bien été supprimé !</div>";
 ?>

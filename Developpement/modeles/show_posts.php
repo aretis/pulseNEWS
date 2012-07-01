@@ -27,11 +27,11 @@
 				if($data['pseudo'] == $_SESSION['pseudo'])
 				{
 					echo"<div class='delete_post'>";
-					if(isset($_GET['pseudo'])) echo"<a style='color:red' href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;".$data['title'];
-					else echo"<a style='color:red' href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;".$data['title'];
+					if(isset($_GET['pseudo'])) echo"<a style='color:red' href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";
+					else echo"<a style='color:red' href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";
 					echo"</div>";
 				}
-				else echo"&nbsp;".$data['title'];
+				else echo"<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";
 			}
 			
 			echo"		</div>";
@@ -146,17 +146,17 @@
 					echo"<div class='delete_post'>";
 					if(isset($_GET['pseudo']))
 					{
-						echo"<a style='color:red' href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+						echo"<a style='color:red' href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";
 					}
 					else 
 					{
-						echo"<a style='color:red' href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
+						echo"<a style='color:red' href='index.php?page=profile&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";
 					}
 					echo"</div>";
 				}
 				else
 				{
-					echo"		&nbsp;".$data['title'];
+					echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";
 				}
 			}
 			else{
