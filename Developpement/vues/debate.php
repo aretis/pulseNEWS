@@ -32,7 +32,7 @@
 				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
 				return;
 			}
-			echo"Votre suggestion à bien été prise en compte !";
+			echo"<div id='box'>Votre suggestion à bien été prise en compte !</div>";
 		}
 	}
 ?>
@@ -84,7 +84,7 @@
 	}
 	?>
 <br>
-<table><tr><td style='width: 40%'></td><td>
+<table><tr><td style='width: 50%'></td><td>
 	<?php
 		$query="SELECT pseudo, id_post, title, content, rate, post_date FROM posts INNER JOIN USERS ON posts.id_user = users.id_user WHERE type=2";
 		
@@ -92,7 +92,7 @@
 		
 		while($data = mysql_fetch_array($result))
 		{
-			echo"<table cellpadding='0' cellspacing='0' class='article' style='float: left; width: 500px;' >";
+			echo"<table cellpadding='0' cellspacing='0' class='article' style=' width: 800px;' >";
 			echo"<tr style='height: 32px;'>";
 			echo"<td rowspan='1'>";
 			echo"<div class='title_post'>";
@@ -141,7 +141,7 @@
 			echo"</td>";
 			echo"</tr>";
 			echo"</table>";
-			echo"<br>";
+			echo"<br><br><br><br>";
 		}
 	?>
 	</td><td style='width: 100%'></td></tr></table>
