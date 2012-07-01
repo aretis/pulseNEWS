@@ -8,7 +8,13 @@
 	function save_comment($id_post, $id_user, $id_parent, $content)
 	{
 
+<<<<<<< HEAD
 		$type_notif='2';
+=======
+		
+
+		$type_notif= 2;
+>>>>>>> 88c6b8ccc17632932e3a657ac7aeab663aaa58da
 
 		include('modeles/connect_db.php');
 		

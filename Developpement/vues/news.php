@@ -135,6 +135,69 @@ function change3(num)
 ?>
 
 
+<table>
+<td style='vertical-align: top; width:20%'>
+<table cellpadding='0' cellspacing='0' class='rss_block'>
+
+<?php 
+if(isset($_POST['pulse']))
+{
+	if($news_exists == 1){
+		echo "<div id='box'> Vous avez déja pulsé cette news !</div>";}
+		
+	else if($news_exists == 0){
+		echo"<div id='box'>Votre news à bien été pulsée !</div>";}
+}?>
+
+			<tr>
+				<td>
+					<div class='block_title'>politique</div>
+				</td>
+			</tr>
+			<tr><td><hr></td></tr>
+			<tr>
+				<td>
+					<div class='block_content'>
+					<?php
+					$url= 'politique.xml';
+					$cat = 1;
+					
+					echo RSS_display($cat, $url, 3);		
+					?>
+					</div>
+				</td>
+			</tr>
+		
+		
+			<tr style='height: 25px;'>
+			</tr>
+			<tr>
+				<td>
+					<div class='block_title'>économie</div>
+				</td>
+			</tr>
+			<tr><td><hr></td></tr>
+			<tr>
+				<td>
+					<div class='block_content'>
+					<?php
+					$url= 'economie.xml';
+					$cat = 2;
+					
+					echo RSS_display($cat, $url, 3);		
+					?>
+					
+					</div>
+				</td>
+			</tr>
+			
+</table>
+
+</td>
+<td>
+
+
+
 <div id="wrapper">
 <div class='tri_news'>
 		<div class="accordionButton3">Trier les informations</div>
@@ -238,69 +301,14 @@ function change3(num)
 </div>
 <br>
 
-<table>
-<td style='vertical-align: top; width:20%'>
-<table cellpadding='0' cellspacing='0' class='rss_block'>
 
-<?php 
-if(isset($_POST['pulse']))
-{
-	if($news_exists == 1){
-		echo "<div id='box'> Vous avez déja pulsé cette news !</div>";}
-		
-	else if($news_exists == 0){
-		echo"<div id='box'>Votre news à bien été pulsée !</div>";}
-}?>
 
-			<tr>
-				<td>
-					<div class='block_title'>politique</div>
-				</td>
-			</tr>
-			<tr><td><hr></td></tr>
-			<tr>
-				<td>
-					<div class='block_content'>
-					<?php
-					$url= 'politique.xml';
-					$cat = 1;
-					
-					echo RSS_display($cat, $url, 3);		
-					?>
-					</div>
-				</td>
-			</tr>
-		
-		
-			<tr style='height: 25px;'>
-			</tr>
-			<tr>
-				<td>
-					<div class='block_title'>économie</div>
-				</td>
-			</tr>
-			<tr><td><hr></td></tr>
-			<tr>
-				<td>
-					<div class='block_content'>
-					<?php
-					$url= 'economie.xml';
-					$cat = 2;
-					
-					echo RSS_display($cat, $url, 3);		
-					?>
-					
-					</div>
-				</td>
-			</tr>
-			
-</table>
-
-</td>
-<td>
 <?php if((!isset($_POST['recherche'])) || (empty($_POST['recherche'])) || $nb_resultats == 0) {?>
 <div id='pardessus'>
 <?php
+
+
+
 
 	include('modeles/view_all_articles.php');
 	
