@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 //--------------------------------------------------------------
 //Christie Bunlon
 //11/04/2012
@@ -52,7 +52,7 @@ function check_register($pseudo, $password, $confirmpassword, $firstname, $surna
 		header('Location: index.php?page=validation');
 	}
 	
-	echo"<div id='box'>";
+	echo"<div id='box2'>";
 	
 	if($field_empty == 1)
 	{
@@ -60,11 +60,11 @@ function check_register($pseudo, $password, $confirmpassword, $firstname, $surna
 	}
 	if($pseudo_exists == 1)
 	{
-		echo'<br>Ce pseudo est déja existant ! Merci d\'en choisir un autre. <br>';
+		echo'<br>Ce pseudo est dÃ©ja existant ! Merci d\'en choisir un autre. <br>';
 	}
 	if($mail_exists == 1)
 	{
-		echo'<br>Cette adresse e-mail est déja existante !<br>';
+		echo'<br>Cette adresse e-mail est dÃ©ja existante !<br>';
 	}
 	if($password_not_same == 1)
 	{

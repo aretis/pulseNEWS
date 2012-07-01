@@ -59,14 +59,6 @@
 		<a id="arrowLeft" class="arrow">&lt;</a>
 		<a id="arrowRight" class="arrow">&gt;</a>
 
-		
-<script type='JavaScript'> 
-			$(function(){
-			setInterval(function(){
-			$("#arrowRight").click();
-			}, 500);
-			});
-		</script>
         <!-- JavaScript includes -->
 		<script src="js/jquery-1.7.1.min.js"></script>
 		<script src="js/impress.js"></script>
