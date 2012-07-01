@@ -175,10 +175,9 @@ body{
   font-size: 32px;
   padding:4px 8px;
   text-decoration:none;
-  vertical-align:middle;
+  vertical-align: top;
    font-family: Arial;
    font-weight: bold;
-   vertical-align: middle;
    box-shadow: 2px 2px 2px #003e40;
    }
 .entrer a:hover {
