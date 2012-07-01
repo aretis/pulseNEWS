@@ -25,7 +25,8 @@ else
 	{
 			include 'controleurs/news.php';
 	}
-
+	
+	if(isset($_GET['page']) && $_GET['page'] == 'presentation') $footer = 0;
 }
 if($footer == 0)
 {

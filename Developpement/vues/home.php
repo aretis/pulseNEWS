@@ -79,8 +79,9 @@
 
 						<h2>Rejoins-nous !</h2>
 
-						<div class='entrer'><a href='index.php?page=connect'>Connexion</a></div><br><br>
+						<br><br><div class='entrer'><a href='index.php?page=connect'>Connexion</a></div><br><br><br>
 						<div class='entrer'><a href='index.php?page=register'>Inscription</a></div>
+						
 
 					</div>
 
@@ -96,8 +97,9 @@
 
 		<div id="content">
 
-			<div class='entrer'><a href='index.php?page=news'>ENTRER</a></div>
-
+			
+			<div class='entrer'><a href='index.php?page=register'>Presentation</a></div><br><br><br><br>
+<div class='entrer'><a href='index.php?page=news'>ENTRER</a></div>
        
 
     	</div>

@@ -1,10 +1,8 @@
-﻿/* Function which display errors of the connexion form in JS
+﻿<script language="JavaScript" type="text/javascript"> 
+/* Function which display errors of the connexion form in JS
 		Salman ALAMDAR
 		19/04/12 
-	*/
-	
-<script language="JavaScript" type="text/javascript"> 
-	
+	*/	
 function verif_formulaire()
 {
 	if(field_empty == 1)

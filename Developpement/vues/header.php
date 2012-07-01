@@ -50,10 +50,13 @@
 	
 	<title>pulseNEWS, sponsored by your mind!</title>
 </head>
-<body>
-
-
 <?php
+	if($_GET['page'] == 'connect')echo"<body onload='verif_formulaire()'>";
+	
+	else echo"<body>";
+
+
+
 
 
 
