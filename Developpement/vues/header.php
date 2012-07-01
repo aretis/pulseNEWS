@@ -10,7 +10,9 @@
 	<script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
 	<script src='js/slotmachine.js'></script>
 	    <script src="js/organictabs.jquery.js"></script>
-		<script src="js/script.js" type="text/javascript"></script>
+		<script src="js/script.js" type="text/javascript"></script
+	
+		
 		<script type="text/javascript" src="js/jquery.bouncebox.1.0.js"></script>
 <script type="text/javascript" src="js/bounce_script.js"></script>
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
@@ -50,10 +52,13 @@
 	
 	<title>pulseNEWS, sponsored by your mind!</title>
 </head>
-<body>
-
-
 <?php
+	if($_GET['page'] == 'connect')echo"<body onload='verif_formulaire()'>";
+	
+	else echo"<body>";
+
+
+
 
 
 
