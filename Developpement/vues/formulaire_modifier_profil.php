@@ -1,11 +1,12 @@
-﻿<html>
-<body>
-<br>
-<br>
+﻿
 
 <link rel="stylesheet" href="design/register.css" />
 
-	<form action='index.php?page=modifier_compte' method='post' >
+	<form id='start' action='index.php?page=modifier_compte' method='post' >
+	<div class='block_title'>modifier mon compte</div>
+<hr>
+	
+	
 	 Nom de l'utilisateur<input type="text" name="nom"/><br/>
 	 Prénom<input type="text" name="prenom"/><br/>
 	 nouveau mot de passe<input type="text" name="newPassword"/><br/>
