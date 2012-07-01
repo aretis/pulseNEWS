@@ -25,7 +25,7 @@
 		}
 		else
 		{
-			echo "<div class=\"userbox\" style=\"width: 200px; height: 200px; position: relative; z-index: 1; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;\">\n";
+			echo "<div class=\"userbox\" style=\"width: 200px; height: 200px; position: relative; z-index: 1; display:inline-block;  \">\n";
 			if (empty($data['profile_picture']))
 			{
 				echo"<img src='design/img/exemple_profile.jpg' style=\"position: absolute; top: 0; width: 100%; height: 100%; z-index: 1;\" />";
@@ -48,5 +48,5 @@
 	
 	
 	echo"</section>";
-	if(mysql_num_rows($result) == 0) echo"<div id='no_result' >Désolé, il n'existe pas de pulseur \" ".$_POST['pulseur']." \" </div>";
+	if(mysql_num_rows($result) == 0) echo"<div id='box' >Désolé, il n'existe pas de pulseur \" ".$_POST['pulseur']." \" </div>";
 ?>

@@ -1,11 +1,13 @@
-﻿<link rel="stylesheet" href="design/form.css" />
+﻿
 <table class='create_article'>
 <form action='#' method='post' enctype="multipart/form-data">
-<tr class='title_create_article'><td>titre</td><td><input style='width: 500px;' type='text' name='title' value='<?php if (isset($article['title'])) echo $article['title']; ?>'/></td></tr>
-<tr><td class='title_create_article'>image</td><td><input type='file' name='fichier' size='10'/></td></tr>
-<tr><td class='title_create_article'>description</td><td><textarea style='width: 500px; height: 75px; font-family: Arial;' type='text' name='description'><?php if (isset($article['description'])) echo $article['description']; ?></textarea></td></tr>
-<tr><td class='title_create_article'>contenu</td><td><textarea style='width: 600px; height: 400px; font-family: Arial;' type='text' name='content'><?php if (isset($article['content'])) echo $article['content']; ?></textarea></td></tr>
-<tr><td class='title_create_article'>région</td><td><SELECT id='name' select='selected' name='area'>
+<tr><td></td><td class='block_title'>Rédiger un article</td></tr>
+<tr><td></td><td><hr></td></hr>
+<tr class='title_create_article'><td>Titre</td><td><input style='width: 500px;' type='text' name='title' value='<?php if (isset($article['title'])) echo $article['title']; ?>'/></td></tr>
+<tr><td class='title_create_article'>Image</td><td><input type='file' name='fichier' size='10'/></td></tr>
+<tr><td class='title_create_article'>Description</td><td><textarea style='width: 500px; height: 75px; font-family: Arial;' type='text' name='description'><?php if (isset($article['description'])) echo $article['description']; ?></textarea></td></tr>
+<tr><td class='title_create_article'>Contenu</td><td><textarea style='width: 600px; height: 250px; font-family: Arial;' type='text' name='content'><?php if (isset($article['content'])) echo $article['content']; ?></textarea></td></tr>
+<tr><td class='title_create_article'>Région</td><td><SELECT id='name' select='selected' name='area'>
 <?php
 
 $query = 'SELECT area_name FROM AREAS';
@@ -21,7 +23,7 @@ $result = call_db($query);
 	
 ?>
  </SELECT></td>
- <tr><td class='title_create_article'>catégorie</td>
+ <tr><td class='title_create_article'>Catégorie</td>
  <td><SELECT id='name' select='selected' name='cat'>
 <?php
 
@@ -49,6 +51,6 @@ $result = call_db($query);
 <?php
 	if( $field_errors == 1)
 	{
-		echo"<div class='create_article_errors'> Un ou plusieurs champs sont manquants! </div>";
+		echo"<div id='box'> Un ou plusieurs champs sont manquants! </div>";
 	}
 ?>
