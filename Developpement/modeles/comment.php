@@ -71,12 +71,7 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		
 		
 	
-			echo"<form action='index.php?page=".$_GET['page'];
-			if (isset($_GET['pseudo']))
-			{
-				echo"&pseudo=".$_GET['pseudo'];
-			}
-			echo "&id_post=".$_GET['id_post']."' method='post'/>";
+			echo"<form action='index.php?".$_SERVER['QUERY_STRING']."' method='post'/>";
 			echo"<input type='hidden' name='id_parent' value='".$data['id_comment']."'/>
 			<input type='hidden' name='id_news' value='".$id."' />
 			<input id='input_comment' type='text' name='comment_a_comment' placeholder='Commenter...'/>
@@ -143,12 +138,7 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 	}
 	
 	
-	echo"<form action='index.php?page=".$_GET['page'];
-	if (isset($_GET['pseudo']))
-	{
-		echo"&pseudo=".$_GET['pseudo'];
-	}
-	echo "&id_post=".$_GET['id_post']."' method='post'/>";
+	echo"<form action='index.php?".$_SERVER['QUERY_STRING']."' method='post'/>";
 	
 	echo"<br>";
 	echo"&nbsp;&nbsp;<input type='text' name='comment' placeholder='Nouveau commentaire...' size='87%'>";
