@@ -64,11 +64,23 @@
 			echo"<tr>";
 			
 			echo"	<td>";
-			if(isset($_SESSION['pseudo']) && isset($_GET['pseudo']))
+			if(isset($_SESSION['pseudo']))
 			{
 				echo"	<div class='depulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=profile?pseudo=".$_GET['pseudo']."&id_news=".$id."&DEpulse=DEpulse\" >
+				echo"<a href=\"index.php?page=".$_GET['page'];
+				if( isset($_GET['pseudo']))
+				{
+				
+					echo"&pseudo=".$_GET['pseudo'];
+				}
+				if( isset($_GET['id_post']))
+				{
+				
+					echo"&id_post=".$_GET['id_post'];
+				}
+				
+				echo"&id_news=".$id."&DEpulse=DEpulse\" >
 					<img id=\"myDiv\" src='design/img/down.png' 
 					onmouseover=\"this.src='design/img/down_plein.png';\" 
 					onmouseout=\"this.src='design/img/down.png';\"/>
@@ -76,7 +88,19 @@
 			
 				echo"	<div class='propulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=profile&pseudo=".$_GET['pseudo']."&id_news=".$id."&PROpulse=PROpulse\" >
+				echo"<a href=\"index.php?page=".$_GET['page'];
+				if( isset($_GET['pseudo']))
+				{
+				
+					echo"&pseudo=".$_GET['pseudo'];
+				}
+				if( isset($_GET['id_post']))
+				{
+				
+					echo"&id_post=".$_GET['id_post'];
+				}
+				
+				echo"&id_news=".$id."&PROpulse=PROpulse\" >
 					<img id=\"myDiv\" src='design/img/up.png' 
 					onmouseover=\"this.src='design/img/up_plein.png';\" 
 					onmouseout=\"this.src='design/img/up.png';\"/>
