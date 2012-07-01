@@ -1,5 +1,5 @@
-﻿﻿<?php
-
+﻿<?php
+	
 	/* Comments article
 		14/05/2012
 		Salman Alamdar
@@ -12,34 +12,9 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 	
 		<div id="wrapper">
 		<div class="accordionButton" style='text-align:center;'>afficher les commentaires...</div>
-		
+		<div class="accordionContent">
 		
 	<?php
-	while($data = mysql_fetch_array($result))
-	{
-		if (isset($_POST['id_commentaire']) && $_POST['id_commentaire'] == $id)
-		{
-		echo'<div class="accordionOuvert">';
-		include('/../modeles/accordeon_ouvert.php');
-		}
-		else if(isset($_POST['id_commentaire']) && $_POST['id_commentaire'] != $id)
-		{
-		echo'<div class=accordionContent>';
-		include('/../modeles/accordeon_fermer.php');
-		}
-		else{
-		echo'<div class=accordionContent>';
-		include('/../modeles/accordeon_fermer.php');
-		}
-
-	}	
-
-	?>
-	
-
-		</div>
-
-	</div><?php
 	while($data = mysql_fetch_array($result))
 	{
 		
@@ -178,7 +153,4 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		</div>
 
 	</div>
-	
-	
-	
 	

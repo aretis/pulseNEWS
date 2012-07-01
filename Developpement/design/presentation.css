@@ -280,11 +280,11 @@ section, footer{
   src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
 }
 #about_us{
-	left:142px;
-  position:relative;
-  text-align:center;
-  top:-211px;
-  width:494px;
+	left: 142px;
+    position: relative;
+    top: -126px;
+    text-align: center;
+    width: 494px;
 }
 #pulse_texte{
 	left: -23px;

@@ -17,7 +17,8 @@
 					<h2>Présentation de pulseNEWS</h2><div id="text_pn">
 					<p>pulseNEWS est un réseau social basé sur l'information. <br>En plus de pouvoir créer votre propre blog personnalisable, <br>vous avez accès aux dernières actualités <br> en provenance de TOUS les journaux en ligne ! <br>Tous les membres peuvent débattre sur les articles tirés<br> de journaux ou rédigés par d'autres utilisateurs. <br>L'esprit pulseNEWS c'est VOUS !</p>
 				</div>
-
+				<!--<p>Réseau social basé sur l'information</br>Blog personnalisable </br>Accés aux dernières actualités de TOUS les journaux en ligne</br>Débat ouvert sur les articles tirés de journaux ou rédigé </br>L'esprit pulseNEWS c'est VOUS !</p>-->
+		    
 		        <img src="design/img/pn.png" width="250" height="250" alt="Galaxy Nexus" />
 		    </div>
 		    
