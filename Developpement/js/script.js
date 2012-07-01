@@ -295,5 +295,5 @@ $(document).ready(function() {
 	CLOSES ALL S ON PAGE LOAD
 	********************************************************************************************************************/	
 	$('.accordionOuvertContent3').hide();
-
+	$('accordionOuvertButton3').hide();
 });
