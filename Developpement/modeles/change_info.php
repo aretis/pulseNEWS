@@ -21,7 +21,7 @@
 	}
 	if(isset($_POST['humeur'])) 
 	{
-		echo $_POST['humeur'];
+		
 		echo " Vos informations ont bien été modifiés !";
 		$query = 'UPDATE users SET humor = "'.$_POST['humeur'].'" WHERE id_user = '.$id_user;
 		if ( !mysql_query($query)) echo"La requete n'a pas aboutie";

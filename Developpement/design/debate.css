@@ -6,10 +6,15 @@
    border-radius: 6px;
    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
+  
+    box-shadow: 1px 1px 3px #111111;
    text-shadow: 2px 2px 5px black;
     border-radius: 5px 5px 5px 5px;
+<<<<<<< HEAD
+	 box-shadow: 1px 1px 3px #111111;
+=======
     box-shadow: 10px 10px 8px #1f6e86;
+>>>>>>> c99448ec2a02bcc444ffe220f1dda9ffbd1790fe
     color: white;
     font-family: "coolvetica_rg";
     font-size: 25px;
@@ -31,7 +36,7 @@ input[type="submit"] {
    text-shadow: 2px 2px 5px black;
     border: 0 none;
     border-radius: 5px 5px 5px 5px;
-    box-shadow: 3px 3px 2px #417324;
+   box-shadow: 1px 1px 3px #111111;
     color: #FFFFFF;
     cursor: pointer;
     font-family: 'coolvetica_rg';
@@ -60,7 +65,11 @@ dl {
    box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: 2px 2px 5px black;
     border-radius: 5px 5px 5px 5px;
+<<<<<<< HEAD
+    box-shadow: 1px 1px 3px #111111;
+=======
     box-shadow: 10px 10px 8px #1f6e86;
+>>>>>>> c99448ec2a02bcc444ffe220f1dda9ffbd1790fe
     color: white;
     display: inline-block;
     font-size: 30px;
@@ -83,7 +92,7 @@ dt {
    box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: 2px 2px 5px black;
     border-radius: 5px 5px 5px 5px;
-    box-shadow: 10px 10px 8px #417324;
+    box-shadow: 1px 1px 3px #111111;
     color: white;
     cursor: pointer;
     display: inline-block;

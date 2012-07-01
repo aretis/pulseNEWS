@@ -67,212 +67,166 @@
 
 <div id="page-wrap">
 ﻿<?php
+
 	if(isset($_GET['delete_notif'])) 
 	{
 		$requete="DELETE FROM notification WHERE id_comment = ".$_GET['delete_notif']."";
 		$sucess=mysql_query($requete) or die(mysql_error());
 		echo "la notification a bien été supprimée";
 	}
-	
+
 	$read_confirm='1';
 	include('/../modeles/call_db.php');
 	include('/../modeles/couperChaine.php');
 
-	$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']." AND  read_confirm='0'";
-	if(!mysql_query($query) )
-			{
-				echo "La requête n'a pas abouti<br />".htmlentities($query).'<br />'.mysql_error();
-				return;
-			}
-
-	$sucess= mysql_query($query) or die (mysql_error());
-	while($resultats=mysql_fetch_assoc($sucess))
-	{
-
-
-		$requete=/*"SELECT * FROM notification N 
-						JOIN comments C ON N.id_comment = C.id_comment 
-						JOIN users U ON C.id_user=U.id_user 
-						WHERE  N.id_user != ".$_SESSION['id_user']." 
-						AND  id_pulseur =".$_SESSION['id_user']." ";*/
-						
-						//"SELECT * FROM notification
-
-
-
-						"SELECT * FROM notification N 
-						JOIN comments C ON N.id_comment = C.id_comment 
-						JOIN users U ON C.id_user=U.id_user 
-						WHERE N.id_user!=".$_SESSION['id_user']." 
-						AND N.id_pulseur =".$_SESSION['id_user']." ORDER BY post_date DESC";
-						//OR  N.id_user=".$_SESSION['id_user']."";
-					
-
-						
-						/*AND WHERE N.id_post=(SELECT N.id_post FROM notification 
-						WHERE N.id_user=".$_SESSION['id_user'].")
-						ORDER BY post_date DESC ";*/
-						
-						//SELECT * FROM notification WHERE 
-						/*UNION ALL  (SELECT content FROM comments C 
-						JOIN notification N ON C.id_comment = N.id_comment
-						WHERE N.id_post=(SELECT N.id_post FROM notification 
-						WHERE N.id_user=".$_SESSION['id_user']."))
-						ORDER BY post_date DESC ";*/
-		$sucess=mysql_query($requete) or die(mysql_error());
-		While($resultats=mysql_fetch_array($sucess))
-		{
-			
-		?>	
-		
-			<section class="slide-up-boxes">
-		<?php
-		if($resultats['read_confirm']==0)
-		{
-		echo"<a style='background-color:#8bb8c6;' href='index.php?page=view_article&id_post=".$resultats['id_post']."&read_confirm=".$read_confirm."&id_comment=".$resultats['id_comment']."'>"; ?>
-				<h5>
-				<?php
-			
-				
-				echo "".$resultats['pseudo']." a commenté votre post!" ;
-				echo"</h5>";?>
-			<div>	
-					<style class=\"userbox\" style=\" width: 10px; height: 10px;  z-index: 1; position:relative; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;">
-			
-				<?php
-				if (empty($resultats['profile_picture']))
-				{
-					echo"<img src='design/img/exemple_profile.jpg'/> style=\"position: relative; top: 15px; width: 10px; height: 10px;height: 1%; z-index: 1;\" />";
-				}
-				else
-				{
-				
-					$image = imagecreatefromstring($resultats['profile_picture']);
-					ob_start();
-					imagejpeg($image, null, 80);
-					$img = ob_get_contents();
-					ob_end_clean();
-					echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
-		
-				}
-				
-					echo"<div class='user_link' style=\"position: right;widht:10px bottom: 5px; left: 5px; z-index: 2; border: none !important;\"/></style>";
-				
-				$chaine = $resultats['content'];
-				couperChaine($chaine,10);
-				$chaineNouvelle=couperChaine($chaine,10);
-				echo $chaineNouvelle;
-				?>
-		</div>
+	$request2 ="SELECT type_de_notif FROM notification";
 	
-			</a>
+	$data2 = mysql_query($request2);
+	
+	if($data2 === false)	
+	{
+		echo "La requête est incorrect<br />".htmlentities($request2).'<br />'.mysql_error();
+		return;
+	}
+
+	while($toto = mysql_fetch_array($data2))
+	{
+		if($toto['type_de_notif'] == 1)
+		{
+		
+			$requete = "SELECT * FROM notification N
+			NATURAL JOIN USERS
+			JOIN comments C ON C.id_comment = N.id_comment
+			WHERE N.id_user != ".$_SESSION['id_user']." 
+			AND N.id_pulseur =".$_SESSION['id_user']." AND type_de_notif = 1 ORDER BY N.date_notif DESC";
+		}
+		else
+		{
+			$requete = "SELECT * FROM notification N
+			NATURAL JOIN USERS
+			JOIN comment_a_comment CAC ON CAC.id_comment = N.id_comment
+			WHERE N.id_user != ".$_SESSION['id_user']." 
+			AND N.id_pulseur =".$_SESSION['id_user']." AND type_de_notif = 2 ORDER BY N.date_notif DESC";
+		}
+		
+	$data = mysql_query($requete);
+	
+	if($data === false)	
+	{
+		echo "La requête est incorrect<br />".htmlentities($requete).'<br />'.mysql_error();
+		return;
+	}
+
+			
+	$result = mysql_fetch_array($data);
+
+	/* ENLEVER DE COMMENTAIRE POUR DEBUGGER
+	if($result === false)
+	{	
+	die('En fait, la requête est vide, il ny a pas de resultat');
+	}*/
+
+		echo'<section class="slide-up-boxes">';
+
+
+		
+		if($result['read_confirm'] == 0)
+		{
+
+			echo"<a style='background-color:#8bb8c6;' href='index.php?page=view_article&id_post=".$result['id_post']."&read_confirm=".$read_confirm."&id_comment=".$result['id_comment']."'>"; ?>
+			<h5>
 			<?php
 		
-		
-			}		
+			if($result['type_de_notif']== 1)
+			{
+			echo "".$result['pseudo']." a commenté votre post!" ;
+			//echo '<style= background-position:right '.$result['
+			}
 			else
 			{
-				
-				echo"<a style='background-color:#d5e5ea;' href='index.php?page=view_article&id_post=".$resultats['id_post']."&read_confirm=".$read_confirm."&id_comment=".$resultats['id_comment']."'>"; ?>
-				<h5>
-				<?php
-			
-				
-				echo "".$resultats['pseudo']." a commenté votre post!" ;
-				echo"</h5>";?>
+			echo"".$result['pseudo']." a répondu a votre commentaire! ";
+			}
+			echo"</h5>";?>
 			<div>	
-					<style class=\"userbox\" style=\" width: 10px; height: 10px;  z-index: 1; position:relative; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;">
-			
-				<?php
-				if (empty($resultats['profile_picture']))
-				{
-					echo"<img src='design/img/exemple_profile.jpg'/> style=\"position: relative; top: 15px; width: 10px; height: 10px;height: 1%; z-index: 1;\" />";
-				}
-				else
-				{
-				
-					$image = imagecreatefromstring($resultats['profile_picture']);
-					ob_start();
-					imagejpeg($image, null, 80);
-					$img = ob_get_contents();
-					ob_end_clean();
-					echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
+				<style class=\"userbox\" style=\" width: 10px; height: 10px;  z-index: 1; position:relative; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;">
 		
-				}
-				
-					echo"<div class='user_link' style=\"position: right;widht:10px bottom: 5px; left: 5px; z-index: 2; border: none !important;\"/></style>";
-				
-				$chaine = $resultats['content'];
+			<?php
+			if (empty($result['profile_picture']))
+			{
+				echo"<img src='design/img/exemple_profile.jpg'/> style=\"position: relative; top: 15px; width: 10px; height: 10px;height: 1%; z-index: 1;\" />";
+			}
+			else
+			{
+			
+				$image = imagecreatefromstring($result['profile_picture']);
+				ob_start();
+				imagejpeg($image, null, 80);
+				$img = ob_get_contents();
+				ob_end_clean();
+				echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
+	
+			}
+			
+				echo"<div class='user_link' style=\"position: right;widht:10px bottom: 5px; left: 5px; z-index: 2; border: none !important;\"/></style>";
+			
+			$chaine = $result['content'];
+			couperChaine($chaine,10);
+			$chaineNouvelle=couperChaine($chaine,10);
+			echo $chaineNouvelle;
+			?>
+			</div>
+
+			</a>
+			<?php
+	
+	
+		}		
+		else
+		{
+			
+			echo"<a style='background-color:#d5e5ea;' href='index.php?page=view_article&id_post=".$result['id_post']."&read_confirm=".$read_confirm."&id_comment=".$result['id_comment']."'>"; ?>
+			<h5>
+			<?php
+			if($result['type_de_notif'] == 1)
+			{
+				echo "".$result['pseudo']." a commenté votre post!" ;
+			}
+			else
+			{
+				echo"".$result['pseudo']." a répondu a votre commentaire!";
+			}
+		
+			echo"</h5>";?>
+			<div>	
+				<style class=\"userbox\" style=\" width: 10px; height: 10px;  z-index: 1; position:relative; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;">
+		
+			<?php
+			if (empty($result['profile_picture']))
+			{
+				echo"<img src='design/img/exemple_profile.jpg'/> style=\"position: relative; top: 15px; width: 10px; height: 10px;height: 1%; z-index: 1;\" />";
+			}
+			else
+			{
+			
+				$image = imagecreatefromstring($result['profile_picture']);
+				ob_start();
+				imagejpeg($image, null, 80);
+				$img = ob_get_contents();
+				ob_end_clean();
+				echo '<img src="data:image/jpg;base64,' .  base64_encode($img)  . '" />';
+	
+			}
+			
+				echo"<div class='user_link' style=\"position: right;widht:10px bottom: 5px; left: 5px; z-index: 2; border: none !important;\"/></style>";
+			
+				$chaine = $result['content'];
 				couperChaine($chaine,10);
 				$chaineNouvelle=couperChaine($chaine,10);
 				echo $chaineNouvelle;
-				?>
-		</div>
-	
-			</a>
-			<?php
-			}
-
-			
-	/*		echo" <br> <br> 
-	
-	<table width = 60% class='post_news' cellspading='0' >
-	<tr style='height: 12px'width=60%>
-
-		</tr>
-		<tr style='background-color: #85c630;'>
-
-		<td>";
-			if ($resultats['read_confirm']==1)
-			{
-			echo"<div class='description'>";
-			}
-			else 
-			echo"<div class='description_notif'>";
-		echo  $resultats['pseudo'] . " &nbsp; a commenté votre post:</br>";
-		$chaine = $resultats['content'];
-		couperChaine($chaine,10);
-		$chaineNouvelle=couperChaine($chaine,10);
-		echo $chaineNouvelle;
-		echo"</div>
-		contenu
-
-		</td>
-		</div>
-		</td>
-			<td style='background-color: white;'>
-		<div class='date_notif'>
-		date
-		</div>
+				
+				echo'</div></a>';
 		
-		</td>
-		<td>
-		<a href='index.php?page=voir_notif&delete_notif=".$resultats['id_comment']."'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X</a>&nbsp;&nbsp;
-		</td>
-
-	</tr>
-	<tr>
-	<td>
-		<a href='index.php?page=view_article&id_post=".$resultats['id_post']."&read_confirm=".$read_confirm."&id_comment=".$resultats['id_comment']."'><div class='comment_button'>voir</div></a>
-		<div style='float: right; width: 5%px;'>&nbsp;</div>
-	</td>
-	</tr>
-	</table>
-	<br>"; 
-
-		}		
-		
-		
-		
-			/*echo"
-			<tr>
-			<td>
-			 ".$resultats['pseudo']." a commenter votre post ".$resultats['content']." 
-			 
-			</tr>
-			</td>";*/
 		}
-
 	}
 ?>
 
