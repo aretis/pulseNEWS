@@ -141,7 +141,7 @@ margin-top: 5px;
 }
 .rate {
 display: block;
-  color: #777777;
+  color:#FD9613;
   font-family: Arial;
   font-size: 16px;
   font-weight: bold;
@@ -150,7 +150,9 @@ display: block;
   vertical-align:top;
   width: 20px;
   text-align: right;
-  
+  position:relative;
+  top:32px;
+  left:91%;
   
   
 }
