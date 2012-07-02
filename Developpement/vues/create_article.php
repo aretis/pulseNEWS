@@ -53,4 +53,9 @@ $result = call_db($query);
 	{
 		echo"<div id='box'> Un ou plusieurs champs sont manquants! </div>";
 	}
+	else if(isset($erreur) && $erreur == 5) {
+		
+	echo"<div id='box'>Vous n'avez sélectionné aucune image</div>";
+	return;
+	}
 ?>
