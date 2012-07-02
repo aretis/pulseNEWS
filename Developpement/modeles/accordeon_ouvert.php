@@ -58,7 +58,7 @@
 			echo"<input type='hidden' name='id_parent' value='".$data['id_comment']."'/>
 			<input type='hidden' name='id_news' value='".$id."' />
 			<input type='hidden' name='id_commentaire' value='".$id."' />
-			<input id='input_comment' type='text' name='comment_a_comment' placeholder='Commenter...'/>
+			<input style='position:relative; left:10px;' id='input_comment' type='text' name='comment_a_comment' placeholder='Commenter...'/>
 			
 			<input style='display:none' type='submit'/>
 			</form><br>";

@@ -1087,10 +1087,10 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   cursor:pointer;
   font-size: 14px;
   font-weight: bold;
-  width: 608px;
+  width: 32%;
     margin: auto;
     position: absolute;
-    left: 302px;
+    left: 285px;
 	margin-top:-13px;
 }
 
@@ -1125,7 +1125,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   background-position:initial initial;
   background-repeat:initial initial;
   float:left;
-  width: 600px;
+  width: 60%;
     -webkit-box-shadow:#000000 0 1px 0;
     background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#d9d9d9));
    background: -webkit-linear-gradient(top, #f7f7f7, #d9d9d9);
@@ -1143,7 +1143,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   background-position:initial initial;
   background-repeat:initial initial;
   float:left;
-  width: 600px;
+  width: 60%;
     -webkit-box-shadow:#000000 0 1px 0;
     background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#d9d9d9));
    background: -webkit-linear-gradient(top, #f7f7f7, #d9d9d9);
@@ -1200,6 +1200,9 @@ text-align: right;
   border-top-left-radius:6px;
   border-top-right-radius:6px;
   box-shadow:#003E40 2px 2px 2px;
+  width:403px;
+  position:relative;
+  left:197px;
 }
 .accordionOuvertcontent2 {
   background-position:initial initial;
