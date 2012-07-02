@@ -1139,7 +1139,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   border-top-right-radius:6px;
   box-shadow:#003E40 2px 2px 2px;
 }
-.accordionOuvertcontent {
+.accordionouvert {
   background-position:initial initial;
   background-repeat:initial initial;
   float:left;
@@ -1157,7 +1157,6 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   border-top-right-radius:6px;
   box-shadow:#003E40 2px 2px 2px;
 }
-
 .accordionbutton2 {
 text-align: right;
   color: #333333;
