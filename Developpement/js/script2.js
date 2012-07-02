@@ -12,7 +12,7 @@ $(function(){
 		e.preventDefault();
 	});
 	
-	setInterval( $(function(){
-		imp.next();
-	}), 5000);
+
 });
+
+
