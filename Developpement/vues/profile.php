@@ -1,17 +1,15 @@
 ﻿
-
-
 <?php	
 
 // SYSTEME DE COMMENTAIRE ------- /////////////
 	if(isset($_GET['delete_comment'])) include('modeles/delete_comment.php');
-	
+
 	else if(isset($_GET['delete_comment_of_comment'])) include('modeles/delete_comment_of_comment.php');
-	
+
 	if(isset($_GET['delete_post'])) include('modeles/delete_post.php');
-	
+
 	include('modeles/pulse.php');
-	
+
 	if(isset($_POST['comment']))
 	{
 		include('modeles/save_comment.php');
@@ -22,16 +20,16 @@
 		include('modeles/save_comment_comment.php');
 		save_comment($_POST['id_news'], $_SESSION['id_user'], $_POST['id_parent'], $_POST['comment_a_comment']);
 	}
-	
-	
+
+
 	if(isset($_GET['PROpulse']))
 	{
-	
+
 		pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['PROpulse']);
 	}
 	else if(isset($_GET['DEpulse']))
 	{
-	
+
 		pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['DEpulse']);
 	}
 
@@ -58,7 +56,7 @@
 
 		$query = "SELECT * FROM users WHERE pseudo ='".$_GET['pseudo']."'";
 		$result = call_db($query);
-			
+
 		while($data = mysql_fetch_array($result))
 		{
 			$id_user = $data['id_user'];
@@ -77,14 +75,14 @@
 ?>
 <div class='profile_ban'>
 <?php
-				
+
 			$request = "SELECT cover_picture FROM users WHERE id_user = ".$id_user;
 
 			$sucess = mysql_query ($request) or die (mysql_error ());
 			$col = mysql_fetch_assoc($sucess);
 
-			
-			
+
+
 			if(empty($col['cover_picture']))
 			{
 				echo"<img src='design/img/ban_exemple.png'/>";
@@ -98,7 +96,7 @@
 				ob_end_clean();
 				echo '<img src="data:image/jpg;base64,' .  base64_encode($data)  . '" />';
 			}
-				
+
 				?>
 	<div class='humor'><?php if(isset($_GET['pseudo']))
 							{
@@ -168,7 +166,7 @@ if(!isset($_GET['pseudo']))
 				<td>
 				
 				<?php
-				
+
 			$request = "SELECT profile_picture FROM users WHERE id_user = ".$id_user;
 
 			$sucess = mysql_query ($request) or die (mysql_error());
@@ -186,111 +184,12 @@ if(!isset($_GET['pseudo']))
 				ob_end_clean();
 				echo '<img src="data:image/jpg;base64,' .  base64_encode($data)  . '" />';
 			}
-				
+
 				?>
 					
 				</td>
 			</tr>
 			<tr><td><br></td></tr>
-			
-			
-	</table>
-	
-</td>
-<td style='width: 70%;vertical-align: top;'>
-<?php
-	
-	if(isset($_GET['pseudo']))
-	{
-		$query = "SELECT id_user FROM users WHERE pseudo ='".$_GET['pseudo']."'";
-		
-		$result = call_db($query);
-			
-		$id = mysql_result($result,0);
-		$req = view_article_user($id);
-		
-		include('modeles/show_posts.php');
-
-	}
-	else
-	{
-		$req = view_article_user($_SESSION['id_user']);
-		include('modeles/show_posts.php');
-
-	}
-?>
-
-
-</td>
-
-<td style='vertical-align: top; '>
-
-<table cellpadding='0' cellspacing='0' class='mon_profil'>
-
-			<tr>
-				<td>
-					<div class='block_title'>mon profil</div>
-				</td>
-			</tr>
-			<tr><td><hr></td></hr>
-			<tr>
-				<td>
-				<div class='block_content'>
-					
-						
-					<strong>Pseudo: </strong>
-					<?php if(isset($_GET['pseudo']))
-							{
-								echo $_GET['pseudo'];
-							}
-							else
-							{
-								echo $pseudo;
-							}
-					?><br>
-					<strong>Nom: </strong>
-					<?php if(isset($_GET['pseudo']))
-							{
-								echo $visit_surname;
-							}
-							else
-							{
-								echo $surname;
-							}
-					?><br>
-					<strong>Prénom: </strong>
-					<?php if(isset($_GET['pseudo']))
-							{
-								echo $visit_firstname;
-							}
-							else
-							{
-								echo $firstname;
-							}
-					?><br>
-					<strong>Mail: </strong>
-					<?php if(isset($_GET['pseudo']))
-							{
-								echo $visit_mail;
-							}
-							else
-							{
-								echo $mail;
-							}
-					?><br>
-					<strong>Région: </strong>
-					<?php if(isset($_GET['pseudo']))
-							{
-								echo $visit_area_name;
-							}
-							else
-							{
-								echo $area_name;
-							}
-					?><br><br><br>
-					</div>
-				</td>
-			</tr>
 			<tr>
 			<td>
 			<div class='block_title'>à propos de moi</div>
@@ -314,9 +213,106 @@ if(!isset($_GET['pseudo']))
 				
 				</td>
 			</tr>
+			
+	</table>
+	
+</td>
+<td style='width: 80%;'>
+<?php
+
+	if(isset($_GET['pseudo']))
+	{
+		$query = "SELECT id_user FROM users WHERE pseudo ='".$_GET['pseudo']."'";
+
+		$result = call_db($query);
+
+		$id = mysql_result($result,0);
+		$req = view_article_user($id);
+
+		include('modeles/show_posts.php');
+
+	}
+	else
+	{
+		$req = view_article_user($_SESSION['id_user']);
+		include('modeles/show_posts.php');
+
+	}
+?>
+
+
+</td>
+
+<td style='vertical-align: top; '>
+
+<table cellpadding='0' cellspacing='0' class='rss_block'>
+
+			<tr>
+				<td>
+					<div class='block_title'>mon profil</div>
+				</td>
+			</tr>
+			<tr><td><hr></td></hr>
+			<tr>
+				<td>
+				<div class='block_content'>
+					
+						
+					<strong>Pseudo: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $_GET['pseudo'];
+							}
+							else
+							{
+								echo $pseudo;
+							}
+					?><br><br>
+					<strong>Nom: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_surname;
+							}
+							else
+							{
+								echo $surname;
+							}
+					?><br><br>
+					<strong>Prénom: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_firstname;
+							}
+							else
+							{
+								echo $firstname;
+							}
+					?><br><br>
+					<strong>Mail: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_mail;
+							}
+							else
+							{
+								echo $mail;
+							}
+					?><br><br>
+					<strong>Région: </strong>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_area_name;
+							}
+							else
+							{
+								echo $area_name;
+							}
+					?>
+					</div>
+				</td>
+			</tr>
 			<tr style='height: 100%'>
 			</tr>
 </table>
 </td>
 </table>
-

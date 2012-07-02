@@ -10,8 +10,8 @@
 		{
 			if($data['pseudo'] == $_SESSION['pseudo'])
 			{
-				if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment=".$data['id_comment']."'>X</a>";
-				else echo"<a href='index.php?page=profile&delete_comment=".$data['id_comment']."'>X</a>";
+				if(isset($_GET['pseudo'])) echo"<div id='delete_com'> <a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment=".$data['id_comment']."'>X</a></div>";
+				else echo"<div id='delete_com'> <a href='index.php?page=profile&delete_comment=".$data['id_comment']."'>X</a></div>";
 			}
 		}
 		$request = "SELECT profile_picture FROM users WHERE pseudo = '".$data['pseudo']."'";
@@ -79,8 +79,8 @@
 			{
 				if($data2['pseudo'] == $_SESSION['pseudo'])
 				{
-					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment_of_comment=".$data2['id_comment']."'>X</a>";
-					else echo"<a href='index.php?page=profile&delete_comment_of_comment=".$data2['id_comment']."'>X</a>";
+					if(isset($_GET['pseudo'])) echo"<div id='delete_com'><a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment_of_comment=".$data2['id_comment']."'>X</a></div>";
+					else echo"<div id='delete_com'><a href='index.php?page=profile&delete_comment_of_comment=".$data2['id_comment']."'>X</a></div>";
 				}
 			}
 			$request = "SELECT profile_picture FROM users WHERE pseudo = '".$data2['pseudo']."'";
