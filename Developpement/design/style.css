@@ -1240,9 +1240,8 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   box-shadow:#000000 0 1px 0;
   color: #333333;
   cursor:pointer;
-
+	
   font-size: 14px;
-
   font-weight: bold;
 }
 .accordionbutton3 :hover
@@ -1253,7 +1252,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   background-position:initial initial;
   background-repeat:initial initial;
 
-
+text-align:center;
     -webkit-box-shadow:#000000 0 1px 0;
     background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#d9d9d9));
    background: -webkit-linear-gradient(top, #f7f7f7, #d9d9d9);
@@ -1435,4 +1434,5 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   width:125%;
   height:257px;
  }
+
  
