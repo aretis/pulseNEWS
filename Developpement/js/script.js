@@ -209,13 +209,13 @@ $(document).ready(function() {
 $(document).ready(function() {
 	 
 	//ACCORDION BUTTON ACTION (ON CLICK DO THE FOLLOWING)
-	$('.accordionButtonOuvert2').click(function() {
+	$('.accordionOuvertButton2').click(function() {
 
 		//REMOVE THE ON CLASS FROM ALL BUTTONS
-		$('.accordionButtonOuvert2').removeClass('on');
+		$('.accordionOuvertButton2').removeClass('on');
 		  
 		//NO MATTER WHAT WE CLOSE ALL OPEN SLIDES
-	 	$('.accordionButtonContent2').slideUp('normal');
+	 	$('.accordionOuvertContent2').slideUp('normal');
    
 		//IF THE NEXT SLIDE WASN'T OPEN THEN OPEN IT
 		if($(this).next().is(':hidden') == true) {
@@ -233,7 +233,7 @@ $(document).ready(function() {
 	/*** REMOVE IF MOUSEOVER IS NOT REQUIRED ***/
 	
 	//ADDS THE .OVER CLASS FROM THE STYLESHEET ON MOUSEOVER 
-	$('.accordionButtonOuvert2').mouseover(function() {
+	$('.accordionOuvertButton2').mouseover(function() {
 		$(this).addClass('over');
 		
 	//ON MOUSEOUT REMOVE THE OVER CLASS
@@ -295,5 +295,5 @@ $(document).ready(function() {
 	CLOSES ALL S ON PAGE LOAD
 	********************************************************************************************************************/	
 	$('.accordionOuvertContent3').hide();
-	$('accordionOuvertButton3').hide();
+
 });
