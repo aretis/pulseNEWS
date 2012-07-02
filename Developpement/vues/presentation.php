@@ -50,7 +50,7 @@
 		    <div id="simplicity" class="step" data-x="1100" data-y="1200" data-scale="1.8" data-rotate="190">
 		        <div id="pulse_texte"><h2>"Pulser" ou rédiger !</h2>
 		        <p>Avec pulseNEWS, vous pouvez "pulser" une news, c'est à dire sélectionner une information afin de l’exposer au débat et à la réflexion, tant sur le 
-				fil d'actualités que sur votre profil. De plus pour les plus créatif d'entre vous, il est également possible d'écrire votre propre article, et de l'illutrer avec une image !</p></div>
+				fil d'actualités que sur votre profil. De plus pour les plus créatif d'entre vous, il est également possible d'écrire votre propre article, et de l'illustrer avec une image !</p></div>
 				
 		        <img src="design/img/pulse.png" width="250" height="300" alt="Galaxy Nexus" />
 		    </div>
@@ -63,7 +63,7 @@
 		    
 		    <div id="upload" class="step" data-x="-200" data-y="1500" data-rotate="180">
 		         <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le débat du jour</h2>
-		        <p>Vous avez toujours rêvé de pouvoir débattre sur un sujet qui vous plaît ? pulseNEWS est là pour ça ! Venez nous proposer un thème dans la page "débat du jour", ou votez pour l'un des thèmes suggérés par un pulseur. Le thème qui aura la meilleur note à 20h sera exposé au débat de 20h à 3h !</p>
+		        <p>Vous avez toujours rêvé de pouvoir débattre sur un sujet qui vous plaît ? pulseNEWS est là pour ça ! Venez nous proposer un thème dans la page "débat du jour", ou votez pour l'un des thèmes suggérés par un pulseur. Le thème qui aura la meilleure note à 20h sera exposé au débat de 20h à 3h !</p>
 		        <div id='debat_texte'><img src="design/img/voter.png" width="248" height="100" alt="Galaxy Nexus" /></div>
 		    </div>
 		    

@@ -687,8 +687,9 @@ input[type="submit"] :hover
 }
 .propulse_debate {
 
- margin: right;
+ text-align: right;
   top:-43px;
+  margin-left: 700px;
   width:100px;
   z-index:0;
 }
