@@ -192,29 +192,7 @@ if(!isset($_GET['pseudo']))
 				</td>
 			</tr>
 			<tr><td><br></td></tr>
-			<tr>
-			<td>
-			<div class='block_title'>à propos de moi</div>
-			</td>
-			</tr>
 			
-			<tr><td><hr></td></tr>
-			<tr>
-				<td>
-					<div class='block_content'>
-					<?php if(isset($_GET['pseudo']))
-							{
-								echo $visit_about;
-							}
-							else
-							{
-								echo $about;
-							}
-					?>			
-					</div>
-				
-				</td>
-			</tr>
 			
 	</table>
 	
@@ -247,7 +225,7 @@ if(!isset($_GET['pseudo']))
 
 <td style='vertical-align: top; '>
 
-<table cellpadding='0' cellspacing='0' class='rss_block'>
+<table cellpadding='0' cellspacing='0' class='mon_profil'>
 
 			<tr>
 				<td>
@@ -309,8 +287,31 @@ if(!isset($_GET['pseudo']))
 							{
 								echo $area_name;
 							}
-					?>
+					?><br><br><br>
 					</div>
+				</td>
+			</tr>
+			<tr>
+			<td>
+			<div class='block_title'>à propos de moi</div>
+			</td>
+			</tr>
+			
+			<tr><td><hr></td></tr>
+			<tr>
+				<td>
+					<div class='block_content'>
+					<?php if(isset($_GET['pseudo']))
+							{
+								echo $visit_about;
+							}
+							else
+							{
+								echo $about;
+							}
+					?>			
+					</div>
+				
 				</td>
 			</tr>
 			<tr style='height: 100%'>
