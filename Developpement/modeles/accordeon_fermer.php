@@ -1,4 +1,4 @@
-
+ï»¿
 
 	<?php
 	
@@ -43,14 +43,14 @@
 		
 		echo"<span style='font-size:10px;'>";
 		echo"<br>Le ";
-		echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+		echo date("d/m/Y Ã  H\hi", strtotime($data['post_date']));
 			
 		
 		echo"</div>";
 
 		
 		echo"<div id='wrapper'>
-		<div class='accordionButton2'>Répondre...</div>
+		<div class='accordionButton2'>RÃ©pondre...</div>
 		<div class='accordionContent2'>";
 		
 		
@@ -111,7 +111,7 @@
 			
 			echo"<span style='font-size:10px;'>";
 			echo"<br>&nbsp;&nbsp;Ecrit le ";
-			echo date("d/m/Y à H\hi", strtotime($data2['post_date']));
+			echo date("d/m/Y Ã  H\hi", strtotime($data2['post_date']));
 			echo"</div>";
 			echo"</span>";
 			echo"</div>";

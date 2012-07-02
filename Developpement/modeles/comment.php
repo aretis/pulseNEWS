@@ -34,20 +34,13 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		
 		if (isset($_POST['id_commentaire']) && $_POST['id_commentaire'] == $id)
 		{
-		echo'1';
-		
-		
 		include('/../modeles/accordeon_ouvert.php');
 		}
 		else if(isset($_POST['id_commentaire']) && $_POST['id_commentaire'] != $id)
 		{
-		echo'2';
-	
 		include('/../modeles/accordeon_fermer.php');
 		}
 		else{
-		echo'3';
-	
 		include('/../modeles/accordeon_fermer.php');
 		}
 
