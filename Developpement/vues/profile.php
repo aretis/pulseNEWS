@@ -107,7 +107,7 @@
 								echo $humor;
 							} ?></div>
 </div>
-<table style='margin: auto; text-align: center;' cellpadding='0' cellspacing='0'>
+<table style='margin: auto; text-align: center; vertical-align: top;' cellpadding='0' cellspacing='0'>
 <td>
 <?php 
 if(!isset($_GET['pseudo']))
@@ -217,7 +217,7 @@ if(!isset($_GET['pseudo']))
 	</table>
 	
 </td>
-<td style='width: 80%;'>
+<td style='width: 80%; vertical-align: top;margin-top: -300px;'>
 <?php
 
 	if(isset($_GET['pseudo']))
@@ -311,8 +311,8 @@ if(!isset($_GET['pseudo']))
 					</div>
 				</td>
 			</tr>
-			<tr style='height: 100%'>
-			</tr>
+			
+			
 </table>
 </td>
 </table>
