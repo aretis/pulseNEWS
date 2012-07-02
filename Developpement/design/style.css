@@ -309,6 +309,8 @@ color: #333333;
   width: 570px;
   padding: 6px 5px;
   font-family: Arial;
+  top:100px;
+  position:relative;
 }
 
 .rate_button {
@@ -1046,9 +1048,9 @@ margin-top: -22px;
   width:334px;
 }
 #search_button {
-  margin-left:227px;
-  margin-top:-41px;
-  width:0;
+  left:220px;
+  position:relative;
+  top:-33px;
 }
 
 #pardessus {
@@ -1202,7 +1204,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   left:658px;
   position:relative;
   text-align:center;
-  top:603px;
+  top:60px;
   width:585px;
   height:89px;
 }
