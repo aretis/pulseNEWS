@@ -96,7 +96,7 @@
 			echo $data['rate'];
 			echo "</div>";
 			
-			echo"<table cellpadding='0' cellspacing='0' class='article' style=' width: 800px;' >";
+			echo"<table cellpadding='0' cellspacing='0' class='article_debate'>";
 			echo"<tr style='height: 32px;'>";
 			echo"<td rowspan='1'>";
 			echo"<div class='title_post'>";

@@ -480,6 +480,21 @@ font-weight: bold;
   padding:6px 5px;
   border: 1px solid #333333;
 }
+.article_debate {
+  background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
+   background: -webkit-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -moz-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -ms-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -o-linear-gradient(top, #f9f9f9, #e0e0e0);
+     border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  box-shadow: 1px 1px 3px #111111;
+  margin:auto;
+  padding:6px 5px;
+  border: 1px solid #333333;
+}
 .article_content {
   padding:6px 5px;
   font-size:12px;
@@ -995,7 +1010,7 @@ margin-top: -22px;
   
 }
 #example-two ul li:last-child a {
-  border:none;
+ 
 }
 #example-two .nav {
   overflow:hidden;

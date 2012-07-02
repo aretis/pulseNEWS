@@ -48,7 +48,7 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 	echo"<form action='index.php?".$_SERVER['QUERY_STRING']."' method='post'/>";
 	
 	echo"<br>";
-	echo"&nbsp;&nbsp;<input type='text' name='comment' placeholder='Nouveau commentaire...' size='87%'>";
+	echo"&nbsp;&nbsp;<input type='text' style='width: 100%' name='comment' placeholder='Nouveau commentaire...' size='87%'>";
 	echo"<input type='hidden' name='id_news' value='".$id."' />";
 	echo"<input type='hidden' name='id_commentaire' value='".$id."' />";
 
