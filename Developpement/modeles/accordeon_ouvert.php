@@ -1,6 +1,5 @@
 <?php
-	while($data = mysql_fetch_array($result))
-	{
+	
 		
 		echo"<div class='comment_post'>";
 		
@@ -120,19 +119,9 @@
 		
 		echo"</span><hr>";
 
-	}
 	
 	
-	echo"<form action='index.php?".$_SERVER['QUERY_STRING']."' method='post'/>";
 	
-	echo"<br>";
-	echo"&nbsp;&nbsp;<input type='text' name='comment' placeholder='Nouveau commentaire...' size='87%'>";
-	echo"<input type='hidden' name='id_news' value='".$id."' />";
-	echo"<input type='hidden' name='id_commentaire' value='".$id."' />";
 
-	echo"<input style='display:none' type='submit' />";
-	echo'</form>';
-
-	
 
 	?>

@@ -321,6 +321,10 @@ if(isset($_POST['pulse']))
 	
 		if($data['type'] == 1)
 		{
+			echo"<div class='rate'>";
+			if($data['rate'] > 0) echo"+";
+			echo $data['rate'];
+			echo "</div>";
 	
 			echo"		<table cellpadding='0' cellspacing='0' class='post_news' >";
 			echo"		<tr style='height: 32px;'>";
@@ -345,12 +349,8 @@ if(isset($_POST['pulse']))
 			{
 				echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";
 			}
-			echo"</div>";
-			echo"		</td><td>	<div class='rate'>";
-			if($data['rate'] > 0) echo"+";
-			echo $data['rate'];
-			echo "</div></td></tr>";
-			echo"	<tr><td>";
+			echo"</div></td>";
+			echo"	</tr><tr><td>";
 			
 			echo"		<div class='description_news'>";
 			echo"<a href=\"".$data['description']."\" >
@@ -405,6 +405,12 @@ if(isset($_POST['pulse']))
 		}		
 		else if($data['type'] == 0)
 		{
+		
+			echo"<div class='rate'>";
+			if($data['rate'] > 0) echo"+";
+			echo $data['rate'];
+			echo "</div>";
+			
 			echo"<table cellpadding='0' cellspacing='0' class='post_news' >";
 			echo"<tr style='height: 32px;'>";
 				echo"<td rowspan='1'>";
@@ -427,12 +433,6 @@ if(isset($_POST['pulse']))
 			else{
 			echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";}
 			echo"	</div>";
-			echo"	</td>";
-
-			echo"	<td>";
-			echo"		<div class='rate'>";
-			if($data['rate'] > 0) echo"+";
-			echo $data['rate']."</div>";
 			echo"	</td>";
 			echo"</tr>";
 			echo"<tr>";

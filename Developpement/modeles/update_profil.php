@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 $prenom=$_SESSION['pseudo'];
 include('modeles/connect_db.php');
 if ( isset($_POST['prenom']) || isset($_POST['nom']) || isset($_POST['surnom']) || isset($_POST['newPassword']) || isset($_POST['confirmPassword']) || isset($_POST['email']) || isset($_POST['region']))
@@ -22,28 +22,30 @@ if ( isset($_POST['prenom']) || isset($_POST['nom']) || isset($_POST['surnom']) 
 				$resultat = mysql_query ($request) or die (mysql_error ());
 			}
 		
-			
-		
+			$lol = 0;
 			if ((!empty($_POST['newPassword'] )) && (!empty($_POST['confirmPassword'])))
 			{
-					if($_POST['newPassword'] == $_POST['confirmPassword'])
-					{
-						$nouveau_password=$_POST['newPassword'];
-						$request = "UPDATE users SET password = '".$nouveau_password."' WHERE  id_user=".$data['id_user']."";
-						$resultat = mysql_query ($request) or die (mysql_error ());
-					}
-					else
-					{
-						echo"les champs de confirmation de nouveaux mot de passe ne correspondent pas!";
-					}
+				if($_POST['newPassword'] == $_POST['confirmPassword'])
+				{
+					$nouveau_password=$_POST['newPassword'];
+					$request = "UPDATE users SET password = '".$nouveau_password."' WHERE  id_user=".$data['id_user']."";
+					$resultat = mysql_query ($request) or die (mysql_error ());
+				}
+				else
+				{
+					echo"<div id='box'>Les champs mot de passe ne correspondent pas!</div>";
+					$lol = 1;
+				}
+			}
+			else if(empty($_POST['newPassword']) && empty($_POST['confirmPassword']))
+			{
 				
 			}
-			else 
+			else
 			{
-				echo'un ou plusieurs des champs de validation de mot de passe sont vide!';
+				echo'<div id=\'box\'>Veuillez remplir les deux champs de mot de passe</div>';
 			}
-
-		
+			
 			if ( !empty($_POST['email']) )
 			{
 				$nouveau_email=$_POST['email'];
@@ -68,8 +70,7 @@ if ( isset($_POST['prenom']) || isset($_POST['nom']) || isset($_POST['surnom']) 
 				session_destroy();
 			}
 			
-			header('location:index.php?page=news');
-			echo' Votre compte à bien était modifié!';
+			if($lol == 0) echo'<div id="box">Votre compte Ã  bien Ã©tait modifiÃ©!</div>';
 	}
 }
 ?>

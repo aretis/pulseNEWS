@@ -145,7 +145,7 @@ margin-top: 5px;
 }
 .rate {
 display: block;
-  color: #777777;
+  color:#FD9613;
   font-family: Arial;
   font-size: 16px;
   font-weight: bold;
@@ -154,7 +154,9 @@ display: block;
   vertical-align:top;
   width: 20px;
   text-align: right;
-  
+  position:relative;
+  top:32px;
+  left:91%;
   
   
 }
@@ -1088,7 +1090,31 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   width:500px;
   font-weight: bold;
 }
+
+.accordionOuvertbutton {
+background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
+   background: -webkit-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -moz-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -ms-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -o-linear-gradient(top, #f9f9f9, #e0e0e0);
+  border:1px solid #003E40;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:#000000 0 1px 0;
+  color: #333333;
+  cursor:pointer;
+  float:left;
+  font-size: 14px;
+  width:500px;
+  font-weight: bold;
+}
 .accordionbutton :hover
+{
+	color: #333333;
+}
+.accordionOuvertbutton :hover
 {
 	color: #333333;
 }
@@ -1110,9 +1136,35 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   border-top-right-radius:6px;
   box-shadow:#003E40 2px 2px 2px;
 }
-
+.accordionOuvertcontent {
+  background-position:initial initial;
+  background-repeat:initial initial;
+  float:left;
+  width: 600px;
+    -webkit-box-shadow:#000000 0 1px 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#d9d9d9));
+   background: -webkit-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -moz-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -ms-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -o-linear-gradient(top, #f7f7f7, #d9d9d9);
+ 
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  box-shadow:#003E40 2px 2px 2px;
+}
 
 .accordionbutton2 {
+text-align: right;
+  color: #333333;
+  cursor:pointer;
+
+  font-size: 12px;
+  font-weight: bold;
+  
+}
+.accordionOuvertbutton2 {
 text-align: right;
   color: #333333;
   cursor:pointer;
@@ -1125,7 +1177,29 @@ text-align: right;
 {
 	color: #333333;
 }
+.accordionOuvertbutton2 :hover
+{
+	color: #333333;
+}
 .accordioncontent2 {
+  background-position:initial initial;
+  background-repeat:initial initial;
+
+
+    -webkit-box-shadow:#000000 0 1px 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#d9d9d9));
+   background: -webkit-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -moz-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -ms-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -o-linear-gradient(top, #f7f7f7, #d9d9d9);
+ 
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  box-shadow:#003E40 2px 2px 2px;
+}
+.accordionOuvertcontent2 {
   background-position:initial initial;
   background-repeat:initial initial;
 
@@ -1331,3 +1405,21 @@ padding: 6px 5px;
 
 	
 }
+.mon_profil{
+background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
+   background: -webkit-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -moz-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -ms-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -o-linear-gradient(top, #f9f9f9, #e0e0e0);
+     border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  box-shadow: 1px 1px 3px #111111;
+  float:right;
+  margin:auto;
+  padding:6px 5px;
+  vertical-align:top;
+  width:125%;
+  height:257px;
+ }

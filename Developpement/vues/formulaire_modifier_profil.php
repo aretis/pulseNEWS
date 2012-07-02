@@ -9,8 +9,8 @@
 	
 	 <label for='name'>Nom de l'utilisateur</label><input type="text" name="nom"/><br/>
 	 <label for='name'>Prénom</label><input type="text" name="prenom"/><br/>
-	 <label for='name'>Nouveau mot de passe</label><input type="text" name="newPassword"/><br/>
-	 <label for='name'>Confirmation</label><input type="text" name="confirmPassword"/><br/>
+	 <label for='name'>Nouveau mot de passe</label><input type="password" name="newPassword"/><br/>
+	 <label for='name'>Confirmation</label><input type="password" name="confirmPassword"/><br/>
 	<label for='name'> E-mail</label><input type="text" name="email"/><br/>
 	<label for='name'> Modifier votre ville ?</label><input type="checkbox" name="modif_ville[]" value="valid"/ ><br><br>
 	<label for='name'> Ma région</label><SELECT name="region">
