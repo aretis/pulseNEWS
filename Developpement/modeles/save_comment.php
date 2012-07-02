@@ -21,7 +21,7 @@
 			return;
 		}
 		$dernier_id =  mysql_insert_id();
-	
+		
 		$requete = 'SELECT id_user FROM posts WHERE id_post = '.$id_post.'';
 		$sucess = mysql_query($requete) or die(mysql_error());
 		while ( $resultats= mysql_fetch_assoc($sucess))
@@ -29,7 +29,10 @@
 			
 			$id_pulseur = $resultats['id_user'];
 		}
+		if ($id_user!=$id_pulseur)
+		{
 			$query='INSERT INTO notification VALUES ('.$dernier_id.','.$id_user.','.$id_post.','.$id_pulseur.',"0",'.$type_de_notif.', NOW())';
 			$sucess = mysql_query($query) or die(mysql_error());
-	}
+		}
+		}
 ?>

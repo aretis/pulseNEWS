@@ -1,5 +1,7 @@
 <?php
-	
+	while($data = mysql_fetch_array($result))
+	{
+		
 		echo"<div class='comment_post'>";
 		
 
@@ -47,17 +49,17 @@
 
 		
 		echo"<div id='wrapper'>
-		<div class='accordionOuvertButton2'>Répondre...</div>
-		<div class='accordionOuvertContent2'>";
+	<div class='accordionButton2'>Répondre...</div>
+		<div class='accordionContent2'>";
 		
 		
 		
 	
-			echo"<br><form action='index.php?page=".$_GET['page']."' method='POST'>
-			<input type='hidden' name='id_parent' value='".$data['id_comment']."'/>
+			echo"<form action='index.php?".$_SERVER['QUERY_STRING']."' method='post'/>";
+			echo"<input type='hidden' name='id_parent' value='".$data['id_comment']."'/>
 			<input type='hidden' name='id_news' value='".$id."' />
-			<input type='hidden' name='id_commentaire' value='".$id."'/>
-			<input id='input_comment' type='text' name='comment_a_comment.'' placeholder='Commenter...'/>
+			<input type='hidden' name='id_commentaire' value='".$id."' />
+			<input id='input_comment' type='text' name='comment_a_comment' placeholder='Commenter...'/>
 			
 			<input style='display:none' type='submit'/>
 			</form><br>";
@@ -118,11 +120,11 @@
 		
 		echo"</span><hr>";
 
+	}
 	
 	
+	echo"<form action='index.php?".$_SERVER['QUERY_STRING']."' method='post'/>";
 	
-	if(isset($_GET['pseudo'])) echo"<form action='index.php?page=".$_GET['page']."&pseudo=".$_GET['pseudo']."' method='post'/>";
-	else echo"<form action='index.php?page=profile' method='post'/>";
 	echo"<br>";
 	echo"&nbsp;&nbsp;<input type='text' name='comment' placeholder='Nouveau commentaire...' size='87%'>";
 	echo"<input type='hidden' name='id_news' value='".$id."' />";
@@ -130,5 +132,7 @@
 
 	echo"<input style='display:none' type='submit' />";
 	echo'</form>';
+
+	
 
 	?>
