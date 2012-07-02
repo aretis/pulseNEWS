@@ -135,8 +135,8 @@
 	echo"<input style='display:none' type='submit' />";
 	echo'</form>';
 
-	
+		echo"</div>";
 
-	
+	echo"</div>";
 	?>
 	
