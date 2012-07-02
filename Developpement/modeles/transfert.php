@@ -11,7 +11,7 @@ function transfert ($id_post)
 	$sucess = is_uploaded_file ($_FILES['fichier']['tmp_name']);
 	if ( !$sucess )
 	{
-		die ("Problème de transfert");
+		echo"<div id='box'>Vous n'avez sélectionné aucune image</div>";
 		return false;
 	}
 	else
@@ -39,7 +39,9 @@ function transfert ($id_post)
 
 	
 	$sucess = mysql_query ($request) or die (mysql_error ());
+	echo"<div id='box'>Votre image a bien été ajoutée !</div>";
 	return;
+	
 	
 	}	
 }

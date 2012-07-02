@@ -38,7 +38,7 @@ if( isset($_POST['upload']) )
         exit("Impossible de copier le fichier dans $content_dir");
     }
 
-    echo "Le fichier a bien été uploadé";
+    echo "<div id='box'>Le fichier a bien été uploadé</div>";
 	
 	
 	
