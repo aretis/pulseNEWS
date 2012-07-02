@@ -191,6 +191,29 @@ if(isset($_POST['pulse']))
 				</td>
 			</tr>
 			
+			<tr style='height: 25px;'>
+			</tr>
+	
+			<tr>
+				<td>
+					<div class='block_title'>people</div>
+				</td>
+			</tr>
+			<tr><td><hr></td></tr>
+			<tr>
+				<td>
+					<div class='block_content'>	
+					
+					<?php
+					$url= 'people.xml';
+					$cat = 8;
+					
+					echo RSS_display($cat, $url, 3);		
+					?>					
+					</div>
+				</td>
+			</tr>
+			
 </table>
 
 </td>
@@ -535,7 +558,31 @@ if(isset($_POST['pulse']))
 					</div>
 				</td>
 			</tr>
+			<tr style='height: 25px;'>
+			</tr>
+	
+			<tr>
+				<td>
+					<div class='block_title'>insolite</div>
+				</td>
+			</tr>
+			<tr><td><hr></td></tr>
+			<tr>
+				<td>
+					<div class='block_content'>	
+					
+					<?php
+					$url= 'insolite.xml';
+					$cat = 7;
+					
+					echo RSS_display($cat, $url, 3);		
+					?>					
+					</div>
+				</td>
+			</tr>
 	
 </table>
+
+
 </td>
 </table>
