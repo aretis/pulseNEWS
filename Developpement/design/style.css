@@ -1202,9 +1202,8 @@ text-align: right;
   border-top-left-radius:6px;
   border-top-right-radius:6px;
   box-shadow:#003E40 2px 2px 2px;
-  width:403px;
   position:relative;
-  left:197px;
+  left:0px;
 }
 .accordionOuvertcontent2 {
   background-position:initial initial;
