@@ -1262,7 +1262,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   box-shadow:#000000 0 1px 0;
   color: #333333;
   cursor:pointer;
-	
+text-align:center;
   font-size: 14px;
   font-weight: bold;
 }

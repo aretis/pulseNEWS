@@ -385,6 +385,7 @@ if(isset($_POST['pulse']))
 			echo"<span>&nbsp;&nbsp;Pulsé le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a style='color: black;' href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>! </div>";
+			//include('modeles/comment.php');
 			echo"	</span></td>";
 			echo"<form action='index.php?page=profile' method='post'/>";
 			echo'</form>';
@@ -446,7 +447,7 @@ if(isset($_POST['pulse']))
 					if(isset($_GET['pseudo'])) echo"<a style='color:red' href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;".$data['title'];
 					else echo"<a style='color:red' href='index.php?page=news&delete_post=".$data['id_post']."'>X</a>&nbsp;&nbsp;";
 					echo"<a href='index.php?page=view_article&id_post=".$data['id_post']."'>".$data['title']."</a>";
-					echo"</div>";
+					echo"</div><br>";
 				}
 				else
 				{
@@ -460,12 +461,13 @@ if(isset($_POST['pulse']))
 			echo"</tr>";
 			echo"<tr>";
 			echo"	<td>";
-			echo"		<div class='description'>";
+			echo"		<br><div class='description'>";
 			echo $data['description']; 
 			echo"		</div>";
-			echo"<span class='info_post'>&nbsp;&nbsp;Ecrit le ";
+			echo"<span class='info_post'>&nbsp;&nbsp;<br>Ecrit le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
 			echo"&nbsp;par <a style='color: black;' href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!";
+			//include('modeles/comment.php');
 			echo"	</span></td>";
 			echo"	</td>";
 			echo"</tr>";
