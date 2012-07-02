@@ -14,33 +14,38 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		if(isset($_POST['id_commentaire']) && $_POST['id_commentaire'] != $id)
 		{
 			
-		echo'<div class="accordionButton" style="text-align:center;">afficher les commentaires...</div>';
+			echo'<div class="accordionButton" style="text-align:center;">afficher les commentaires...</div>';
 		}
 		if(!isset($_POST['id_commentaire']) )
 		{	
-		echo'<div class="accordionButton" style="text-align:center;">afficher les commentaires...</div>';
-	}
+		
+			echo'<div class="accordionButton" style="text-align:center;">afficher les commentaires...</div>';
+		}
+	
 	while($data = mysql_fetch_array($result))
 	{ 
+		
 		if (isset($_POST['id_commentaire']) && $_POST['id_commentaire'] == $id)
 		{
+		echo'1';
 		echo'<div class="accordionOuvert">';
 		
 		include('/../modeles/accordeon_ouvert.php');
 		}
 		else if(isset($_POST['id_commentaire']) && $_POST['id_commentaire'] != $id)
 		{
-		
+		echo'2';
 		echo'<div class=accordionContent>';
 		include('/../modeles/accordeon_fermer.php');
 		}
 		else{
-		
+		echo'3';
 		echo'<div class=accordionContent>';
 		include('/../modeles/accordeon_fermer.php');
 		}
 
 	}	
+
 
 	?>
 	<div/>

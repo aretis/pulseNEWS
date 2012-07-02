@@ -6,7 +6,7 @@
 		$id = $id_post = $data['id_post'];
 		if(isset($id_user))
 		{
-				$requete="SELECT pseudo FROM users WHERE id_user= ".$id_user."";
+				$requete="SELECT pseudo FROM users WHERE id_user= ".$id_user;
 				$sucess=mysql_query($requete) or die(mysql_error());
 				while($resultats=mysql_fetch_assoc($sucess))
 				{

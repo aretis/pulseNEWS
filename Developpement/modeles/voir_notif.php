@@ -79,7 +79,7 @@
 	include('/../modeles/call_db.php');
 	include('/../modeles/couperChaine.php');
 
-	$request2 ="SELECT type_de_notif FROM notification";
+	$request2 ="SELECT id_comment,type_de_notif FROM notification";
 	
 	$data2 = mysql_query($request2);
 	
@@ -91,6 +91,7 @@
 
 	while($toto = mysql_fetch_array($data2))
 	{
+		$id=$toto['id_comment'];
 		if($toto['type_de_notif'] == 1)
 		{
 		
@@ -98,7 +99,7 @@
 			NATURAL JOIN USERS
 			JOIN comments C ON C.id_comment = N.id_comment
 			WHERE N.id_user != ".$_SESSION['id_user']." 
-			AND N.id_pulseur =".$_SESSION['id_user']." AND type_de_notif = 1 ORDER BY N.date_notif DESC";
+			AND N.id_pulseur =".$_SESSION['id_user']." AND  N.id_comment=".$id." AND type_de_notif = 1 ORDER BY N.date_notif DESC";
 		}
 		else
 		{
@@ -106,7 +107,7 @@
 			NATURAL JOIN USERS
 			JOIN comment_a_comment CAC ON CAC.id_comment = N.id_comment
 			WHERE N.id_user != ".$_SESSION['id_user']." 
-			AND N.id_pulseur =".$_SESSION['id_user']." AND type_de_notif = 2 ORDER BY N.date_notif DESC";
+			AND N.id_pulseur =".$_SESSION['id_user']." AND N.id_comment=".$id." AND type_de_notif = 2 ORDER BY N.date_notif DESC";
 		}
 		
 	$data = mysql_query($requete);
