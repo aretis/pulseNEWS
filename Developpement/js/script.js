@@ -24,14 +24,14 @@ $(document).ready(function() {
 	 	$('.accordionContent').slideUp('normal');
    
 		//IF THE NEXT SLIDE WASN'T OPEN THEN OPEN IT
-		if($(this).next().is(':hidden') == true) {
+		/*if($(this).next().is(':hidden') == true) {
 			
 			//ADD THE ON CLASS TO THE BUTTON
 			$(this).addClass('on');
 			  
 			//OPEN THE SLIDE
 			$(this).next().slideDown('normal');
-		 } 
+		 } */
 		  
 	 });
 	  

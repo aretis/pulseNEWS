@@ -1085,10 +1085,13 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   box-shadow:#000000 0 1px 0;
   color: #333333;
   cursor:pointer;
-  float:left;
   font-size: 14px;
-  width:500px;
   font-weight: bold;
+  width: 608px;
+    margin: auto;
+    position: absolute;
+    left: 302px;
+	margin-top:-13px;
 }
 
 .accordionOuvertbutton {
