@@ -1,4 +1,4 @@
-﻿<link rel="stylesheet" href="design/profil.css" />
+﻿
 
 
 <?php	
@@ -197,7 +197,7 @@ if(!isset($_GET['pseudo']))
 	</table>
 	
 </td>
-<td style='width: 80%;'>
+<td style='width: 70%;vertical-align: top;'>
 <?php
 	
 	if(isset($_GET['pseudo']))
