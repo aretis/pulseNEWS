@@ -1,4 +1,4 @@
-<?php
+Ôªø<?php
 function update_profile_picture($id_user)
 {
 	$sucess = false;
@@ -11,7 +11,7 @@ function update_profile_picture($id_user)
 	$sucess = is_uploaded_file ($_FILES['profile_picture']['tmp_name']);
 	if ( !$sucess )
 	{
-		die ("ProblËme de transfert");
+		echo"<div id='box'>Vous n'avez s√©lectionn√©e aucune image</div>";
 		return false;
 	}
 	else
@@ -20,7 +20,7 @@ function update_profile_picture($id_user)
 	$picture_size = $_FILES['profile_picture']['size'];
 	if ( $picture_size > $picture_max )
 	{
-		die ("le fichier ne peut Ítre enregistrÈ,la taille n'est pas respectÈe!");
+		echo"<div id='box'>La taille de l'image d√©passe la limite !</div>";
 		return false;
 	}
 	$picture_type = $_FILES['profile_picture']['type'];
@@ -36,8 +36,10 @@ function update_profile_picture($id_user)
 
 	
 	$sucess = mysql_query ($request) or die (mysql_error ());
+	echo"<div id='box'>Votre image a bien √©t√© ajout√©e !</div>";
 	return;
 	
+		
 	}	
 }
 	
@@ -55,7 +57,7 @@ function update_cover_picture($id_user)
 	$sucess = is_uploaded_file ($_FILES['cover_picture']['tmp_name']);
 	if ( !$sucess )
 	{
-		die ("ProblËme de transfert");
+		echo"<div id='box'>Vous n'avez s√©lectionn√© aucune image</div>";
 		return false;
 	}
 	else
@@ -64,7 +66,7 @@ function update_cover_picture($id_user)
 	$picture_size = $_FILES['cover_picture']['size'];
 	if ( $picture_size > $picture_max )
 	{
-		die ("le fichier ne peut Ítre enregistrÈ,la taille n'est pas respectÈe!");
+		echo"<div id='box'>La taille de l'image d√©passe la limite !</div>";
 		return false;
 	}
 	$picture_type = $_FILES['cover_picture']['type'];
@@ -80,8 +82,10 @@ function update_cover_picture($id_user)
 
 	
 	$sucess = mysql_query ($request) or die (mysql_error ());
+	echo"<div id='box'>Votre image a bien √©t√© ajout√©e !</div>";
 	return;
 	
+		
 	}	
 }
 ?>
