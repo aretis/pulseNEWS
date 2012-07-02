@@ -25,7 +25,6 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		echo"<span  font-weight:bold;'>";
 			if(isset($_SESSION['pseudo']))
 		{
-<<<<<<< HEAD
 			if($data['pseudo'] == $_SESSION['pseudo'])
 			{
 				if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment=".$data['id_comment']."'>X</a>";
@@ -63,38 +62,6 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 			
 		
 		echo"</div>";
-=======
-			
-			echo'<div class="accordionButton" style="text-align:center;">afficher les commentaires...</div>';
-		}
-		if(!isset($_POST['id_commentaire']) )
-		{	
-		
-			echo'<div class="accordionButton" style="text-align:center;">afficher les commentaires...</div>';
-		}
-	
-	while($data = mysql_fetch_array($result))
-	{ 
-		
-		if (isset($_POST['id_commentaire']) && $_POST['id_commentaire'] == $id)
-		{
-		echo'1';
-		echo'<div class="accordionOuvert">';
-		
-		include('/../modeles/accordeon_ouvert.php');
-		}
-		else if(isset($_POST['id_commentaire']) && $_POST['id_commentaire'] != $id)
-		{
-		echo'2';
-		echo'<div class=accordionContent>';
-		include('/../modeles/accordeon_fermer.php');
-		}
-		else{
-		echo'3';
-		echo'<div class=accordionContent>';
-		include('/../modeles/accordeon_fermer.php');
-		}
->>>>>>> ac3d3f945c3e43d7822a3d269d042272cbd1b7ea
 
 		
 		echo"<div id='wrapper'>
@@ -115,7 +82,6 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
   echo"</div></div>";
   
 
-<<<<<<< HEAD
 		
 		$request = "SELECT id_comment, content, post_date, pseudo FROM comment_a_comment INNER JOIN USERS ON comment_a_comment.id_user = users.id_user WHERE id_post = ".$id." AND id_parent=".$data['id_comment'];
 		$resultat = call_db($request);
@@ -168,12 +134,6 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		echo"</span>";
 		
 		echo"</span><hr>";
-=======
-
-	?>
-	<div/>
-	<div/>
->>>>>>> ac3d3f945c3e43d7822a3d269d042272cbd1b7ea
 
 	}
 	
