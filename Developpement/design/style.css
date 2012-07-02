@@ -964,7 +964,7 @@ margin-top: -22px;
   float:left;
   position:relative;
   top:350px;
-  width:30%;
+  width:20%;
 }
 .col-one, .col-two {
   margin-right:3%;
@@ -992,7 +992,7 @@ margin-top: -22px;
 }
 #example-two ul li a:hover {
   background-color:#1A9DC5;
-  color:white;
+  
 }
 #example-two ul li:last-child a {
   border:none;
@@ -1003,23 +1003,45 @@ margin-top: -22px;
 #example-two .nav li {
   float:left;
   margin:0 10px 0 0;
-  width:97px;
+  width:80px;
 }
 #example-two .nav li.last {
   margin-right:0;
 }
 #example-two .nav li a {
-  background-color:#666666;
-  border:0;
-  color:white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
+   background: -webkit-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -moz-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -ms-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -o-linear-gradient(top, #f9f9f9, #e0e0e0);
+  border:1px solid #003E40;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:#000000 0 1px 0;
+  color: #333333;
+  cursor:pointer;
+  font-size: 12px;
+  font-weight: bold;
   display:block;
-  font-size:16px;
   padding:5px;
   text-align:center;
+  -webkit-transition:height .2s ease-out, padding .4s ease-out;
+    -moz-transition:height .2s ease-out, padding .4s ease-out;
+    -o-transition:height .2s ease-out, padding .4s ease-out;
+    -ms-transition:height .2s ease-out, padding .4s ease-out;
+    transition:height .2s ease-out, padding .4s ease-out;
 }
 #example-two li a.current, #example-two li a.current:hover {
   background-color:#EEEEEE !important;
-  color:black;
+  color: #333333;
+  font-size: 14px;
+  -webkit-transition:height .4s ease-out, padding .4s ease-out;
+    -moz-transition:height .4s ease-out, padding .4s ease-out;
+    -o-transition:height .4s ease-out, padding .4s ease-out;
+    -ms-transition:height .4s ease-out, padding .4s ease-out;
+    transition:height .4s ease-out, padding .4s ease-out;
 }
 #example-two .nav li a:hover, #example-two .nav li a:focus {
   background-color:#999999;
