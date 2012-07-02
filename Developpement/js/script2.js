@@ -11,4 +11,8 @@ $(function(){
 		imp.next();
 		e.preventDefault();
 	});
+	
+	setInterval( $(function(){
+		imp.next();
+	}), 5000);
 });

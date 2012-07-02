@@ -20,7 +20,7 @@
 <label for='password'>&nbsp;&nbsp;mot de passe</label>
 <input id='password' type='password' name='password'/><br><br>
 
-<input type="submit" value=" se connecter ! "/>
+<input type="submit" value=" se connecter ! " style="position:relative; top:0px; left:300px;"/>
 
 </form>
 

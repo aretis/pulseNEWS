@@ -22,9 +22,9 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		echo'<div class="accordionOuvert">';
 		include('/../modeles/accordeon_ouvert.php');
 		}
-<<<<<<< HEAD
+
 		else if(isset($_POST['id_commentaire']) && $_POST['id_commentaire'] != $id)
-=======
+
 		$request = "SELECT profile_picture FROM users WHERE pseudo = '".$data['pseudo']."'";
 
 			$sucess = mysql_query ($request) or die (mysql_error());
@@ -81,22 +81,19 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		$resultat = call_db($request);
 		
 		while($data2 = mysql_fetch_array($resultat))
->>>>>>> 6ceffb572e17ea75685eff8dcfe6b499ab961f75
 		{
-		echo'<div class=accordionContent>';
-		include('/../modeles/accordeon_fermer.php');
+			echo'<div class=accordionContent>';
+			include('/../modeles/accordeon_fermer.php');
 		}
-		else{
-		echo'<div class=accordionContent>';
-		include('/../modeles/accordeon_fermer.php');
+		
+		else
+		{
+			echo'<div class=accordionContent>';
+			include('/../modeles/accordeon_fermer.php');
 		}
 
-<<<<<<< HEAD
 	}	
-=======
-	}
-	
-	
+
 	echo"<form action='index.php?".$_SERVER['QUERY_STRING']."' method='post'/>";
 	
 	echo"<br>";
@@ -104,7 +101,7 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 	echo"<input type='hidden' name='id_news' value='".$id."' />";
 	echo"<input style='display:none' type='submit' />";
 	echo'</form>';
->>>>>>> 6ceffb572e17ea75685eff8dcfe6b499ab961f75
+
 
 	?>
 	
