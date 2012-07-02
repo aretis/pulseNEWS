@@ -5,12 +5,36 @@
         <title>Présentation de pulseNEWS</title>
        
         <link rel="stylesheet" href="design/presentation.css" />
+
+		<script src="js/jquery-1.7.1.min.js"></script>
+		
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var imp = impress();
+			
+			$('#arrowLeft').click(function(e){
+				imp.prev();
+				e.preventDefault();
+			});
+			
+			$('#arrowRight').click(function(e){
+				imp.next();
+				e.preventDefault();
+			});
+		
+		
+			setInterval( function(){
+				$("#arrowRight").click();
+			}, 15000);
+		});
+
+		</script>
     </head>
     
     <body>
 
 		<div id="impress" class="impress-not-supported">
-			
+			<div id="lol">
 			<div id="intro" class="step" data-x="0" data-y="0">
 				
 				
@@ -21,6 +45,7 @@
 		    
 		        <img src="design/img/pn.png" width="250" height="250" alt="Galaxy Nexus" />
 		    </div>
+			</div>
 		    
 		    <div id="simplicity" class="step" data-x="1100" data-y="1200" data-scale="1.8" data-rotate="190">
 		        <div id="pulse_texte"><h2>"Pulser" ou rédiger !</h2>
@@ -60,9 +85,8 @@
 		<a id="arrowRight" class="arrow">&gt;</a>
 
         <!-- JavaScript includes -->
-		<script src="js/jquery-1.7.1.min.js"></script>
+
 		<script src="js/impress.js"></script>
-		<script src="js/script2.js"></script>
 		
 <a style='color: black;' href='index.php?page=news'><div class='retour'>Revenir sur pulseNEWS</div></a>
     </body>
