@@ -110,7 +110,7 @@
 			{
 				echo"	<div class='depulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=profile&id_news=".$id."&DEpulse=DEpulse\" >
+				echo"<a href=\"index.php?".$_SERVER['QUERY_STRING']."&id_news=".$id."&DEpulse=DEpulse\" >
 					<img id=\"myDiv\" src='design/img/down.png' 
 					onmouseover=\"this.src='design/img/down_plein.png';\" 
 					onmouseout=\"this.src='design/img/down.png';\"/>
@@ -118,7 +118,7 @@
 			
 				echo"	<div class='propulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=profile&id_news=".$id."&PROpulse=PROpulse\" >
+				echo"<a href=\"index.php?".$_SERVER['QUERY_STRING']."&id_news=".$id."&PROpulse=PROpulse\" >
 					<img id=\"myDiv\" src='design/img/up.png' 
 					onmouseover=\"this.src='design/img/up_plein.png';\" 
 					onmouseout=\"this.src='design/img/up.png';\"/>
@@ -224,7 +224,7 @@
 			{
 				echo"	<div class='depulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=profile?pseudo=".$_GET['pseudo']."&id_news=".$id."&DEpulse=DEpulse\" >
+				echo"<a href=\"index.php?".$_SERVER['QUERY_STRING']."&id_news=".$id."&DEpulse=DEpulse\" >
 					<img id=\"myDiv\" src='design/img/down.png' 
 					onmouseover=\"this.src='design/img/down_plein.png';\" 
 					onmouseout=\"this.src='design/img/down.png';\"/>
@@ -232,7 +232,7 @@
 			
 				echo"	<div class='propulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=profile&pseudo=".$_GET['pseudo']."&id_news=".$id."&PROpulse=PROpulse\" >
+				echo"<a href=\"index.php?".$_SERVER['QUERY_STRING']."&id_news=".$id."&PROpulse=PROpulse\" >
 					<img id=\"myDiv\" src='design/img/up.png' 
 					onmouseover=\"this.src='design/img/up_plein.png';\" 
 					onmouseout=\"this.src='design/img/up.png';\"/>
@@ -242,7 +242,7 @@
 			{
 				echo"	<div class='depulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=profile&id_news=".$id."&DEpulse=DEpulse\" >
+				echo"<a href=\"index.php?".$_SERVER['QUERY_STRING']."&id_news=".$id."&DEpulse=DEpulse\" >
 					<img id=\"myDiv\" src='design/img/down.png' 
 					onmouseover=\"this.src='design/img/down_plein.png';\" 
 					onmouseout=\"this.src='design/img/down.png';\"/>
@@ -250,7 +250,7 @@
 			
 				echo"	<div class='propulse'>&nbsp;";
 				
-				echo"<a href=\"index.php?page=profile&id_news=".$id."&PROpulse=PROpulse\" >
+				echo"<a href=\"index.php?".$_SERVER['QUERY_STRING']."&id_news=".$id."&PROpulse=PROpulse\" >
 					<img id=\"myDiv\" src='design/img/up.png' 
 					onmouseover=\"this.src='design/img/up_plein.png';\" 
 					onmouseout=\"this.src='design/img/up.png';\"/>
