@@ -22,6 +22,7 @@ function update_profile_picture($id_user)
 	{
 		echo"<div id='box'>La taille de l'image dépasse la limite !</div>";
 		return false;
+		exit;
 	}
 	$picture_type = $_FILES['profile_picture']['type'];
 	$picture_name = $_FILES['profile_picture']['name'];
@@ -68,6 +69,7 @@ function update_cover_picture($id_user)
 	{
 		echo"<div id='box'>La taille de l'image dépasse la limite !</div>";
 		return false;
+		exit;
 	}
 	$picture_type = $_FILES['cover_picture']['type'];
 	$picture_name = $_FILES['cover_picture']['name'];

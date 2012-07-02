@@ -61,7 +61,15 @@ if( $field_errors == 1 || $no_image == 1 )
 	{
 		echo"Vous n'avez pas ajouté d'image ! ";
 	}
+<<<<<<< HEAD
 	
 	echo"</div>";
 }
+=======
+	else if(isset($erreur) && $erreur == 5) {
+		
+	echo"<div id='box'>Vous n'avez sélectionné aucune image</div>";
+	return;
+	}
+>>>>>>> c4b6e168beb53e54269a96d06f9329910225f35d
 ?>

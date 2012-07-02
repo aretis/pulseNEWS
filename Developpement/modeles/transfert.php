@@ -1,6 +1,7 @@
 <?php
 function transfert ($id_post)
 {
+	$erreur = 0;
 	$sucess = false;
 	$picture_blob = '';
 	$picture_size = 0;
@@ -9,9 +10,10 @@ function transfert ($id_post)
 	$picture_max = 1500000;
 	
 	$sucess = is_uploaded_file ($_FILES['fichier']['tmp_name']);
-	if ( !$sucess )
+	if (!$sucess )
 	{
 		echo"<div id='box'>Vous n'avez sélectionné aucune image</div>";
+		$erreur = 5;
 		return false;
 	}
 	else
