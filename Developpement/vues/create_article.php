@@ -3,10 +3,10 @@
 <form action='#' method='post' enctype="multipart/form-data">
 <tr><td></td><td class='block_title'>Rédiger un article</td></tr>
 <tr><td></td><td><hr></td></hr>
-<tr class='title_create_article'><td>Titre</td><td><input style='width: 500px;' type='text' name='title' value='<?php if (isset($article['title'])) echo $article['title']; ?>'/></td></tr>
+<tr class='title_create_article'><td>Titre</td><td><input style='width: 500px;' type='text' name='title' value='<?php if (isset($_POST['title'])) echo $_POST['title']; ?>'/></td></tr>
 <tr><td class='title_create_article'>Image</td><td><input type='file' name='fichier' size='10'/></td></tr>
-<tr><td class='title_create_article'>Description</td><td><textarea style='width: 500px; height: 75px; font-family: Arial;' type='text' name='description'><?php if (isset($article['description'])) echo $article['description']; ?></textarea></td></tr>
-<tr><td class='title_create_article'>Contenu</td><td><textarea style='width: 600px; height: 250px; font-family: Arial;' type='text' name='content'><?php if (isset($article['content'])) echo $article['content']; ?></textarea></td></tr>
+<tr><td class='title_create_article'>Description</td><td><textarea style='width: 500px; height: 75px; font-family: Arial;' type='text' name='description'><?php if (isset($_POST['description'])) echo $_POST['description']; ?></textarea></td></tr>
+<tr><td class='title_create_article'>Contenu</td><td><textarea style='width: 600px; height: 250px; font-family: Arial;' type='text' name='content'><?php if (isset($_POST['content'])) echo $_POST['content']; ?></textarea></td></tr>
 <tr><td class='title_create_article'>Région</td><td><SELECT id='name' select='selected' name='area'>
 <?php
 
@@ -49,8 +49,19 @@ $result = call_db($query);
 
 </table>
 <?php
+if( $field_errors == 1 || $no_image == 1 )
+{
+	echo"<div id='box'>";
+
 	if( $field_errors == 1)
 	{
-		echo"<div id='box'> Un ou plusieurs champs sont manquants! </div>";
+		echo"Un ou plusieurs champs sont manquants ! ";
 	}
+	if( $no_image == 1)
+	{
+		echo"Vous n'avez pas ajouté d'image ! ";
+	}
+	
+	echo"</div>";
+}
 ?>

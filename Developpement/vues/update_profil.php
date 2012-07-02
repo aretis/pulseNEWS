@@ -66,7 +66,6 @@ while($data=mysql_fetch_assoc($sucess))
 	
 		if ( $_POST['modif_ville']== 'valid2' )
 	{
-	zehgijokptmelkdsijhu
 			$nouveau_region=$_POST['jiji'];
 
 			$request = "UPDATE users SET area_name = '".$nouveau_region."' WHERE  id_user=".$data['id_user']."";

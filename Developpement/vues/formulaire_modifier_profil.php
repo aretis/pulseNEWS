@@ -7,13 +7,13 @@
 <hr>
 	
 	
-	 Nom de l'utilisateur<input type="text" name="nom"/><br/>
-	 Prénom<input type="text" name="prenom"/><br/>
-	 nouveau mot de passe<input type="text" name="newPassword"/><br/>
-	 confirmation du mot de passe<input type="text" name="confirmPassword"/><br/>
-	 E-mail<input type="text" name="email"/><br/>
-	 Voulez vous modifier votre ville?<input type="checkbox" name="modif_ville[]" value="valid"/ ><br/>
-	 Ma région<SELECT name="region">
+	 <label for='name'>Nom de l'utilisateur</label><input type="text" name="nom"/><br/>
+	 <label for='name'>Prénom</label><input type="text" name="prenom"/><br/>
+	 <label for='name'>Nouveau mot de passe</label><input type="password" name="newPassword"/><br/>
+	 <label for='name'>Confirmation</label><input type="password" name="confirmPassword"/><br/>
+	<label for='name'> E-mail</label><input type="text" name="email"/><br/>
+	<label for='name'> Modifier votre ville ?</label><input type="checkbox" name="modif_ville[]" value="valid"/ ><br><br>
+	<label for='name'> Ma région</label><SELECT name="region">
 <?php
 	
 	$query = 'SELECT area_name FROM AREAS';
@@ -31,9 +31,9 @@
   
 <br><br>
 	
-	supprimer mon compte &nbsp; <INPUT type="checkbox" name="delete_profil">
+	<label for='name'>Supprimer mon compte </label>&nbsp; <INPUT type="checkbox" name="delete_profil"><br><br>
 
-	<input type='submit'  value="envoyer"/>
+	<input type='submit'  value="envoyer" style='position:relative;left:400px;'/>
 
 </form>
 
