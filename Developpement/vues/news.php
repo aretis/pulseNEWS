@@ -203,10 +203,10 @@ if(isset($_POST['pulse']))
 		<div class="accordionButton3">Trier les informations</div>
 		<div class="accordionContent3">
 		<div class='tri'>
-	<div class='shorti'>Trier par : </div>
+	<br><div class='shorti'>Trier par : </div>
 	<form method='post' action='index.php?page=news'>
 	
-	<SELECT id='date' name='date' selected='selected' onchange='change2(this.selectedIndex)'>
+	<br><SELECT id='date' name='date' selected='selected' onchange='change2(this.selectedIndex)'>
 		<option value='0'>Date</option>
 		<option value='1'>Les plus récentes</option>
 		<option value='2'>Les moins récentes</option>
@@ -220,8 +220,8 @@ if(isset($_POST['pulse']))
 
 	<SELECT name='type' selected='selected' onchange='change(this.selectedIndex)'>
 		<option value='0'>Type de News</option>
-		<option value='1'>News rédigé</option>
-		<option value='2'>News pulsé</option>
+		<option value='1'>News rédigée</option>
+		<option value='2'>News pulsée</option>
 	</SELECT>
 
 	<SELECT id='area' name='area' selected='selected'>
@@ -257,7 +257,7 @@ if(isset($_POST['pulse']))
 			mysql_free_result($result);
 			mysql_close($link);
 		?>
-	</SELECT><div class='link_submit'> <input name='tri' type='submit' value='trier' /></div>
+	</SELECT><div class='link_submit' style='text-align: right;'> <input name='tri' type='submit' value='trier' /></div>
 	
 	
 </form>
@@ -266,9 +266,9 @@ if(isset($_POST['pulse']))
 		<hr>
 	
 		
-			<div class='search_news'>
+			<br><div class='search_news'>
 			<div class='shorti'>Rechercher : </div>
-	<form method="post" action="index.php?page=recherche">
+	<br><form method="post" action="index.php?page=recherche">
 		<input type="search"name="recherche"/>
 		<select name ="mode">
 			<option value="exp_exacte">l'expression exacte</option>
@@ -289,7 +289,7 @@ if(isset($_POST['pulse']))
 				mysql_close($link);
 			?>
 		</select>
-		<div class='link_submit'><input type="submit" value ="rechercher" name ="rechercher"/></div>
+		<div class='link_submit' style='text-align: right;'><input type="submit" value ="rechercher" name ="rechercher"/></div>
 	</form>
 
 </div>
