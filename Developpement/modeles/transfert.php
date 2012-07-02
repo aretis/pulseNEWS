@@ -13,10 +13,9 @@ function transfert ($id_post)
 	if (!$sucess )
 	{
 		echo"<div id='box'>Vous n'avez sélectionné aucune image</div>";
-<<<<<<< HEAD
-=======
+
 		$erreur = 5;
->>>>>>> ba77d90cfd6fddd5c8032a728c64e0feb9ec6238
+
 		return false;
 	}
 	else
