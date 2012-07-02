@@ -92,6 +92,10 @@
 		
 		while($data = mysql_fetch_array($result))
 		{
+			echo"<div class='rate'>";
+			echo $data['rate'];
+			echo "</div>";
+			
 			echo"<table cellpadding='0' cellspacing='0' class='article' style=' width: 800px;' >";
 			echo"<tr style='height: 32px;'>";
 			echo"<td rowspan='1'>";
@@ -112,12 +116,6 @@
 				echo"		&nbsp;".$data['title'];
 			}
 			echo"	</div>";
-			echo"	</td>";
-
-			echo"	<td>";
-			echo"		<div class='rate'>";
-			if($data['rate'] > 0) echo" + ";
-			echo $data['rate']."</div>";
 			echo"	</td>";
 			echo"</tr>";
 			echo"<tr>";

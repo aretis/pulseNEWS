@@ -17,6 +17,11 @@
 		//si le post est un flux RSS pulsé
 		if ($data['type'] == 1)
 		{
+			echo"<div class='rate'>";
+			if($data['rate'] > 0) echo"+";
+			echo $data['rate'];
+			echo "</div>";
+			
 			echo"		<table cellpadding='0' cellspacing='0' class='post_news' >";
 			echo"		<tr style='height: 32px;'>";
 			echo"		<td rowspan='1'>";
@@ -35,13 +40,6 @@
 			}
 			
 			echo"		</div>";
-			echo"		</td>";
-
-			echo"		<td>";
-			echo"			<div class='rate'>";
-			if($data['rate'] > 0) echo"+";
-			echo $data['rate'];
-			echo "</div>";
 			echo"		</td>";
 			echo"	</tr>";
 			echo"	<tr>";
@@ -134,6 +132,10 @@
 		// si le post a été rédigé par un utilisateur
 		else if($data['type'] == 0)
 		{
+			echo"<div class='rate'>";
+			if($data['rate'] > 0) echo"+";
+			echo $data['rate'];
+			echo "</div>";
 			echo"<table cellpadding='0' cellspacing='0' class='article'>";
 			echo"<tr style='height: 10px;'>";
 			echo"	<td rowspan='1'>";
@@ -163,12 +165,6 @@
 			echo"		&nbsp;".$data['title'];
 			}
 			echo"	</div>";
-			echo"	</td>";
-			echo"";
-			echo"	<td>";
-			echo"		<div class='rate'>";
-			if($data['rate'] > 0) echo"+"; 
-			echo $data['rate']."</div>";
 			echo"	</td>";
 			echo"</tr>";
 			echo"<tr>";
