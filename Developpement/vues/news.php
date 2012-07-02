@@ -347,7 +347,7 @@ if(isset($_POST['pulse']))
 			}
 			echo"</div>";
 			echo"		</td><td>	<div class='rate'>";
-			if($data['rate'] > 0) echo" + ";
+			if($data['rate'] > 0) echo"+";
 			echo $data['rate'];
 			echo "</div></td></tr>";
 			echo"	<tr><td>";
@@ -431,7 +431,7 @@ if(isset($_POST['pulse']))
 
 			echo"	<td>";
 			echo"		<div class='rate'>";
-			if($data['rate'] > 0) echo" + ";
+			if($data['rate'] > 0) echo"+";
 			echo $data['rate']."</div>";
 			echo"	</td>";
 			echo"</tr>";

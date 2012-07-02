@@ -39,7 +39,7 @@
 
 			echo"		<td>";
 			echo"			<div class='rate'>";
-			if($data['rate'] > 0) echo" + ";
+			if($data['rate'] > 0) echo"+";
 			echo $data['rate'];
 			echo "</div>";
 			echo"		</td>";
@@ -167,7 +167,7 @@
 			echo"";
 			echo"	<td>";
 			echo"		<div class='rate'>";
-			if($data['rate'] > 0) echo" + "; 
+			if($data['rate'] > 0) echo"+"; 
 			echo $data['rate']."</div>";
 			echo"	</td>";
 			echo"</tr>";
