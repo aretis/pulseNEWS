@@ -92,11 +92,10 @@
 		
 		while($data = mysql_fetch_array($result))
 		{
+			echo'<div class=\'post_news\'>';
 			
+			// --------------------------------------------------------------------------------------------
 			
-			echo"<table cellpadding='0' cellspacing='0' class='article_debate'>";
-			echo"<tr style='height: 32px;'>";
-			echo"<td rowspan='1'>";
 			echo"<div class='title_post' style='font-weight: bold;'>";
 			if(isset($_SESSION['pseudo']))
 			{
@@ -113,33 +112,34 @@
 			{
 				echo"		&nbsp;".$data['title'];
 			}
-			echo"<div class='rate'>";
+			// --------------------------------------------------------------------------------------------------
+			
+			
+			echo"<br><div class='rate'>";
 			echo $data['rate'];
 			echo "</div>";
 			echo"	</div>";
-			echo"	</td>";
-			echo"</tr>";
-			echo"<tr>";
-			echo"	<td>";
-			echo"		<div class='description'>";
+
+			// -----------------------------------------------------------------------------------------------------
+			echo"		<br><div class='description'>";
 			echo $data['content']; 
 			echo"		</div>";
-			echo"<span class='info_post'>&nbsp;&nbsp;Suggéré le ";
+			
+			// -----------------------------------------------------------------------------------------------------------
+			
+			echo"<br><span class='info_post'>&nbsp;&nbsp;Suggéré le ";
 			echo date("d/m/Y à H\hi", strtotime($data['post_date']));
-			echo"&nbsp;par ".$data['pseudo'];
-			echo"	</span></td>";
+			echo"&nbsp;par <a style='color: black;' href='index.php?page=profile&pseudo=".$data['pseudo']."'>".$data['pseudo']." </a>!";
+			echo"	</span>";
 
-			echo"</tr>";
-			echo"<tr>";
-			echo"<td>";
+			// ----------------------------------------------------------------------------------------------------------
+			
 			if(isset($_SESSION['pseudo']))
 			{
 				echo"	<div class='propulse_debate'>&nbsp;";
 				echo"	<form action='index.php?page=debate' method='POST'/><input type='hidden' name='type' value='posts' /><input type='hidden' name='PROpulse' value='PROpulse' /><input type='hidden' name='id_news' value='".$data['id_post']."' /><input style='cursor:pointer' type='submit' value='Je vote !' /></form></div></a>";
 			}
-			echo"</td>";
-			echo"</tr>";
-			echo"</table>";
+			echo'</div>';
 			echo"<br><br><br><br>";
 		}
 	?>
