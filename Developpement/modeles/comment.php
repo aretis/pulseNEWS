@@ -7,6 +7,7 @@
 
 
 $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN USERS ON comments.id_user = users.id_user WHERE id_post = ".$id;
+
 	$result = call_db($query);
 		
 		
