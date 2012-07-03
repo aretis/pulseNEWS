@@ -15,10 +15,7 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 		
 	}
     $mode = "exp_exacte";
-<<<<<<< HEAD
 
-=======
->>>>>>> d1215c41498ac0b6e8b55b4290d2c4814226b020
     if ($mode == "exp_exacte")
     {
         $liaison = 'AND'; 
@@ -60,10 +57,6 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 	{
 		
 		$nb_resultats = mysql_num_rows($req);
-<<<<<<< HEAD
-
-=======
->>>>>>> d1215c41498ac0b6e8b55b4290d2c4814226b020
 	}
 
     if ($nb_resultats == 0) 
