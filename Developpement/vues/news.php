@@ -1,5 +1,20 @@
 ﻿
 <?php
+
+	if(isset($_POST['comment']))
+		{
+			include('modeles/save_comment.php');
+			save_comment($_POST['id_news'], $_SESSION['id_user'], $_POST['comment']);
+		}
+		else if(isset($_POST['comment_a_comment']))
+		{	
+			include('modeles/save_comment_comment.php');
+			save_comment($_POST['id_news'], $_SESSION['id_user'], $_POST['id_parent'], $_POST['comment_a_comment']);
+		}	if(isset($_GET['delete_comment'])) include('modeles/delete_comment.php');
+
+		else if(isset($_GET['delete_comment_of_comment'])) include('modeles/delete_comment_of_comment.php');
+	
+	
 	include('modeles/pulse.php');
 	
 	
@@ -326,9 +341,9 @@ if(isset($_POST['pulse']))
 
 
 	include('modeles/view_all_articles.php');
-	
-	$req = view_all_article($date, $rate, $type, $news_area, $cat_news);
 
+	$req = view_all_article($date, $rate, $type, $news_area, $cat_news);
+	
 	while($post_data = mysql_fetch_assoc($req))
 	{
 	
@@ -336,10 +351,7 @@ if(isset($_POST['pulse']))
 	
 		if($post_data['type'] == 1)
 		{
-			echo"<div class='rate'>";
-			if($post_data['rate'] > 0) echo"+";
-			echo $post_data['rate'];
-			echo "</div>";
+			
 	
 			echo"		<table cellpadding='0' cellspacing='0' class='post_news' >";
 			echo"		<tr style='height: 32px;'>";
@@ -364,6 +376,10 @@ if(isset($_POST['pulse']))
 			{
 				echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$post_data['id_post']."'>".$post_data['title']."</a>";
 			}
+			echo"<div class='rate'>";
+			if($post_data['rate'] > 0) echo"+";
+			echo $post_data['rate'];
+			echo "</div>";
 			echo"</div></td>";
 			echo"	</tr><tr><td>";
 			
@@ -424,11 +440,7 @@ if(isset($_POST['pulse']))
 		else if($post_data['type'] == 0)
 		{
 		
-			echo"<div class='rate'>";
-			if($post_data['rate'] > 0) echo"+";
-			echo $post_data['rate'];
-			echo "</div>";
-			
+	
 			echo"<table cellpadding='0' cellspacing='0' class='post_news' >";
 			echo"<tr style='height: 32px;'>";
 				echo"<td rowspan='1'>";
@@ -450,6 +462,10 @@ if(isset($_POST['pulse']))
 			}
 			else{
 			echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$post_data['id_post']."'>".$post_data['title']."</a>";}
+			echo"<div class='rate'>";
+			if($post_data['rate'] > 0) echo"+";
+			echo $post_data['rate'];
+			echo "</div>";
 			echo"	</div>";
 			echo"	</td>";
 			echo"</tr>";

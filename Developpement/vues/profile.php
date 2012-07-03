@@ -144,7 +144,7 @@ if(!isset($_GET['pseudo']))
 ?>
 </td>
 </table>
-<table>
+<table><tr>
 <td style='vertical-align: top;'>
 <table cellpadding='0' cellspacing='0' class='rss_block'>
 			<tr>
@@ -217,7 +217,7 @@ if(!isset($_GET['pseudo']))
 	</table>
 	
 </td>
-<td style='width: 80%; vertical-align: top;height:100%;'>
+<td style='width: 80%; vertical-align: top;'>
 <?php
 
 	if(isset($_GET['pseudo']))
@@ -314,5 +314,5 @@ if(!isset($_GET['pseudo']))
 			
 			
 </table>
-</td>
+</td></tr>
 </table>

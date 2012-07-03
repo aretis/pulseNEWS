@@ -92,14 +92,12 @@
 		
 		while($data = mysql_fetch_array($result))
 		{
-			echo"<div class='rate'>";
-			echo $data['rate'];
-			echo "</div>";
+			
 			
 			echo"<table cellpadding='0' cellspacing='0' class='article_debate'>";
 			echo"<tr style='height: 32px;'>";
 			echo"<td rowspan='1'>";
-			echo"<div class='title_post'>";
+			echo"<div class='title_post' style='font-weight: bold;'>";
 			if(isset($_SESSION['pseudo']))
 			{
 				if($data['pseudo'] == $_SESSION['pseudo'])
@@ -115,6 +113,9 @@
 			{
 				echo"		&nbsp;".$data['title'];
 			}
+			echo"<div class='rate'>";
+			echo $data['rate'];
+			echo "</div>";
 			echo"	</div>";
 			echo"	</td>";
 			echo"</tr>";

@@ -41,26 +41,19 @@
 	     <div id="example-two">
 					
     		<ul class="nav">
-				<li class="nav-zero"><a href="#featured" class="current">A la Une</a></li>
-                <li class="nav-one"><a href="#featured2" >Politique</a></li>
+				
+                <li class="nav-one"><a href="#featured2" class="current" >Politique</a></li>
                 <li class="nav-two"><a href="#core2">Economie</a></li>
                 <li class="nav-three"><a href="#jquerytuts2">Sport</a></li>
                 <li class="nav-four"><a href="#classics2">Ecologie</a></li>
-				<li class="nav-four"><a href="#jquerytuts3">People</a></li>
-				<li class="nav-four last"><a href="#jquerytuts4">Insolite</a></li>
+				<li class="nav-five"><a href="#jquerytuts3">People</a></li>
+				<li class="nav-six last"><a href="#jquerytuts4">Insolite</a></li>
             </ul>
     		
     		<div class="list-wrap">
     		
 			
-			<ul id="featured">
-    			<?php
-					$url= 'une.xml';
-					$cat = 'une';
-					
-					echo RSS_display($cat, $url, 20);		
-					?>
-    			</ul>
+			
 			
     			<ul id="featured2">
     			<?php
