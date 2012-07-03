@@ -38,7 +38,12 @@
 			
 			$id_pulseur = $resultats['id_user'];
 		}
+		
+		if($id_pulseur != $id_toto)
+		{
 			$query='INSERT INTO notification VALUES ('.$dernier_id.','.$id_pulseur.','.$id_post.','.$id_toto.',"0",'.$type_notif.',NOW())';
 			$sucess = mysql_query($query) or die(mysql_error());
+		}
+		else return;
 	}
 ?>

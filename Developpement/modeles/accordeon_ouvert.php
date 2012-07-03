@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 	
 		
 		echo"<div class='comment_post'>";
@@ -10,8 +10,8 @@
 		{
 			if($data['pseudo'] == $_SESSION['pseudo'])
 			{
-				if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment=".$data['id_comment']."'>X</a>";
-				else echo"<a href='index.php?page=profile&delete_comment=".$data['id_comment']."'>X</a>";
+				if(isset($_GET['pseudo'])) echo"<div id='delete_com'> <a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment=".$data['id_comment']."'>X</a></div>";
+				else echo"<div id='delete_com'> <a href='index.php?page=profile&delete_comment=".$data['id_comment']."'>X</a></div>";
 			}
 		}
 		$request = "SELECT profile_picture FROM users WHERE pseudo = '".$data['pseudo']."'";
@@ -41,14 +41,14 @@
 		
 		echo"<span style='font-size:10px;'>";
 		echo"<br>Le ";
-		echo date("d/m/Y à H\hi", strtotime($data['post_date']));
+		echo date("d/m/Y Ã  H\hi", strtotime($data['post_date']));
 			
 		
 		echo"</div>";
 
 		
 		echo"<div id='wrapper'>
-	<div class='accordionButton2'>Répondre...</div>
+	<div class='accordionButton2'>RÃ©pondre...</div>
 		<div class='accordionContent2'>";
 		
 		
@@ -58,7 +58,7 @@
 			echo"<input type='hidden' name='id_parent' value='".$data['id_comment']."'/>
 			<input type='hidden' name='id_news' value='".$id."' />
 			<input type='hidden' name='id_commentaire' value='".$id."' />
-			<input id='input_comment' type='text' name='comment_a_comment' placeholder='Commenter...'/>
+			<input style='position:relative; left:10px;' id='input_comment' type='text' name='comment_a_comment' placeholder='Commenter...'/>
 			
 			<input style='display:none' type='submit'/>
 			</form><br>";
@@ -79,8 +79,8 @@
 			{
 				if($data2['pseudo'] == $_SESSION['pseudo'])
 				{
-					if(isset($_GET['pseudo'])) echo"<a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment_of_comment=".$data2['id_comment']."'>X</a>";
-					else echo"<a href='index.php?page=profile&delete_comment_of_comment=".$data2['id_comment']."'>X</a>";
+					if(isset($_GET['pseudo'])) echo"<div id='delete_com'><a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment_of_comment=".$data2['id_comment']."'>X</a></div>";
+					else echo"<div id='delete_com'><a href='index.php?page=profile&delete_comment_of_comment=".$data2['id_comment']."'>X</a></div>";
 				}
 			}
 			$request = "SELECT profile_picture FROM users WHERE pseudo = '".$data2['pseudo']."'";
@@ -109,7 +109,7 @@
 			
 			echo"<span style='font-size:10px;'>";
 			echo"<br>&nbsp;&nbsp;Ecrit le ";
-			echo date("d/m/Y à H\hi", strtotime($data2['post_date']));
+			echo date("d/m/Y Ã  H\hi", strtotime($data2['post_date']));
 			echo"</div>";
 			echo"</span>";
 			echo"</div>";

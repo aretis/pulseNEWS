@@ -45,7 +45,9 @@
                 <li class="nav-one"><a href="#featured2" >Politique</a></li>
                 <li class="nav-two"><a href="#core2">Economie</a></li>
                 <li class="nav-three"><a href="#jquerytuts2">Sport</a></li>
-                <li class="nav-four last"><a href="#classics2">Ecologie</a></li>
+                <li class="nav-four"><a href="#classics2">Ecologie</a></li>
+				<li class="nav-four"><a href="#jquerytuts3">People</a></li>
+				<li class="nav-four last"><a href="#jquerytuts4">Insolite</a></li>
             </ul>
     		
     		<div class="list-wrap">
@@ -63,7 +65,7 @@
     			<ul id="featured2">
     			<?php
 					$url= 'politique.xml';
-					$cat = 'politique';
+					$cat = 1;
 					
 					echo RSS_display($cat, $url, 20);		
 					?>
@@ -72,7 +74,7 @@
         		 <ul id="core2" class="hide">
                     <?php
 					$url= 'economie.xml';
-					$cat = 'économie';
+					$cat = 2;
 					
 					echo RSS_display($cat, $url, 20);		
 					?>
@@ -81,7 +83,7 @@
         		 <ul id="jquerytuts2" class="hide">
         		   <?php
 					$url= 'sport.xml';
-					$cat = 'sport';
+					$cat = 5;
 					
 					echo RSS_display($cat, $url, 20);		
 					?>
@@ -90,7 +92,25 @@
         		 <ul id="classics2" class="hide">
                     <?php
 					$url= 'ecologie.xml';
-					$cat = 'écologie';
+					$cat = 3;
+					
+					echo RSS_display($cat, $url, 20);		
+					?>
+        		 </ul>
+				 
+				 <ul id="jquerytuts3" class="hide">
+                    <?php
+					$url= 'people.xml';
+					$cat = 8;
+					
+					echo RSS_display($cat, $url, 20);		
+					?>
+        		 </ul>
+				 
+				  <ul id="jquerytuts4" class="hide">
+                    <?php
+					$url= 'insolite.xml';
+					$cat = 7;
 					
 					echo RSS_display($cat, $url, 20);		
 					?>

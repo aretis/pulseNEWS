@@ -114,13 +114,16 @@
 	
 	if($data === false)	
 	{
+		
 		echo "La requête est incorrect<br />".htmlentities($requete).'<br />'.mysql_error();
 		return;
+		
 	}
 
-			
 	$result = mysql_fetch_array($data);
-
+	$nb_notif= mysql_num_rows($data);
+	if ($nb_notif != 0)
+	{
 	/* ENLEVER DE COMMENTAIRE POUR DEBUGGER
 	if($result === false)
 	{	
@@ -226,8 +229,9 @@
 				echo $chaineNouvelle;
 				
 				echo'</div></a>';
-		
 		}
+	}
+	
 	}
 ?>
 
