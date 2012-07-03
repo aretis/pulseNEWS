@@ -1,5 +1,20 @@
 ﻿
 <?php
+
+	if(isset($_POST['comment']))
+		{
+			include('modeles/save_comment.php');
+			save_comment($_POST['id_news'], $_SESSION['id_user'], $_POST['comment']);
+		}
+		else if(isset($_POST['comment_a_comment']))
+		{	
+			include('modeles/save_comment_comment.php');
+			save_comment($_POST['id_news'], $_SESSION['id_user'], $_POST['id_parent'], $_POST['comment_a_comment']);
+		}	if(isset($_GET['delete_comment'])) include('modeles/delete_comment.php');
+
+		else if(isset($_GET['delete_comment_of_comment'])) include('modeles/delete_comment_of_comment.php');
+	
+	
 	include('modeles/pulse.php');
 	
 	
@@ -341,9 +356,9 @@ if(isset($_POST['pulse']))
 
 
 	include('modeles/view_all_articles.php');
-	
-	$req = view_all_article($date, $rate, $type, $news_area, $cat_news);
 
+	$req = view_all_article($date, $rate, $type, $news_area, $cat_news);
+	
 	while($post_data = mysql_fetch_assoc($req))
 	{
 	
