@@ -15,7 +15,6 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 		
 	}
     $mode = "exp_exacte";
-	echo $recherche;
     if ($mode == "exp_exacte")
     {
         $liaison = 'AND'; 
@@ -34,7 +33,6 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
     }
     else 
     {
-		echo '1';
         $mots = explode(" ", $recherche); 
         $nombre_mots = count ($mots); 
 		$valeur_requete='';
@@ -58,7 +56,6 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 	{
 		
 		$nb_resultats = mysql_num_rows($req);
-		echo $nb_resultats;
 	}
 
     if ($nb_resultats == 0) 
@@ -70,11 +67,11 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 	{
 		if($nb_resultats==1)
 		{
-			echo"<div id='box'>Il y a 1 résultat qui correspond a votre recherche<br></div>";
+			echo"<div id='box'>1 résultat a été trouvé<br></div>";
 		}
 		else if($nb_resultats > 1)
 		{
-			echo'<div id="box">Il y a '.$nb_resultats.' résultats qui correspondent à votre recherche</div>';
+			echo'<div id="box">'.$nb_resultats.' résultats ont été trouvés</div>';
 		}
 		
 	while($post_data = mysql_fetch_assoc($req))
@@ -84,10 +81,7 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 	
 		if($post_data['type'] == 1)
 		{
-			echo"<div class='rate'>";
-			if($post_data['rate'] > 0) echo"+";
-			echo $post_data['rate'];
-			echo "</div>";
+			
 	
 			echo"		<table cellpadding='0' cellspacing='0' class='post_news' >";
 			echo"		<tr style='height: 32px;'>";
@@ -112,6 +106,10 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 			{
 				echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$post_data['id_post']."'>".$post_data['title']."</a>";
 			}
+			echo"<div class='rate'>";
+			if($post_data['rate'] > 0) echo"+";
+			echo $post_data['rate'];
+			echo "</div>";
 			echo"</div></td>";
 			echo"	</tr><tr><td>";
 			
@@ -172,10 +170,7 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 		else if($post_data['type'] == 0)
 		{
 		
-			echo"<div class='rate'>";
-			if($post_data['rate'] > 0) echo"+";
-			echo $post_data['rate'];
-			echo "</div>";
+			
 			
 			echo"<table cellpadding='0' cellspacing='0' class='post_news' >";
 			echo"<tr style='height: 32px;'>";
@@ -191,6 +186,7 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 					echo"<a href='index.php?page=view_article&id_post=".$post_data['id_post']."'>".$post_data['title']."</a>";
 					echo"</div><br>";
 				}
+				
 				else
 				{
 					echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$post_data['id_post']."'>".$post_data['title']."</a>";
@@ -198,6 +194,10 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 			}
 			else{
 			echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$post_data['id_post']."'>".$post_data['title']."</a>";}
+			echo"<div class='rate'>";
+			if($post_data['rate'] > 0) echo"+";
+			echo $post_data['rate'];
+			echo "</div>";
 			echo"	</div>";
 			echo"	</td>";
 			echo"</tr>";
