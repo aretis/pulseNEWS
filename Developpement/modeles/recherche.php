@@ -6,17 +6,16 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 	if(isset($_POST['recherche']))
 	{
 		$recherche = mysql_real_escape_string(htmlspecialchars($_POST['recherche'])); 
-		$mode = mysql_real_escape_string(htmlspecialchars($_POST['mode']));
-		$categorie= mysql_real_escape_string(htmlspecialchars($_POST['categorie']));
+	
 	}
 	
 	if(isset($_GET['recherche']))
 	{
 		$recherche = mysql_real_escape_string(htmlspecialchars($_GET['recherche'])); 
-		$mode = mysql_real_escape_string(htmlspecialchars($_GET['mode']));
-		$categorie= mysql_real_escape_string(htmlspecialchars($_GET['categorie']));
+		
 	}
-    
+    $mode = "exp_exacte";
+	echo $recherche;
     if ($mode == "exp_exacte")
     {
         $liaison = 'AND'; 
@@ -26,35 +25,40 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
         $liaison = 'OR';
     }
 	  
-    if ($mode == "expression_exacte") 
+    if ($mode == "exp_exacte") 
     {
-		echo $recherche;
-        $req = mysql_query('SELECT * FROM posts NATURAL JOIN users WHERE type = 0 OR type = 1 AND content AND title LIKE \'%'.$recherche.'%\'');
+		
+        $req = mysql_query('SELECT * FROM posts NATURAL JOIN users WHERE type != 3 AND title LIKE \'%'.$recherche.'%\' OR content  LIKE \'%'.$recherche.'%\'');
 		
 		
     }
     else 
     {
+		echo '1';
         $mots = explode(" ", $recherche); 
         $nombre_mots = count ($mots); 
-        $valeur_requete = '';
+		$valeur_requete='';
 
         for($nb_boucle = 0; $nb_boucle < $nombre_mots; $nb_boucle++) 
         {
             $valeur_requete .= '' . $liaison . ' content LIKE \'%' . $mots[$nb_boucle] . '%\''; 
         }
-        
+        echo $valeur_requete;
         $valeur_requete = ltrim($valeur_requete,$liaison);
-        $req= mysql_query("SELECT * FROM posts NATURAL JOIN users WHERE type = 0 OR type = 1 AND $valeur_requete"); 
+        $req= mysql_query("SELECT * FROM posts NATURAL JOIN users WHERE type != 3  AND title LIKE  OR content  LIKE \'%'.$recherche.'%\''$valeur_requete"); 
     }
+        $req = mysql_query('SELECT * FROM posts NATURAL JOIN users WHERE type != 3 AND title LIKE \'%'.$recherche.'%\' OR content  LIKE \'%'.$recherche.'%\'');
     
 	if($req === false)
 	{
+		
 		$nb_resultats = 0;
 	}
 	else
 	{
+		
 		$nb_resultats = mysql_num_rows($req);
+		echo $nb_resultats;
 	}
 
     if ($nb_resultats == 0) 

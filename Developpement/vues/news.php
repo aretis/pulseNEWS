@@ -294,25 +294,10 @@ if(isset($_POST['pulse']))
 			<div class='shorti'>Rechercher : </div>
 	<br><form method="post" action="index.php?page=news">
 		<input type="search"name="recherche"/>
-		<select name ="mode">
-			<option value="exp_exacte">l'expression exacte</option>
-			<option value="all_mots">tout les mots </option>
-			<option value="un_mot">Au moins un mot</option>
-		</select>
-		<SELECT name="categorie">
-			<?php
-				$query = 'SELECT cat_name FROM news_cat';
-				$result = call_db($query);
+		
 
-				while($data = mysql_fetch_assoc($result))
-				{
-					echo'<option>'.$data['cat_name'].'</option>';
-				}
-				
-				mysql_free_result($result);
-				mysql_close($link);
-			?>
-		</select>
+			
+		
 		<div class='link_submit' style='text-align: right;'><input type="submit" value ="rechercher" name ="rechercher"/></div>
 	</form>
 

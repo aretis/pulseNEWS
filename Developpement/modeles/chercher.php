@@ -6,27 +6,8 @@
 
 <form method="post" action="index.php?page=recherche">
 <input type="text"name="recherche"/>
-<select name ="mode">
-	<option value="exp_exacte">l'expression exacte</option>
-	<option value="all_mots">tout les mots </option>
-	<option value="un_mot">Au moins un mot</option>
-</select>
 
-	 Catégorie<SELECT name="region">
-<?php
-	
-	$query = 'SELECT news_cat FROM cat_name';
-	$result = call_db($query);
 
-		while($donnees = mysql_fetch_array($result))
-		{
-			echo'<option>'.$donnees['categorie'].'</option>';
-		}
-	
-	mysql_free_result($result);
-	mysql_close($link);
-
-?>
 <html>
 <body>
 <br>
