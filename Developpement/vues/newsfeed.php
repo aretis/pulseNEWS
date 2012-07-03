@@ -46,8 +46,8 @@
                 <li class="nav-two"><a href="#core2">Economie</a></li>
                 <li class="nav-three"><a href="#jquerytuts2">Sport</a></li>
                 <li class="nav-four"><a href="#classics2">Ecologie</a></li>
-				<li class="nav-four"><a href="#jquerytuts3">People</a></li>
-				<li class="nav-four last"><a href="#jquerytuts4">Insolite</a></li>
+				<li class="nav-five"><a href="#jquerytuts3">People</a></li>
+				<li class="nav-six last"><a href="#jquerytuts4">Insolite</a></li>
             </ul>
     		
     		<div class="list-wrap">
