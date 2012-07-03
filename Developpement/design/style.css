@@ -705,12 +705,13 @@ word-wrap: break-word;
   width:835px;
 }
 .propulse_debate {
-
- text-align: right;
-  top:-43px;
-  margin-left: 700px;
+margin-left:700px;
+  text-align:right;
+  top:-60px;
   width:100px;
   z-index:0;
+  position:relative;
+  left:-114px;
 }
 .humor {
 	color: #777777;
