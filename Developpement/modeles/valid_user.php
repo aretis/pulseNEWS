@@ -13,13 +13,7 @@
 			}
 			else 
 			{
-				echo "
-				
-				<br>
-				
-				<br>
-				
-				votre mot de passe est incorrect!";
+				echo "<div id='box'>Votre mot de passe est incorrect !</div>";
 			}
 		}
 	}
