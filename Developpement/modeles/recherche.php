@@ -29,7 +29,7 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
     if ($mode == "expression_exacte") 
     {
 		echo $recherche;
-        $requete = mysql_query('SELECT * FROM posts WHERE content AND title LIKE \'%'.$recherche.'%\'');
+        $req = mysql_query('SELECT * FROM posts NATURAL JOIN users WHERE type = 0 OR type = 1 AND content AND title LIKE \'%'.$recherche.'%\'');
 		
 		
     }
@@ -45,11 +45,17 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
         }
         
         $valeur_requete = ltrim($valeur_requete,$liaison);
-        $requete= mysql_query("SELECT * FROM posts WHERE $valeur_requete"); 
+        $req= mysql_query("SELECT * FROM posts NATURAL JOIN users WHERE type = 0 OR type = 1 AND $valeur_requete"); 
     }
     
-    $nb_resultats = mysql_num_rows($requete);
-	
+	if($req === false)
+	{
+		$nb_resultats = 0;
+	}
+	else
+	{
+		$nb_resultats = mysql_num_rows($req);
+	}
 
     if ($nb_resultats == 0) 
     {
@@ -66,64 +72,184 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 		{
 			echo'<div id="box">Il y a '.$nb_resultats.' résultats qui correspondent à votre recherche</div>';
 		}
-		while($resultats = mysql_fetch_array($requete))
+		
+	while($post_data = mysql_fetch_assoc($req))
+	{
+	
+	$id = $id_post = $post_data['id_post'];
+	
+		if($post_data['type'] == 1)
+		{
+			echo"<div class='rate'>";
+			if($post_data['rate'] > 0) echo"+";
+			echo $post_data['rate'];
+			echo "</div>";
+	
+			echo"		<table cellpadding='0' cellspacing='0' class='post_news' >";
+			echo"		<tr style='height: 32px;'>";
+			echo"		<td rowspan='1'>";
+			echo"		<div class='title_post'>";
+			if(isset($_SESSION['pseudo']))
+			{
+				if($post_data['pseudo'] == $_SESSION['pseudo'])
+				{
+					echo"<div class='delete_post'>";
+					if(isset($_GET['pseudo'])) echo"<a style='color:red' href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$post_data['id_post']."'>X</a>&nbsp;&nbsp;".$post_data['title'];
+					else echo"<a style='color:red' href='index.php?page=news&delete_post=".$post_data['id_post']."'>X</a>&nbsp;&nbsp;&nbsp;<a href='index.php?page=view_article&id_post=".$post_data['id_post']."'>".$post_data['title']."</a>";;
+					echo"</div>";
+				}
+				else
+				{
+					echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$post_data['id_post']."'>".$post_data['title']."</a>";
+				}
+				
+			}
+			else
+			{
+				echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$post_data['id_post']."'>".$post_data['title']."</a>";
+			}
+			echo"</div></td>";
+			echo"	</tr><tr><td>";
+			
+			echo"		<div class='description_news'>";
+			echo"<a href=\"".$post_data['description']."\" >
+				<img id=\"myDiv\" src='design/img/news_1.png' 
+				onmouseover=\"this.src='design/img/news_2.png';\" 
+				onmouseout=\"this.src='design/img/news_1.png';\"/>
+			</a>";
+			
+			echo"<span>&nbsp;&nbsp;Pulsé le ";
+			echo date("d/m/Y à H\hi", strtotime($post_data['post_date']));
+			echo"&nbsp;par <a style='color: black;' href='index.php?page=profile&pseudo=".$post_data['pseudo']."'>".$post_data['pseudo']." </a>! </div>";
+			
+			include('modeles/comment.php');
+			
+			echo"	</span></td>";
+			echo"<form action='index.php?page=profile' method='post'/>";
+			echo'</form>';
+			echo"	</td>";
+			echo"</tr>";
+			echo"<tr>";
+			
+			echo"	<td>";
+			if(isset($_SESSION['pseudo']))
+			{
+				echo"	<div class='depulse'>&nbsp;";
+				
+				echo"<a href=\"index.php?page=news&type=posts&id_news=".$post_data['id_post']."&DEpulse=DEpulse\" >
+					<img id=\"myDiv\" src='design/img/down.png' 
+					onmouseover=\"this.src='design/img/down_plein.png';\" 
+					onmouseout=\"this.src='design/img/down.png';\"/>
+				</a></div>";
+			
+				echo"	<div class='propulse'>&nbsp;";
+				
+				echo"<a href=\"index.php?page=news&type=posts&id_news=".$post_data['id_post']."&PROpulse=PROpulse\" >
+					<img id=\"myDiv\" src='design/img/up.png' 
+					onmouseover=\"this.src='design/img/up_plein.png';\" 
+					onmouseout=\"this.src='design/img/up.png';\"/>
+				</a></div><div class='cat_news'>";
+			}
+			
+			$query = 'SELECT cat_name FROM news_cat WHERE id_cat ='.$post_data['cat'];
+			$result = call_db($query);
+
+			while($toto = mysql_fetch_assoc($result))
+			{
+				echo $toto['cat_name'];
+			}
+			echo"</div></td>";
+			
+			echo"</tr>";
+			
+			echo"</table>";
+			echo"<br>";
+		}		
+		else if($post_data['type'] == 0)
 		{
 		
-			echo"  </td>
-	<td>
-	<table cellpadding='0' cellspacing='0' class='post_news' >
-	<tr style='height: 32px;'>
-		<td rowspan='1'>
-		<div class='title_post'>
-		&nbsp;Nom du journal: ".$resultats['title']."
-		
-		</div>
-		</td>
-
-		<td>
-			<div class='rate'>".$resultats['rate']."</div>
-		</td>
-		</tr>
-		<tr style='background-color: #58b54c;'>
-		<td>
-		<div class='description'>";
-					$chaine = $resultats['content'];
-					couperChaine($chaine,20);
-					$chaineNouvelle=couperChaine($chaine,20);
-					echo $chaineNouvelle;
-					
-		echo"</div>
-		</td>
-		</div>
-		</td>
-			<td style='background-color: white;'>
-		<div class='date_news'>
-		".$resultats['post_date']."
-		</div>
-		
-		</td>
-
-	</tr>
-	<tr>
-	<td>
-		<a href='index.php?page=voir_article&id=".$resultats['id_post']."&recherche=".$recherche."&mode=".$mode."&categorie=".$categorie."'><div class='comment_button'>lire l'article!</div></a>
-		<div style='float: right; width: 5%px;'>&nbsp;</div>
-	</td>
-	</tr>
-	
-	</table>
-	</br>
-	"; 
-
+			echo"<div class='rate'>";
+			if($post_data['rate'] > 0) echo"+";
+			echo $post_data['rate'];
+			echo "</div>";
+			
+			echo"<table cellpadding='0' cellspacing='0' class='post_news' >";
+			echo"<tr style='height: 32px;'>";
+				echo"<td rowspan='1'>";
+				echo"<div class='title_post'>";
+			if(isset($_SESSION['pseudo']))
+			{
+				if($post_data['pseudo'] == $_SESSION['pseudo'])
+				{
+					echo"<div class='delete_post'>";
+					if(isset($_GET['pseudo'])) echo"<a style='color:red' href='index.php?page=news&pseudo=".$_GET['pseudo']."&delete_post=".$post_data['id_post']."'>X</a>&nbsp;&nbsp;".$post_data['title'];
+					else echo"<a style='color:red' href='index.php?page=news&delete_post=".$post_data['id_post']."'>X</a>&nbsp;&nbsp;";
+					echo"<a href='index.php?page=view_article&id_post=".$post_data['id_post']."'>".$post_data['title']."</a>";
+					echo"</div><br>";
+				}
+				else
+				{
+					echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$post_data['id_post']."'>".$post_data['title']."</a>";
+				}
 			}
+			else{
+			echo"		&nbsp;<a href='index.php?page=view_article&id_post=".$post_data['id_post']."'>".$post_data['title']."</a>";}
+			echo"	</div>";
+			echo"	</td>";
+			echo"</tr>";
+			echo"<tr>";
+			echo"	<td>";
+			echo"		<br><div class='description'>";
+			echo $post_data['description']; 
+			echo"		</div>";
+			echo"<span class='info_post'>&nbsp;&nbsp;<br>Ecrit le ";
+			echo date("d/m/Y à H\hi", strtotime($post_data['post_date']));
+			echo"&nbsp;par <a style='color: black;' href='index.php?page=profile&pseudo=".$post_data['pseudo']."'>".$post_data['pseudo']." </a>!";
+			
+			include('modeles/comment.php');
+			
+			echo"	</span></td>";
+			echo"	</td>";
+			echo"</tr>";
+			echo"<tr>";
+			echo"<td>";
+			if(isset($_SESSION['pseudo']))
+			{
+				echo"	<div class='depulse'>&nbsp;";
+				
+				echo"<a href=\"index.php?page=news&type=posts&id_news=".$post_data['id_post']."&DEpulse=DEpulse\" >
+					<img id=\"myDiv\" src='design/img/down.png' 
+					onmouseover=\"this.src='design/img/down_plein.png';\" 
+					onmouseout=\"this.src='design/img/down.png';\"/>
+				</a></div>";
+			
+				echo"	<div class='propulse'>&nbsp;";
+				
+				echo"<a href=\"index.php?page=news&type=posts&id_news=".$post_data['id_post']."&PROpulse=PROpulse\" >
+					<img id=\"myDiv\" src='design/img/up.png' 
+					onmouseover=\"this.src='design/img/up_plein.png';\" 
+					onmouseout=\"this.src='design/img/up.png';\"/>
+				</a></div><div class='cat_news'>";
+				
+			}
+			$query = 'SELECT cat_name FROM news_cat WHERE id_cat ='.$post_data['cat'];
+			$result = call_db($query);
+
+			while($toto = mysql_fetch_assoc($result))
+			{
+				echo $toto['cat_name'];
+			}
+			
+			echo"</div></td>";
+			
+			echo"</tr>";
+			
+			echo"</table>";
+			echo"<br>";
+		}
+		
+	}
 			
 		}
 	}	
-
-
-
-else if (empty($_POST['recherche']))
-{
-	echo'veuillez saisir une recherche!';
-}
 ?>
