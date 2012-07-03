@@ -131,6 +131,7 @@ margin-top: 5px;
   margin:auto;
   padding:4px 8px;
   width:90%;
+  height: 100px;
 }
 .title_post a{
 
@@ -145,20 +146,18 @@ margin-top: 5px;
 }
 .rate {
 display: block;
-  color:#FD9613;
+  color:#333333;
   font-family: Arial;
   font-size: 16px;
   font-weight: bold;
-  height: 100%;
   text-decoration:none;
   vertical-align:top;
   width: 20px;
+  height: 16px;
+  margin-left: 98%;
+  margin-top: -20px;
   text-align: right;
   position:relative;
-  top:32px;
-  left:91%;
-  
-  
 }
 .description {
 color: #333333;
@@ -475,10 +474,11 @@ font-weight: bold;
   border-top-left-radius:6px;
   border-top-right-radius:6px;
   box-shadow: 1px 1px 3px #111111;
-  float:right;
+  
   margin:auto;
   padding:6px 5px;
   border: 1px solid #333333;
+  width: 90%;
 }
 .article_debate {
   background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
