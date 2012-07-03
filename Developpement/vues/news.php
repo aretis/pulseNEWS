@@ -2,6 +2,7 @@
 <?php
 	include('modeles/pulse.php');
 	
+	
 	if(isset($_SESSION['pseudo']))
 	{
 		if(isset($_GET['PROpulse']))
@@ -291,7 +292,7 @@ if(isset($_POST['pulse']))
 		
 			<br><div class='search_news'>
 			<div class='shorti'>Rechercher : </div>
-	<br><form method="post" action="index.php?page=recherche">
+	<br><form method="post" action="index.php?page=news">
 		<input type="search"name="recherche"/>
 		<select name ="mode">
 			<option value="exp_exacte">l'expression exacte</option>
@@ -325,7 +326,13 @@ if(isset($_POST['pulse']))
 <br>
 
 
-
+<?php
+	if(isset($_POST['recherche']) && empty($_POST['recherche'])) echo"<div id='box'> Vous n'avez pas entré de recherche ! </div>";
+	else if(isset($_POST['recherche']) && (!empty($_POST['recherche'])))
+	{
+		include('modeles/recherche.php');
+	}
+?>
 <?php if((!isset($_POST['recherche'])) || (empty($_POST['recherche'])) || $nb_resultats == 0) {?>
 <div id='pardessus'>
 <?php
