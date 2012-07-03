@@ -153,7 +153,7 @@
 			echo"</h5>";?>
 				<div >
 					<section id = 'photos_user' '>
-		<!-- <div class=\"userbox\" style=\" width: 20px; height: 20px;  z-index: 1; position:relative; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;">--!>
+		
 		
 			<?php
 			if (empty($result['profile_picture']))
@@ -190,25 +190,26 @@
 		{
 			
 			echo"<a style='background-color:#d5e5ea;' href='index.php?page=view_article&id_post=".$result['id_post']."&read_confirm=".$read_confirm."&id_comment=".$result['id_comment']."'>"; ?>
-			<h5>
+	<h5>
 			<?php
-			if($result['type_de_notif'] == 1)
+		
+			if($result['type_de_notif']== 1)
 			{
-				echo "".$result['pseudo']." a commenté votre post!" ;
+			echo "".$result['pseudo']." a commenté votre post!" ;
+			//echo '<style= background-position:right '.$result['
 			}
 			else
 			{
-				echo"".$result['pseudo']." a répondu a votre commentaire!";
+			echo"".$result['pseudo']." a répondu a votre commentaire! ";
 			}
-		
 			echo"</h5>";?>
-			<div>	
-				<style class=\"userbox\" style=\" width: 10px; height: 10px;  z-index: 1; position:relative; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;">
+				<div >
+					<section id = 'photos_user' '>
 		
 			<?php
 			if (empty($result['profile_picture']))
 			{
-				echo"<img src='design/img/exemple_profile.jpg'/> style=\"position: relative; top: 15px; width: 10px; height: 10px;height: 1%; z-index: 1;\" />";
+				echo"<img  src='design/img/exemple_profile.jpg' />";
 			}
 			else
 			{
@@ -222,14 +223,14 @@
 	
 			}
 			
-				echo"<div class='user_link' style=\"position: right;widht:10px bottom: 5px; left: 5px; z-index: 2; border: none !important;\"/></style>";
-			
-				$chaine = $result['content'];
-				couperChaine($chaine,10);
-				$chaineNouvelle=couperChaine($chaine,10);
-				echo $chaineNouvelle;
-				
-				echo'</div></a>';
+				echo"</ class='user_link' style=\";widht:10px height: 10px; bottom: 5px; left: 5px; z-index: 2; border: none !important;\"/></style>";
+				echo"</section>";
+			$chaine = $result['content'];
+			couperChaine($chaine,10);
+			$chaineNouvelle=couperChaine($chaine,10);
+			echo "<div id='notif_text'>".$chaineNouvelle."</div>";
+			echo"</div>";
+			echo"</a>";
 		}
 	}
 	
