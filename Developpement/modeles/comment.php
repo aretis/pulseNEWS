@@ -31,7 +31,7 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		}
 	while($data = mysql_fetch_array($result))
 	{ 
-		
+
 		if (isset($_POST['id_commentaire']) && $_POST['id_commentaire'] == $id)
 		{
 		include('modeles/accordeon_ouvert.php');
@@ -44,7 +44,7 @@ $query = "SELECT id_comment, content, post_date, pseudo FROM comments INNER JOIN
 		include('modeles/accordeon_fermer.php');
 		}
 
-	}	
+	}
 	echo"<form action='index.php?".$_SERVER['QUERY_STRING']."' method='post'/>";
 	
 	echo"<br>";
