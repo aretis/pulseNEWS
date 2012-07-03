@@ -72,8 +72,8 @@
 				
 				
 					<p>pulseNEWS a été créé par Salman ALAMDAR, Christie BUNLON, Michel GILLE et Brice HOFFMANN. En effet, après avoir obtenu la première place aux forums des Projets Industriels de janvier 2012 avec Educ'land (site d’activités éducatives), Salman et Christie sont restés dans leur lancée pour innover le Monde du Web. Voyant que les
-					réseaux sociaux axés sur l'information avaient un futur prometteur, ils ce sont associés avec Michel et Brice,
-					deux éléments majeur du projet iTiPiX (site internet de valorisation artistique) pour fonder la communauté pulseNEWS.<br><br><br>"Ceux qui osent se trompent souvent, ceux qui n'osent pas se trompent toujours."</p>
+					réseaux sociaux axés sur l'information avaient un futur prometteur, ils se sont associés avec Michel et Brice,
+					deux éléments majeurs du projet iTiPiX (site internet de valorisation artistique) pour fonder la communauté pulseNEWS.<br><br><br>"Ceux qui osent se trompent souvent, ceux qui n'osent pas se trompent toujours."</p>
 				</div>
 		        <br><!--<img src="design/img/dream_team.jpg" width="600" height="400" alt="Galaxy Nexus" />-->
 		    </div>

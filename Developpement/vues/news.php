@@ -528,7 +528,7 @@ if(isset($_POST['pulse']))
 }?>
 </div>
 </td>
-<td style='vertical-align: top;'>
+<td style='vertical-align: top;width: 20%;'>
 	<table cellpadding='0' cellspacing='0' class='rss_block' >
 
 			<tr>
