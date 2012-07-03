@@ -217,7 +217,7 @@ if(!isset($_GET['pseudo']))
 	</table>
 	
 </td>
-<td style='width: 80%; vertical-align: top;margin-top: -300px;'>
+<td style='width: 80%; vertical-align: top;height:100%;'>
 <?php
 
 	if(isset($_GET['pseudo']))
