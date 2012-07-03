@@ -193,9 +193,13 @@
 		{
 
 			echo"<a style='background-color:#d5e5ea;' href='index.php?page=view_article&id_post=".$result['id_post']."&read_confirm=".$read_confirm."&id_comment=".$result['id_comment']."'>"; ?>
-			<h5>
+	<h5>
 			<?php
+<<<<<<< HEAD
 	
+=======
+		
+>>>>>>> 6a41ef5e7534133b62e74b545ff851d7d5cb69da
 			if($result['type_de_notif']== 1)
 			{
 			echo "".$result['pseudo']." a commenté votre post!" ;
@@ -232,11 +236,16 @@
 			couperChaine($chaine,10);
 			$chaineNouvelle=couperChaine($chaine,10);
 			echo "<div id='notif_text'>".$chaineNouvelle."</div>";
+<<<<<<< HEAD
 			
 			echo"</div>";
 			echo"</a>";
 			echo"<a id='supprimer_notif' href='index.php?page=voir_notif&id_comment=".$result['id_comment']."'> X </a>";
 			
+=======
+			echo"</div>";
+			echo"</a>";
+>>>>>>> 6a41ef5e7534133b62e74b545ff851d7d5cb69da
 		}
 	}
 	
