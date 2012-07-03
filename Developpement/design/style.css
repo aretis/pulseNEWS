@@ -1498,4 +1498,13 @@ float: none;
     position: relative;
     left: -118px;
 }
+#supprimer_notif{
+color:blue;
+  font-size:25px;
+  position:relative;
+  left:676px;
+  width:19px;
+  height:29px;
+  top:-78px;
+}
  
