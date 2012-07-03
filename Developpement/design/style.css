@@ -667,11 +667,12 @@ input[type="submit"] :hover
   margin-top:-5px;
 }
 .comment_post {
-
+white-space: pre-line;
   font-size: 12px;
   height:100%;
   position:relative;
-
+display: block;
+word-wrap: break-word;
 }
 .comment_post img
 {
@@ -1169,7 +1170,7 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
    background: -moz-linear-gradient(top, #f7f7f7, #d9d9d9);
    background: -ms-linear-gradient(top, #f7f7f7, #d9d9d9);
    background: -o-linear-gradient(top, #f7f7f7, #d9d9d9);
- 
+	
   border-bottom-left-radius:6px;
   border-bottom-right-radius:6px;
   border-top-left-radius:6px;
@@ -1239,7 +1240,8 @@ text-align: right;
   border-top-right-radius:6px;
   box-shadow:#003E40 2px 2px 2px;
   position:relative;
-  left:0px;
+  left: 0px;
+ 
 }
 .accordionOuvertcontent2 {
   background-position:initial initial;
@@ -1258,6 +1260,7 @@ text-align: right;
   border-top-left-radius:6px;
   border-top-right-radius:6px;
   box-shadow:#003E40 2px 2px 2px;
+
 }
 
 
@@ -1384,7 +1387,8 @@ text-align:center;
 }
 #all_comment_comment{
 	position:relative;
-	left:30%;
+	left:10%;
+	width: 90%;
 }
 #new_debate{
 	margin:auto;
