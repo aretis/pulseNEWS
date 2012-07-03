@@ -874,6 +874,23 @@ margin-top: -22px;
   height:100px;
   text-shadow:black 2px 2px 5px;
 }
+
+#photos_user {
+}
+#photos_user img {
+border: 1px solid #003E40;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px 0 #000000;
+    float: left;
+    height: 55px;
+    left: -118px;
+    position: relative;
+    text-shadow: 2px 2px 5px black;
+    top: -9px;
+    width: 75px;
+    z-index: 2;
+	
+}
 .edit_profile {
   -webkit-box-shadow:#000000 0 1px 0;
   background-image:-webkit-linear-gradient(top, #1A9DC5, #1F6E86);
@@ -1475,5 +1492,9 @@ background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e
   width:125%;
   height:257px;
  }
-
+#notif_text{
+float: none;
+    position: relative;
+    left: -118px;
+}
  

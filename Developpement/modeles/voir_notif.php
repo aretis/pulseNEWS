@@ -151,13 +151,14 @@
 			echo"".$result['pseudo']." a répondu a votre commentaire! ";
 			}
 			echo"</h5>";?>
-			<div>	
-				<style class=\"userbox\" style=\" width: 10px; height: 10px;  z-index: 1; position:relative; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;">
+				<div >
+					<section id = 'photos_user' '>
+		<!-- <div class=\"userbox\" style=\" width: 20px; height: 20px;  z-index: 1; position:relative; display:inline-block; border-width: 1px; border-color: green; border-style: dashed;">--!>
 		
 			<?php
 			if (empty($result['profile_picture']))
 			{
-				echo"<img src='design/img/exemple_profile.jpg'/> style=\"position: relative; top: 15px; width: 10px; height: 10px;height: 1%; z-index: 1;\" />";
+				echo"<img  src='design/img/exemple_profile.jpg' />";
 			}
 			else
 			{
@@ -171,12 +172,12 @@
 	
 			}
 			
-				echo"<div class='user_link' style=\"position: right;widht:10px bottom: 5px; left: 5px; z-index: 2; border: none !important;\"/></style>";
-			
+				echo"</ class='user_link' style=\";widht:10px height: 10px; bottom: 5px; left: 5px; z-index: 2; border: none !important;\"/></style>";
+				echo"</section>";
 			$chaine = $result['content'];
 			couperChaine($chaine,10);
 			$chaineNouvelle=couperChaine($chaine,10);
-			echo $chaineNouvelle;
+			echo "<div id='notif_text'>".$chaineNouvelle."</div>";
 			?>
 			</div>
 

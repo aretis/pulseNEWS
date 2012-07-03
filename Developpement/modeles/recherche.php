@@ -15,7 +15,7 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 		
 	}
     $mode = "exp_exacte";
-	echo $recherche;
+
     if ($mode == "exp_exacte")
     {
         $liaison = 'AND'; 
@@ -43,7 +43,7 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
         {
             $valeur_requete .= '' . $liaison . ' content LIKE \'%' . $mots[$nb_boucle] . '%\''; 
         }
-        echo $valeur_requete;
+    
         $valeur_requete = ltrim($valeur_requete,$liaison);
         $req= mysql_query("SELECT * FROM posts NATURAL JOIN users WHERE type != 3  AND title LIKE  OR content  LIKE \'%'.$recherche.'%\''$valeur_requete"); 
     }
@@ -58,7 +58,7 @@ if ((isset($_POST['recherche']) && !empty($_POST['recherche'])))
 	{
 		
 		$nb_resultats = mysql_num_rows($req);
-		echo $nb_resultats;
+
 	}
 
     if ($nb_resultats == 0) 
