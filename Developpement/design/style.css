@@ -494,6 +494,7 @@ font-weight: bold;
   margin:auto;
   padding:6px 5px;
   border: 1px solid #333333;
+  height: 100px;
 }
 .article_content {
   padding:6px 5px;
