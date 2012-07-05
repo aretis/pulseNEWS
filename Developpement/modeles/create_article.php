@@ -11,14 +11,14 @@ function create_article($article)
 		$id_user = $data['id_user'];
     } 
 	
-	$req = call_db('SELECT id_cat FROM NEWS_CAT WHERE cat_name = "'.$article['cat'].'";');
+	$req = call_db('SELECT id_cat FROM news_cat WHERE cat_name = "'.$article['cat'].'";');
 	
 	while($data = mysql_fetch_assoc($req)) 
     { 
 		$id_cat = $data['id_cat'];
     } 
 	
-	$req = call_db('SELECT id_area FROM AREAS WHERE area_name = "'.$article['area'].'";');
+	$req = call_db('SELECT id_area FROM areas WHERE area_name = "'.$article['area'].'";');
 	
 	while($data = mysql_fetch_assoc($req)) 
     { 

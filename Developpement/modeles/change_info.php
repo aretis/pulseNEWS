@@ -1,6 +1,6 @@
 ﻿<?php
-	include ('/../modeles/profile_print.php');
-	include ('/../modeles/call_db.php');
+	include ('modeles/profile_print.php');
+	include ('modeles/call_db.php');
 	include('modeles/connect_db.php');
 
 	mysql_query("SET NAMES 'utf8'");

@@ -10,7 +10,7 @@
 <tr><td class='title_create_article'>Région</td><td><SELECT id='name' select='selected' name='area'>
 <?php
 
-$query = 'SELECT area_name FROM AREAS';
+$query = 'SELECT area_name FROM areas';
 $result = call_db($query);
 
 	while($donnees = mysql_fetch_array($result))
@@ -27,7 +27,7 @@ $result = call_db($query);
  <td><SELECT id='name' select='selected' name='cat'>
 <?php
 
-$query = 'SELECT cat_name FROM NEWS_CAT';
+$query = 'SELECT cat_name FROM news_cat';
 $result = call_db($query);
 
 	while($donnees = mysql_fetch_array($result))

@@ -49,7 +49,11 @@ function check_register($pseudo, $password, $confirmpassword, $firstname, $surna
 	{
 		include('modeles/valid_register.php');
 		valid_register($pseudo,$password,$surname,$firstname,$mail,$areaname);
-		header('Location: index.php?page=validation');
+?>
+		<script language="Javascript">
+			document.location.replace("index.php?page=validation");
+		</script>
+		<?php
 	}
 	
 	echo"<div id='box2'>";

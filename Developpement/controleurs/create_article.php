@@ -29,8 +29,11 @@ else
 			$article['cat'] = $_POST['cat'];
 			
 			create_article($article);
-			
-			header('Location:index.php?page=profile');
+			?>
+				<script language="Javascript">
+				document.location.replace("index.php?page=profile");
+				</script>
+			<?php
 		}
 		else
 		{

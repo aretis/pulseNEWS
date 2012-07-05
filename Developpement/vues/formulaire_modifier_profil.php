@@ -16,7 +16,7 @@
 	<label for='name'> Ma région</label><SELECT name="region">
 <?php
 	
-	$query = 'SELECT area_name FROM AREAS';
+	$query = 'SELECT area_name FROM areas';
 	$result = call_db($query);
 
 		while($donnees = mysql_fetch_array($result))

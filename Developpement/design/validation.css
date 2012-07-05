@@ -14,20 +14,12 @@ h1,h2,h3,h4,h5,h6{ font-size:100%; font-weight:normal;}
 q:before,q:after{ content:'';}
 abbr,acronym{ border:0;}
 
-@font-face 
-{
-	font-family: 'coolvetica_rg';
-	src: url('fonts/coolvetica_rg.ttf') format('truetype');
-}
 html {
 	overflow:-moz-scrollbars-vertical;
 }
 body{
-	background-color:rgb(240,255,240);
-	font-family: 'coolvetica_rg';
-	line-height:16px;
-	text-shadow:0 1px 0 #fff;
-	color:white;
+	background-color:#c0deed;
+	color:black;
 }
 a{
 	color:#333;
@@ -60,15 +52,15 @@ form p:last-child{ /* Sélecteur avancé pour sélectionner le dernier paragraphe d
 	margin-bottom:0;
 }
 .name{
-	cursor:pointer;
-	display:block;
-	float:left;
-	font-size:36px;
-	font-weight:bold;
-	line-height:42px;
-	margin-bottom:48px;
-	width:668px;
-	color:white;
+	color:black;
+  cursor:pointer;
+  display:block;
+  float:left;
+  font-size:25px;
+  font-weight:bold;
+  line-height:42px;
+  margin-bottom:48px;
+  width:572px;
 }
 
 input[type=text],
@@ -105,16 +97,15 @@ select:focus{
 }
 input[type=submit],
 a.submit{
-	background-color:#375D81;
-	color:#fff;
+	color:black;
 	cursor:pointer;
 	font-family:Arial,sans-serif;
 	font-size:16px;
 	font-weight:bold;
 	padding:7px 10px;
 	text-decoration:none;
-	text-shadow:0 1px 1px #333;
 	text-transform:uppercase;
+	background-image:-webkit-linear-gradient(top, #F9F9F9, #E0E0E0);
 }
 input[type=submit]:hover,
 a.submit:hover{

@@ -11,7 +11,6 @@
 		include('modeles/connect_db.php');
 		
 		mysql_query("SET NAMES 'utf8'");
-		
 		$query='INSERT INTO comments VALUES ("", '.$id_user.', '.$id_post.', "'.$content.'", NOW())';
 		
 		

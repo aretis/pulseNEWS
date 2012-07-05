@@ -9,7 +9,11 @@
 		{
 			if (($_POST['password']) == $resultat['password'])
 			{
-				header('location:index.php?page=modifier_compte');
+			?>
+				<script language="Javascript">
+					document.location.replace("index.php?page=modifier_compte");
+				</script>
+				<?php
 			}
 			else 
 			{

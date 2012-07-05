@@ -33,7 +33,7 @@
 		pulse($_GET['id_news'], $_SESSION['id_user'], $_GET['DEpulse']);
 	}
 
-	include('/../modeles/connect_db.php');
+	include('modeles/connect_db.php');
 		mysql_query("SET NAMES 'utf8'");
 		if(isset($_SESSION['pseudo']))
 		{

@@ -8,7 +8,7 @@
 
 	
 	ec
-	$query = "SELECT content, post_date, pseudo  FROM comments NATURAL JOIN USERS";
+	$query = "SELECT content, post_date, pseudo  FROM comments NATURAL JOIN users";
 	include('call_db.php');
 	$result = call_db($query);
 

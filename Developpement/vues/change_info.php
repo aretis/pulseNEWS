@@ -1,5 +1,5 @@
 ﻿<?php
-	include ('/../modeles/change_info.php');
+	include ('modeles/change_info.php');
 ?>
 
 

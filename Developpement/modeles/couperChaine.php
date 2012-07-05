@@ -1,10 +1,10 @@
-
+ï»¿
 <?php
 //-----------------------------------------------------------------------------------------
 //
 //christie bunlon
 //
-//fonction qui permet de faire apparaître un certain nombre de caracteres d'un contenu de 
+//fonction qui permet de faire apparaitre un certain nombre de caracteres d'un contenu de 
 //-----------------------------------------------------------------------------------------------
 function couperChaine($chaine, $nbrMotMax)
 {

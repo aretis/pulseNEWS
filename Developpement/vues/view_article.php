@@ -70,7 +70,7 @@
 		$pseudo = $data1['pseudo'];
 	}
 	
-	$query = 'SELECT * FROM POSTS WHERE id_post = '.$id_post;
+	$query = 'SELECT * FROM posts WHERE id_post = '.$id_post;
 	$req = mysql_query($query);
 
 	include('modeles/show_posts.php');

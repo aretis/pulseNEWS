@@ -3,6 +3,7 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset='UTF-8'"/>
+
 <link rel="stylesheet" href="design/style.css" />
 <link rel="icon" type="image/gif" href="design/img/favicon.gif" />
 <script src="js/modernizr.custom.80028.js"></script>
@@ -94,7 +95,7 @@
 					{
 					
 						$user=$_SESSION['id_user'];
-						include('/../modeles/connect_db.php');
+						include('modeles/connect_db.php');
 						$query = "SELECT id_pulseur, count(id_pulseur) AS nb_notif FROM notification WHERE  id_pulseur = ".$_SESSION['id_user']." AND id_user != ".$_SESSION['id_user']." AND read_confirm='0'";
 						if(!mysql_query($query) )
 								{

@@ -11,7 +11,7 @@ function print_profile($key,$pseudo,$surname,$firstname,$mail,$area_name,$about,
 	
 	mysql_query("SET NAMES 'utf8'");
 	
-	 mysql_query('SELECT * FROM USERS("'.$key.'","'.$pseudo.'","'.$surname.'","'.$area_name.'","'.$firstname.'","'.$mail.'","'.$about.'","'.$humor.'")');
+	 mysql_query('SELECT * FROM users("'.$key.'","'.$pseudo.'","'.$surname.'","'.$area_name.'","'.$firstname.'","'.$mail.'","'.$about.'","'.$humor.'")');
 
 		include('call_db.php');
 	mysql_close();

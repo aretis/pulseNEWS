@@ -52,7 +52,11 @@ function check_connect($pseudo, $password)
 		$_SESSION['pseudo'] = $pseudo;
 		$_SESSION['id_user'] = $donnees['id_user'];
 		
-		header('Location:index.php?page=profile');
+		?>
+		<script language="Javascript">
+			document.location.replace("index.php?page=profile");
+		</script>
+		<?php
 	}
 }
 ?>

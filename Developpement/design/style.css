@@ -1411,7 +1411,7 @@ text-align:center;
 }
 #new_debate{
 	margin:auto;
-	width:455px;
+	width:50%;
 }
 
 .comment_a_comment1 {
@@ -1507,4 +1507,95 @@ color:blue;
   height:29px;
   top:-78px;
 }
+.accordionbuttonDebate {
+background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e0e0e0));
+   background: -webkit-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -moz-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -ms-linear-gradient(top, #f9f9f9, #e0e0e0);
+   background: -o-linear-gradient(top, #f9f9f9, #e0e0e0);
+  border:1px solid #003E40;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:#000000 0 1px 0;
+  color: #333333;
+  cursor:pointer;
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+    /* margin: auto; */
+    position: relative;
+	margin-top:10px;
+}
+.accordionOuvertDebate {
+  background-position:initial initial;
+  background-repeat:initial initial;
+  float:left;
+  width: 100%;
+  /* margin-left:-8px; */
+    -webkit-box-shadow:#000000 0 1px 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#d9d9d9));
+   background: -webkit-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -moz-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -ms-linear-gradient(top, #f7f7f7, #d9d9d9);
+   background: -o-linear-gradient(top, #f7f7f7, #d9d9d9);
  
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  box-shadow:#003E40 2px 2px 2px;
+}
+.slide-up-boxes a { 
+			display: block; 
+			height: 130px; 
+			margin: 0 0 20px 0; // espace en
+			background: rgba(215, 215, 215); 
+			border: 1px solid #ccc; 
+			height: 60px; 
+			overflow: hidden; 
+		
+		}
+		
+		.slide-up-boxes h5 {
+			background-position:repeat;
+			color: #333; 
+			text-align: center;
+			height: 35px; 
+			font: italic 18px Georgia, Serif;    /* Vertically center text by making line height equal to height */
+			 //opacity: 1;
+			 -webkit-transition: all 0.2s linear; 
+			 -moz-transition: all 0.2s linear; 
+			 -o-transition: all 0.2s linear;
+		}
+		
+		.slide-up-boxes a:hover h5 { 
+			margin-top: -65px; 
+			opacity: 0; 
+		}
+		
+		.slide-up-boxes div { 
+		
+			position: relative; 
+			color: white; 
+			font: 12px/15px Georgia, Serif;
+			height: 70px; 
+			padding: 10px; 
+			opacity: 0; 
+			-webkit-transform: rotate(6deg); 
+			-webkit-transition: all 0.4s linear; 
+			-moz-transform: rotate(6deg); 
+			-moz-transition: all 0.4s linear; 
+			-o-transform: rotate(6deg); 
+			-o-transition: all 0.4s linear; 
+		}
+		.slide-up-boxes a:hover div { 
+			opacity: 1; 
+			-webkit-transform: rotate(0); 
+			-moz-transform: rotate(0); 
+			-o-transform: rotate(0); 
+		}
+		.slide-up-boxes div { background: grey;  17px 17px no-repeat; padding-left: 120px; }
+		//.slide-up-boxes   div  { background: #367db2 url(images/diw.png) 21px 10px no-repeat; padding-left: 90px; }
+		//.slide-up-boxes a:nth-child(3) div { background: #393838 url(images/qod.png) 14px 16px no-repeat; padding-left: 133px; }

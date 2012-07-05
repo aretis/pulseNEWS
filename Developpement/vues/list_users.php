@@ -48,5 +48,5 @@
 	
 	
 	echo"</section>";
-	if(mysql_num_rows($result) == 0) echo"<div id='box' >Désolé, il n'existe pas de pulseur \" ".$_POST['pulseur']." \" </div>";
+	if(mysql_num_rows($result) == 0 && isset($_POST['pulseur'])) echo"<div id='box' >Désolé, il n'existe pas de pulseur \" ".$_POST['pulseur']." \" </div>";
 ?>

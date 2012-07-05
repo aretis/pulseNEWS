@@ -1,72 +1,5 @@
-﻿<!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset='UTF-8'>
-	<title>Slideup Boxes</title>
-	<link rel='stylesheet' href='design/notif.css'>
-
-	
-	<style>
-		.slide-up-boxes a { 
-			display: block; 
-			height: 130px; 
-			margin: 0 0 20px 0; // espace en
-			background: rgba(215, 215, 215); 
-			border: 1px solid #ccc; 
-			height: 60px; 
-			overflow: hidden; 
-		
-		}
-		
-		.slide-up-boxes h5 {
-			background-position:repeat;
-			color: #333; 
-			text-align: center;
-			height: 35px; 
-			font: italic 18px Georgia, Serif;    /* Vertically center text by making line height equal to height */
-			 //opacity: 1;
-			 -webkit-transition: all 0.2s linear; 
-			 -moz-transition: all 0.2s linear; 
-			 -o-transition: all 0.2s linear;
-		}
-		
-		.slide-up-boxes a:hover h5 { 
-			margin-top: -65px; 
-			opacity: 0; 
-		}
-		
-		.slide-up-boxes div { 
-		
-			position: relative; 
-			color: white; 
-			font: 12px/15px Georgia, Serif;
-			height: 70px; 
-			padding: 10px; 
-			opacity: 0; 
-			-webkit-transform: rotate(6deg); 
-			-webkit-transition: all 0.4s linear; 
-			-moz-transform: rotate(6deg); 
-			-moz-transition: all 0.4s linear; 
-			-o-transform: rotate(6deg); 
-			-o-transition: all 0.4s linear; 
-		}
-		.slide-up-boxes a:hover div { 
-			opacity: 1; 
-			-webkit-transform: rotate(0); 
-			-moz-transform: rotate(0); 
-			-o-transform: rotate(0); 
-		}
-		.slide-up-boxes div { background: grey;  17px 17px no-repeat; padding-left: 120px; }
-		//.slide-up-boxes   div  { background: #367db2 url(images/diw.png) 21px 10px no-repeat; padding-left: 90px; }
-		//.slide-up-boxes a:nth-child(3) div { background: #393838 url(images/qod.png) 14px 16px no-repeat; padding-left: 133px; }
-	</style>
-</head>
-<body>
-
-
-<div id="page-wrap">
-﻿<?php
+﻿<div id="page-wrap">
+<?php
 
 	if(isset($_GET['id_comment'])) 
 	{
@@ -74,10 +7,11 @@
 		$sucess=mysql_query($requete) or die(mysql_error());
 		echo "<div id='box'> La notification a bien été supprimée</div>";
 	}
-
+	
 	$read_confirm='1';
-	include('/../modeles/call_db.php');
-	include('/../modeles/couperChaine.php');
+	
+	include('modeles/call_db.php');
+	include('modeles/couperChaine.php');
 
 	$request2 ="SELECT id_comment,type_de_notif FROM notification";
 	
@@ -98,7 +32,7 @@
 		{
 		
 			$requete = "SELECT * FROM notification N
-			NATURAL JOIN USERS
+			NATURAL JOIN users
 			JOIN comments C ON C.id_comment = N.id_comment
 			WHERE N.id_user != ".$_SESSION['id_user']." 
 			AND N.id_pulseur =".$_SESSION['id_user']." AND  N.id_comment=".$id." AND type_de_notif = 1 ORDER BY N.date_notif DESC";
@@ -106,7 +40,7 @@
 		else
 		{
 			$requete = "SELECT * FROM notification N
-			NATURAL JOIN USERS
+			NATURAL JOIN users
 			JOIN comment_a_comment CAC ON CAC.id_comment = N.id_comment
 			WHERE N.id_user != ".$_SESSION['id_user']." 
 			AND N.id_pulseur =".$_SESSION['id_user']." AND N.id_comment=".$id." AND type_de_notif = 2 ORDER BY N.date_notif DESC";
@@ -195,11 +129,7 @@
 			echo"<a style='background-color:#d5e5ea;' href='index.php?page=view_article&id_post=".$result['id_post']."&read_confirm=".$read_confirm."&id_comment=".$result['id_comment']."'>"; ?>
 	<h5>
 			<?php
-<<<<<<< HEAD
-	
-=======
-		
->>>>>>> 6a41ef5e7534133b62e74b545ff851d7d5cb69da
+
 			if($result['type_de_notif']== 1)
 			{
 			echo "".$result['pseudo']." a commenté votre post!" ;
@@ -232,20 +162,17 @@
 			
 				echo"</ class='user_link' style=\";widht:10px height: 10px; bottom: 5px; left: 5px; z-index: 2; border: none !important;\"/></style>";
 				echo"</section>";
+
 			$chaine = $result['content'];
 			couperChaine($chaine,10);
 			$chaineNouvelle=couperChaine($chaine,10);
 			echo "<div id='notif_text'>".$chaineNouvelle."</div>";
-<<<<<<< HEAD
+
 			
 			echo"</div>";
 			echo"</a>";
-			echo"<a id='supprimer_notif' href='index.php?page=voir_notif&id_comment=".$result['id_comment']."'> X </a>";
 			
-=======
-			echo"</div>";
-			echo"</a>";
->>>>>>> 6a41ef5e7534133b62e74b545ff851d7d5cb69da
+echo"<a id='supprimer_notif' href='index.php?page=voir_notif&id_comment=".$result['id_comment']."'> X </a>";
 		}
 	}
 	

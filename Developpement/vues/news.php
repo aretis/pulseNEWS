@@ -394,7 +394,7 @@ if(isset($_POST['pulse']))
 			echo date("d/m/Y à H\hi", strtotime($post_data['post_date']));
 			echo"&nbsp;par <a style='color: black;' href='index.php?page=profile&pseudo=".$post_data['pseudo']."'>".$post_data['pseudo']." </a>! </div>";
 			
-			include('modeles/comment.php');
+			if(isset($_SESSION['pseudo'])) include('modeles/comment.php');
 			
 			echo"	</span></td>";
 			echo"<form action='index.php?page=profile' method='post'/>";
@@ -478,7 +478,7 @@ if(isset($_POST['pulse']))
 			echo date("d/m/Y à H\hi", strtotime($post_data['post_date']));
 			echo"&nbsp;par <a style='color: black;' href='index.php?page=profile&pseudo=".$post_data['pseudo']."'>".$post_data['pseudo']." </a>!";
 			
-			include('modeles/comment.php');
+			if(isset($_SESSION['pseudo'])) include('modeles/comment.php');
 			
 			echo"	</span></td>";
 			echo"	</td>";
@@ -523,7 +523,7 @@ if(isset($_POST['pulse']))
 	}
 	if(mysql_num_rows($req) == 0)
 	{
-		echo"<div class='no_news'> Désolé, aucune news n'a été trouvée pour ces critères</div>";
+		echo"<div id='box'> Désolé, aucune news n'a été trouvée</div>";
 	}
 }?>
 </div>

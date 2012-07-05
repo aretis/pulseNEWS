@@ -12,8 +12,8 @@
 		{
 			if($data['pseudo'] == $_SESSION['pseudo'])
 			{
-				if(isset($_GET['pseudo'])) echo"<div id='delete_com'><a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment=".$data['id_comment']."'>X</a></div>";
-				else echo"<div id='delete_com'><a href='index.php?page=profile&delete_comment=".$data['id_comment']."'>X</a></div>";
+				if(isset($_GET['pseudo'])) echo"<div id='delete_com'><a href='index.php?".$_SERVER['QUERY_STRING']."&pseudo=".$_GET['pseudo']."&delete_comment=".$data['id_comment']."'>X</a></div>";
+				else echo"<div id='delete_com'><a href='index.php?".$_SERVER['QUERY_STRING']."&delete_comment=".$data['id_comment']."'>X</a></div>";
 			}
 		}
 		$request = "SELECT profile_picture FROM users WHERE pseudo = '".$data['pseudo']."'";
@@ -69,7 +69,7 @@
   
 
 		
-		$request = "SELECT id_comment, content, post_date, pseudo FROM comment_a_comment INNER JOIN USERS ON comment_a_comment.id_user = users.id_user WHERE id_post = ".$id." AND id_parent=".$data['id_comment'];
+		$request = "SELECT id_comment, content, post_date, pseudo FROM comment_a_comment INNER JOIN users ON comment_a_comment.id_user = users.id_user WHERE id_post = ".$id." AND id_parent=".$data['id_comment'];
 		$resultat = call_db($request);
 		
 		while($data2 = mysql_fetch_array($resultat))
@@ -81,8 +81,22 @@
 			{
 				if($data2['pseudo'] == $_SESSION['pseudo'])
 				{
-					if(isset($_GET['pseudo'])) echo"<div id='delete_com'><a href='index.php?page=profile&pseudo=".$_GET['pseudo']."&delete_comment_of_comment=".$data2['id_comment']."'>X</a></div>";
-					else echo"<div id='delete_com'><a href='index.php?page=profile&delete_comment_of_comment=".$data2['id_comment']."'>X</a></div>";
+					if(isset($_GET['pseudo']))
+					{
+						echo"<div id='delete_com'><a href='index.php?page=";
+						if($_GET['page'] == 'profile') echo 'profile';
+						else if($_GET['page'] == 'news') echo 'news';
+						else if($_GET['page'] == 'new_debate') echo 'new_debate';
+						echo"&pseudo=".$_GET['pseudo']."&delete_comment_of_comment=".$data2['id_comment']."'>X</a></div>";
+					}
+					else{
+					
+						echo"<div id='delete_com'><a href='index.php?page=";
+							if($_GET['page'] == 'profile') echo 'profile';
+							else if($_GET['page'] == 'news') echo 'news';
+							else if($_GET['page'] == 'new_debate') echo 'new_debate';
+						echo"&delete_comment_of_comment=".$data2['id_comment']."'>X</a></div>";
+					}
 				}
 			}
 			$request = "SELECT profile_picture FROM users WHERE pseudo = '".$data2['pseudo']."'";

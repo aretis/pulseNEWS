@@ -2,7 +2,7 @@
 
 $_SESSION['prenom']='christie';
 $prenom=$_SESSION['prenom'];
-include('/../modeles/connect_db.php');
+include('modeles/connect_db.php');
 $requete="SELECT id_user FROM users WHERE pseudo='$prenom'";
 $sucess=mysql_query($requete) or die(mysql_error());
 while($data=mysql_fetch_assoc($sucess))
